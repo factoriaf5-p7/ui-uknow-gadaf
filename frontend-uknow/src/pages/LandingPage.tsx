@@ -1,11 +1,12 @@
-import { Button } from "../components/Button"
+import { ButtonP } from "../components/ButtonP"
+import { ButtonS } from "../components/ButtonS"
 
 
 export const LandingPage=()=> {
   return (
     <>
-        <Button text={"Get Started"}/>
-        <Button text={"Explore"}/>
+        <ButtonP text={'Get Started'} />
+        <ButtonS text={'Explore'}/>
     </>
   )
 }
