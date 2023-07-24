@@ -2,6 +2,7 @@ import { ButtonP } from "../components/ButtonP"
 import { ButtonS } from "../components/ButtonS"
 
 
+
 export const LandingPage=()=> {
   return (
     <>
