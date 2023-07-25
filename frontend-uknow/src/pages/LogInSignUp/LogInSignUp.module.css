@@ -11,6 +11,7 @@
 
 .topContainer {
   border: 1px solid rgb(68, 199, 100);
+  width: 100vw;
 }
 
 .bottomContainer {
@@ -35,7 +36,14 @@
   border-bottom: 3px solid #3a591e;
   border: 1px solid red;
   width: 100vw;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tap p {
+  margin: 0;
+  padding: 0;
 }
 
 form {

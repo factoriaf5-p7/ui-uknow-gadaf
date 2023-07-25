@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./LandingPage.css";
 import { useParams } from "react-router-dom";
 import { Course } from "../components/CourseInterface";
 

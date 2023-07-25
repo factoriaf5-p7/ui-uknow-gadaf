@@ -47,7 +47,7 @@ export const LandingPage=()=> {
         
       
         <p>Sign up and get 1000 knowlitos to get you started</p>
-          <Link   to="/SignUp">
+          <Link   to="/loginsignup">
             <ButtonP className={styles.button} text={"Get Started"} />
           </Link>
           <Link  to="/home">
