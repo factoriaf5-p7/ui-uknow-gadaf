@@ -1,3 +1,8 @@
+*{
+  overflow: hidden;
+  max-height:150vh;
+}
+
 .hero{
     display: flex;
     flex-direction: column;
@@ -5,7 +10,8 @@
 }
 
 .video{
-    width: 100vw;
+    height: 50vh;
+    width: auto;
     position: fixed;
     z-index: -1000;
 }
@@ -16,16 +22,18 @@
     align-items: flex-start;
     position: absolute;
     bottom: -50%;
-    left: 60%;
+    left: 40%;
     transform: translateX(-50%);
     transition: transform 0.5s ease;
     height: fit-content;
     border-radius: 5%;
     padding: 1%;
     width: 250px !important;
-    font-weight: 800;
-    font-size: 20px;
-    color: #2D2D2D !important;
+     
+}
+.translate-up {
+  transform: translateX(-50%) translateY(-10%);
+  top: 60%;
 }
 
 
@@ -36,8 +44,8 @@
 }
 
 .logo-container {
-    width: 50vw;
-    background-color: rgba(240, 248, 255, 0.438);
+    width: 70vw;
+    background-color: rgba(240, 248, 255, 0.35);
     margin-top: 10%;
     display: flex;
     opacity: 0; /* Set initial opacity to 0 */
@@ -48,8 +56,42 @@
     opacity: 1; /* Change the opacity to 1 when the show-logo class is applied */
   }
   
-.translate-up {
-    transform: translateX(-50%) translateY(-50%);
+
+
+p{
+  color: black !important;
+  font-weight: 700;
+ 
+}
+
+@media (min-width: 768px) {
+
+  .hero{
+    margin-top: -8px;
+  }
+
+  .video{
+    height: 120vh;
+    top:-10;
+  }
+
+  .logo-container {
+    width: 45vw;
+    margin-top: 10%;
+  }
+
+  img{
+    height: 25vh;
+    margin: 1%;
+  }
+ 
+  .translate-up {
+    transform: translateX(135%) translateY(-148%);
     top: 60%;
   }
 
+  p{
+    font-size: 20px !important;  
+  }
+
+}
