@@ -22,7 +22,7 @@
     height: fit-content;
     border-radius: 5%;
     padding: 1%;
-    width: 300px !important;
+    width: 250px !important;
     font-weight: 800;
     font-size: 20px;
     color: #2D2D2D !important;
@@ -47,8 +47,6 @@
   .logo-container.show-logo {
     opacity: 1; /* Change the opacity to 1 when the show-logo class is applied */
   }
-
-  
   
 .translate-up {
     transform: translateX(-50%) translateY(-50%);
