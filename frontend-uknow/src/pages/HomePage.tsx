@@ -7,6 +7,7 @@ export function HomePage () {
       <p>Aqui va el navbar superior</p>
       <Categories />
       <PopularCourses />
+
     </>
   )
 }
