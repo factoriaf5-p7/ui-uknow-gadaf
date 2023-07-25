@@ -19,13 +19,13 @@
     left: 60%;
     transform: translateX(-50%);
     transition: transform 0.5s ease;
-    background-color: rgba(239, 244, 249, 0.314);
     height: fit-content;
     border-radius: 5%;
     padding: 1%;
     width: 300px !important;
     font-weight: 800;
     font-size: 20px;
+    color: #2D2D2D !important;
 }
 
 
