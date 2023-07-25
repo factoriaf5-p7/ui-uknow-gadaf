@@ -1,5 +1,12 @@
+import { Categories } from '../components/Categories/Categories'
+import { PopularCourses } from '../components/PopularCourses/PopularCourses'
+
 export function HomePage () {
   return (
-    <div>HomePage</div>
+    <>
+      <p>Aqui va el navbar superior</p>
+      <Categories />
+      <PopularCourses />
+    </>
   )
 }
