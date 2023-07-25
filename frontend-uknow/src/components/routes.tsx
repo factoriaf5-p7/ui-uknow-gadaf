@@ -1,5 +1,5 @@
 import { createBrowserRouter,  useRouteError } from "react-router-dom";
-import { LandingPage } from '../pages/LandingPage';
+import { LandingPage } from '../pages/LandingPage/LandingPage';
 import { HomePage } from "../pages/HomePage";
 import { SignUp } from "../pages/SignUp";
 

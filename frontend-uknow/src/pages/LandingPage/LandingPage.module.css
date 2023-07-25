@@ -1,25 +1,21 @@
 .hero{
-    
-    background-color: gray;
-}
-
-.videobg{
-    z-index: -10000;
-    width: 100vw;
-    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .video{
-    height: 100vh;
     width: 100vw;
     position: fixed;
+    z-index: -1000;
 }
 
+img{}
 
 .buttons-container {
     display: flex;
     flex-direction:column ;
-    align-items: center;
+    align-items: flex-start;
     position: absolute;
     bottom: -50%;
     left: 60%;
@@ -29,8 +25,22 @@
     height: fit-content;
     border-radius: 5%;
     padding: 1%;
-    
-  }
+    width: 300px !important;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+
+.button{
+    margin: 19px 0 0 0;
+    height: 37px;
+    width: 162px;
+}
+
+img{
+    width:50vw;
+    background-color: rgba(240, 248, 255, 0.438);
+}
 
   
   
