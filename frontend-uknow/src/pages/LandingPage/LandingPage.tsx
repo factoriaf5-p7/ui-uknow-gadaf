@@ -22,7 +22,7 @@ export const LandingPage=()=> {
     if (videoEnded) {
       setTimeout(() => {
         setShowLogo(true);
-      }, 500);
+      }, 150);
     }
   }, [videoEnded]);
 
