@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { Course } from '../components/CourseInterface'
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { Course } from "../components/CourseInterface";
 
 export const CoursePage = () => {
   const { CourseId } = useParams<{ CourseId: string }>()
