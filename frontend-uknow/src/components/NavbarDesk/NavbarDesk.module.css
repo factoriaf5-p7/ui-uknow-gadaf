@@ -1,0 +1,23 @@
+
+.navContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center !important;
+    background-color: #F3F6F8 !important;
+}
+
+.item{
+    color: #3A591E !important;
+    font-weight: 600 !important;
+}
+
+img{
+    height: 10vh;
+}
+
+
+@media (max-width: 600px) {
+    .navContainer{
+        display: none !important;
+    }
+}

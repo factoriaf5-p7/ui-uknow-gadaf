@@ -12,3 +12,11 @@
     color:#3A591E;
     font-size: 25px !important;
 }
+
+
+@media (min-width: 768px) {
+    .navContainer{
+        display: none !important;
+    }
+    
+}

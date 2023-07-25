@@ -20,3 +20,10 @@ img{
     padding: 20%;
     border-radius: 50%;
 }
+
+@media (min-width: 600px) {
+    .navContainer{
+        display: none !important;
+    }
+    
+}
