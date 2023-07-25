@@ -1,6 +1,4 @@
-
-
-export  function HomePage() {
+export function HomePage () {
   return (
     <div>HomePage</div>
   )
