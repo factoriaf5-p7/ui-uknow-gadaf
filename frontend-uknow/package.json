@@ -11,12 +11,9 @@
     "test": "vitest --ui"
   },
   "dependencies": {
-    "bootstrap": "^5.3.0",
-    "bootstrap-icons": "^1.10.5",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.8.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.14.1",
     "sort-by": "^0.0.2"
@@ -36,6 +33,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "react-bootstrap": "^2.8.0",
+    "bootstrap-icons": "^1.10.5",
     "jsdom": "^22.1.0",
     "nock": "^13.3.1",
     "standard": "^17.1.0",
