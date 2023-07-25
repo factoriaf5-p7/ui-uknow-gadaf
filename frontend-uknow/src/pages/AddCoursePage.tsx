@@ -11,44 +11,44 @@ interface FormType {
 
 export const AddCoursePage = () => {
     const [newCourse, setNewCourse] = useState<FormType>({
-        name: "",
-        price: "",
-        topic: "",
-        difficulty: "",
-        tags: "",
-        content: "",
-    });
+        name: '',
+        price: '',
+        topic: '',
+        difficulty: '',
+        tags: '',
+        content: ''
+    })
 
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => {
-        const { name, value } = e.target;
+        const { name, value } = e.target
         setNewCourse((prevNewCourse) => ({
             ...prevNewCourse,
-            [name]: value,
-        }));
-    };
+            [name]: value
+        }))
+    }
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
+        e.preventDefault()
         try {
             const response = await fetch.post(
-                "http://localhost:5173/courses/",
+                'http://localhost:5173/courses/',
                 newCourse
-            );
-            console.log("Response", response.data);
+            )
+            console.log('Response', response.data)
             setNewCourse({
-                name: "",
-                price: "",
-                topic: "",
-                difficulty: "",
-                tags: "",
-                content: "",
-            });
+                name: '',
+                price: '',
+                topic: '',
+                difficulty: '',
+                tags: '',
+                content: ''
+            })
         } catch (error) {
-            console.log(error);
+            console.log(error)
         }
-    };
+    }
 
     return (
         <>
@@ -56,39 +56,39 @@ export const AddCoursePage = () => {
                 <label>
                     Name:
                     <input
-                        type="text"
-                        name="name"
+                        type='text'
+                        name='name'
                         value={newCourse.name}
                         onChange={handleChange}
                     />
                 </label>
                 <label>
                     <input
-                        type="number"
-                        name="price"
+                        type='number'
+                        name='price'
                         value={newCourse.price}
                         onChange={handleChange}
                     />
                 </label>
                 <label>
                     <textarea
-                        name="topic"
+                        name='topic'
                         value={newCourse.topic}
                         onChange={handleChange}
-                    ></textarea>
+                    />
                 </label>
                 <label>
                     <input
-                        type="text"
-                        name="difficulty"
+                        type='text'
+                        name='difficulty'
                         value={newCourse.difficulty}
                         onChange={handleChange}
                     />
                 </label>
                 <label>
                     <input
-                        type="text"
-                        name="tags"
+                        type='text'
+                        name='tags'
                         value={newCourse.tags}
                         onChange={handleChange}
                     />
@@ -96,14 +96,14 @@ export const AddCoursePage = () => {
                 <label>
                     Attenuation Level:
                     <input
-                        type="text"
-                        name="content"
+                        type='text'
+                        name='content'
                         value={newCourse.content}
                         onChange={handleChange}
                     />
                 </label>
-                <button type="submit">Add Course</button>
+                <button type='submit'>Add Course</button>
             </form>
         </>
-    );
-};
+    )
+}
