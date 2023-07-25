@@ -1,3 +1,8 @@
+*{
+  overflow: hidden;
+  max-height:150vh;
+}
+
 .hero{
     display: flex;
     flex-direction: column;
