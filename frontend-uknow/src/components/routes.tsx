@@ -1,7 +1,7 @@
 import { createBrowserRouter,  useRouteError } from "react-router-dom";
 import { LandingPage } from '../pages/LandingPage';
 import { HomePage } from "../pages/HomePage";
-import { SignUp } from "../pages/SignUp";
+import { LogInSignUp } from "../pages/LogInSignUp/LogInSignUp";
 
 const ErrorPage=()=> {
   const error:any = useRouteError();
@@ -29,7 +29,7 @@ export const router = createBrowserRouter([
     element: <HomePage/>,
   },
   {
-    path: "/signup",
-    element: <SignUp/>,
+    path: "/loginsignup",
+    element: <LogInSignUp/>,
   },
 ]);
