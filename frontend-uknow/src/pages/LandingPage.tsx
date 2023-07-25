@@ -27,7 +27,6 @@ export const LandingPage = () => {
       <video className='videobg' src={homework}>
         Your browser does not support the video tag.
       </video>
-<<<<<<< HEAD
       <div className={`buttons-container ${videoEnded ? "translate-up" : ""}`}>
         <img src={Logo} alt="U-know logo" />
         <div className={'buttons'}>
@@ -37,16 +36,6 @@ export const LandingPage = () => {
           {' '}
           <Link to="/home">
             <ButtonS text={"Explore"} />
-=======
-      <div className={`buttons-container ${videoEnded ? 'translate-up' : ''}`}>
-        <img src={Logo} alt='U-know logo' />
-        <div className='buttons'>
-          <Link to='/SignUp'>
-            <ButtonP text='Get Started' />
-          </Link>{' '}
-          <Link to='/home'>
-            <ButtonS text='Explore' />
->>>>>>> homePage/AndreuGeorgina
           </Link>
         </div>
       </div>
