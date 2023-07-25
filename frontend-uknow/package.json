@@ -9,10 +9,10 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "vitest --ui"
-  
   },
   "dependencies": {
     "bootstrap": "^5.3.0",
+    "bootstrap-icons": "^1.10.5",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "react": "^18.2.0",
@@ -34,11 +34,16 @@
     "@vitest/ui": "^0.33.0",
     "eslint": "^8.44.0",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.1",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "react-bootstrap": "^2.8.0",
     "jsdom": "^22.1.0",
     "nock": "^13.3.1",
+    "standard": "^17.1.0",
     "typescript": "^5.0.2",
     "vite": "^4.4.0",
     "vitest": "^0.33.0"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json"
   }
 }
