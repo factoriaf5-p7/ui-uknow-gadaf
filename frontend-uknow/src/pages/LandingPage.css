@@ -1,0 +1,41 @@
+.hero{
+    
+    background-color: gray;
+}
+
+.videobg{
+    z-index: -10000;
+    width: 100vw;
+    position: absolute;
+}
+
+.video{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+}
+
+
+.buttons-container {
+    display: flex;
+    flex-direction:column ;
+    align-items: center;
+    position: absolute;
+    bottom: -50%;
+    left: 60%;
+    transform: translateX(-50%);
+    transition: transform 0.5s ease;
+    background-color: rgba(239, 244, 249, 0.314);
+    height: fit-content;
+    border-radius: 5%;
+    padding: 1%;
+    
+  }
+
+  
+  
+  .translate-up {
+    transform: translateX(-50%) translateY(-50%);
+    top: 60%;
+  }
+
