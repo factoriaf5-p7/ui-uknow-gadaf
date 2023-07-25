@@ -1,0 +1,22 @@
+.navContainer{
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    align-items: center;
+}
+
+img{
+    height: 10vh;
+}
+
+.iconsContainer{
+    display: flex;
+}
+
+.icon{
+    color:#3A591E;
+    font-size: 35px !important;
+    background-color: #F3F6F8;
+    padding: 20%;
+    border-radius: 50%;
+}
