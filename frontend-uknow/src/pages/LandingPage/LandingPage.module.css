@@ -10,8 +10,6 @@
     z-index: -1000;
 }
 
-img{}
-
 .buttons-container {
     display: flex;
     flex-direction:column ;
@@ -37,14 +35,22 @@ img{}
     width: 162px;
 }
 
-img{
-    width:50vw;
+.logo-container {
+    width: 50vw;
     background-color: rgba(240, 248, 255, 0.438);
-}
+    margin-top: 10%;
+    display: flex;
+    opacity: 0; /* Set initial opacity to 0 */
+    transition: opacity 0.5s ease;
+  }
+  
+  .logo-container.show-logo {
+    opacity: 1; /* Change the opacity to 1 when the show-logo class is applied */
+  }
 
   
   
-  .translate-up {
+.translate-up {
     transform: translateX(-50%) translateY(-50%);
     top: 60%;
   }

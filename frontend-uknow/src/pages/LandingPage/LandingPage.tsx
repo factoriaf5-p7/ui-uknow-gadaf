@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { ButtonP } from "../../components/ButtonP"
 import { ButtonS } from "../../components/ButtonS"
 import homework from "../../assets/homework.mp4"
-import  { useState } from "react";
+import  { useEffect, useState } from "react";
 import styles from './LandingPage.module.css';
 import Logo from "../../assets/LOGO.png"
 
@@ -11,12 +11,21 @@ import Logo from "../../assets/LOGO.png"
 export const LandingPage=()=> {
 
   const [videoEnded, setVideoEnded] = useState(false);
+  const [showLogo, setShowLogo] = useState(false);
 
   const handleVideoEnded = () => {
     setVideoEnded(true);
   };
 
-  const displayLogo = () => {}
+  useEffect(() => {
+    // Delay showing the logo for 500ms after the video ends
+    if (videoEnded) {
+      setTimeout(() => {
+        setShowLogo(true);
+      }, 500);
+    }
+  }, [videoEnded]);
+
 
   return (
     <section className={styles.hero}>
@@ -30,7 +39,9 @@ export const LandingPage=()=> {
         Your browser does not support the video tag.
       </video>
       
-      <img src={Logo} alt="U-know logo" />
+      <div className={`${styles['logo-container']} ${showLogo ? styles['show-logo'] : ''}`}>
+        <img src={Logo} alt="U-know logo" />
+      </div>
       
       <div className={`${styles["buttons-container"]} ${videoEnded ? styles["translate-up"] : ""}`}>
         
