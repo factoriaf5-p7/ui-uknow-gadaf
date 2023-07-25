@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./LandingPage.css";
 
 interface FormType {
     name: string;
