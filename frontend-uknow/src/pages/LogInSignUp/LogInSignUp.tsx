@@ -8,10 +8,6 @@ import Logo from "../../assets/LOGO.png";
 export const LogInSignUp = () => {
   const [activeTab, setActiveTab] = useState("logIn");
 
-  const handleTabClick = (tab: React.SetStateAction<string>) => {
-    setActiveTab(tab);
-  };
-
   return (
     <div className={styles.content}>
       <div className={styles.header}>
@@ -28,7 +24,7 @@ export const LogInSignUp = () => {
             className={`${styles.tab} ${
               activeTab === "logIn" ? styles.active : ""
             }`}
-            onClick={() => handleTabClick("logIn")}
+            onClick={() => setActiveTab("logIn")}
           >
             <p>Log In</p>
           </div>
@@ -36,7 +32,7 @@ export const LogInSignUp = () => {
             className={`${styles.tab} ${
               activeTab === "signUp" ? styles.active : ""
             }`}
-            onClick={() => handleTabClick("signUp")}
+            onClick={() => setActiveTab("signUp")}
           >
             <p>Sign Up</p>
           </div>
@@ -65,17 +61,17 @@ export const LogInSignUp = () => {
         ) : (
           <div className={styles.signUpContainer}>
             <Form>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Group className="mb-3">
                 <div className="input-icon">
                   <Form.Control type="email" placeholder="Enter your name" />
                 </div>
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Group className="mb-3">
                 <Form.Control type="email" placeholder="Enter your email" />
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Group className="mb-3">
                 <Form.Control
                   id={styles.textField}
                   type="password"
@@ -83,7 +79,7 @@ export const LogInSignUp = () => {
                 />
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Group className="mb-3">
                 <Form.Control
                   id={styles.textField}
                   type="password"

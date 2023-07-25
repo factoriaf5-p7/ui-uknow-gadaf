@@ -1,3 +1,24 @@
 * {
   overflow: hidden;
 }
+
+/* globals.css */
+
+:root {
+  /* Colores */
+  --color-text-primary: #777777;
+  --color-heading-primary: #2d2d2d;
+  --color-text-secondary: #777777;
+  --color-background: #ffffff;
+  --color-containers: #f3f6f8;
+
+  /* Tamaños de fuente */
+  --font-size-p: 16px;
+  --font-size-h1: 20px;
+  --font-size-h6: 16px;
+
+  /* Pesos de fuente */
+  --font-weight-p: 400;
+  --font-weight-h1: 600;
+  --font-weight-h6: 400;
+}
