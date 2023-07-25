@@ -2,6 +2,8 @@ import { createBrowserRouter,  useRouteError } from "react-router-dom";
 import { LandingPage } from '../pages/LandingPage';
 import { HomePage } from "../pages/HomePage";
 import { LogInSignUp } from "../pages/LogInSignUp/LogInSignUp";
+import { CoursePage } from "../pages/CoursePage";
+import { AddCoursePage } from "../pages/AddCoursePage";
 
 const ErrorPage=()=> {
   const error:any = useRouteError();
@@ -31,5 +33,13 @@ export const router = createBrowserRouter([
   {
     path: "/loginsignup",
     element: <LogInSignUp/>,
+  },
+  {
+    path: "/course",
+    element: <CoursePage/>,
+  },
+  {
+    path: "/addcourse",
+    element: <AddCoursePage/>,
   },
 ]);
