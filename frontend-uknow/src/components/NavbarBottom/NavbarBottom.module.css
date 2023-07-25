@@ -1,0 +1,14 @@
+.navContainer{
+    background-color: #F3F6F8;
+    display: flex;
+    justify-content: space-around;
+    position:fixed ;
+    bottom: 0;
+    width: 100vw;
+}
+
+
+.icon{
+    color:#3A591E;
+    font-size: 25px !important;
+}
