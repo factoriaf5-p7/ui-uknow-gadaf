@@ -11,7 +11,7 @@ interface ButtonProps {
 export const ButtonS: FC<ButtonProps> = ({ text, onClick, className }) => {
   return (
     <>
-      <Button variant="outline-success" className={className} onClick={onClick}>
+      <Button variant="secondary" className={className} onClick={onClick}>
       {text}
       </Button>
     </>  
