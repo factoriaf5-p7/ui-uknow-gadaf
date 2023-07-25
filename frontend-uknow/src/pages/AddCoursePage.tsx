@@ -25,9 +25,9 @@ export const AddCoursePage = () => {
         const { name, value } = e.target
         setNewCourse((prevNewCourse) => ({
             ...prevNewCourse,
-            [name]: value
-        }))
-    }
+            [name]: value,
+        }));
+    };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -35,7 +35,7 @@ export const AddCoursePage = () => {
             const response = await fetch.post(
                 'http://localhost:5173/courses/',
                 newCourse
-            )
+            );
             console.log('Response', response.data)
             setNewCourse({
                 name: '',
