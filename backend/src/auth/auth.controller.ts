@@ -18,7 +18,7 @@ export class AuthController {
 	@Post('signup')
 	async signup(@Body() user: RegisterUserDto) {
 		const response = await this.authService.register(user);
-		if(response.status !== HttpStatus.OK) throw new HttpException(response.message, response.status);
+		// if(response.status !== HttpStatus.OK) throw new HttpException(response.message, response.status);
 		return response;
 	}
 

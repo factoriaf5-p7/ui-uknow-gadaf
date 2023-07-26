@@ -1,10 +1,10 @@
 import { createBrowserRouter, useRouteError } from 'react-router-dom'
-import { LandingPage } from '../pages/LandingPage/LandingPage'
-import { HomePage } from '../pages/HomePage'
-import { Auth } from '../pages/Auth/Auth'
-import { CoursePage } from '../pages/CoursePage'
-import { AddCoursePage } from '../pages/AddCoursePage'
-import { AllUsersPage } from '../pages/AllUsersPage'
+import { LandingPage } from './pages/LandingPage/LandingPage'
+import { HomePage } from './pages/HomePage'
+import { CoursePage } from './pages/CoursePage'
+import { AddCoursePage } from './pages/AddCoursePage'
+import { AllUsersPage } from './pages/AllUsersPage'
+import { Auth } from './pages/Auth/Auth'
 
 const ErrorPage = () => {
   const error:any = useRouteError()
@@ -46,5 +46,5 @@ export const router = createBrowserRouter([
   {
     path: '/allusers',
     element: <AllUsersPage />
-  },
+  }
 ])

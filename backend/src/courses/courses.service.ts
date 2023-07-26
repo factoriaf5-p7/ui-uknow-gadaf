@@ -387,4 +387,18 @@ export class CoursesService {
 			throw error;
 		}
 	}
+
+	async findAllByRating() {
+		try {
+		  const allCourses = await this.courseModel.find().sort({ rating: 'desc' });
+	
+		  return {
+				message: 'All courses retrieved successfully by rating.',
+				status: HttpStatus.OK,
+				data: allCourses,
+		  };
+		} catch (error) {
+		  throw error;
+		}
+	  }
 }
