@@ -1,8 +1,9 @@
-// import { useEffect, useState } from 'react'
-
 import { Container } from "react-bootstrap";
 import { AllCoursesCard } from "./AllCoursesCard";
+import styles from "./AllCourses.module.css";
+import Button from "react-bootstrap";
 
+// import { useEffect, useState } from 'react'
 // export const AllCourses = () => {
 //   const [course, setCourse] = useState<any[]>([])
 
@@ -39,7 +40,42 @@ import { AllCoursesCard } from "./AllCoursesCard";
 export function AllCourses() {
   return (
     <Container>
-      <h2>All courses</h2>
+      <div className={styles.topBar}>
+        <h2>All courses</h2>
+
+        {/* SORT BY button */}
+
+        <div className="dropdown">
+          <button
+            className="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            style={{
+              backgroundColor: "#F3F6F8",
+              color: "black",
+              border: "none",
+              
+            }}
+          >
+            Sort by
+          </button>
+          
+          <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li>
+              <a className="dropdown-item" href="#">
+                Rating
+              </a>
+            </li>
+            <li>
+              <a className="dropdown-item" href="#">
+                Price
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
 
       <AllCoursesCard />
     </Container>
