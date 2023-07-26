@@ -3,7 +3,6 @@ import { ButtonP } from '../components/ButtonP'
 import { ButtonS } from '../components/ButtonS'
 import homework from '../assets/homework.mp4'
 import { useState } from 'react'
-import './LandingPage.css'
 import Logo from '../assets/2Logo.png'
 
 export const LandingPage = () => {

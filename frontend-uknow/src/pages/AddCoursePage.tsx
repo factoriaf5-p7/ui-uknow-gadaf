@@ -2,12 +2,12 @@ import { useState } from "react";
 import axios from "axios";
 
 interface FormType {
-    name: string;
-    price: string;
-    topic: string;
-    difficulty: string;
-    tags: string;
-    content: string;
+  name: string;
+  price: string;
+  topic: string;
+  difficulty: string;
+  tags: string;
+  content: string;
 }
 
 export const AddCoursePage = () => {
