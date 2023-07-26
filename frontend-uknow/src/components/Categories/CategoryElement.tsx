@@ -1,8 +1,8 @@
-interface TopicProp {
-  topic: string
+interface CategoryProp {
+  category: string
 }
 
-export const CategoryElement = ({ topic }: TopicProp) => {
+export const CategoryElement = ({ category }: CategoryProp) => {
   return (
     // <Card style={{ width: '200px' }}>
     //   <div className='text-center p-2 pb-0'>
@@ -12,6 +12,6 @@ export const CategoryElement = ({ topic }: TopicProp) => {
     //     <Card.Title className='text-center m-0 p-2'>{title}</Card.Title>
     //   </Card.Body>
     // </Card>
-    <div className='border border-dark rounded p-1'>{topic}</div>
+    <div className='border border-dark rounded p-1'>{category}</div>
   )
 }

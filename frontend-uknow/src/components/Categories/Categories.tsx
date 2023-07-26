@@ -24,11 +24,11 @@ export const Categories = () => {
     <>
       <section>
         <Container>
-          <h4>Topics</h4>
+          <h4>Categories</h4>
           <div className='d-flex flex-wrap justify-content-center' style={{ gap: 10 }}>
-            {topics.map((topic, i) => (
+            {topics.map((category, i) => (
               <div key={i}>
-                <CategoryElement topic={topic.topic} />
+                <CategoryElement category={category} />
               </div>
             ))}
           </div>

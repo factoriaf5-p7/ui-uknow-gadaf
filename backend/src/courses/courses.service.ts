@@ -49,7 +49,7 @@ export class CoursesService {
 
 	async getAllCategories (){
 		try {
-			const category = await this.courseModel.find({}, { _id: 0, category: 1 });
+			const category = await this.courseModel.distinct('category');
 
 			return {
 				data: category,
