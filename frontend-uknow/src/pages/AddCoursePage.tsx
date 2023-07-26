@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 
 interface FormType {
     name: string;
@@ -32,7 +33,7 @@ export const AddCoursePage = () => {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         try {
-            const response = await fetch.post(
+            const response = await axios.post(
                 'http://localhost:5173/courses/',
                 newCourse
             );
