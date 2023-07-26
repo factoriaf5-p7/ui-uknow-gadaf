@@ -1,7 +1,7 @@
 import { createBrowserRouter, useRouteError } from 'react-router-dom'
 import { LandingPage } from '../pages/LandingPage/LandingPage'
 import { HomePage } from '../pages/HomePage'
-import { LogInSignUp } from '../pages/LogInSignUp/LogInSignUp'
+import { Auth } from '../pages/Auth/Auth'
 import { CoursePage } from '../pages/CoursePage'
 import { AddCoursePage } from '../pages/AddCoursePage'
 import { AllUsersPage } from '../pages/AllUsersPage'
@@ -32,8 +32,8 @@ export const router = createBrowserRouter([
     element: <HomePage />
   },
   {
-    path: '/loginsignup',
-    element: <LogInSignUp />
+    path: '/auth',
+    element: <Auth />
   },
   {
     path: '/course',

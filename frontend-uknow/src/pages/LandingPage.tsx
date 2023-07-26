@@ -29,7 +29,7 @@ export const LandingPage = () => {
       <div className={`buttons-container ${videoEnded ? 'translate-up' : ''}`}>
         <img src={Logo} alt='U-know logo' />
         <div className='buttons'>
-          <Link to='/LogInSignUp'>
+          <Link to='/auth'>
             <ButtonP text='Get Started' />
           </Link>
           {' '}
