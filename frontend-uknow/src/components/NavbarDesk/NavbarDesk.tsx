@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Nav from 'react-bootstrap/Nav';
 import styles from './NavbarDesk.module.css'
 import LOGO from '../../assets/LOGO.png'
