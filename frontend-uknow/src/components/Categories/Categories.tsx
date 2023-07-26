@@ -10,25 +10,29 @@ export const Categories = () => {
         <Container>
           <h2>Categories</h2>
           <div className={styles.cards}>
-            <Col>
-              <CategoryElement title="Frontend" img={img} />
-            </Col>
-            <Col>
-              <CategoryElement title="Backend" img={img} />
-            </Col>
-            <Col>
-              <CategoryElement title="UI/UX" img={img} />
-            </Col>
+            <div>
+              <Col>
+                <CategoryElement title="Frontend" img={img} />
+              </Col>
+              <Col>
+                <CategoryElement title="Backend" img={img} />
+              </Col>
+              <Col>
+                <CategoryElement title="UI/UX" img={img} />
+              </Col>
+            </div>
 
-            <Col>
-              <CategoryElement title="Cybersecurity" img={img} />
-            </Col>
-            <Col>
-              <CategoryElement title="Gaming" img={img} />
-            </Col>
-            <Col>
-              <CategoryElement title="DataBase" img={img} />
-            </Col>
+            <div>
+              <Col>
+                <CategoryElement title="Cybersecurity" img={img} />
+              </Col>
+              <Col>
+                <CategoryElement title="Gaming" img={img} />
+              </Col>
+              <Col>
+                <CategoryElement title="DataBase" img={img} />
+              </Col>
+            </div>
           </div>
         </Container>
       </section>
