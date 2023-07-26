@@ -22,7 +22,7 @@ export const PopularCourses = () => {
 
   return (
     <Container>
-      <h2>Most popular</h2>
+      <h4>Most popular</h4>
 
       <div className='d-flex justify-content-between'>
         {course.slice(0, 5).map((course) => (

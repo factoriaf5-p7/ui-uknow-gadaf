@@ -1,20 +1,17 @@
-import { Card } from "react-bootstrap";
-import styles from "./CategoryElement.module.css";
-
-interface CategoryItemProp {
-  img: string;
-  title: string;
+interface TopicProp {
+  topic: string
 }
 
-export const CategoryElement = ({ img, title }: CategoryItemProp) => {
+export const CategoryElement = ({ topic }: TopicProp) => {
   return (
-    <Card className={styles.card}>
-      <div className={styles.button}>
-        <Card.Img className={styles.img} src={img} />
-      </div>
-      <Card.Body>
-        <Card.Title className={styles.title}>{title}</Card.Title>
-      </Card.Body>
-    </Card>
-  );
-};
+    // <Card style={{ width: '200px' }}>
+    //   <div className='text-center p-2 pb-0'>
+    //     <Card.Img src={img} style={{ width: '50px', height: '50px' }} />
+    //   </div>
+    //   <Card.Body className='p-0'>
+    //     <Card.Title className='text-center m-0 p-2'>{title}</Card.Title>
+    //   </Card.Body>
+    // </Card>
+    <div className='border border-dark rounded p-1'>{topic}</div>
+  )
+}

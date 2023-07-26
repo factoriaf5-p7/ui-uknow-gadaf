@@ -1,10 +1,10 @@
-import { Categories } from '../components/Categories/Categories';
-import { Header } from '../components/Header/Header';
-import { NavbarBottom } from '../components/NavbarBottom/NavbarBottom';
-import { NavbarDesk } from '../components/NavbarDesk/NavbarDesk';
-import { PopularCourses } from '../components/PopularCourses/PopularCourses';
+import { Categories } from '../components/Categories/Categories'
+import { Header } from '../components/Header/Header'
+import { NavbarBottom } from '../components/NavbarBottom/NavbarBottom'
+import { NavbarDesk } from '../components/NavbarDesk/NavbarDesk'
+import { PopularCourses } from '../components/PopularCourses/PopularCourses'
 
-export function HomePage() {
+export function HomePage () {
   return (
     <>
       <NavbarDesk />
@@ -13,5 +13,5 @@ export function HomePage() {
       <PopularCourses />
       <NavbarBottom />
     </>
-  );
+  )
 }

@@ -47,6 +47,18 @@ export class CoursesService {
 		}
 	}
 
+	async getAllCategories (){
+		try {
+			const category = await this.courseModel.find({}, { _id: 0, category: 1 });
+
+			return {
+				data: category,
+			};
+		} catch (error) {
+			throw error;
+		}
+	}
+
 	async findBoughtCourses(id: ObjectId) {
 		try {
 			const { message, status, data } = await this.userService.findOneWithBoughtCourses(id);
