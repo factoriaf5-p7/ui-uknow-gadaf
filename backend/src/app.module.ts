@@ -5,23 +5,23 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { UsersModule } from './users/users.module';
 import { CoursesModule } from './courses/courses.module';
 import { AuthModule } from './auth/auth.module';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ChatModule } from './chat/chat.module';
 
 @Module({
 	imports: [
 		// STATIC CONNECTION VERSION
-		MongooseModule.forRoot('mongodb://localhost:27017/uknow'),
+		// MongooseModule.forRoot('mongodb://localhost:27017/uknow'),
 
 		// DYNAMIC CONNECTION VERSION
-		// MongooseModule.forRootAsync({
-		// 	imports: [ ConfigModule ],
-		// 	useFactory: async (configService: ConfigService) => ({
-		// 		// uri: `mongodb://${configService.get<string>('DB_HOST')}:${configService.get<string>('DB_PORT')}/${configService.get<string>('DB_NAME')}`
-		// 		uri: `mongodb+srv://${configService.get<string>('DB_USER')}:${configService.get<string>('DB_PASSWORD')}@${configService.get<string>('DB_HOST')}/${configService.get<string>('DB_NAME')}`
-		// 	}),
-		// 	inject: [ ConfigService ],
-		// }),
+		MongooseModule.forRootAsync({
+			imports: [ ConfigModule ],
+			useFactory: async (configService: ConfigService) => ({
+				// uri: `mongodb://${configService.get<string>('DB_HOST')}:${configService.get<string>('DB_PORT')}/${configService.get<string>('DB_NAME')}`
+				uri: `mongodb+srv://${configService.get<string>('DB_USER')}:${configService.get<string>('DB_PASSWORD')}@${configService.get<string>('DB_HOST')}/${configService.get<string>('DB_NAME')}`
+			}),
+			inject: [ ConfigService ],
+		}),
 		
 		// DYNAMIC DOCKER VERSION FOR MAC AN LINUX, ¿WINDOWS?
 		// MongooseModule.forRootAsync({
