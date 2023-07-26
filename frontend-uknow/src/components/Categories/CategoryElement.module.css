@@ -1,4 +1,31 @@
-.categoryElementImg {
-    width: 150px;
-    height: 150px;
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  border: none;
+  margin-left: 10px;
+}
+
+.button {
+  width: 50px;
+  height: 50px;
+  background-color: #d9d9d9;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.img {
+  width: 26px;
+}
+
+.title {
+  font-size: 16px;
+  text-align: center;
+  font-weight: 600;
+  color: #2d2d2d;
 }

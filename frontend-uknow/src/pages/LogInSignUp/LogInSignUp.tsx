@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Form } from 'react-bootstrap'
 import { ButtonP } from '../../components/ButtonP'
 import styles from './LogInSignUp.module.css'
