@@ -1,7 +1,7 @@
 
 .navContainer{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center !important;
     background-color: #F3F6F8 !important;
 }
