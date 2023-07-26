@@ -7,12 +7,16 @@ import { JwtService } from '@nestjs/jwt';
 import { sendEmail } from '../utils/mail-sender';
 import { RecoverRequestDto } from './dto/recover-request.dto';
 import { hash, genSalt, compare } from 'bcrypt';
+import { InjectModel } from '@nestjs/mongoose';
+import { User } from 'src/users/schemas/user.schema';
+import { Model } from 'mongoose';
 
 @Injectable()
 export class AuthService {
 	constructor(
     private userService: UsersService, 
 	private readonly jwtService: JwtService,
+	@InjectModel(User.name) private readonly userModel: Model<User>
 	) {}
   
 	async validatePassword (password: string, encriptedPassword: string) {
@@ -21,6 +25,21 @@ export class AuthService {
 
 	async login(user: GetUserLoginDto){
 		const { email, password } = user;
+		const findUser = await this.userModel.findOne({ email });
+		if(!findUser) throw new HttpException('USER_NOT_FOUND', HttpStatus.NOT_FOUND);
+
+		const checkPassword = await compare(password, findUser.password);
+		if(!checkPassword) throw new HttpException('INVALID_PASSWORD', HttpStatus.FORBIDDEN);
+
+		const paylod = { id:findUser.id, name: findUser.name };
+		const token = this.jwtService.sign(paylod);
+
+		return { 
+			message: 'Login success.', 
+			status: HttpStatus.OK,
+			token: token
+		};
+		/* const { email, password } = user;
 		const findUser = await this.userService.findOneLogin(email);
 		if (!findUser) throw new HttpException('USER_NOT_FOUND', HttpStatus.NOT_FOUND);
 
@@ -38,11 +57,15 @@ export class AuthService {
 			message: 'Login success.', 
 			status: HttpStatus.OK,
 			data: token
-		};
+		}; */
 	}
 
 	async register(user: RegisterUserDto) {
-		try {
+		const { password } = user;
+		const hashPassword = await hash(password, 10);
+		user = { ...user, password: hashPassword };
+		return this.userService.create(user);
+		/* try {
 			user.password = await this.encryptPassword(user.password);
 			const { data, message, status } = await this.userService.create(user);
 			return {
@@ -52,7 +75,7 @@ export class AuthService {
 			};
 		} catch (error) {
 			throw error;
-		}
+		} */
 	}
 
 	async recoverPasswordRequest(user: RecoverRequestDto){

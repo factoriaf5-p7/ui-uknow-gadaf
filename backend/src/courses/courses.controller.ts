@@ -36,6 +36,11 @@ export class CoursesController {
   	return this.coursesService.findAllSortedByPriceDesc();
   }
 
+  @Get('rating')
+  findAllByRating() {
+  	return this.coursesService.findAllByRating();
+  }
+
   @Get()
   // @UseGuards(AuthGuard) //'admin'
   findAll() {
