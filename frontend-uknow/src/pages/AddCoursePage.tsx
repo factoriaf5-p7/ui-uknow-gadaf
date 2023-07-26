@@ -1,17 +1,18 @@
 import { useState } from "react";
 import axios from "axios";
-
 interface FormType {
-  name: string;
-  price: string;
-  topic: string;
-  difficulty: string;
-  tags: string;
-  content: string;
+    id: string;
+    name: string;
+    price: string;
+    topic: string;
+    difficulty: string;
+    tags: string;
+    content: string;
 }
 
 export const AddCoursePage = () => {
     const [newCourse, setNewCourse] = useState<FormType>({
+        id: '',
         name: '',
         price: '',
         topic: '',
@@ -39,6 +40,7 @@ export const AddCoursePage = () => {
             );
             console.log('Response', response.data)
             setNewCourse({
+                id: '',
                 name: '',
                 price: '',
                 topic: '',
@@ -54,6 +56,16 @@ export const AddCoursePage = () => {
     return (
         <>
             <form onSubmit={handleSubmit}>
+            <label>
+                    Id:
+                    <input
+                        type='text'
+                        name='id'
+                        value={newCourse.id}
+                        onChange={handleChange}
+                    />
+                </label>
+
                 <label>
                     Name:
                     <input
@@ -63,6 +75,7 @@ export const AddCoursePage = () => {
                         onChange={handleChange}
                     />
                 </label>
+
                 <label>
                     <input
                         type='number'
@@ -71,6 +84,7 @@ export const AddCoursePage = () => {
                         onChange={handleChange}
                     />
                 </label>
+
                 <label>
                     <textarea
                         name='topic'
@@ -78,6 +92,7 @@ export const AddCoursePage = () => {
                         onChange={handleChange}
                     />
                 </label>
+
                 <label>
                     <input
                         type='text'
@@ -86,6 +101,7 @@ export const AddCoursePage = () => {
                         onChange={handleChange}
                     />
                 </label>
+
                 <label>
                     <input
                         type='text'
@@ -94,6 +110,7 @@ export const AddCoursePage = () => {
                         onChange={handleChange}
                     />
                 </label>
+                
                 <label>
                     Attenuation Level:
                     <input
@@ -103,6 +120,7 @@ export const AddCoursePage = () => {
                         onChange={handleChange}
                     />
                 </label>
+
                 <button type='submit'>Add Course</button>
             </form>
         </>

@@ -5,6 +5,8 @@ import { LogInSignUp } from '../pages/LogInSignUp/LogInSignUp'
 import { CoursePage } from '../pages/CoursePage'
 import { AddCoursePage } from '../pages/AddCoursePage'
 import { AllUsersPage } from '../pages/AllUsersPage'
+import { DeleteCoursePage } from '../pages/DeleteCoursePage'
+
 
 const ErrorPage = () => {
   const error:any = useRouteError()
@@ -36,15 +38,19 @@ export const router = createBrowserRouter([
     element: <LogInSignUp />
   },
   {
-    path: '/course',
-    element: <CoursePage />
-  },
-  {
     path: '/addcourse',
     element: <AddCoursePage />
   },
   {
     path: '/allusers',
     element: <AllUsersPage />
+  },
+  {
+    path: '/course',
+    element: <CoursePage />
+  },
+  {
+    path: '/deletecourse',
+    element: <DeleteCoursePage />
   },
 ])
