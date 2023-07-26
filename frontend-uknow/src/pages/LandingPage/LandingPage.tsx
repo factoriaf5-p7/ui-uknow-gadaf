@@ -40,7 +40,7 @@ export const LandingPage=()=> {
       </video>
       
       <div className={`${styles['logo-container']} ${showLogo ? styles['show-logo'] : ''}`}>
-        <img src={Logo} alt="U-know logo" />
+        <img className={styles.logo} src={Logo} alt="U-know logo" />
       </div>
       
       <div className={`${styles["buttons-container"]} ${videoEnded ? styles["translate-up"] : ""}`}>
