@@ -1,6 +1,6 @@
-* {
+/* * {
   overflow: hidden;
-}
+} */
 
 /* globals.css */
 
@@ -11,6 +11,9 @@
   --color-text-secondary: #777777;
   --color-background: #ffffff;
   --color-containers: #f3f6f8;
+  --color-green-dark: #3A591E;
+  --color-green: #92A65F;
+  --color-green-light:#D7E0D0;
 
   /* Tamaños de fuente */
   --font-size-p: 16px;
@@ -22,3 +25,13 @@
   --font-weight-h1: 600;
   --font-weight-h6: 400;
 }
+
+body {
+  color: var(--color-text-primary);
+}
+
+h1{
+  font-size: var(--font-size-h1);
+  color: var(--color-heading-primary);
+}
+
