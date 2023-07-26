@@ -9,6 +9,8 @@ export default function LogInForm() {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    console.log("Form submitted!"); // Add a console log to check if the function is called
+    console.log(formData);
   };
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -41,8 +43,10 @@ export default function LogInForm() {
 
         <Form.Text id={styles.forgotPassword}>Forgot password?</Form.Text>
 
-        <ButtonP text={"Log In"} />
+        <ButtonP text={"Log In"} type='submit'/>
       </Form>
+      
+   
     </div>
   );
 }
