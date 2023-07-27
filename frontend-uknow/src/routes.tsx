@@ -5,7 +5,7 @@ import { LogInSignUp } from './pages/LogInSignUp/LogInSignUp'
 import { CoursePage } from './pages/CoursePage'
 import { AddCoursePage } from './pages/AddCoursePage'
 import { AllUsersPage } from './pages/AllUsersPage'
-import { DeleteCoursePage } from './pages/DeleteCoursePage'
+import { DeleteCourse } from './pages/DeleteCoursePage'
 
 
 const ErrorPage = () => {
@@ -51,6 +51,6 @@ export const router = createBrowserRouter([
   },
   {
     path: '/deletecourse',
-    element: <DeleteCoursePage />
+    element: <DeleteCourse courseId={'string'} />
   },
 ])
