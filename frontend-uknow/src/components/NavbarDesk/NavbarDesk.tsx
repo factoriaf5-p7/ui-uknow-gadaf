@@ -1,8 +1,9 @@
+// NavbarDesk.tsx
 import { useEffect, useState } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import styles from './NavbarDesk.module.css'
-import LOGO from '../../assets/LOGO.png'
-import { Container } from 'react-bootstrap'
+import LogoImg from '../../assets/LogoGris.png'
+import LogoText from '../../assets/LogoText.svg'
 
 export const NavbarDesk = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
@@ -20,30 +21,33 @@ export const NavbarDesk = () => {
       window.removeEventListener('scroll', handleScroll)
     }
   }, [prevScrollPos])
+
   return (
-    <Container>
-      <Nav defaultActiveKey='/home' as='ul' className={`${styles.navContainer} ${visible ? styles.visible : styles.hidden} justify-content-between my-2`}>
+    <section className={styles.navBarSection}>
+      <div className={styles.navBarItems}>
         <div>
-          <Nav.Item as='li'>
-            <Nav.Link className='p-0' href='/home'>
-              <img src={LOGO} alt='' />
+          <Nav.Item className={styles.logoText}>
+            <Nav.Link href='/home'>
+              <img src={LogoText} alt='' className={visible ? styles.growLogoText : ''} />
             </Nav.Link>
           </Nav.Item>
         </div>
-        <div className='d-flex'>
-          <Nav.Item as='li'>
-            <Nav.Link className={styles.item} href='/home'>
-              Home
+        <div>
+          <Nav.Item className={`${styles.logoImg} ${!visible ? styles.logoImgHidden : ''}`}>
+            <Nav.Link href='/home'>
+              <img src={LogoImg} alt='' />
             </Nav.Link>
           </Nav.Item>
+        </div>
+        <div className={styles.navBarLinks}>
           <Nav.Item as='li'>
             <Nav.Link className={styles.item} href='/addcourse'>
-              Add a Course
+              New Course
             </Nav.Link>
           </Nav.Item>
           <Nav.Item as='li'>
             <Nav.Link className={styles.item} href='/course'>
-              Courses
+              My courses
             </Nav.Link>
           </Nav.Item>
           <Nav.Item as='li'>
@@ -52,7 +56,7 @@ export const NavbarDesk = () => {
             </Nav.Link>
           </Nav.Item>
         </div>
-      </Nav>
-    </Container>
+      </div>
+    </section>
   )
 }

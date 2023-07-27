@@ -23,15 +23,15 @@
   /* Pesos de fuente */
   --font-weight-p: 400;
   --font-weight-h1: 600;
-  --font-weight-h6: 400;
+  --font-weight-h6: 400; 
 }
 
 body {
   color: var(--color-text-primary);
+  padding-top: 350px;
 }
 
 h1{
   font-size: var(--font-size-h1);
   color: var(--color-heading-primary);
 }
-
