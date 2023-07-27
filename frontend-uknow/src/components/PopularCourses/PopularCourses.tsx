@@ -9,7 +9,7 @@ export const PopularCourses = () => {
     const fetchCourse = async () => {
       try {
         const response = await fetch(
-          'http://localhost:3000/api/courses'
+          'http://localhost:3000/api/courses/rating'
         )
         const data = await response.json()
         setCourse(data.data)
@@ -24,10 +24,10 @@ export const PopularCourses = () => {
     <Container>
       <h4>Most popular</h4>
 
-      <div className='d-flex justify-content-between'>
+      <div className='d-flex justify-content-center flex-wrap'>
         {course.slice(0, 5).map((course) => (
           <div key={course._id}>
-            <CourseCard img={course.image} rating={0} title={course.name} price={course.price} />
+            <CourseCard img={course.image} rating={course.rating} title={course.name} price={course.price} />
           </div>
         ))}
       </div>
