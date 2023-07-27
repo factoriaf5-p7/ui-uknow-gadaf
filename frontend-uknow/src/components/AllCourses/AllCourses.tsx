@@ -23,6 +23,7 @@ export const AllCourses = () => {
   const navigate = useNavigate()
 
   const handleCourseClick = async (courseId: any) => {
+    navigate(`/course/${courseId}`)
     try {
       const response = await fetch(`http://localhost:3000/api/courses/${courseId}`)
       const data = await response.json()
