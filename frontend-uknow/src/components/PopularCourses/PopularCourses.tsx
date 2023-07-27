@@ -27,7 +27,7 @@ export const PopularCourses = () => {
       <div className='d-flex justify-content-center flex-wrap'>
         {course.slice(0, 5).map((course) => (
           <div key={course._id}>
-            <CourseCard img={course.image} rating={course.rating} title={course.name} price={course.price} />
+            <CourseCard img={course.image} rating={course.rating + ' ⭐'} title={course.name} price={course.price} />
           </div>
         ))}
       </div>
