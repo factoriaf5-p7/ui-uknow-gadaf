@@ -1,0 +1,16 @@
+.card {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+}
+
+.img {
+    width: 100px;
+    width: 100px;
+    
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}

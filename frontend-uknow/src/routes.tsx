@@ -8,43 +8,49 @@ import { Auth } from './pages/Auth/Auth'
 import { Profile } from './pages/Profile'
 
 const ErrorPage = () => {
-  const error:any = useRouteError()
-  console.error(error)
+  const error: any = useRouteError();
+  console.error(error);
 
   return (
-    <div id='error-page'>
+    <div id="error-page">
       <h1>Oops!</h1>
       <p>Sorry, an unexpected error has occurred.</p>
       <p>
         <i>{error.statusText || error.message}</i>
       </p>
     </div>
-  )
-}
+  );
+};
 
 export const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <LandingPage />,
-    errorElement: <ErrorPage />
+    errorElement: <ErrorPage />,
   },
   {
-    path: '/home',
-    element: <HomePage />
+    path: "/home",
+    element: <HomePage />,
   },
   {
+<<<<<<< HEAD
     path: '/auth',
     element: <Auth />
+=======
+    path: "/loginsignup",
+    element: <LogInSignUp />,
+>>>>>>> origin/homePage
   },
   {
-    path: '/course',
-    element: <CoursePage />
+    path: "/course",
+    element: <CoursePage />,
   },
   {
-    path: '/addcourse',
-    element: <AddCoursePage />
+    path: "/addcourse",
+    element: <AddCoursePage />,
   },
   {
+<<<<<<< HEAD
     path: '/allusers',
     element: <AllUsersPage />
   },
@@ -53,3 +59,9 @@ export const router = createBrowserRouter([
     element: <Profile/>
   }
 ])
+=======
+    path: "/allusers",
+    element: <AllUsersPage />,
+  },
+]);
+>>>>>>> origin/homePage

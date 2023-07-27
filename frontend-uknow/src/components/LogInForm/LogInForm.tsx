@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 import { ChangeEvent, FormEvent, useState } from "react"
+=======
+import { ChangeEvent, FormEvent, useState } from "react";
+>>>>>>> origin/homePage
 import { ButtonP } from "../../components/ButtonP";
 import { Form } from "react-bootstrap";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import styles from "./LogInForm.module.css";
+<<<<<<< HEAD
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -33,6 +38,18 @@ export const LogInForm=()=> {
       ...formData,
       [event.target.name]: event.target.value }
       );
+=======
+
+export default function LogInForm() {
+  const [formData, setFormData] = useState({ email: "", password: "" });
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  };
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [event.target.name]: event.target.value });
+>>>>>>> origin/homePage
   };
 
   return (
@@ -61,10 +78,15 @@ export const LogInForm=()=> {
 
         <Form.Text id={styles.forgotPassword}>Forgot password?</Form.Text>
 
+<<<<<<< HEAD
         <ButtonP text={"Log In"} type='submit'/>
       </Form>
       
    
+=======
+        <ButtonP text={"Log In"} />
+      </Form>
+>>>>>>> origin/homePage
     </div>
   );
 }

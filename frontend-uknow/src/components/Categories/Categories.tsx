@@ -24,6 +24,7 @@ export const Categories = () => {
     <>
       <section>
         <Container>
+<<<<<<< HEAD
           <h4>Categories</h4>
           <div className='d-flex flex-wrap justify-content-center' style={{ gap: 10 }}>
             {topics.map((category, i) => (
@@ -31,6 +32,33 @@ export const Categories = () => {
                 <CategoryElement category={category} />
               </div>
             ))}
+=======
+          <h2>Categories</h2>
+          <div className={styles.cards}>
+            <div>
+              <Col>
+                <CategoryElement title="Frontend" img={img} />
+              </Col>
+              <Col>
+                <CategoryElement title="Backend" img={img} />
+              </Col>
+              <Col>
+                <CategoryElement title="UI/UX" img={img} />
+              </Col>
+            </div>
+
+            <div>
+              <Col>
+                <CategoryElement title="Cybersecurity" img={img} />
+              </Col>
+              <Col>
+                <CategoryElement title="Gaming" img={img} />
+              </Col>
+              <Col>
+                <CategoryElement title="DataBase" img={img} />
+              </Col>
+            </div>
+>>>>>>> origin/homePage
           </div>
         </Container>
       </section>
