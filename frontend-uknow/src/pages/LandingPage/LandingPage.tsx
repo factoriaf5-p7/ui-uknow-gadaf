@@ -1,54 +1,26 @@
 import { Link } from 'react-router-dom'
 import { ButtonP } from '../../components/ButtonP'
 import { ButtonS } from '../../components/ButtonS'
-import homework from '../../assets/homework.mp4'
-import { useEffect, useState } from 'react'
 import styles from './LandingPage.module.css'
 import Logo from '../../assets/LOGO.png'
 
 export const LandingPage = () => {
-  const [videoEnded, setVideoEnded] = useState(false)
-  const [showLogo, setShowLogo] = useState(false)
-
-  const handleVideoEnded = () => {
-    setVideoEnded(true)
-  }
-
-  useEffect(() => {
-    // Delay showing the logo for 500ms after the video ends
-    if (videoEnded) {
-      setTimeout(() => {
-        setShowLogo(true)
-      }, 150)
-    }
-  }, [videoEnded])
-
   return (
-    <section className={styles.hero}>
-      <video
-        className={styles.video}
-        src={homework}
-        autoPlay
-        muted
-        onEnded={handleVideoEnded}
-      >
-        Your browser does not support the video tag.
-      </video>
-
-      <div className={`${styles['logo-container']} ${showLogo ? styles['show-logo'] : ''}`}>
-        <img className={styles.logo} src={Logo} alt='U-know logo' />
+    <div className={`${styles.container} d-flex flex-column justify-content-center align-items-center`} style={{ gap: 100 }}>
+      <div>
+        <img src={Logo} alt='logo' style={{ width: '150px', height: '150px' }} />
       </div>
-
-      <div className={`${styles['buttons-container']} ${videoEnded ? styles['translate-up'] : ''}`}>
-
+      <div className='border border-dark p-2'>
         <p>Sign up and get 1000 knowlitos to get you started</p>
-        <Link to='/auth'>
-          <ButtonP className={styles.button} text='Get Started' />
-        </Link>
-        <Link to='/home'>
-          <ButtonS className={styles.button} text='Explore' />
-        </Link>
+        <div className='d-flex flex-column justify-content-center align-items-center'>
+          <Link to='/auth'>
+            <ButtonP className={styles.button} text='Get Started' />
+          </Link>
+          <Link to='/home'>
+            <ButtonS className={styles.button} text='Explore' />
+          </Link>
+        </div>
       </div>
-    </section>
+    </div>
   )
 }
