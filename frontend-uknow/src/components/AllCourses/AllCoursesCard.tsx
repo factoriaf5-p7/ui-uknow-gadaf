@@ -1,33 +1,33 @@
 // import { Card } from 'react-bootstrap'
-import Img from "../../assets/python.png"
-import { StarRating } from "../StarRating/StarRating"
+import Img from '../../assets/python.png'
+import { StarRating } from '../StarRating/StarRating'
 import styles from './AllCoursesCard.module.css'
 
-// interface AllCoursesCardProps {
-//     img: string,
-//     rating: number,
-//     title: string,
-//     price:number
-// }
+interface AllCoursesCardProps {
+    img: string,
+    rating: number,
+    title: string,
+    price:number
+}
 
-export const AllCoursesCard = () => {
+export const AllCoursesCard = ({ img, rating, title, price }: AllCoursesCardProps) => {
   return (
     <div className={styles.card}>
-<div className={styles.img}>
-  <img src={Img} alt="Python" />
-</div>
-<div className={styles.info}>
-  <h1>Python</h1>
-<StarRating />
-  <p>$150</p>
-</div>
+      <div className={styles.img}>
+        <img src={img} alt='Python' />
+      </div>
+      <div className={styles.info}>
+        <h1>{title}</h1>
+        <p>{rating}</p>
+        {/* <StarRating /> */}
+        <p>{price}</p>
+      </div>
 
     </div>
   )
 }
 
-// export const AllCoursesCard = ({ Img, rating, title, price }: AllCoursesCardProps) => {
-//   return (
+
 
 //  <Card>
 //       <Card.Img src={Img} style={{ width: '50px' }} />
