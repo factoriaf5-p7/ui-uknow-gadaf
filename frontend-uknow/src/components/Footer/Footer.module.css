@@ -70,9 +70,20 @@ a {
   color: #777777;
 }
 
+.socialIcon:hover {
+  color: #92bb2b;
+}
+
 .copyrightFooter {
   font-size: 12px;
   text-align: right;
   padding-right: 15px;
   padding-left: 15px;
+}
+
+@media (max-width: 500px) {
+  .footerSection{
+      display: none !important;
+  }
+  
 }
