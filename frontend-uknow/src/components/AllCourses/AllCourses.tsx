@@ -68,7 +68,6 @@ export const AllCourses = () => {
         </div>
       </div>
 
-<<<<<<< HEAD
       <div className='d-flex flex-wrap justify-content-center' style={{ display: 'inline-block', gap: 10 }}>
         {course.map((course, i) => (
           <div key={i} onClick={() => handleCourseClick(course._id)}>
@@ -80,17 +79,6 @@ export const AllCourses = () => {
                 price={course.price}
               />
             </Link>
-=======
-      <div>
-        {course.slice(0, 5).map((course, i) => (
-          <div key={i}>
-            <AllCoursesCard
-              img={course.image}
-              rating={course.rating}
-              title={course.name}
-              price={course.price}
-            />
->>>>>>> b14d183e1b22a9645859b9fb3436b8ab64cffe4c
           </div>
         ))}
       </div>
