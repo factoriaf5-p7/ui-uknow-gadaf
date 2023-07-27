@@ -1,9 +1,12 @@
-*{
+body {
   overflow: hidden;
   max-height:150vh;
 }
 
 .hero{
+  
+  overflow: hidden;
+  max-height:150vh;
     display: flex;
     flex-direction: column;
     align-items: center;
