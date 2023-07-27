@@ -1,0 +1,21 @@
+.logInContainer {
+  background-color: #f3f6f8;
+  width: 100vw;
+  height: 445px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+#forgotPassword {
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 50px;
+}

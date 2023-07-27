@@ -1,16 +1,16 @@
 import { createBrowserRouter, useRouteError } from 'react-router-dom'
 import { LandingPage } from './pages/LandingPage/LandingPage'
-import { HomePage } from './pages/HomePage'
-import { LogInSignUp } from './pages/LogInSignUp/LogInSignUp'
+import { HomePage } from './pages/HomePage/HomePage'
 import { CoursePage } from './pages/CoursePage'
 import { AddCoursePage } from './pages/AddCoursePage'
 import { AllUsersPage } from './pages/AllUsersPage'
 import { DeleteCourse } from './pages/DeleteCoursePage'
 import { DeleteUser } from './pages/DeleteUsersPage'
-
+import { Auth } from './pages/Auth/Auth'
+import { Profile } from './pages/Profile'
 
 const ErrorPage = () => {
-  const error:any = useRouteError()
+  const error: any = useRouteError()
   console.error(error)
 
   return (
@@ -35,8 +35,8 @@ export const router = createBrowserRouter([
     element: <HomePage />
   },
   {
-    path: '/loginsignup',
-    element: <LogInSignUp />
+    path: '/auth',
+    element: <Auth />
   },
   {
     path: '/addcourse',
@@ -57,5 +57,8 @@ export const router = createBrowserRouter([
   {
     path: '/deleteuser',
     element: <DeleteUser userId={'number'} />
+  },
+    path: '/profile',
+    element: <Profile />
   },
 ])

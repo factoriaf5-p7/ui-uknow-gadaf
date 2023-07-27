@@ -22,7 +22,7 @@ export const Categories = () => {
 
   return (
     <>
-      <section>
+
         <Container>
           <h4>Categories</h4>
           <div className='d-flex flex-wrap justify-content-center' style={{ gap: 10 }}>
@@ -33,7 +33,7 @@ export const Categories = () => {
             ))}
           </div>
         </Container>
-      </section>
+     
     </>
   )
 }
