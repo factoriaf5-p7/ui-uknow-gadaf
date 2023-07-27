@@ -1,14 +1,15 @@
 import { createBrowserRouter, useRouteError } from 'react-router-dom'
 import { LandingPage } from './pages/LandingPage/LandingPage'
-import { HomePage } from './pages/HomePage'
+import { HomePage } from './pages/HomePage/HomePage'
 import { CoursePage } from './pages/CoursePage'
 import { AddCoursePage } from './pages/AddCoursePage'
 import { AllUsersPage } from './pages/AllUsersPage'
 import { Auth } from './pages/Auth/Auth'
 import { Profile } from './pages/Profile'
+import CourseDetail from './components/CourseDetail/CourseDetail'
 
 const ErrorPage = () => {
-  const error:any = useRouteError()
+  const error: any = useRouteError()
   console.error(error)
 
   return (
@@ -51,5 +52,9 @@ export const router = createBrowserRouter([
   {
     path: '/profile',
     element: <Profile />
+  },
+  {
+    path: '/course/:id',
+    element: <CourseDetail />
   }
 ])

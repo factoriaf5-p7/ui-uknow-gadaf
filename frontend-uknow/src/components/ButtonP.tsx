@@ -1,6 +1,5 @@
-import { ButtonHTMLAttributes, FC } from 'react';
-import Button from 'react-bootstrap/Button';
-
+import { ButtonHTMLAttributes, FC } from 'react'
+import Button from 'react-bootstrap/Button'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
@@ -8,11 +7,10 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
 }
 
-
-export const ButtonP: FC<ButtonProps> = ({ type ,text, onClick, className }) => {
+export const ButtonP: FC<ButtonProps> = ({ type, text, onClick, className }) => {
   return (
     <>
-    <style type="text/css">
+      <style type='text/css'>
         {`
     .btn-success {
       background-color: #3A591E;
@@ -22,9 +20,9 @@ export const ButtonP: FC<ButtonProps> = ({ type ,text, onClick, className }) => 
     }
     `}
       </style>
-      <Button variant="success" className={className} onClick={onClick} type={type}>
-      {text}
+      <Button variant='success' className={className} onClick={onClick} type={type}>
+        {text}
       </Button>
-    </>  
-  );
-};
+    </>
+  )
+}
