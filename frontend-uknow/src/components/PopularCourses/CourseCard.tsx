@@ -2,7 +2,7 @@ import { Card } from 'react-bootstrap'
 
 interface CourseCardProps {
     img: string,
-    rating: number,
+    rating: string,
     title: string,
     price:number
 }

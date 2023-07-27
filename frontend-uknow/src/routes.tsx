@@ -6,6 +6,7 @@ import { AddCoursePage } from './pages/AddCoursePage'
 import { AllUsersPage } from './pages/AllUsersPage'
 import { Auth } from './pages/Auth/Auth'
 import { Profile } from './pages/Profile'
+import CourseDetail from './components/CourseDetail/CourseDetail'
 
 const ErrorPage = () => {
   const error: any = useRouteError()
@@ -51,5 +52,9 @@ export const router = createBrowserRouter([
   {
     path: '/profile',
     element: <Profile />
+  },
+  {
+    path: '/course/:id',
+    element: <CourseDetail />
   }
 ])

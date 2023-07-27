@@ -1,16 +1,16 @@
-.card {
-    display: flex;
-    align-items: center;
-    margin: 1rem;
-}
-
-.img {
-    width: 100px;
-    width: 100px;
-    
-}
-
-.info {
-    display: flex;
+.courseCard {
+    border: 1px black solid;
+    display: inline-flex;
+    flex-wrap: wrap;
     flex-direction: column;
+    padding: 0.4rem;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 150px;
+    height: 200px;
+    text-align: center;
+}
+
+.courseCard p {
+    margin: 0;
 }
