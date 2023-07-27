@@ -2,7 +2,7 @@ import { Container } from 'react-bootstrap'
 import { AllCoursesCard } from './AllCoursesCard'
 import styles from './AllCourses.module.css'
 import { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 export const AllCourses = () => {
   const [course, setCourse] = useState<any[]>([])
@@ -68,19 +68,6 @@ export const AllCourses = () => {
         </div>
       </div>
 
-<<<<<<< HEAD
-      <div className='d-flex flex-wrap justify-content-center' style={{ display: 'inline-block', gap: 10 }}>
-        {course.map((course, i) => (
-          <div key={i} onClick={() => handleCourseClick(course._id)}>
-            <Link to={`/course/${course._id}`}>
-              <AllCoursesCard
-                img={course.image}
-                rating={course.rating}
-                title={course.name}
-                price={course.price}
-              />
-            </Link>
-=======
       <div>
         {course.slice(0, 5).map((course, i) => (
           <div key={i}>
@@ -90,7 +77,6 @@ export const AllCourses = () => {
               title={course.name}
               price={course.price}
             />
->>>>>>> b14d183e1b22a9645859b9fb3436b8ab64cffe4c
           </div>
         ))}
       </div>

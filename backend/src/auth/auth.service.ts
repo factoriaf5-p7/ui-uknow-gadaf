@@ -61,9 +61,7 @@ export class AuthService {
 	}
 
 	async register(user: RegisterUserDto) {
-		const { password,email } = user;
-		const findUser = await this.user.findOneLogin(email);
-		if (findUser !== null) throw new HttpException('USER_ALREADY_EXIST', HttpStatus.CONFLICT);
+		const { password } = user;
 		const hashPassword = await hash(password, 10);
 		user = { ...user, password: hashPassword };
 		return this.userService.create(user);

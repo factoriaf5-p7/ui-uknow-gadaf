@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useState } from 'react'
+import React, { ChangeEvent, FormEvent, useState } from 'react'
 import { ButtonP } from '../../components/ButtonP'
 import { Form } from 'react-bootstrap'
 import 'bootstrap-icons/font/bootstrap-icons.css'
