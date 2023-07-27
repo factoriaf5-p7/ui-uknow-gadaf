@@ -2,8 +2,6 @@ import { describe, test, expect, beforeEach } from 'vitest'
 import { render, screen, waitFor } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { HomePage } from '../pages/HomePage/HomePage'
-// import { MemoryRouter } from 'react-router-dom'
-// import { HomePage } from '../pages/HomePage'
 
 describe('HOMEPAGE', () => {
   describe('HomePage PARTS', () => {
