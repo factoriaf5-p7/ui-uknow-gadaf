@@ -1,55 +1,55 @@
-import { createBrowserRouter, useRouteError } from 'react-router-dom';
-import { LandingPage } from './pages/LandingPage/LandingPage';
-import { HomePage } from './pages/HomePage';
-import { CoursePage } from './pages/CoursePage';
-import { AddCoursePage } from './pages/AddCoursePage';
-import { AllUsersPage } from './pages/AllUsersPage';
-import { Auth } from './pages/Auth/Auth';
-import { Profile } from './pages/Profile';
+import { createBrowserRouter, useRouteError } from 'react-router-dom'
+import { LandingPage } from './pages/LandingPage/LandingPage'
+import { HomePage } from './pages/HomePage/HomePage'
+import { CoursePage } from './pages/CoursePage'
+import { AddCoursePage } from './pages/AddCoursePage'
+import { AllUsersPage } from './pages/AllUsersPage'
+import { Auth } from './pages/Auth/Auth'
+import { Profile } from './pages/Profile'
 
 const ErrorPage = () => {
-  const error: any = useRouteError();
-  console.error(error);
+  const error: any = useRouteError()
+  console.error(error)
 
   return (
-    <div id="error-page">
+    <div id='error-page'>
       <h1>Oops!</h1>
       <p>Sorry, an unexpected error has occurred.</p>
       <p>
         <i>{error.statusText || error.message}</i>
       </p>
     </div>
-  );
-};
+  )
+}
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <LandingPage />,
-    errorElement: <ErrorPage />,
+    errorElement: <ErrorPage />
   },
   {
     path: '/home',
-    element: <HomePage />,
+    element: <HomePage />
   },
   {
     path: '/auth',
-    element: <Auth />,
+    element: <Auth />
   },
   {
     path: '/course',
-    element: <CoursePage />,
+    element: <CoursePage />
   },
   {
     path: '/addcourse',
-    element: <AddCoursePage />,
+    element: <AddCoursePage />
   },
   {
     path: '/allusers',
-    element: <AllUsersPage />,
+    element: <AllUsersPage />
   },
   {
     path: '/profile',
-    element: <Profile />,
-  },
-]);
+    element: <Profile />
+  }
+])
