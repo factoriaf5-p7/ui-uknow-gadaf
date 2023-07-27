@@ -58,6 +58,7 @@ export const router = createBrowserRouter([
     path: '/deleteuser',
     element: <DeleteUser userId={'number'} />
   },
+  {
     path: '/profile',
     element: <Profile />
   },

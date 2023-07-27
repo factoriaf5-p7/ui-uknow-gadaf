@@ -34,7 +34,7 @@ export const CoursePage = () => {
                     <p>{course.content}</p>
                 </>
             )}
-            {!course && <p>Cargando Cursos...</p>}
+            {!course && <p>Cargando Curso...</p>}
         </div>
     )
 }

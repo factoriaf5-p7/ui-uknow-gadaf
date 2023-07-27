@@ -1,5 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
+import { Header } from '../components/Header/Header'
+import { NavbarBottom } from '../components/NavbarBottom/NavbarBottom'
+import { NavbarDesk } from '../components/NavbarDesk/NavbarDesk'
+
 interface FormType {
     id: string;
     name: string;
@@ -52,11 +56,14 @@ export const AddCoursePage = () => {
             console.log(error)
         }
     }
-
+    
+    
     return (
         <>
+        <Header />
+            <NavbarDesk />
             <form onSubmit={handleSubmit}>
-            <label>
+                <label>
                     Id:
                     <input
                         type='text'
@@ -77,6 +84,7 @@ export const AddCoursePage = () => {
                 </label>
 
                 <label>
+                    Price:
                     <input
                         type='number'
                         name='price'
@@ -86,6 +94,7 @@ export const AddCoursePage = () => {
                 </label>
 
                 <label>
+                    Topic:
                     <textarea
                         name='topic'
                         value={newCourse.topic}
@@ -94,6 +103,7 @@ export const AddCoursePage = () => {
                 </label>
 
                 <label>
+                    Difficulty:
                     <input
                         type='text'
                         name='difficulty'
@@ -103,6 +113,7 @@ export const AddCoursePage = () => {
                 </label>
 
                 <label>
+                    Tags:
                     <input
                         type='text'
                         name='tags'
@@ -110,7 +121,7 @@ export const AddCoursePage = () => {
                         onChange={handleChange}
                     />
                 </label>
-                
+
                 <label>
                     Attenuation Level:
                     <input
@@ -123,6 +134,8 @@ export const AddCoursePage = () => {
 
                 <button type='submit'>Add Course</button>
             </form>
+            <NavbarBottom />
         </>
     )
 }
+
