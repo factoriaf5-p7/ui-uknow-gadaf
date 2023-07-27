@@ -5,7 +5,7 @@ import { CoursePage } from './pages/CoursePage'
 import { AddCoursePage } from './pages/AddCoursePage'
 import { AllUsersPage } from './pages/AllUsersPage'
 import { Auth } from './pages/Auth/Auth'
-import { Profile } from './pages/Profile'
+import { Profile } from './components/Profile/Profile'
 import CourseDetail from './components/CourseDetail/CourseDetail'
 
 const ErrorPage = () => {
