@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styles from "./Auth.module.css";
 import Logo from "../../assets/LOGO.png";
-import LogInForm from "../../components/LogInForm/LogInForm";
-import SignUpForm from "../../components/SignUpForm/SignUpForm";
+import {LogInForm} from "../../components/LogInForm/LogInForm";
+import {SignUpForm} from "../../components/SignUpForm/SignUpForm";
 
 export const Auth = () => {
   const [activeTab, setActiveTab] = useState("logIn");

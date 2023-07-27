@@ -29,7 +29,6 @@ export class UsersService {
 				return { 
 					message: 'User created succesfully',
 					status: HttpStatus.OK,
-					data: ''
 				};
 			}
 		}catch(error){
