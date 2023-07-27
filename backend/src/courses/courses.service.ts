@@ -47,6 +47,18 @@ export class CoursesService {
 		}
 	}
 
+	async getAllCategories (){
+		try {
+			const category = await this.courseModel.distinct('category');
+
+			return {
+				data: category,
+			};
+		} catch (error) {
+			throw error;
+		}
+	}
+
 	async findBoughtCourses(id: ObjectId) {
 		try {
 			const { message, status, data } = await this.userService.findOneWithBoughtCourses(id);
@@ -387,4 +399,18 @@ export class CoursesService {
 			throw error;
 		}
 	}
+
+	async findAllByRating() {
+		try {
+		  const allCourses = await this.courseModel.find().sort({ rating: 'desc' });
+	
+		  return {
+				message: 'All courses retrieved successfully by rating.',
+				status: HttpStatus.OK,
+				data: allCourses,
+		  };
+		} catch (error) {
+		  throw error;
+		}
+	  }
 }

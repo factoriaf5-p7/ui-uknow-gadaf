@@ -6,7 +6,11 @@ import { ObjectId } from 'mongoose';
 import { RegisterUserDto } from '../auth/dto/register-user.dto';
 import { AuthGuard } from '../auth/guards/auth.guard';
 import { UpdateUserByAdminDto } from './dto/update-user-byadmin.dto ';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 
+@ApiBearerAuth()
+@ApiTags('users')
 @Controller('users')
 export class UsersController {
 	constructor(private readonly usersService: UsersService) {}
@@ -29,8 +33,9 @@ export class UsersController {
   		return this.usersService.findOne(id);
   	}
 
+	  // @UseGuards(AuthGuard) //admin
+	// @UseGuards(JwtAuthGuard)
 	@Get()
-	// @UseGuards(AuthGuard) //admin
   	findAll() {
   		return this.usersService.findAll();
   	}

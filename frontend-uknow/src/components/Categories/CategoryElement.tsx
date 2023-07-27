@@ -1,18 +1,17 @@
-import { Card } from 'react-bootstrap'
-
-interface CategoryItemProp {
-    img: string,
-    title: string,
-
+interface CategoryProp {
+  category: string
 }
 
-export const CategoryElement = ({ img, title }: CategoryItemProp) => {
+export const CategoryElement = ({ category }: CategoryProp) => {
   return (
-    <Card>
-      <Card.Img src={img} style={{ width: '50px' }} />
-      <Card.Body>
-        <Card.Title>{title}</Card.Title>
-      </Card.Body>
-    </Card>
+    // <Card style={{ width: '200px' }}>
+    //   <div className='text-center p-2 pb-0'>
+    //     <Card.Img src={img} style={{ width: '50px', height: '50px' }} />
+    //   </div>
+    //   <Card.Body className='p-0'>
+    //     <Card.Title className='text-center m-0 p-2'>{title}</Card.Title>
+    //   </Card.Body>
+    // </Card>
+    <div className='border border-dark rounded p-1'>{category}</div>
   )
 }

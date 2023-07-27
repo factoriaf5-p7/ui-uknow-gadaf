@@ -10,7 +10,10 @@ import { PurchaseCourseDto } from './dto/buy-course.dto';
 import { Roles } from 'src/auth/guards/roles';
 import { Role } from 'src/auth/guards/roles.enum';
 import { RolesGuard } from 'src/auth/guards/role.guard';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 
+@ApiBearerAuth()
+@ApiTags('courses')
 @Controller('courses')
 export class CoursesController {
 	constructor(private readonly coursesService: CoursesService) {}
@@ -34,6 +37,16 @@ export class CoursesController {
   @Get('order-courses-price')
   findAllSortedByPriceDesc() {
   	return this.coursesService.findAllSortedByPriceDesc();
+  }
+
+  @Get('rating')
+  findAllByRating() {
+  	return this.coursesService.findAllByRating();
+  }
+
+  @Get('categories')
+  getAllCategories() {
+  	return this.coursesService.getAllCategories();
   }
 
   @Get()

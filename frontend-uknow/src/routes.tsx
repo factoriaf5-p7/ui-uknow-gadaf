@@ -1,11 +1,11 @@
 import { createBrowserRouter, useRouteError } from 'react-router-dom'
-import { LandingPage } from '../pages/LandingPage/LandingPage'
-import { HomePage } from '../pages/HomePage'
-import { LogInSignUp } from '../pages/LogInSignUp/LogInSignUp'
-import { CoursePage } from '../pages/CoursePage'
-import { AddCoursePage } from '../pages/AddCoursePage'
-import { AllUsersPage } from '../pages/AllUsersPage'
-import { DeleteCoursePage } from '../pages/DeleteCoursePage'
+import { LandingPage } from './pages/LandingPage/LandingPage'
+import { HomePage } from './pages/HomePage'
+import { LogInSignUp } from './pages/LogInSignUp/LogInSignUp'
+import { CoursePage } from './pages/CoursePage'
+import { AddCoursePage } from './pages/AddCoursePage'
+import { AllUsersPage } from './pages/AllUsersPage'
+import { DeleteCoursePage } from './pages/DeleteCoursePage'
 
 
 const ErrorPage = () => {

@@ -19,7 +19,11 @@ export class Course {
 
   @ApiProperty({ example: 'image.png' })
   @Prop({ required: true })
-  	img: string;
+  	image: string;
+
+  @ApiProperty({ example: 'image.png' })
+  @Prop({ required: true })
+  	category: string;
 
   @ApiProperty({ example: 'Beginner' })
   @Prop({ required: true, enum: [ 'Beginner', 'Medium', 'Advanced' ] })
