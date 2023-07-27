@@ -60,6 +60,12 @@ export class UsersService {
 		}
 	}
 
+	async getProfile(user: any) {
+		const profileArray = await this.userModel.find({ _id: user.sub });
+		const profileObject = profileArray.length > 0 ? profileArray[0] : null;
+		return profileObject;
+	  }
+
 	async findAllAdmin() {
 		try {
 			const users = await this.userModel.find();
