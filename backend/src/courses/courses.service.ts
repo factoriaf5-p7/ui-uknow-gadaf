@@ -47,6 +47,18 @@ export class CoursesService {
 		}
 	}
 
+	async getAllCategories (){
+		try {
+			const category = await this.courseModel.distinct('category');
+
+			return {
+				data: category,
+			};
+		} catch (error) {
+			throw error;
+		}
+	}
+
 	async findBoughtCourses(id: ObjectId) {
 		try {
 			const { message, status, data } = await this.userService.findOneWithBoughtCourses(id);
