@@ -1,11 +1,11 @@
-import { createBrowserRouter, useRouteError } from 'react-router-dom'
-import { LandingPage } from './pages/LandingPage/LandingPage'
-import { HomePage } from './pages/HomePage'
-import { CoursePage } from './pages/CoursePage'
-import { AddCoursePage } from './pages/AddCoursePage'
-import { AllUsersPage } from './pages/AllUsersPage'
-import { Auth } from './pages/Auth/Auth'
-import { Profile } from './pages/Profile'
+import { createBrowserRouter, useRouteError } from 'react-router-dom';
+import { LandingPage } from './pages/LandingPage/LandingPage';
+import { HomePage } from './pages/HomePage';
+import { CoursePage } from './pages/CoursePage';
+import { AddCoursePage } from './pages/AddCoursePage';
+import { AllUsersPage } from './pages/AllUsersPage';
+import { Auth } from './pages/Auth/Auth';
+import { Profile } from './pages/Profile';
 
 const ErrorPage = () => {
   const error: any = useRouteError();
@@ -24,44 +24,32 @@ const ErrorPage = () => {
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <LandingPage />,
     errorElement: <ErrorPage />,
   },
   {
-    path: "/home",
+    path: '/home',
     element: <HomePage />,
   },
   {
-<<<<<<< HEAD
     path: '/auth',
-    element: <Auth />
-=======
-    path: "/loginsignup",
-    element: <LogInSignUp />,
->>>>>>> origin/homePage
+    element: <Auth />,
   },
   {
-    path: "/course",
+    path: '/course',
     element: <CoursePage />,
   },
   {
-    path: "/addcourse",
+    path: '/addcourse',
     element: <AddCoursePage />,
   },
   {
-<<<<<<< HEAD
     path: '/allusers',
-    element: <AllUsersPage />
+    element: <AllUsersPage />,
   },
   {
     path: '/profile',
-    element: <Profile/>
-  }
-])
-=======
-    path: "/allusers",
-    element: <AllUsersPage />,
+    element: <Profile />,
   },
 ]);
->>>>>>> origin/homePage
