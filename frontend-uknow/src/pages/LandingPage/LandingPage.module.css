@@ -1,13 +1,7 @@
-<<<<<<< HEAD
-*{
-  /* overflow: hidden; */
-  max-height:150vh;
-=======
 .container {
   /* background-image: url('../../assets/LOGO.png'); */
   height: 100vh;
   background-color: bisque;
->>>>>>> f443afd03852b91dabaa1cd065567cdc98610bd0
 }
 
 .button{
