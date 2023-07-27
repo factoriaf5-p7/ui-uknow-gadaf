@@ -1,5 +1,5 @@
-import { FC } from 'react';
-import Button from 'react-bootstrap/Button';
+import { FC } from 'react'
+import Button from 'react-bootstrap/Button'
 
 interface ButtonProps {
   text: string;
@@ -7,11 +7,10 @@ interface ButtonProps {
   className?: string;
 }
 
-
 export const ButtonS: FC<ButtonProps> = ({ text, onClick, className }) => {
   return (
     <>
-     <style type="text/css">
+      <style type='text/css'>
         {`
     .btn-secondary {
       background-color: #D7E0D0;
@@ -21,9 +20,9 @@ export const ButtonS: FC<ButtonProps> = ({ text, onClick, className }) => {
     }
     `}
       </style>
-      <Button variant="secondary" className={className} onClick={onClick}>
-      {text}
+      <Button variant='secondary' className={className} onClick={onClick}>
+        {text}
       </Button>
-    </>  
-  );
-};
+    </>
+  )
+}
