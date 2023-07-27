@@ -6,6 +6,7 @@ import { CoursePage } from './pages/CoursePage'
 import { AddCoursePage } from './pages/AddCoursePage'
 import { AllUsersPage } from './pages/AllUsersPage'
 import { DeleteCourse } from './pages/DeleteCoursePage'
+import { DeleteUser } from './pages/DeleteUsersPage'
 
 
 const ErrorPage = () => {
@@ -52,5 +53,9 @@ export const router = createBrowserRouter([
   {
     path: '/deletecourse',
     element: <DeleteCourse courseId={'string'} />
+  },
+  {
+    path: '/deleteuser',
+    element: <DeleteUser userId={'number'} />
   },
 ])
