@@ -3,7 +3,7 @@ import { ButtonP } from '../components/ButtonP'
 import { ButtonS } from '../components/ButtonS'
 import homework from '../assets/homework.mp4'
 import { useState } from 'react'
-import Logo from '../assets/2Logo.png'
+import Logo from '../assets/LOGO.png'
 
 export const LandingPage = () => {
   const [videoEnded, setVideoEnded] = useState(false)
