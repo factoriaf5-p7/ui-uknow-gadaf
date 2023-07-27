@@ -19,21 +19,6 @@ export const AllCourses = () => {
     fetchCourse()
   }, [])
 
-  //   return (
-  //     <Container>
-  //       <h2>All courses</h2>
-
-  //       <div className='d-flex justify-content-between'>
-  //         {course.slice(0, 5).map((course) => (
-  //           <div key={course._id}>
-  //             <AllCoursesCard img={course.image} rating={0} title={course.name} price={course.price} />
-  //           </div>
-  //         ))}
-  //       </div>
-  //     </Container>
-  //   )
-  // }
-
   return (
     <Container>
       <div className={styles.topBar}>
@@ -73,7 +58,7 @@ export const AllCourses = () => {
       </div>
 
       <div>
-        {course.map((course, i) => (
+        {course.slice(0, 5).map((course, i) => (
           <div key={i}>
             <AllCoursesCard
               img={course.image}
