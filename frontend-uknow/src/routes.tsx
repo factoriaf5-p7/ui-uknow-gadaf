@@ -8,6 +8,7 @@ import { Auth } from './pages/Auth/Auth'
 import { Profile } from './components/Profile/Profile'
 import CourseDetail from './components/CourseDetail/CourseDetail'
 
+// eslint-disable-next-line react-refresh/only-export-components
 const ErrorPage = () => {
   const error: any = useRouteError()
   console.error(error)
