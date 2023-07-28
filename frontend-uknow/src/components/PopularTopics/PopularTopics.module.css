@@ -1,0 +1,15 @@
+.container{
+    margin-top: 1.5rem;
+}
+
+.containerTitle{
+    margin-bottom: 1rem;
+  }
+
+.chips {    
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}

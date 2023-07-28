@@ -56,7 +56,10 @@ export class AuthService {
 		return { 
 			message: 'Login success.', 
 			status: HttpStatus.OK,
-			token: token
+			payload: {
+				token,
+				id: payload.sub
+			}
 		};
 	}
 

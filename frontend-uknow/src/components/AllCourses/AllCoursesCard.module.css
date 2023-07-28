@@ -14,3 +14,7 @@
 .courseCard p {
     margin: 0;
 }
+
+.cardImg {
+    width: 3rem;
+}

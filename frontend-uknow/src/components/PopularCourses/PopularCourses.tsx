@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap'
 import { CourseCard } from './CourseCard'
 import { Link, useNavigate } from 'react-router-dom'
+import styles from './PopularCourses.module.css'
 
 export const PopularCourses = () => {
   const [course, setCourse] = useState<any[]>([])
@@ -35,7 +36,7 @@ export const PopularCourses = () => {
   }
 
   return (
-    <Container>
+    <Container className={styles.container}>
       <h4>Most popular</h4>
 
       <div className='d-flex justify-content-center flex-wrap'>
