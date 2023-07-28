@@ -24,22 +24,22 @@ export class AuthService {
 	}
 
 	async login(user: GetUserLoginDto){
+		// const { email, password } = user;
+		// const findUser = await this.userModel.findOne({ email });
+		// if(!findUser) throw new HttpException('USER_NOT_FOUND', HttpStatus.NOT_FOUND);
+
+		// const checkPassword = await compare(password, findUser.password);
+		// if(!checkPassword) throw new HttpException('INVALID_PASSWORD', HttpStatus.FORBIDDEN);
+
+		// const payload = { id:findUser._id, name: findUser.email };
+		// const token = this.jwtService.sign(payload);
+
+		// return { 
+		// 	message: 'Login success.', 
+		// 	status: HttpStatus.OK,
+		// 	token: token
+		// };
 		const { email, password } = user;
-		const findUser = await this.userModel.findOne({ email });
-		if(!findUser) throw new HttpException('USER_NOT_FOUND', HttpStatus.NOT_FOUND);
-
-		const checkPassword = await compare(password, findUser.password);
-		if(!checkPassword) throw new HttpException('INVALID_PASSWORD', HttpStatus.FORBIDDEN);
-
-		const paylod = { id:findUser.id, name: findUser.name };
-		const token = this.jwtService.sign(paylod);
-
-		return { 
-			message: 'Login success.', 
-			status: HttpStatus.OK,
-			token: token
-		};
-		/* const { email, password } = user;
 		const findUser = await this.userService.findOneLogin(email);
 		if (!findUser) throw new HttpException('USER_NOT_FOUND', HttpStatus.NOT_FOUND);
 
@@ -56,8 +56,8 @@ export class AuthService {
 		return { 
 			message: 'Login success.', 
 			status: HttpStatus.OK,
-			data: token
-		}; */
+			token: token
+		};
 	}
 
 	async register(user: RegisterUserDto) {
