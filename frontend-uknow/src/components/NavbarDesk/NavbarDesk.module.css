@@ -73,7 +73,16 @@
   }
   
   @media (max-width: 600px) {
-    .navContainer {
+    .navBarSection {
       display: none !important;
     }
+
+    .navBarContainer {
+      display: none !important;
+    }
+
+    body {
+      padding-top: 0 !important;
+    }
   }
+
