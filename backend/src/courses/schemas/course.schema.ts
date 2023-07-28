@@ -26,12 +26,13 @@ export class Course {
   	category: string;
 
   @ApiProperty({ example: 'Beginner' })
-  @Prop({ required: true, enum: [ 'Beginner', 'Medium', 'Advanced' ] })
+  @Prop({ required: true })
   	difficulty: string;
 
-  @ApiProperty({ example: [ 'HTML', 'CSS', 'JavaScript' ] })
+  @ApiProperty({ example: 'HTML, CSS, JavaScript' })
   @Prop()
-  	tags: [];
+  	tags: string;
+
   @ApiProperty({ example: true })
   @Prop({ default: false })
   	bought: boolean;
