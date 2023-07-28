@@ -22,8 +22,12 @@ export const LogInForm = () => {
         headers: { 'Content-Type': 'application/JSON' }
       }
     )
-    console.log(response.data.token)
-    sessionStorage.setItem('token', response.data.token)
+    const token = response.data.payload.token
+    const id = response.data.payload.id
+    console.log(token)
+    console.log(response.data)
+    sessionStorage.setItem('token', token)
+    sessionStorage.setItem('id', id)
     navigate('/profile')
     setFormData(initialState)
   }
