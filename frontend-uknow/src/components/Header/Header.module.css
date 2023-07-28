@@ -2,11 +2,15 @@
     display: flex;
     justify-content: space-between;
     width: 100vw;
+    height: 7vh;
     align-items: center;
+    background-color: #F3F6F8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-img{
-    height: 10vh;
+.logoText {
+    width: 5rem;
+    height: auto;
 }
 
 .iconsContainer{
@@ -15,11 +19,12 @@ img{
 
 .icon{
     color:#3A591E;
-    font-size: 35px !important;
-    background-color: #F3F6F8;
+    font-size: 25px !important;
+    background-color: #ffffff;
     padding: 20%;
     border-radius: 50%;
 }
+
 
 @media (min-width: 600px) {
     .navContainer{

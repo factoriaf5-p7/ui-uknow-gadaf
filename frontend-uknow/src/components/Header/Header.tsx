@@ -1,5 +1,5 @@
 import { BellFill, Search } from 'react-bootstrap-icons'
-import LOGO from '../../assets/LOGO.png'
+import LogoText from '../../assets/LogoText.svg'
 import Nav from 'react-bootstrap/Nav'
 import styles from './Header.module.css'
 
@@ -9,7 +9,7 @@ export const Header = () => {
       <div>
         <Nav.Item as='li'>
           <Nav.Link href='/home'>
-            <img src={LOGO} alt='' />
+            <img className={styles.logoText} src={LogoText} alt='' />
           </Nav.Link>
         </Nav.Item>
       </div>

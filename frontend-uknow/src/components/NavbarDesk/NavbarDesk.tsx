@@ -56,7 +56,7 @@ export const NavbarDesk = () => {
               </Nav.Link>
             </Nav.Item>
             <Nav.Item as='li'>
-              <Nav.Link href='/loginsignup'>
+              <Nav.Link href='/auth'>
                 <span className={styles.item}>
                   Profile <Person className={styles.icon} />
                 </span>

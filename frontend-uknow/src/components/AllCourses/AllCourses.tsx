@@ -34,11 +34,12 @@ export const AllCourses = () => {
   }
 
   return (
-    <Container>
+    <Container className={styles.container}>
       <div className={styles.topBar}>
         <h2>All courses</h2>
 
-        <div className='dropdown'>
+        {/* <div className='dropdown'> */}
+        <div>
           <button
             className='btn btn-secondary dropdown-toggle'
             type='button'

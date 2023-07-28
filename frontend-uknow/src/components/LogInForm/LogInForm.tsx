@@ -22,9 +22,9 @@ export const LogInForm = () => {
         headers: { 'Content-Type': 'application/JSON' }
       }
     )
-    console.log(response.data)
-    localStorage.setItem('token', response.data.data)
-    navigate('/home')
+    console.log(response.data.token)
+    sessionStorage.setItem('token', response.data.token)
+    navigate('/profile')
     setFormData(initialState)
   }
 
