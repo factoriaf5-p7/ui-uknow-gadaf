@@ -1,17 +1,17 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
 import { ButtonP } from '../../components/ButtonP'
 import { Form } from 'react-bootstrap'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import styles from './SignUpForm.module.css'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
 
+// Esta interface me permite definir el tipo de error para poder extraer los
+// diferentes errores al hacer sign up. handleSubmit try and catch
 // eslint-disable-next-line no-unused-vars
 interface ApiError {
   message: string;
 }
 export const SignUpForm = () => {
-  const navigate = useNavigate()
   const initialState = {
     email: '',
     password: '',
@@ -42,9 +42,9 @@ export const SignUpForm = () => {
           headers:
           { 'Content-Type': 'application/json' }
         })
-      setFormData(initialState)
       // Now the user must login
-      navigate('/auth')
+      window.location.reload()
+      setFormData(initialState)
       alert('Now please login')
     } catch (error: ApiError | any) {
       if (error.response && error.response.data && error.response.data.message) {
