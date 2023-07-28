@@ -10,7 +10,7 @@ import axios from "axios";
 //     content: string;
 // }
 
- export const DeleteCourse = ({ courseId }: { courseId: string }) => {
+export const DeleteCourse = ({ courseId }: { courseId: string }) => {
     const handleDelete = async () => {
         try {
             await axios.delete(`http://localhost:5173/courses/${courseId}`);
@@ -24,6 +24,6 @@ import axios from "axios";
     );
 };
 
- 
+
 
 
