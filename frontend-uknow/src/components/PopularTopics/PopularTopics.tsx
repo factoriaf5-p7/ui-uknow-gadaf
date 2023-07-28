@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Container } from 'react-bootstrap'
 import { TopicChip } from './TopicChip'
+import styles from './PopularTopics.module.css'
 
 export const PopularTopics = () => {
   const [topics, setTopics] = useState<any[]>([])
@@ -19,13 +20,17 @@ export const PopularTopics = () => {
   }, [])
 
   return (
-    <Container>
+    <>
+    <Container className={styles.container}>
+      <div className={styles.containerTitle}>
       <h2>Popular topics</h2>
-      <div>
+      </div>
+      <div className={styles.chips}>
         {topics.slice(0, 10).map((topic, i) => (
           <TopicChip title={topic.name} key={i} />
         ))}
       </div>
     </Container>
+    </>
   )
 }
