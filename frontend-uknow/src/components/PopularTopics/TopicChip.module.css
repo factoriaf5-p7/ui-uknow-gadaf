@@ -5,17 +5,23 @@
   border-radius: 20px !important;
   cursor: pointer;
   outline: none;
-  background-color: #AED581 !important;
-  border: 0 !important;
-  box-shadow: 0 2px 4px rgba(93, 93, 93, 0.2);
+  background: rgb(0, 166, 255) !important;
+  background-image: linear-gradient(135deg, #f0f2e4, transparent),
+                    linear-gradient(-45deg, #eaf4c2, transparent),
+                    linear-gradient(45deg, #E3DB8A, transparent) !important;
+  
+
+  border-style: none !important;
   color: #222222 !important;
 }
 
 .chip:hover {  
-  background-color: #DCEDC8 !important;
-  color: #222222 !important;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #AED581 !important;
 }
 
 .chipText {
   font-size: 14px;
+  display: flex;
+  align-items: center;
 }

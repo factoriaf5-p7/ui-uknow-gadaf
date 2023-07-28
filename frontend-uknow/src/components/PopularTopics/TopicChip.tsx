@@ -7,8 +7,10 @@ interface TopicProps {
 
 export const TopicChip = ({ title }: TopicProps) => {
   return (
-    <Button className={styles.chip}>
+    <Button
+      className={`${styles.chip} ${styles.customButton}`}
+    >
       <span className={styles.chipText}>{title}</span>
-      </Button>
+    </Button>
   )
 }

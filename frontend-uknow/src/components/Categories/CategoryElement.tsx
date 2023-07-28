@@ -1,3 +1,5 @@
+import styles from './CategoryElement.module.css'
+
 interface CategoryProp {
   category: string
 }
@@ -12,6 +14,6 @@ export const CategoryElement = ({ category }: CategoryProp) => {
     //     <Card.Title className='text-center m-0 p-2'>{title}</Card.Title>
     //   </Card.Body>
     // </Card>
-    <div className='border border-dark rounded p-1'>{category}</div>
+    <div className={styles.categoryChip}>{category}</div>
   )
 }
