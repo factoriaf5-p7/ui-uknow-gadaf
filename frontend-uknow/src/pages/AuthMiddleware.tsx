@@ -20,7 +20,7 @@ const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
             return res.status(401).json({ error: 'Unauthorized' });
         }
         const decodedToken = decoded as DecodedToken;
-        req['user'] = decodedToken.userId;
+        req.userId = decodedToken.userId;
         next();
     });
 };
