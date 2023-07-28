@@ -7,7 +7,8 @@ import { AllUsersPage } from './pages/AllUsersPage'
 import { DeleteCourse } from './pages/DeleteCoursePage'
 import { DeleteUser } from './pages/DeleteUsersPage'
 import { Auth } from './pages/Auth/Auth'
-import { Profile } from './pages/Profile'
+import { Profile } from './components/Profile/Profile'
+import CourseDetail from './components/CourseDetail/CourseDetail'
 
 const ErrorPage = () => {
   const error: any = useRouteError()
@@ -62,4 +63,11 @@ export const router = createBrowserRouter([
     path: '/profile',
     element: <Profile />
   },
+<<<<<<< HEAD
+=======
+  {
+    path: '/course/:id',
+    element: <CourseDetail />
+  }
+>>>>>>> ccd5f8669eeca7e73fdb6b9939d368cb5c79a6f7
 ])

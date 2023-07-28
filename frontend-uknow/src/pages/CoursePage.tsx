@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { Course } from "../components/Interfaces/CourseInterface";
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import { Course } from '../components/Interfaces/CourseInterface'
 
 export const CoursePage = () => {
     const { CourseId } = useParams<{ CourseId: string }>()
@@ -34,7 +34,7 @@ export const CoursePage = () => {
                     <p>{course.content}</p>
                 </>
             )}
-            {!course && <p>Cargando Curso...</p>}
+            {!course && <p>Cargando Cursos...</p>}
         </div>
     )
 }

@@ -17,13 +17,8 @@ export class UsersService {
 	async create(user: RegisterUserDto) {
 		try{
 			const result = await this.userModel.find({ email: user.email });
-
-			if(result.length !== 0){
-				return {
-					message: 'Error in your request',
-					status: HttpStatus.BAD_REQUEST,
-					data: ''
-				};
+			if (result.length === 1) {
+				throw new HttpException('USER_ALREADY_EXIST', 403);
 			} else {
 				await this.userModel.create( user );
 				return { 
@@ -64,6 +59,12 @@ export class UsersService {
 			throw error;
 		}
 	}
+
+	async getProfile(user: any) {
+		const profileArray = await this.userModel.find({ _id: user.sub });
+		const profileObject = profileArray.length > 0 ? profileArray[0] : null;
+		return profileObject;
+	  }
 
 	async findAllAdmin() {
 		try {

@@ -22,14 +22,10 @@ export const PopularTopics = () => {
     <Container>
       <h2>Popular topics</h2>
       <div>
-        {topics.slice(0, 10).map((topic) => (
-          <TopicChip key={topic.id} title={topic.name} />
+        {topics.slice(0, 10).map((topic, i) => (
+          <TopicChip title={topic.name} key={i} />
         ))}
       </div>
     </Container>
   )
-}
-
-{
-  /* <TopicChip title='CSS'/> */
 }
