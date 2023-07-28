@@ -11,7 +11,7 @@ export const AllCoursesCard = ({ img, rating, title, price }: AllCoursesCardProp
   return (
     <div className={styles.courseCard}>
       <div>
-        <img src={img} alt='logo' />
+        <img className={styles.cardImg} src={img} alt='logo' />
       </div>
       <p className='fw-bold'>{title}</p>
       <p className='fw-semibold'>{rating} ⭐</p>

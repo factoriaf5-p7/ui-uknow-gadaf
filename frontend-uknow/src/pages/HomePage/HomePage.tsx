@@ -14,13 +14,13 @@ export function HomePage () {
       <NavbarDesk />
       <Header />
       <div className={styles.homePageContainer}>
-      <Categories />
-      <PopularCourses />
-      <PopularTopics />
-      <AllCourses />
-      <NavbarBottom />
-      <Footer />
-    </div>
+        <Categories />
+        <PopularCourses />
+        <PopularTopics />
+        <AllCourses />
+        <NavbarBottom />
+        <Footer />
+      </div>
     </div>
   )
 }
