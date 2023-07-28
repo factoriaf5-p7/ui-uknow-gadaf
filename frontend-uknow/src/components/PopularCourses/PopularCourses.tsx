@@ -37,7 +37,7 @@ export const PopularCourses = () => {
 
   return (
     <Container className={styles.container}>
-      <h4>Most popular</h4>
+      <h4 className={styles.sectionTitle}>Most popular</h4>
 
       <div className='d-flex justify-content-center flex-wrap'>
         {course.slice(0, 5).map((course) => (

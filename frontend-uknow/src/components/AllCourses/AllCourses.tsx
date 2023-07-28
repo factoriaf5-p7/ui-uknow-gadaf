@@ -37,7 +37,7 @@ export const AllCourses = () => {
   return (
     <Container className={styles.container}>
       <div className={styles.topBar}>
-        <h4>All courses</h4>
+        <h4 className={styles.sectionTitle}>All courses</h4>
 
         {/* <div className='dropdown'> */}
         <Dropdown />

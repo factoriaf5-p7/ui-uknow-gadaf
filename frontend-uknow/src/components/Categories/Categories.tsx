@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Container } from 'react-bootstrap'
 import { CategoryElement } from './CategoryElement'
+import styles from './Categories.module.css'
 
 export const Categories = () => {
   const [topics, setTopics] = useState<any[]>([])
@@ -23,17 +24,17 @@ export const Categories = () => {
   return (
     <>
 
-        <Container>
-          <h4>Categories</h4>
-          <div className='d-flex flex-wrap justify-content-center' style={{ gap: 10 }}>
-            {topics.map((category, i) => (
-              <div key={i}>
-                <CategoryElement category={category} />
-              </div>
-            ))}
-          </div>
-        </Container>
-     
+      <Container>
+        <h4 className={styles.sectionTitle}>Categories</h4>
+        <div className='d-flex flex-wrap justify-content-center' style={{ gap: 10 }}>
+          {topics.map((category, i) => (
+            <div key={i}>
+              <CategoryElement category={category} />
+            </div>
+          ))}
+        </div>
+      </Container>
+
     </>
   )
 }

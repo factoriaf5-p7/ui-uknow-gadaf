@@ -21,16 +21,14 @@ export const PopularTopics = () => {
 
   return (
     <>
-    <Container className={styles.container}>
-      <div className={styles.containerTitle}>
-      <h4>Popular topics</h4>
-      </div>
-      <div className={styles.chips}>
-        {topics.slice(0, 10).map((topic, i) => (
-          <TopicChip title={topic.name} key={i} />
-        ))}
-      </div>
-    </Container>
+      <Container className={styles.container}>
+        <h4 className={styles.sectionTitle}>Popular topics</h4>
+        <div className={styles.chips}>
+          {topics.slice(0, 10).map((topic, i) => (
+            <TopicChip title={topic.name} key={i} />
+          ))}
+        </div>
+      </Container>
     </>
   )
 }
