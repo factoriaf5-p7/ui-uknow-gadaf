@@ -50,8 +50,16 @@ describe('HOMEPAGE', () => {
       const wrapper = render(<Categories />)
       expect(wrapper).toBeTruthy()
     })
+    test('Component PopularCouses mounts properly', () => {
+      const wrapper = render(<PopularCourses />)
+      expect(wrapper).toBeTruthy()
+    })
     test('component PopularTopics mounts properly', () => {
       const wrapper = render(<PopularTopics />)
+      expect(wrapper).toBeTruthy()
+    })
+    test('Component AllCouses mounts properly', () => {
+      const wrapper = render(<AllCourses />)
       expect(wrapper).toBeTruthy()
     })
     test('component NavbarBottom mounts properly', () => {
