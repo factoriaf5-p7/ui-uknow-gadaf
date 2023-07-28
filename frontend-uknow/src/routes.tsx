@@ -10,6 +10,19 @@ import { Auth } from './pages/Auth/Auth'
 import { Profile } from './components/Profile/Profile'
 import CourseDetail from './components/CourseDetail/CourseDetail'
 
+/*Permitir que solamente el usuario registrado pueda crear un curso */
+import express, { Request, Response } from 'express';
+import authMiddleware from './AuthMiddleware';
+
+const router = express.Router();
+
+router.post('/create', authMiddleware, (_req: Request, res: Response) => {
+    res.json({ message: 'Curso creado exitosamente' });
+});
+
+export default router;
+/*Permitir que solamente el usuario registrado pueda crear un curso */
+
 const ErrorPage = () => {
   const error: any = useRouteError()
   console.error(error)
