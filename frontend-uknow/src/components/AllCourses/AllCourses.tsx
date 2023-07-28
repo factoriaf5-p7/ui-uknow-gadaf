@@ -3,6 +3,7 @@ import { AllCoursesCard } from './AllCoursesCard'
 import styles from './AllCourses.module.css'
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import  { Dropdown } from '../Dropdown/Dropdown'
 
 export const AllCourses = () => {
   const [course, setCourse] = useState<any[]>([])
@@ -36,38 +37,10 @@ export const AllCourses = () => {
   return (
     <Container className={styles.container}>
       <div className={styles.topBar}>
-        <h2>All courses</h2>
+        <h4>All courses</h4>
 
         {/* <div className='dropdown'> */}
-        <div>
-          <button
-            className='btn btn-secondary dropdown-toggle'
-            type='button'
-            id='dropdownMenuButton1'
-            data-bs-toggle='dropdown'
-            aria-expanded='false'
-            style={{
-              backgroundColor: '#F3F6F8',
-              color: 'black',
-              border: 'none'
-            }}
-          >
-            Sort by
-          </button>
-
-          <ul className='dropdown-menu' aria-labelledby='dropdownMenuButton1'>
-            <li>
-              <a className='dropdown-item' href='#'>
-                Rating
-              </a>
-            </li>
-            <li>
-              <a className='dropdown-item' href='#'>
-                Price
-              </a>
-            </li>
-          </ul>
-        </div>
+        <Dropdown />
       </div>
 
       <div className='d-flex flex-wrap justify-content-center' style={{ display: 'inline-block', gap: 10 }}>

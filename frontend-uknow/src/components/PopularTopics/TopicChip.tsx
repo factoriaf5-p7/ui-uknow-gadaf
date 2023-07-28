@@ -7,9 +7,7 @@ interface TopicProps {
 
 export const TopicChip = ({ title }: TopicProps) => {
   return (
-    <Button
-      className={`${styles.chip} ${styles.customButton}`}
-    >
+    <Button className={styles.chip}>
       <span className={styles.chipText}>{title}</span>
     </Button>
   )
