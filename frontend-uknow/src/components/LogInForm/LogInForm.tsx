@@ -28,7 +28,7 @@ export const LogInForm = () => {
     console.log(response.data)
     sessionStorage.setItem('token', token)
     sessionStorage.setItem('id', id)
-    navigate('/profile')
+    navigate('/home')
     setFormData(initialState)
   }
 
