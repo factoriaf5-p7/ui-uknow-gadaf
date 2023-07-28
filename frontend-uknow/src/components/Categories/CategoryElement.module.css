@@ -1,18 +1,26 @@
 .categoryChip {
+
   height: 35px;
   padding: 0 26px;
-  border: 1px solid #AED581 !important;
+  border: none;
   border-radius: 20px !important;
+  cursor: pointer;
+  outline: none;
+    background-image: 
+  radial-gradient(circle at 100% 0, #f0f2e4, transparent),
+  radial-gradient(circle at 0 100%, #eaf4c2, transparent),
+  radial-gradient(circle at 100% 100%, #E3DB8A, transparent),
+  radial-gradient(circle at 50% 50%, transparent, rgb(0, 166, 255)) !important;
+  
+
+  border-style: none !important;
+  color: #222222 !important;
+  font-size: 14px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 4px rgba(93, 93, 93, 0.2);
 }
 
 .categoryChip:hover {
-  background-color: rgb(0, 166, 255);
- background-image: radial-gradient(circle at 100% 0, #f0f2e4, transparent),
-  radial-gradient(circle at 0 100%, #eaf4c2, transparent),
-  radial-gradient(circle at 100% 100%, #E3DB8A, transparent);}
-  
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #AED581 !important;
+}
