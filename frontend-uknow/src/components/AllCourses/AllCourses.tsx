@@ -34,7 +34,7 @@ export const AllCourses = () => {
   }
 
   return (
-    <Container>
+    <Container className={styles.container}>
       <div className={styles.topBar}>
         <h2>All courses</h2>
 

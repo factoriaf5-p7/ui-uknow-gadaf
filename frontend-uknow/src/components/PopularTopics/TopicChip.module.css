@@ -1,9 +1,6 @@
 .chip {
   height: 45px;
   background-color: #f3f6f8;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   padding: 0 16px;
   border: none;
   border-radius: 20px;
