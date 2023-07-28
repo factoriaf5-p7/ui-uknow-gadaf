@@ -8,7 +8,7 @@ interface TopicProps {
 export const TopicChip = ({ title }: TopicProps) => {
   return (
     <Button className={styles.chip}>
-      {title}
-    </Button>
+      <span className={styles.chipText}>{title}</span>
+      </Button>
   )
 }

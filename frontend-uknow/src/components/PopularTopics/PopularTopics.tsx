@@ -25,7 +25,7 @@ export const PopularTopics = () => {
       <div className={styles.containerTitle}>
       <h2>Popular topics</h2>
       </div>
-      <div>
+      <div className={styles.chips}>
         {topics.slice(0, 10).map((topic, i) => (
           <TopicChip title={topic.name} key={i} />
         ))}
