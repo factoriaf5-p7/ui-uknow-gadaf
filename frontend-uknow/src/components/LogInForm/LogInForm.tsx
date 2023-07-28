@@ -25,7 +25,7 @@ export const LogInForm = () => {
           headers:
         { 'Content-Type': 'application/JSON' }
         })
-      localStorage.setItem('token', response.data.data)
+      sessionStorage.setItem('token', response.data.token)
       navigate('/home')
       setFormData(initialState)
     } catch (error: ApiError | any) {
@@ -70,7 +70,7 @@ export const LogInForm = () => {
           />
         </Form.Group>
 
-        <Form.Text id={styles.forgotPassword}>Forgot password?</Form.Text>
+        {/* <Form.Text id={styles.forgotPassword}>Forgot password?</Form.Text> */}
 
         <ButtonP text='Log In' type='submit' />
       </Form>
