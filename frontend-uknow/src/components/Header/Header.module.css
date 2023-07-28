@@ -4,8 +4,12 @@
     width: 100vw;
     height: 7vh;
     align-items: center;
-    background-color: #F3F6F8;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-image: 
+  radial-gradient(circle at 100% 0, #f0f2e4, transparent),
+  radial-gradient(circle at 0 100%, #eaf4c2, transparent),
+  radial-gradient(circle at 100% 100%, #E3DB8A, transparent),
+  radial-gradient(circle at 50% 50%, transparent, rgb(0, 166, 255)) !important;
+    box-shadow: 0 2px 1px rgba(160, 160, 160, 0.2);
 }
 
 .logoText {

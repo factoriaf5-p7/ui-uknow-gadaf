@@ -1,16 +1,28 @@
-.navContainer{
-    background-color: #F3F6F8;
+.navBottomContainer {
+width: 100vw;
+background-color: white;
+}
+
+.navContainer {
+    background-image: 
+    radial-gradient(circle at 100% 0, #f0f2e4 25%, #f0f2e4 25%),
+    radial-gradient(circle at 0 100%, #eaf4c2 25%, #eaf4c2 25%),
+    radial-gradient(circle at 100% 100%, #E3DB8A 25%, #E3DB8A 25%),
+    radial-gradient(circle at 50% 50%, #00A6FF 40%, #00A6FF 40%);
+    position: fixed;
     display: flex;
     justify-content: space-around;
-    position:fixed ;
+    align-items: center;
     bottom: 0;
     width: 100vw;
-}
+    height: 5vh;
+  }
+  
 
 
 .icon{
-    color:#3A591E;
-    font-size: 25px !important;
+    color:  #3e3e3e;
+    font-size: 20px !important;
 }
 
 

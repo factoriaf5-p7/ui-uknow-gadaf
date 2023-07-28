@@ -39,26 +39,34 @@ export const NavbarDesk = () => {
             </Nav.Link>
           </Nav.Item>
         </div>
+        
         <div className={styles.navBarItems}>
           <div className={styles.navBarLinks}>
             <Nav.Item as='li'>
               <Nav.Link href='/addcourse'>
                 <span className={styles.item}>
-                  New Course <PlusCircle className={styles.icon} />
+                  New Course 
+
+                  {/* <PlusCircle className={styles.icon} /> */}
+
                 </span>
               </Nav.Link>
             </Nav.Item>
             <Nav.Item as='li'>
               <Nav.Link href='/course'>
                 <span className={styles.item}>
-                  My courses <Heart className={styles.icon} />
+                  My courses 
+                  
+                  {/* <Heart className={styles.icon} /> */}
                 </span>
               </Nav.Link>
             </Nav.Item>
             <Nav.Item as='li'>
               <Nav.Link href='/auth'>
                 <span className={styles.item}>
-                  Profile <Person className={styles.icon} />
+                  Profile 
+                  
+                  {/* <Person className={styles.icon} /> */}
                 </span>
               </Nav.Link>
             </Nav.Item>
