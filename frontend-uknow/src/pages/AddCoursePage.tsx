@@ -5,7 +5,6 @@ import { NavbarBottom } from '../components/NavbarBottom/NavbarBottom'
 import { NavbarDesk } from '../components/NavbarDesk/NavbarDesk'
 
 interface FormType {
-    id: string;
     name: string;
     price: string;
     topic: string;
@@ -16,7 +15,6 @@ interface FormType {
 
 export const AddCoursePage = () => {
     const [newCourse, setNewCourse] = useState<FormType>({
-        id: '',
         name: '',
         price: '',
         topic: '',
@@ -39,12 +37,11 @@ export const AddCoursePage = () => {
         e.preventDefault()
         try {
             const response = await axios.post(
-                'http://localhost:5173/courses/',
+                'http://localhost:3000/api/courses/create',
                 newCourse
             );
             console.log('Response', response.data)
             setNewCourse({
-                id: '',
                 name: '',
                 price: '',
                 topic: '',
@@ -63,15 +60,6 @@ export const AddCoursePage = () => {
         <Header />
             <NavbarDesk />
             <form onSubmit={handleSubmit}>
-                <label>
-                    Id:
-                    <input
-                        type='text'
-                        name='id'
-                        value={newCourse.id}
-                        onChange={handleChange}
-                    />
-                </label>
 
                 <label>
                     Name:

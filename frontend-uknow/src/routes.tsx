@@ -63,11 +63,8 @@ export const router = createBrowserRouter([
     path: '/profile',
     element: <Profile />
   },
-<<<<<<< HEAD
-=======
   {
     path: '/course/:id',
     element: <CourseDetail />
   }
->>>>>>> ccd5f8669eeca7e73fdb6b9939d368cb5c79a6f7
 ])
