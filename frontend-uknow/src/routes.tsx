@@ -1,4 +1,4 @@
-import { createBrowserRouter, useRouteError } from 'react-router-dom'
+/* import { createBrowserRouter, useRouteError } from 'react-router-dom'
 import { LandingPage } from './pages/LandingPage/LandingPage'
 import { HomePage } from './pages/HomePage/HomePage'
 import { CoursePage } from './pages/CoursePage'
@@ -58,4 +58,4 @@ export const router = createBrowserRouter([
     path: '/course/:id',
     element: <CourseDetail />
   }
-])
+]) */
