@@ -5,14 +5,14 @@
   border-radius: 20px !important;
   cursor: pointer;
   outline: none;
-  background-color: #c4de53bb !important;
+  background-color: #AED581 !important;
   border: 0 !important;
   box-shadow: 0 2px 4px rgba(93, 93, 93, 0.2);
   color: #222222 !important;
 }
 
 .chip:hover {  
-  background-color: #e0f67eb3 !important;
+  background-color: #DCEDC8 !important;
   color: #222222 !important;
 }
 
