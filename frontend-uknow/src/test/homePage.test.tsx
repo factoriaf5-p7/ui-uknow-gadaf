@@ -2,12 +2,19 @@ import { describe, test, expect, beforeEach } from 'vitest'
 import { render, screen, waitFor } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { HomePage } from '../pages/HomePage/HomePage'
+import { Categories } from '../components/Categories/Categories'
+import { PopularCourses } from '../components/PopularCourses/PopularCourses'
+import { PopularTopics } from '../components/PopularTopics/PopularTopics'
+import { AllCourses } from '../components/AllCourses/AllCourses'
+import { Footer } from '../components/Footer/Footer'
+import { NavbarBottom } from '../components/NavbarBottom/NavbarBottom'
+import { NavbarDesk } from '../components/NavbarDesk/NavbarDesk'
 
 describe('HOMEPAGE', () => {
-  describe('HomePage PARTS', () => {
+  describe('titles', () => {
     beforeEach(() => {
       render(
-        <MemoryRouter initialEntries={['/']}>
+        <MemoryRouter>
           <HomePage />
         </MemoryRouter>
       )
@@ -24,6 +31,36 @@ describe('HOMEPAGE', () => {
         const allcoursesTitle = screen.getByText(/All Courses/i)
         expect(allcoursesTitle).toBeInTheDocument()
       })
+    })
+  })
+
+  describe('render components de la homepage', () => {
+    beforeEach(() => {
+      render(
+        <MemoryRouter>
+          <HomePage />
+        </MemoryRouter>
+      )
+    })
+    test('component NavbarDesc mounts properly', () => {
+      const wrapper = render(<NavbarDesk />)
+      expect(wrapper).toBeTruthy()
+    })
+    test('Component Categories mounts properly', () => {
+      const wrapper = render(<Categories />)
+      expect(wrapper).toBeTruthy()
+    })
+    test('component PopularTopics mounts properly', () => {
+      const wrapper = render(<PopularTopics />)
+      expect(wrapper).toBeTruthy()
+    })
+    test('component NavbarBottom mounts properly', () => {
+      const wrapper = render(<NavbarBottom />)
+      expect(wrapper).toBeTruthy()
+    })
+    test('component Footer mounts properly', () => {
+      const wrapper = render(<Footer />)
+      expect(wrapper).toBeTruthy()
     })
   })
 })
