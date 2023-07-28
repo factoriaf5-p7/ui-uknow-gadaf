@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { ArrayMaxSize, IsArray, IsNotEmpty, IsString, IsEnum } from 'class-validator';
+import { ArrayMaxSize, IsArray, IsNotEmpty, IsString, IsEnum, IsNumber } from 'class-validator';
 
 enum Difficulty {
 	Begginer = 'Begginer',
@@ -13,21 +13,35 @@ export class CreateCourseDto {
 	@IsNotEmpty()
 		name: string;
 
+	@ApiProperty({ example: 'How to validate dtos properties' })
+	@IsString()
+	@IsNotEmpty()
+		price: string;
+
 	@ApiProperty({ example: 'Web development | Backend | Frontend ' })
 	@IsString()
 	@IsNotEmpty()
 		topic: string;
 
-	@ApiProperty({ example: 'Beginner | Medium | Advanced' })
+		@ApiProperty({ example: 'Big Data ' })
 	@IsString()
-	@IsEnum(Difficulty)
+	@IsNotEmpty()
+			category: string;
+
+	@ApiProperty({ example: 'Easy, Intermediate, Hard, Advanced' })
+	@IsString()
 	@IsNotEmpty()
 		difficulty: string;
 	
 	@ApiProperty({ example: '#webdevolopment, #javascript, #css' })
-	@IsArray()
-	@ArrayMaxSize(3)
-		tags: [string, string, string];
+	@IsString()
+	@IsNotEmpty()
+		tags: string;
+
+	@ApiProperty({ example: 'img.png' })
+	@IsString()
+	@IsNotEmpty()
+		image: string;
 	
 	@ApiProperty({ example: '### How to validate dtos properties<br>## Class-validator<br>To validate install the package as follow: nmp i class-validator.' })
 	@IsString()

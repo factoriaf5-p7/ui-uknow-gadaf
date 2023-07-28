@@ -1,30 +1,18 @@
-.card {
+.categoryChip {
+  height: 35px;
+  padding: 0 26px;
+  border: 1px solid #AED581 !important;
+  border-radius: 20px !important;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100px;
-  margin-left: 10px;
+  box-shadow: 0 2px 4px rgba(93, 93, 93, 0.2);
 }
 
-.button {
-  width: 50px;
-  height: 50px;
-  background-color: #d9d9d9;
-  border-radius: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.img {
-  width: 26px;
-}
-
-.title {
-  font-size: 16px;
-  text-align: center;
-  font-weight: 600;
-  color: #2d2d2d;
-}
+.categoryChip:hover {
+  background-color: rgb(0, 166, 255);
+ background-image: radial-gradient(circle at 100% 0, #f0f2e4, transparent),
+  radial-gradient(circle at 0 100%, #eaf4c2, transparent),
+  radial-gradient(circle at 100% 100%, #E3DB8A, transparent);}
+  
