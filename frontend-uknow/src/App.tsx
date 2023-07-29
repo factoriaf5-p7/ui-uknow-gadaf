@@ -13,7 +13,7 @@ import { Header } from './components/Header/Header'
 import { NavbarBottom } from './components/NavbarBottom/NavbarBottom'
 import { Footer } from './components/Footer/Footer'
 
-function PageLayout ({ children }:any) {
+function Layout ({ children }:any) {
   return (
     <>
       <Header />
@@ -38,9 +38,8 @@ function App () {
             <Route path='/auth' element={<Auth />} />
           </Routes>)
         : (
-          <PageLayout>
+          <Layout>
             <Routes>
-              {/* Routes for general pages */}
               <Route path='/home' element={<HomePage />} />
               <Route path='/course' element={<PrivateRoute element={<CoursePage />} />} />
               <Route path='/addcourse' element={<PrivateRoute element={<AddCoursePage />} />} />
@@ -48,7 +47,7 @@ function App () {
               <Route path='/profile' element={<PrivateRoute element={<Profile />} />} />
               <Route path='/course/:id' element={<PrivateRoute element={<CourseDetail />} />} />
             </Routes>
-          </PageLayout>
+          </Layout>
           )}
     </>
   )
