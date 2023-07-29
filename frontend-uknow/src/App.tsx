@@ -27,20 +27,21 @@ function PageLayout ({ children }:any) {
 
 function App () {
   const location = useLocation()
-  const isLandingPage = location.pathname === '/'
+  const isLandingPage = location.pathname === '/' || location.pathname === '/auth'
+
   return (
     <>
       {isLandingPage
         ? (
           <Routes>
             <Route path='/' element={<LandingPage />} />
+            <Route path='/auth' element={<Auth />} />
           </Routes>)
         : (
           <PageLayout>
             <Routes>
               {/* Routes for general pages */}
               <Route path='/home' element={<HomePage />} />
-              <Route path='/auth' element={<Auth />} />
               <Route path='/course' element={<PrivateRoute element={<CoursePage />} />} />
               <Route path='/addcourse' element={<PrivateRoute element={<AddCoursePage />} />} />
               <Route path='/allusers' element={<AllUsersPage />} />
