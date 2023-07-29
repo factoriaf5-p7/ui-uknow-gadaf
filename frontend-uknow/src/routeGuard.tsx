@@ -1,10 +1,10 @@
-import { Navigate } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
+import { Navigate } from 'react-router-dom'
 import axios from 'axios'
 
 interface PrivateRouteProps {
-    element: React.ReactNode;
-  }
+  element: React.ReactNode;
+}
 
 const PrivateRoute: React.FC<PrivateRouteProps> = ({ element }) => {
   const token = sessionStorage.getItem('token')
@@ -17,10 +17,8 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({ element }) => {
       const verifyToken = async () => {
         try {
           const res = await axios.post('http://localhost:3000/api/auth/verify', { token })
-          console.log(res.data)
-          setIsTokenValid(true)
+          setIsTokenValid(res.data.verified)
         } catch (error) {
-          console.log(error)
           setIsTokenValid(false)
         }
       }
@@ -29,7 +27,7 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({ element }) => {
   }, [token])
 
   if (isTokenValid === null) {
-    return <Navigate to='/auth' />
+    return null
   } else if (isTokenValid === false) {
     return <Navigate to='/auth' />
   } else {
