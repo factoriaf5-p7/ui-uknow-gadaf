@@ -37,7 +37,7 @@ export const AddCoursePage = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     try {
-      const userId = sessionStorage.getItem('id')
+      const userId = localStorage.getItem('id')
       const response = await axios.post(
         `http://localhost:3000/api/courses/create/${userId}`,
         newCourse

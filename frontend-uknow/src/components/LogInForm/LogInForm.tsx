@@ -26,8 +26,8 @@ export const LogInForm = () => {
     const id = response.data.payload.id
     console.log(token)
     console.log(response.data)
-    sessionStorage.setItem('token', token)
-    sessionStorage.setItem('id', id)
+    localStorage.setItem('token', token)
+    localStorage.setItem('id', id)
     navigate('/home')
     setFormData(initialState)
   }

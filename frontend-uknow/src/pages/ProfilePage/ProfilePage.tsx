@@ -20,7 +20,7 @@ export const Profile = () => {
   useEffect(() => {
     async function getData () {
       try {
-        const token = sessionStorage.getItem('token')
+        const token = localStorage.getItem('token')
         console.log(token)
         const response = await axios.get('http://localhost:3000/api/users/profile', {
           headers: {

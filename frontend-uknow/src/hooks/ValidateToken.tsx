@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 
 function useProtectedRoute () {
   useEffect(() => {
-    const token = sessionStorage.getItem('token')
+    const token = localStorage.getItem('token')
 
     if (!token) {
       // Redirect the user to the login page or any other unauthorized page
