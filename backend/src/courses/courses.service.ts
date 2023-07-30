@@ -88,7 +88,7 @@ export class CoursesService {
 
 	async addRating(userId: ObjectId, ratedCourse: RatedCourseDto) {
 		try {
-			const { data, message, status } = await this.userService.addRating(
+			const { data } = await this.userService.addRating(
 				userId,
 				ratedCourse,
 			);
@@ -139,7 +139,7 @@ export class CoursesService {
 		try {
 			const calculates = [];
 			const idCoursesAll = await this.courseModel.find({}, { _id: 1, name: 1 }); //id de todos los cursos
-			const { data, message, status } = await this.userService.findAllBoughtCourses({},{ bought_courses: 1, _id: 0 }); //cursos comprados de cada usuario
+			const { data } = await this.userService.findAllBoughtCourses({},{ bought_courses: 1, _id: 0 }); //cursos comprados de cada usuario
 
 			// return 'This action find all users';
 			// const courses = this.courseModel.find();
@@ -195,7 +195,7 @@ export class CoursesService {
 
 	async findCreatedCourses(userId: ObjectId) {
 		try{
-			const { data, message, status } =
+			const { data } =
 		await this.userService.findOneWithCreatedCourses(userId);
 
 			const createdCourses = [];

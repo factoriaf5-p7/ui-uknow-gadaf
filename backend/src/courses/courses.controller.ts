@@ -4,14 +4,13 @@ import { CoursesService } from './courses.service';
 import { CreateCourseDto } from './dto/create-course.dto';
 import { UpdateCourseDto } from './dto/update-course.dto';
 import { ObjectId } from 'mongoose';
-import { AuthGuard } from 'src/auth/guards/auth.guard';
+// import { AuthGuard } from 'src/auth/guards/auth.guard';
 import { RatedCourseDto } from './dto/rate-course.dto';
 import { PurchaseCourseDto } from './dto/buy-course.dto';
 import { Roles } from 'src/auth/guards/roles';
 import { Role } from 'src/auth/guards/roles.enum';
 import { RolesGuard } from 'src/auth/guards/role.guard';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
-import { filter } from 'rxjs';
 
 @ApiBearerAuth()
 @ApiTags('courses')
