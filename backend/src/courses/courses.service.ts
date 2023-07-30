@@ -10,9 +10,9 @@ import { PurchaseCourseDto } from './dto/buy-course.dto';
 
 @Injectable()
 export class CoursesService {
-	prototype(prototype: any, arg1: string) {
-		throw new Error('Method not implemented.');
-	}
+	// prototype(prototype: any, arg1: string) {
+	// 	throw new Error('Method not implemented.');
+	// }
 	constructor(
     private readonly userService: UsersService,
     @InjectModel(Course.name) private courseModel: Model<Course>,
@@ -59,9 +59,13 @@ export class CoursesService {
 		}
 	}
 
+	async filterByCategory (filter: string) {
+		return await this.courseModel.find({ category: filter });
+	}
+
 	async findBoughtCourses(id: ObjectId) {
 		try {
-			const { message, status, data } = await this.userService.findOneWithBoughtCourses(id);
+			const { data } = await this.userService.findOneWithBoughtCourses(id);
 	
 			const boughtCourses = [];
 
@@ -282,7 +286,7 @@ export class CoursesService {
 	async update(id: ObjectId, updateCourse: UpdateCourseDto) {
 		try {
 			// user que quiere actualizar curso
-			const { data, message, status } = await this.userService.findOne(id);
+			const { data } = await this.userService.findOne(id);
 			
 			const entries = Object.entries(data.created_courses);
 			let courseUpdated;

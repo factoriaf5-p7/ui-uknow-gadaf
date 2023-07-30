@@ -11,6 +11,7 @@ import { Roles } from 'src/auth/guards/roles';
 import { Role } from 'src/auth/guards/roles.enum';
 import { RolesGuard } from 'src/auth/guards/role.guard';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { filter } from 'rxjs';
 
 @ApiBearerAuth()
 @ApiTags('courses')
@@ -47,6 +48,11 @@ export class CoursesController {
   @Get('categories')
   getAllCategories() {
   	return this.coursesService.getAllCategories();
+  }
+
+  @Get('category')
+  filterByCategory(@Query('filter') filter: string) {
+  	return this.coursesService.filterByCategory(filter);
   }
 
   @Get()

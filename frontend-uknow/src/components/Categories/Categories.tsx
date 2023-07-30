@@ -2,24 +2,34 @@ import { useState, useEffect } from 'react'
 import { Container } from 'react-bootstrap'
 import { CategoryElement } from './CategoryElement'
 import styles from './Categories.module.css'
+import { Link } from 'react-router-dom'
 
 export const Categories = () => {
-  const [topics, setTopics] = useState<any[]>([])
+  const [categories, setCategories] = useState<any[]>([])
 
   useEffect(() => {
-    const fetchTopics = async () => {
+    const getCategories = async () => {
       try {
         const response = await fetch(
           'http://localhost:3000/api/courses/categories'
         )
         const data = await response.json()
-        setTopics(data.data)
+        setCategories(data.data)
       } catch (error) {
         console.log(error)
       }
     }
-    fetchTopics()
+    getCategories()
   }, [])
+
+  // const handleCategoryClick = async (category: any) => {
+  //   try {
+  //     const res = await axios.get(`http://localhost:3000/api/courses/category?filter=${category}`)
+  //     console.log(res.data)
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
 
   return (
     <>
@@ -27,9 +37,11 @@ export const Categories = () => {
       <Container>
         <h4 className={styles.sectionTitle}>Categories</h4>
         <div className='d-flex flex-wrap justify-content-center' style={{ gap: 10 }}>
-          {topics.map((category, i) => (
+          {categories.map((category, i) => (
             <div key={i}>
-              <CategoryElement category={category} />
+              <Link to={`/category?filter=${category}`}>
+                <CategoryElement category={category} />
+              </Link>
             </div>
           ))}
         </div>
