@@ -63,6 +63,29 @@ export class CoursesService {
 		return await this.courseModel.find({ category: filter });
 	}
 
+	async getAllTopics (){
+		try {
+			// const topics = await this.courseModel.distinct('topic');
+
+			const topics = await this.courseModel.aggregate([
+				{ $group: { _id: '$topic' } },
+				{ $sample: { size: 200 } },
+			  ]);
+
+			  const randomTopics = topics.map((item) => item._id);
+
+			return {
+				data: randomTopics,
+			};
+		} catch (error) {
+			throw error;
+		}
+	}
+
+	async filterByTopic (filter: string) {
+		return await this.courseModel.find({ topic: filter });
+	}
+
 	async findBoughtCourses(id: ObjectId) {
 		try {
 			const { data } = await this.userService.findOneWithBoughtCourses(id);

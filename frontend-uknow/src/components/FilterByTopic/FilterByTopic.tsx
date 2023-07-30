@@ -4,17 +4,17 @@ import { Container } from 'react-bootstrap'
 import { useSearchParams } from 'react-router-dom'
 import { AllCoursesCard } from '../AllCourses/AllCoursesCard'
 
-export const FilteredByCategory = () => {
+export const FilterByTopic = () => {
   const [searchParam] = useSearchParams()
   const filter = searchParam.get('filter')
-  const [filteredCourses, setFilteredCourses] = useState<any[]>([])
+  const [filteredTopic, setFilteredTopic] = useState<any[]>([])
 
   useEffect(() => {
     const getFilteredCategories = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/api/courses/category?filter=${filter}`)
+        const res = await axios.get(`http://localhost:3000/api/courses/topic?filter=${filter}`)
         const courses = res.data
-        setFilteredCourses(courses)
+        setFilteredTopic(courses)
       } catch (error) {
         console.log(error)
       }
@@ -24,7 +24,6 @@ export const FilteredByCategory = () => {
   }, [])
 
   return (
-
     <Container>
       <div className='d-flex' style={{ gap: 15 }}>
         <div className='d-flex align-items-center'>
@@ -36,9 +35,9 @@ export const FilteredByCategory = () => {
       </div>
 
       <div className='d-flex flex-wrap justify-content-center mt-4' style={{ display: 'inline-block', gap: 10 }}>
-        {filteredCourses.map((course, i) => (
+        {filteredTopic.map((topic, i) => (
           <div key={i}>
-            <AllCoursesCard image={course.image} rating={course.rating} title={course.name} price={course.price} />
+            <AllCoursesCard image={topic.image} rating={topic.rating} title={topic.name} price={topic.price} />
           </div>
         ))}
       </div>

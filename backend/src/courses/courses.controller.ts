@@ -54,6 +54,16 @@ export class CoursesController {
   	return this.coursesService.filterByCategory(filter);
   }
 
+  @Get('topics')
+  getAllTopics() {
+  	return this.coursesService.getAllTopics();
+  }
+
+  @Get('topic')
+  filterByTopic(@Query('filter') filter: string) {
+  	return this.coursesService.filterByTopic(filter);
+  }
+
   @Get()
   // @UseGuards(AuthGuard) //'admin'
   findAll() {

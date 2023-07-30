@@ -12,7 +12,8 @@ import { NavbarDesk } from './components/NavbarDesk/NavbarDesk'
 import { Header } from './components/Header/Header'
 import { NavbarBottom } from './components/NavbarBottom/NavbarBottom'
 import { Footer } from './components/Footer/Footer'
-import { FilteredByCategory } from './components/FilteredByCategory/FilteredByCategory'
+import { FilterByCategory } from './components/FilterByCategory/FilterByCategory'
+import { FilterByTopic } from './components/FilterByTopic/FilterByTopic'
 
 function Layout ({ children }:any) {
   return (
@@ -47,7 +48,8 @@ function App () {
               <Route path='/allusers' element={<AllUsersPage />} />
               <Route path='/profile' element={<PrivateRoute element={<Profile />} />} />
               <Route path='/course/:id' element={<PrivateRoute element={<CourseDetail />} />} />
-              <Route path='/category' element={<FilteredByCategory />} />
+              <Route path='/category' element={<FilterByCategory />} />
+              <Route path='/topic' element={<FilterByTopic />} />
             </Routes>
           </Layout>
           )}

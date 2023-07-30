@@ -22,15 +22,6 @@ export const Categories = () => {
     getCategories()
   }, [])
 
-  // const handleCategoryClick = async (category: any) => {
-  //   try {
-  //     const res = await axios.get(`http://localhost:3000/api/courses/category?filter=${category}`)
-  //     console.log(res.data)
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // }
-
   return (
     <>
 
