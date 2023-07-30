@@ -16,7 +16,7 @@ export const PopularCourses = () => {
         const data = await response.json()
         setCourse(data.data)
       } catch (error) {
-        console.log('No se encuentra ese curso por su:', error)
+        console.log(error)
       }
     }
     fetchCourse()

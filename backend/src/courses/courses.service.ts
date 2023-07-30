@@ -7,6 +7,7 @@ import { Model, ObjectId } from 'mongoose';
 import { UsersService } from '../users/users.service';
 import { RatedCourseDto } from './dto/rate-course.dto';
 import { PurchaseCourseDto } from './dto/buy-course.dto';
+import { User } from 'src/users/schemas/user.schema';
 
 @Injectable()
 export class CoursesService {
@@ -16,12 +17,13 @@ export class CoursesService {
 	constructor(
     private readonly userService: UsersService,
     @InjectModel(Course.name) private courseModel: Model<Course>,
+    @InjectModel(User.name) private userModel: Model<User>,
 	) {}
 
-	async create(userId: ObjectId, createCourseDto: CreateCourseDto) {
+	async create(userId: ObjectId | string, createCourseDto: CreateCourseDto) {
 		try {
 			const newCourse = await this.courseModel.create(createCourseDto);
-			this.userService.addCreatedCourse(userId, newCourse._id);
+			await this.userModel.findByIdAndUpdate(userId, { $push: { created_courses: newCourse._id } });
 
 			return {
 				message: 'New course created successfully.',

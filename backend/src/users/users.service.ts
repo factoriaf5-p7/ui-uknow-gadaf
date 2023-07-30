@@ -31,22 +31,6 @@ export class UsersService {
 		}
 	}
 
-	async addCreatedCourse(userId: ObjectId | string, courseId: mongoose.Types.ObjectId) {
-		try {
-			await this.userModel.findOneAndUpdate({ id: userId }, 
-				{ $push: { created_courses: courseId } }
-			);
-
-			return {
-				message: 'Created course added successfully',
-				status: HttpStatus.OK,
-				data: ''
-			};
-		} catch (error) {
-			throw error;
-		}
-	}
-
 	async findAll() {
 		try{
 			const users = await this.userModel.find().select('-password').lean().exec();
