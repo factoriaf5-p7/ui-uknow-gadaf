@@ -31,9 +31,9 @@ export class UsersService {
 		}
 	}
 
-	async addCreatedCourse(userId: ObjectId, courseId: mongoose.Types.ObjectId) {
+	async addCreatedCourse(userId: ObjectId | string, courseId: mongoose.Types.ObjectId) {
 		try {
-			await this.userModel.findOneAndUpdate({ _id: userId }, 
+			await this.userModel.findOneAndUpdate({ id: userId }, 
 				{ $push: { created_courses: courseId } }
 			);
 

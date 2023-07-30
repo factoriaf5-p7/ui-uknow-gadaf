@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { Container } from 'react-bootstrap'
 
 export const Profile = () => {
   const [profile, setProfile] = useState({
@@ -39,10 +40,10 @@ export const Profile = () => {
   }, [])
 
   return (
-    <div>
-      <h4>Hey, this is coming from backend to get user profile</h4>
-      <p>{profile.name}</p>
+    <Container>
+      <h4>Profile</h4>
+      <h6>{profile.name}</h6>
       <p>{profile._id}</p>
-    </div>
+    </Container>
   )
 }
