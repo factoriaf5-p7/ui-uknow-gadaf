@@ -88,6 +88,44 @@ export class CoursesService {
 		return await this.courseModel.find({ topic: filter });
 	}
 
+	async purchaseCourse(purchaseCourseDto: PurchaseCourseDto) {
+		try {
+			const user = await this.userModel.findOne({ _id: purchaseCourseDto.userId });
+			const course = await this.courseModel.findOne({ _id: purchaseCourseDto.courseId });
+			
+			if (user.wallet_balance < course.price) {
+				throw new HttpException('INSUFFICIENT_BALANCE', HttpStatus.FORBIDDEN);
+			} else {
+				if (!course.bought) {
+					await this.courseModel.findOneAndUpdate(
+						{ _id: course._id },
+						{ bought: true },
+					);
+				}
+				const balance = user.wallet_balance -= course.price;
+				const object = {
+					course_id: course.id,
+					stars: 0,
+					commented: false
+				};
+
+				const updateData = {
+					$push: { bought_courses: object },
+					$set: { wallet_balance: balance }
+				  };
+
+				await this.userModel.findByIdAndUpdate(user._id, updateData);
+
+				return {
+					message: 'Course purchased.',
+					status: HttpStatus.OK,
+				};
+			}
+		}catch (error){
+			throw error;
+		}
+	}
+
 	async findBoughtCourses(id: ObjectId) {
 		try {
 			const { data } = await this.userService.findOneWithBoughtCourses(id);
@@ -392,39 +430,6 @@ export class CoursesService {
 				throw new HttpException('Course not found.', HttpStatus.NOT_FOUND);
 			}
 		} catch (error) {
-			throw error;
-		}
-	}
-
-	async purchaseCourse(purchaseCourseDto: PurchaseCourseDto) {
-		try{
-			const user = (await this.userService.findOne(purchaseCourseDto.userId)).data;
-			const course = await this.courseModel.findOne({ _id: purchaseCourseDto.courseId });
-			
-			if (user.wallet_balance < course.price) {
-				throw new HttpException('INSUFFICIENT_BALANCE', HttpStatus.FORBIDDEN);
-			} else {
-				if (!course.bought) {
-					await this.courseModel.findOneAndUpdate(
-						{ _id: course._id },
-						{ bought: true },
-					);
-				}
-				user.wallet_balance -= course.price;
-				const object = {
-					course_id: course.id,
-					stars: 0,
-					commented: false
-				};
-				await this.userService.updateUserBoughtCourses(user._id, object);
-
-				return {
-					message: 'Course purchased.',
-					status: HttpStatus.OK,
-					data: ''
-				};
-			}
-		}catch (error){
 			throw error;
 		}
 	}
