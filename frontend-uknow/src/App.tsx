@@ -47,7 +47,7 @@ function App () {
               <Route path='/addcourse' element={<PrivateRoute element={<AddCoursePage />} />} />
               <Route path='/allusers' element={<AllUsersPage />} />
               <Route path='/profile' element={<PrivateRoute element={<Profile />} />} />
-              <Route path='/course/:id' element={<PrivateRoute element={<CourseDetail />} />} />
+              <Route path='/course/:id' element={<CourseDetail />} />
               <Route path='/category' element={<FilterByCategory />} />
               <Route path='/topic' element={<FilterByTopic />} />
             </Routes>
