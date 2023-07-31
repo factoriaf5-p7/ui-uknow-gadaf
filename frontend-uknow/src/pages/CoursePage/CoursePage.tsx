@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap'
 import { StarRating } from '../../components/StarRating/StarRating'
 import DemoImg from '../../assets/demoImg.jpeg'
 import styles from './CoursePage.module.css'
+import axios from 'axios'
 
 const CourseDetail = () => {
   const { id } = useParams()
@@ -28,10 +29,14 @@ const CourseDetail = () => {
     return <div>Course not found.</div>
   }
 
-  const handleBuyCourse = () => {
+  const handleBuyCourse = async () => {
     const isConfirmed = window.confirm('Are you sure you want to buy this course?')
     if (isConfirmed) {
-      // API call.
+      const res = await axios.patch('http://localhost:3000/api/courses/purchase', {
+        userId: localStorage.getItem('id'),
+        courseId: id
+      })
+      return res
     }
   }
 

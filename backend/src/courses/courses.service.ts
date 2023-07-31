@@ -96,9 +96,9 @@ export class CoursesService {
 			if (user.wallet_balance < course.price) {
 				throw new HttpException('INSUFFICIENT_BALANCE', HttpStatus.FORBIDDEN);
 			}
-			//  else if (user.bought_courses.includes()) {
-
-			// } 
+			 else if (user.bought_courses.includes(course.id)) {
+				throw new HttpException('You already bought this course.', HttpStatus.FORBIDDEN);
+			} 
 			else {
 				if (!course.bought) {
 					await this.courseModel.findOneAndUpdate(
