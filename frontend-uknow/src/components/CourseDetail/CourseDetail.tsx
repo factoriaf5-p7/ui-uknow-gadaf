@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { NavbarDesk } from '../NavbarDesk/NavbarDesk'
+import { Container } from 'react-bootstrap'
 
 const CourseDetail = () => {
   const { id } = useParams()
@@ -27,13 +27,15 @@ const CourseDetail = () => {
 
   return (
     <>
-      <NavbarDesk />
-      <div>
-        <h1>{courseDetails.name}</h1>
+      <Container>
+        <h2>{courseDetails.name}</h2>
+        <p>Category: {courseDetails.category}</p>
+        <p>Difficulty: {courseDetails.difficulty}</p>
         <p>Rating: {courseDetails.rating}</p>
         <p>Price: {courseDetails.price}</p>
-        <img src={courseDetails.image} alt={courseDetails.name} />
-      </div>
+        <p>Description: {courseDetails.content}</p>
+        <img src={courseDetails.image} alt={courseDetails.name} style={{ width: '250px' }} />
+      </Container>
     </>
   )
 }

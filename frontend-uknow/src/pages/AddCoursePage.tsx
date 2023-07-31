@@ -50,6 +50,7 @@ export const AddCoursePage = () => {
 
   return (
     <Container>
+      <h2>Create course.</h2>
       <form onSubmit={handleSubmit}>
         <label>
           Name
