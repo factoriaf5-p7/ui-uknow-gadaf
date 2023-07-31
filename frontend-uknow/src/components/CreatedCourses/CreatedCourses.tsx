@@ -3,27 +3,33 @@ import { AllCoursesCard } from '../AllCourses/AllCoursesCard'
 import styles from './CreatedCourses.module.css'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
-export const CreatedCourses = ({ idUser }) => {
-  console.log(`idUSer ${idUser}`)
+export const CreatedCourses = ({idUser}) => {
   const [course, setCourse] = useState<any[]>([])
 
   useEffect(() => {
-    const fetchCourse = async () => {
+    const fetchCourses = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/courses')
-        // const response = await fetch(`http://localhost:3000/api/created-courses/${idUser}`)
-        const data = await response.json()
-        setCourse(data.data)
+        const response = await axios.get('http://localhost:3000/api/users/created-courses',
+          {
+            headers: {
+              Authorization: ` Bearer ${token} `
+            }
+          })
+
+        const data = await [response]
+        setCourse(data)
       } catch (error) {
-        console.log('No se encuentra ese curso por su:', error)
+        console.log('No lista los cursos creados por un usuario ...', error)
       }
     }
-    fetchCourse()
+    fetchCourses()
   }, [])
 
   return (
     <Container className={styles.container}>
+      <h3>Created Courses</h3>
       <div className='d-flex flex-wrap justify-content-center' style={{ display: 'inline-block', gap: 10 }}>
         {course.map((course, i) => (
           <div key={i}>
@@ -33,6 +39,7 @@ export const CreatedCourses = ({ idUser }) => {
                 rating={course.rating}
                 title={course.name}
                 price={course.price}
+
               />
             </Link>
           </div>

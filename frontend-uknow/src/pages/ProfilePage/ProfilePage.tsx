@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap'
 import styles from './ProfilePage.module.css'
-import { Wallet2 } from 'react-bootstrap-icons'
+import { Coin } from 'react-bootstrap-icons'
 import { CreatedCourses } from '../../components/CreatedCourses/CreatedCourses'
 
 export const Profile = () => {
@@ -52,9 +52,9 @@ export const Profile = () => {
         <section className={styles.userInfo}>
           <h4>{profile.email}</h4>
           <p>{profile.profile} : {profile._id}</p>
-          <h6 className={styles.chip}><Wallet2 /> {profile.wallet_balance}</h6>
+          <h6 className={styles.chip}><Coin />  {profile.wallet_balance}</h6>
         </section>
-        <section className={styles.ceatedCourses}> <h1>Created Courses</h1><CreatedCourses idUser={profile._id} /></section>
+        <section className={styles.createdCourses}> <CreatedCourses /></section>
       </div>
     </Container>
   )
