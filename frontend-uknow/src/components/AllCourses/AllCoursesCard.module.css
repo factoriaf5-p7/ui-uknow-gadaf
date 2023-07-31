@@ -1,5 +1,5 @@
 .courseCard {
-    border: 1px black solid;
+    border: 1px rgb(230, 230, 230) solid;
     display: inline-flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -9,6 +9,13 @@
     width: 150px;
     height: 200px;
     text-align: center;
+    border-radius: 8px;
+  background-image: 
+  radial-gradient(circle at 100% 0, #ffffff, transparent),
+  radial-gradient(circle at 70% 100%, #fbffea, transparent),
+  radial-gradient(circle at 100% 100%, #ffffff, transparent),
+  radial-gradient(circle at 10% 10%, transparent, rgb(187, 220, 237));
+  box-shadow: 0 2px 4px rgba(220, 220, 220, 0.2);
 }
 
 .courseCard p {
