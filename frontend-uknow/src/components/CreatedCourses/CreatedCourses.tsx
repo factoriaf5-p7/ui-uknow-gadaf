@@ -1,17 +1,18 @@
 import { Container } from 'react-bootstrap'
 import { AllCoursesCard } from '../AllCourses/AllCoursesCard'
-import styles from './AllCourses.module.css'
+import styles from './CreatedCourses.module.css'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Dropdown } from '../Dropdown/Dropdown'
 
-export const ProfileCreatedCourses = () => {
+export const CreatedCourses = ({ idUser }) => {
+  console.log(`idUSer ${idUser}`)
   const [course, setCourse] = useState<any[]>([])
 
   useEffect(() => {
     const fetchCourse = async () => {
       try {
         const response = await fetch('http://localhost:3000/api/courses')
+        // const response = await fetch(`http://localhost:3000/api/created-courses/${idUser}`)
         const data = await response.json()
         setCourse(data.data)
       } catch (error) {
@@ -23,11 +24,6 @@ export const ProfileCreatedCourses = () => {
 
   return (
     <Container className={styles.container}>
-      <div className={styles.topBar}>
-        {/* <div className='dropdown'> */}
-        <Dropdown />
-      </div>
-
       <div className='d-flex flex-wrap justify-content-center' style={{ display: 'inline-block', gap: 10 }}>
         {course.map((course, i) => (
           <div key={i}>
