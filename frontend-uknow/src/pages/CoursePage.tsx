@@ -23,19 +23,19 @@ export const CoursePage = () => {
         fetchCourse()
     }, [CourseId])
 
-  return (
-    <Container>
-      {course && (
-        <>
-          <h2>{course.name}</h2>
-          <p>{course.price}</p>
-          <p>{course.topic}</p>
-          <p>Attenuation Level: {course.difficulty}</p>
-          <p>{course.tags}</p>
-          <p>{course.content}</p>
-        </>
-      )}
-      {!course && <p>Cargando Cursos...</p>}
-    </Container>
-  )
+    return (
+        <Container>
+            {course && (
+                <>
+                    <h2>{course.name}</h2>
+                    <p>{course.price}</p>
+                    <p>{course.topic}</p>
+                    <p>Attenuation Level: {course.difficulty}</p>
+                    <p>{course.tags}</p>
+                    <p>{course.content}</p>
+                </>
+            )}
+            {!course && <p>Cargando Cursos...</p>}
+        </Container>
+    )
 }

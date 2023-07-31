@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Container } from 'react-bootstrap'
 
 interface FormType {
     name: string;
