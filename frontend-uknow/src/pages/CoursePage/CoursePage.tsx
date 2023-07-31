@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
 import { StarRating } from '../../components/StarRating/StarRating'
 import DemoImg from '../../assets/demoImg.jpeg'
@@ -30,6 +30,7 @@ const CourseDetail = () => {
   }
 
   const [message, setMessage] = useState<React.ReactNode>('')
+  const navigate = useNavigate()
   const handleBuyCourse = async () => {
     const isConfirmed = window.confirm('Are you sure you want to buy this course?')
     if (isConfirmed) {
@@ -39,9 +40,13 @@ const CourseDetail = () => {
           courseId: id
         })
         setMessage(<h4 className='text-success'>Course purchased!</h4>)
-        console.log(res)
+        return res
       } catch (error: any) {
-        setMessage(<h4 className='text-danger'>{error.response.data.message}</h4>)
+        if (error.response.status === 400) {
+          navigate('/auth')
+        } else {
+          setMessage(<h4 className='text-danger'>{error.response.data.message}</h4>)
+        }
       }
     }
   }
