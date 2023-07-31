@@ -10,9 +10,10 @@ export const Auth = () => {
   return (
     <div className={styles.content}>
       <div className={styles.header}>
+
         <h2 id={styles.welcome}>Welcome to</h2>
         <div className={styles.logo}>
-          <img src={Logo} alt='U-know logo' />
+          <a href='/home'><img src={Logo} alt='U-know logo' /></a>
         </div>
         <p>Please enter your details</p>
       </div>
