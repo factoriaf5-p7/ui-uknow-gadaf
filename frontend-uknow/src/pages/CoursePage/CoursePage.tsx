@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
 import { StarRating } from '../../components/StarRating/StarRating'
@@ -29,14 +29,20 @@ const CourseDetail = () => {
     return <div>Course not found.</div>
   }
 
+  const [message, setMessage] = useState<React.ReactNode>('')
   const handleBuyCourse = async () => {
     const isConfirmed = window.confirm('Are you sure you want to buy this course?')
     if (isConfirmed) {
-      const res = await axios.patch('http://localhost:3000/api/courses/purchase', {
-        userId: localStorage.getItem('id'),
-        courseId: id
-      })
-      return res
+      try {
+        const res = await axios.patch('http://localhost:3000/api/courses/purchase', {
+          userId: localStorage.getItem('id'),
+          courseId: id
+        })
+        setMessage(<h4 className='text-success'>Course purchased!</h4>)
+        console.log(res)
+      } catch (error: any) {
+        setMessage(<h4 className='text-danger'>{error.response.data.message}</h4>)
+      }
     }
   }
 
@@ -44,6 +50,7 @@ const CourseDetail = () => {
     <>
       <Container className={styles.courseContainer}>
         <section>
+          {message}
           <img src={DemoImg} alt={courseDetails.name} className={styles.courseImg} />
           <hr />
           <div className={styles.ratingLevel}>

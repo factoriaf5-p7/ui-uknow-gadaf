@@ -92,14 +92,14 @@ export class CoursesService {
 		try {
 			const user = await this.userModel.findOne({ _id: purchaseCourseDto.userId });
 			const course = await this.courseModel.findOne({ _id: purchaseCourseDto.courseId });
+
+			if (user.bought_courses.some((item) => item.course_id.toString() === course.id.toString())) {
+				throw new HttpException('You already bought this course.', HttpStatus.FORBIDDEN);
+			}
 			
 			if (user.wallet_balance < course.price) {
-				throw new HttpException('INSUFFICIENT_BALANCE', HttpStatus.FORBIDDEN);
-			}
-			 else if (user.bought_courses.includes(course.id)) {
-				throw new HttpException('You already bought this course.', HttpStatus.FORBIDDEN);
-			} 
-			else {
+				throw new HttpException('Insuffient balance.', HttpStatus.FORBIDDEN);
+			} else {
 				if (!course.bought) {
 					await this.courseModel.findOneAndUpdate(
 						{ _id: course._id },
