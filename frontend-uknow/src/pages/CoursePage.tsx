@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Course } from '../components/Interfaces/CourseInterface'
+import { Container } from 'react-bootstrap'
 
 export const CoursePage = () => {
     const { CourseId } = useParams<{ CourseId: string }>()
@@ -22,19 +23,19 @@ export const CoursePage = () => {
         fetchCourse()
     }, [CourseId])
 
-    return (
-        <div>
-            {course && (
-                <>
-                    <h2>{course.name}</h2>
-                    <p>{course.price}</p>
-                    <p>{course.topic}</p>
-                    <p>Attenuation Level: {course.difficulty}</p>
-                    <p>{course.tags}</p>
-                    <p>{course.content}</p>
-                </>
-            )}
-            {!course && <p>Cargando Cursos...</p>}
-        </div>
-    )
+  return (
+    <Container>
+      {course && (
+        <>
+          <h2>{course.name}</h2>
+          <p>{course.price}</p>
+          <p>{course.topic}</p>
+          <p>Attenuation Level: {course.difficulty}</p>
+          <p>{course.tags}</p>
+          <p>{course.content}</p>
+        </>
+      )}
+      {!course && <p>Cargando Cursos...</p>}
+    </Container>
+  )
 }

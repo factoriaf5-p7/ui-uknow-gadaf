@@ -1,10 +1,12 @@
 .container{
-    margin-top: 1.5rem;
+  margin-top: 2.5rem;
 }
 
-.containerTitle{
-    margin-bottom: 1rem;
-  }
+.sectionTitle{
+  padding-bottom: 0.7rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #efefef;
+}
 
 .chips {    
   display: flex;

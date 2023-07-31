@@ -1,7 +1,8 @@
 .topBar {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #efefef;
 }
 
 .dropdown {
@@ -9,10 +10,5 @@
 }
 
 .container{
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
 }
-
-.containerTitle{
-    margin-bottom: 1rem;
-  }
-

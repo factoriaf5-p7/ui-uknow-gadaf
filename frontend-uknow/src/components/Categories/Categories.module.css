@@ -1,7 +1,5 @@
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
+.sectionTitle{
+  padding-bottom: 0.7rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #efefef;
 }

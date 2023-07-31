@@ -1,9 +1,8 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { ApiProperty } from '@nestjs/swagger';
-import mongoose, { HydratedDocument, Schema as MongooseSchema, Types, ObjectId } from 'mongoose';
+import mongoose, { HydratedDocument, Schema as ObjectId } from 'mongoose';
 import { Course } from '../../courses/schemas/course.schema';
-import { Type } from 'class-transformer';
 
 export type UserDocument = HydratedDocument<User>;
 

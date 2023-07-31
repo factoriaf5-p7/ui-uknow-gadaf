@@ -1,6 +1,10 @@
 .navBarSection {
     width: 100vw;
-    background-color: #F3F6F8 !important;
+    background-image: 
+  radial-gradient(circle at 100% 0, #f0f2e4, transparent),
+  radial-gradient(circle at 0 100%, #eaf4c2, transparent),
+  radial-gradient(circle at 100% 100%, #E3DB8A, transparent),
+  radial-gradient(circle at 50% 50%, transparent, #00A6FF) !important;
     padding-top: 1rem;
     padding-bottom: 1rem;
     position: fixed;
@@ -13,13 +17,16 @@
     flex-direction: column;
     list-style: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center !important;
   }
   
   .item {
-    color: #3A591E !important;
+    color: #2d2d2d !important;
     font-weight: 600 !important;
+    /* border-right: 1px solid #ffffff; */
+    padding-right: 3rem;
+   
   }
   
   .logoText img {
@@ -28,7 +35,7 @@
   }
   
   .logoImg img {
-    width: 150px;
+    width: 110px;
     height: auto;
   }
 
@@ -43,33 +50,32 @@
 
 .navBarLinks{
     display: flex;
-    justify-content: space-around; 
+    justify-content: space-evenly; 
     width: 90%; 
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
 }
 
-  .icon{
-    width: 35px;
+  /* .icon{
+    width: 25px;
     padding-right: 3px;
     color: #2d2d2d;
-}
+} */
   .iconBubble {
-    color:#3A591E;
-    font-size: 35px !important;
+    color:#657c71;
+    font-size: 25px !important;
     background-color: #ffffff;
     padding: 20%;
     border-radius: 50%;
-
   }
   .navBarItems {
     display: flex;
-    justify-content: space-around; 
+    align-items: center;
     width: 90%; 
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    border-top: 1px solid #777777;
-    border-bottom: 1px solid #777777;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
   }
   
   @media (max-width: 600px) {

@@ -1,20 +1,21 @@
 import { Card } from 'react-bootstrap'
+import styles from './CourseCard.module.css'
 
 interface CourseCardProps {
-    img: string,
-    rating: string,
-    title: string,
-    price:number
+  img: string,
+  rating: string,
+  title: string,
+  price: number
 }
 
 export const CourseCard = ({ img, rating, title, price }: CourseCardProps) => {
   return (
-    <div className='d-flex text-center justify-content-center align-items-center m-2 border border-dark' style={{ width: '220px', height: '120px' }}>
-      <div className=''><img src={img} style={{ width: '80px' }} /></div>
-      <div className='p-1'>
-        <Card.Text className='fw-bold m-0'>{title}</Card.Text>
-        <Card.Text className='m-0'>{price}</Card.Text>
-        <Card.Text>{rating} ⭐</Card.Text>
+    <div className={styles['course-card-container']}>
+      <div><img src={img} className={styles['course-card-img']} /></div>
+      <div className={styles['course-card-info']}>
+        <Card.Text className={styles['course-card-title']}>{title}</Card.Text>
+        <Card.Text className={styles['course-card-price']}>{price}$</Card.Text>
+        <Card.Text className={styles['course-card-rating']}>{rating} ⭐</Card.Text>
       </div>
     </div>
   )

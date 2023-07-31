@@ -7,21 +7,23 @@ import { Model, ObjectId } from 'mongoose';
 import { UsersService } from '../users/users.service';
 import { RatedCourseDto } from './dto/rate-course.dto';
 import { PurchaseCourseDto } from './dto/buy-course.dto';
+import { User } from 'src/users/schemas/user.schema';
 
 @Injectable()
 export class CoursesService {
-	prototype(prototype: any, arg1: string) {
-		throw new Error('Method not implemented.');
-	}
+	// prototype(prototype: any, arg1: string) {
+	// 	throw new Error('Method not implemented.');
+	// }
 	constructor(
     private readonly userService: UsersService,
     @InjectModel(Course.name) private courseModel: Model<Course>,
+    @InjectModel(User.name) private userModel: Model<User>,
 	) {}
 
-	async create(userId: ObjectId, createCourseDto: CreateCourseDto) {
+	async create(userId: ObjectId | string, createCourseDto: CreateCourseDto) {
 		try {
 			const newCourse = await this.courseModel.create(createCourseDto);
-			this.userService.addCreatedCourse(userId, newCourse._id);
+			await this.userModel.findByIdAndUpdate(userId, { $push: { created_courses: newCourse._id } });
 
 			return {
 				message: 'New course created successfully.',
@@ -59,9 +61,36 @@ export class CoursesService {
 		}
 	}
 
+	async filterByCategory (filter: string) {
+		return await this.courseModel.find({ category: filter });
+	}
+
+	async getAllTopics (){
+		try {
+			// const topics = await this.courseModel.distinct('topic');
+
+			const topics = await this.courseModel.aggregate([
+				{ $group: { _id: '$topic' } },
+				{ $sample: { size: 200 } },
+			  ]);
+
+			  const randomTopics = topics.map((item) => item._id);
+
+			return {
+				data: randomTopics,
+			};
+		} catch (error) {
+			throw error;
+		}
+	}
+
+	async filterByTopic (filter: string) {
+		return await this.courseModel.find({ topic: filter });
+	}
+
 	async findBoughtCourses(id: ObjectId) {
 		try {
-			const { message, status, data } = await this.userService.findOneWithBoughtCourses(id);
+			const { data } = await this.userService.findOneWithBoughtCourses(id);
 	
 			const boughtCourses = [];
 
@@ -84,7 +113,7 @@ export class CoursesService {
 
 	async addRating(userId: ObjectId, ratedCourse: RatedCourseDto) {
 		try {
-			const { data, message, status } = await this.userService.addRating(
+			const { data } = await this.userService.addRating(
 				userId,
 				ratedCourse,
 			);
@@ -135,7 +164,7 @@ export class CoursesService {
 		try {
 			const calculates = [];
 			const idCoursesAll = await this.courseModel.find({}, { _id: 1, name: 1 }); //id de todos los cursos
-			const { data, message, status } = await this.userService.findAllBoughtCourses({},{ bought_courses: 1, _id: 0 }); //cursos comprados de cada usuario
+			const { data } = await this.userService.findAllBoughtCourses({},{ bought_courses: 1, _id: 0 }); //cursos comprados de cada usuario
 
 			// return 'This action find all users';
 			// const courses = this.courseModel.find();
@@ -191,7 +220,7 @@ export class CoursesService {
 
 	async findCreatedCourses(userId: ObjectId) {
 		try{
-			const { data, message, status } =
+			const { data } =
 		await this.userService.findOneWithCreatedCourses(userId);
 
 			const createdCourses = [];
@@ -282,7 +311,7 @@ export class CoursesService {
 	async update(id: ObjectId, updateCourse: UpdateCourseDto) {
 		try {
 			// user que quiere actualizar curso
-			const { data, message, status } = await this.userService.findOne(id);
+			const { data } = await this.userService.findOne(id);
 			
 			const entries = Object.entries(data.created_courses);
 			let courseUpdated;
