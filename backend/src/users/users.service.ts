@@ -45,9 +45,15 @@ export class UsersService {
 	}
 
 	async getProfile(user: any) {
-		const profileArray = await this.userModel.find({ _id: user.sub });
+		const profileArray = await this.userModel.find({ _id: user.sub }).select('-password');
 		const profileObject = profileArray.length > 0 ? profileArray[0] : null;
 		return profileObject;
+	  }
+
+	  async getCreatedCourses(user: any) {
+		const profileArray = await this.userModel.find({ _id: user.sub });
+		const profileObject = profileArray.length > 0 ? profileArray[0] : null;
+		return profileObject.created_courses;
 	  }
 
 	async findAllAdmin() {
