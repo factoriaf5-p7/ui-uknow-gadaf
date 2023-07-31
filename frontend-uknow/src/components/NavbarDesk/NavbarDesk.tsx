@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav'
 import styles from './NavbarDesk.module.css'
 import LogoImg from '../../assets/LogoGris.png'
 import LogoText from '../../assets/LogoText.svg'
-import { BellFill, Heart, Person, PlusCircle, Search } from 'react-bootstrap-icons'
+import { BellFill, Search } from 'react-bootstrap-icons'
 
 export const NavbarDesk = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
@@ -39,13 +39,13 @@ export const NavbarDesk = () => {
             </Nav.Link>
           </Nav.Item>
         </div>
-        
+
         <div className={styles.navBarItems}>
           <div className={styles.navBarLinks}>
             <Nav.Item as='li'>
               <Nav.Link href='/addcourse'>
                 <span className={styles.item}>
-                  New Course 
+                  New Course
 
                   {/* <PlusCircle className={styles.icon} /> */}
 
@@ -55,17 +55,17 @@ export const NavbarDesk = () => {
             <Nav.Item as='li'>
               <Nav.Link href='/course'>
                 <span className={styles.item}>
-                  My courses 
-                  
+                  My courses
+
                   {/* <Heart className={styles.icon} /> */}
                 </span>
               </Nav.Link>
             </Nav.Item>
             <Nav.Item as='li'>
-              <Nav.Link href='/auth'>
+              <Nav.Link href='/profile'>
                 <span className={styles.item}>
-                  Profile 
-                  
+                  Profile
+
                   {/* <Person className={styles.icon} /> */}
                 </span>
               </Nav.Link>

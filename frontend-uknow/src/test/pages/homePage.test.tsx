@@ -1,14 +1,14 @@
 import { describe, test, expect, beforeEach } from 'vitest'
 import { render, screen, waitFor } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
-import { HomePage } from '../pages/HomePage/HomePage'
-import { Categories } from '../components/Categories/Categories'
-import { PopularCourses } from '../components/PopularCourses/PopularCourses'
-import { PopularTopics } from '../components/PopularTopics/PopularTopics'
-import { AllCourses } from '../components/AllCourses/AllCourses'
-import { Footer } from '../components/Footer/Footer'
-import { NavbarBottom } from '../components/NavbarBottom/NavbarBottom'
-import { NavbarDesk } from '../components/NavbarDesk/NavbarDesk'
+import { HomePage } from '../../pages/HomePage/HomePage'
+import { Categories } from '../../components/Categories/Categories'
+import { PopularCourses } from '../../components/PopularCourses/PopularCourses'
+import { PopularTopics } from '../../components/PopularTopics/PopularTopics'
+import { AllCourses } from '../../components/AllCourses/AllCourses'
+import { Footer } from '../../components/Footer/Footer'
+import { NavbarBottom } from '../../components/NavbarBottom/NavbarBottom'
+import { NavbarDesk } from '../../components/NavbarDesk/NavbarDesk'
 
 describe('HOMEPAGE', () => {
   describe('titles', () => {

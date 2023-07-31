@@ -38,9 +38,7 @@ export class CreateCourseDto {
 	@IsNotEmpty()
 		tags: string;
 
-	@ApiProperty({ example: 'img.png' })
-	@IsString()
-	@IsNotEmpty()
+	@ApiProperty({ example: 'img.png', default: 'https://images.vexels.com/media/users/3/224169/isolated/preview/dbfe1f493ad01117fa4ec5ba10150e4d-computer-programming-logo.png' })
 		image: string;
 	
 	@ApiProperty({ example: '### How to validate dtos properties<br>## Class-validator<br>To validate install the package as follow: nmp i class-validator.' })

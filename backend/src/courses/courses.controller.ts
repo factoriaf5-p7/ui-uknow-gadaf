@@ -4,7 +4,7 @@ import { CoursesService } from './courses.service';
 import { CreateCourseDto } from './dto/create-course.dto';
 import { UpdateCourseDto } from './dto/update-course.dto';
 import { ObjectId } from 'mongoose';
-import { AuthGuard } from 'src/auth/guards/auth.guard';
+// import { AuthGuard } from 'src/auth/guards/auth.guard';
 import { RatedCourseDto } from './dto/rate-course.dto';
 import { PurchaseCourseDto } from './dto/buy-course.dto';
 import { Roles } from 'src/auth/guards/roles';
@@ -47,6 +47,21 @@ export class CoursesController {
   @Get('categories')
   getAllCategories() {
   	return this.coursesService.getAllCategories();
+  }
+
+  @Get('category')
+  filterByCategory(@Query('filter') filter: string) {
+  	return this.coursesService.filterByCategory(filter);
+  }
+
+  @Get('topics')
+  getAllTopics() {
+  	return this.coursesService.getAllTopics();
+  }
+
+  @Get('topic')
+  filterByTopic(@Query('filter') filter: string) {
+  	return this.coursesService.filterByTopic(filter);
   }
 
   @Get()
