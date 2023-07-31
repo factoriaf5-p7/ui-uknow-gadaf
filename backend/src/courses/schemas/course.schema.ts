@@ -18,7 +18,7 @@ export class Course {
   	topic: string;
 
   @ApiProperty({ example: 'image.png' })
-  @Prop({ required: true })
+  @Prop({ default: 'https://images.vexels.com/media/users/3/224169/isolated/preview/dbfe1f493ad01117fa4ec5ba10150e4d-computer-programming-logo.png' })
   	image: string;
 
   @ApiProperty({ example: 'image.png' })
@@ -26,12 +26,13 @@ export class Course {
   	category: string;
 
   @ApiProperty({ example: 'Beginner' })
-  @Prop({ required: true, enum: [ 'Beginner', 'Medium', 'Advanced' ] })
+  @Prop({ required: true })
   	difficulty: string;
 
-  @ApiProperty({ example: [ 'HTML', 'CSS', 'JavaScript' ] })
+  @ApiProperty({ example: 'HTML, CSS, JavaScript' })
   @Prop()
-  	tags: [];
+  	tags: string;
+
   @ApiProperty({ example: true })
   @Prop({ default: false })
   	bought: boolean;

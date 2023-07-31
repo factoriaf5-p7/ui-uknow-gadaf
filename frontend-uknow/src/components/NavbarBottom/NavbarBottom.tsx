@@ -4,7 +4,7 @@ import styles from './NavbarBottom.module.css'
 
 export const NavbarBottom = () => {
   return (
-    <>
+    <div className={styles.navBottomContainer}>
       <Nav defaultActiveKey='/home' as='ul' className={styles.navContainer}>
         <Nav.Item as='li'>
           <Nav.Link href='/home'>
@@ -27,6 +27,6 @@ export const NavbarBottom = () => {
           </Nav.Link>
         </Nav.Item>
       </Nav>
-    </>
+    </div>
   )
 }

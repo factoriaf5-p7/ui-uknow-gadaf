@@ -5,6 +5,7 @@ import { RegisterUserDto } from './dto/register-user.dto';
 import { RecoverUserDto } from './dto/recover-user.dto';
 import { RecoverRequestDto } from './dto/recover-request.dto';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { VerifyTokenDto } from './dto/verify-token.dto';
 
 @ApiBearerAuth()
 @ApiTags('auth')
@@ -20,8 +21,12 @@ export class AuthController {
 	@Post('signup')
 	async signup(@Body() user: RegisterUserDto) {
 		const response = await this.authService.register(user);
-		// if(response.status !== HttpStatus.OK) throw new HttpException(response.message, response.status);
 		return response;
+	}
+
+	@Post('verify')
+	async verifyToken(@Body() token: VerifyTokenDto) {
+		return this.authService.verifyToken(token);
 	}
 
 	@Patch('recover')

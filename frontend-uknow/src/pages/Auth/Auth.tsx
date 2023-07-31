@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import styles from './Auth.module.css'
 import Logo from '../../assets/LOGO.png'
 import { LogInForm } from '../../components/LogInForm/LogInForm'
@@ -15,7 +15,6 @@ export const Auth = () => {
           <img src={Logo} alt='U-know logo' />
         </div>
         <p>Please enter your details</p>
-        <br />
       </div>
 
       <div className={styles.body}>

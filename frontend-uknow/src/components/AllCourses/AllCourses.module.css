@@ -1,8 +1,14 @@
 .topBar {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #efefef;
 }
 
 .dropdown {
     color: #F3F6F8;
+}
+
+.container{
+    margin-top: 2.5rem;
 }

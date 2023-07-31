@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Container } from 'react-bootstrap'
 import { TopicChip } from './TopicChip'
+import styles from './PopularTopics.module.css'
+import { Link } from 'react-router-dom'
 
 export const PopularTopics = () => {
   const [topics, setTopics] = useState<any[]>([])
@@ -8,24 +10,32 @@ export const PopularTopics = () => {
   useEffect(() => {
     const fetchTopics = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/courses')
+        const response = await fetch(
+          'http://localhost:3000/api/courses/topics'
+        )
         const data = await response.json()
         setTopics(data.data)
       } catch (error) {
-        console.log('No se encuentra ese tema por su:', error)
+        console.log(error)
       }
     }
     fetchTopics()
   }, [])
 
   return (
-    <Container>
-      <h2>Popular topics</h2>
-      <div>
-        {topics.slice(0, 10).map((topic, i) => (
-          <TopicChip title={topic.name} key={i} />
-        ))}
-      </div>
-    </Container>
+    <>
+      <Container className={styles.container}>
+        <h4 className={styles.sectionTitle}>Popular topics</h4>
+        <div className={styles.chips}>
+          {topics.slice(0, 10).map((topic, i) => (
+            <div key={i}>
+              <Link to={`/topic?filter=${topic}`}>
+                <TopicChip title={topic} key={i} />
+              </Link>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </>
   )
 }

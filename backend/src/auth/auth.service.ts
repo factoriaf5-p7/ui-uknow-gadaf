@@ -10,6 +10,7 @@ import { hash, genSalt, compare } from 'bcrypt';
 import { InjectModel } from '@nestjs/mongoose';
 import { User } from 'src/users/schemas/user.schema';
 import { Model } from 'mongoose';
+import { VerifyTokenDto } from './dto/verify-token.dto';
 
 @Injectable()
 export class AuthService {
@@ -24,21 +25,6 @@ export class AuthService {
 	}
 
 	async login(user: GetUserLoginDto){
-		// const { email, password } = user;
-		// const findUser = await this.userModel.findOne({ email });
-		// if(!findUser) throw new HttpException('USER_NOT_FOUND', HttpStatus.NOT_FOUND);
-
-		// const checkPassword = await compare(password, findUser.password);
-		// if(!checkPassword) throw new HttpException('INVALID_PASSWORD', HttpStatus.FORBIDDEN);
-
-		// const payload = { id:findUser._id, name: findUser.email };
-		// const token = this.jwtService.sign(payload);
-
-		// return { 
-		// 	message: 'Login success.', 
-		// 	status: HttpStatus.OK,
-		// 	token: token
-		// };
 		const { email, password } = user;
 		const findUser = await this.userService.findOneLogin(email);
 		if (!findUser) throw new HttpException('USER_NOT_FOUND', HttpStatus.NOT_FOUND);
@@ -56,7 +42,10 @@ export class AuthService {
 		return { 
 			message: 'Login success.', 
 			status: HttpStatus.OK,
-			token: token
+			payload: {
+				token,
+				id: payload.sub
+			}
 		};
 	}
 
@@ -65,17 +54,15 @@ export class AuthService {
 		const hashPassword = await hash(password, 10);
 		user = { ...user, password: hashPassword };
 		return this.userService.create(user);
-		/* try {
-			user.password = await this.encryptPassword(user.password);
-			const { data, message, status } = await this.userService.create(user);
-			return {
-				message,
-				status,
-				data
-			};
-		} catch (error) {
-			throw error;
-		} */
+	}
+
+	async verifyToken(token: VerifyTokenDto) {
+		try {
+			this.jwtService.verify(token.token, { secret: 'SECRET' });
+			return { verified: true };
+		  } catch (error) {
+			return { verified: false };
+		  }
 	}
 
 	async recoverPasswordRequest(user: RecoverRequestDto){
@@ -87,7 +74,7 @@ export class AuthService {
 		try {
 			const token = await this.jwtService.signAsync(payload, { expiresIn: '1d' });
 			user.recovery_token = token;
-			const { data, message, status } = await this.userService.updateRecoveryToken(user);
+			const { data } = await this.userService.updateRecoveryToken(user);
 			sendEmail(data, token);
 			return {
 				message: 'Recovery link has sent to your email',

@@ -4,6 +4,7 @@ import { CoursesController } from './courses.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Course, CourseSchema } from './schemas/course.schema';
 import { UsersModule } from 'src/users/users.module';
+import { User, UserSchema } from 'src/users/schemas/user.schema';
 
 @Module({
 	imports: [
@@ -12,6 +13,10 @@ import { UsersModule } from 'src/users/users.module';
 			{
 				name:Course.name,
 				schema: CourseSchema
+			},
+			{
+				name: User.name,
+				schema: UserSchema
 			}
 		])
 	],

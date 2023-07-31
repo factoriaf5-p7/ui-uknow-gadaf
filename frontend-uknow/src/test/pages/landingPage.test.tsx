@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import { LandingPage } from '../pages/LandingPage/LandingPage'
+import { LandingPage } from '../../pages/LandingPage/LandingPage'
 import '@testing-library/jest-dom/extend-expect'
 
 test('video autoplays', () => {
