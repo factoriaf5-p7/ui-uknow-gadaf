@@ -26,7 +26,7 @@ export const PopularCourses = () => {
     <Container className={styles.container}>
       <h4 className={styles.sectionTitle}>Most popular</h4>
 
-      <div className='d-flex justify-content-center flex-wrap'>
+      <div className={styles.coursesContainer}>
         {course.slice(0, 5).map((course) => (
           <div key={course._id}>
             <Link to={`/course/${course._id}`}>

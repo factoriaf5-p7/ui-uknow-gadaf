@@ -6,5 +6,12 @@
     padding-bottom: 0.7rem;
     margin-bottom: 1.5rem;
     border-bottom: 1px solid #efefef;
-}
-  
+  }
+
+
+  .coursesContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
