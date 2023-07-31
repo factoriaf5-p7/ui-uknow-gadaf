@@ -1,6 +1,6 @@
 import styles from './StarRating.module.css'
 
-export const StarRating = ({ stars }) => {
+export const StarRating = ({ stars }: any) => {
   const maxStars = 5
 
   // // Obtenemos el valor completo
@@ -25,4 +25,3 @@ export const StarRating = ({ stars }) => {
     </>
   )
 }
-

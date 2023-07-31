@@ -34,3 +34,7 @@ p {
   font-size: var(--font-size-h6);
   color: var(--color-text-primary);
 }
+
+hr {
+  color: transparent;
+}

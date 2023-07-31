@@ -88,28 +88,68 @@ export class CoursesService {
 		return await this.courseModel.find({ topic: filter });
 	}
 
-	async findBoughtCourses(id: ObjectId) {
+	async purchaseCourse(purchaseCourseDto: PurchaseCourseDto) {
 		try {
-			const { data } = await this.userService.findOneWithBoughtCourses(id);
-	
-			const boughtCourses = [];
+			const user = await this.userModel.findOne({ _id: purchaseCourseDto.userId });
+			const course = await this.courseModel.findOne({ _id: purchaseCourseDto.courseId });
 
-			const entries = Object.entries(data.bought_courses);
-			console.log(entries);
+			if (user.bought_courses.some((item) => item.course_id.toString() === course.id.toString())) {
+				throw new HttpException('You already bought this course.', HttpStatus.FORBIDDEN);
+			}
+			
+			if (user.wallet_balance < course.price) {
+				throw new HttpException('Insuffient balance.', HttpStatus.FORBIDDEN);
+			} else {
+				if (!course.bought) {
+					await this.courseModel.findOneAndUpdate(
+						{ _id: course._id },
+						{ bought: true },
+					);
+				}
+				const balance = user.wallet_balance -= course.price;
+				const object = {
+					course_id: course.id,
+				};
 
-			entries.forEach(course=> { 
-				boughtCourses.push({ _id: course[1].course_id['_id'] ,name: course[1].course_id.name });
-			});
+				const updateData = {
+					$push: { bought_courses: object },
+					$set: { wallet_balance: balance }
+				  };
 
-			return {
-				message: 'Retrieved all courses purchased by user successfully',
-				status: HttpStatus.OK,
-				data: boughtCourses
-			};
-		} catch (error) {
+				await this.userModel.findByIdAndUpdate(user._id, updateData);
+
+				return {
+					message: 'Course purchased.',
+					status: HttpStatus.OK,
+				};
+			}
+		}catch (error){
 			throw error;
 		}
 	}
+
+	// async findBoughtCourses(id: ObjectId) {
+	// 	try {
+	// 		const { data } = await this.userService.findOneWithBoughtCourses(id);
+	
+	// 		const boughtCourses = [];
+
+	// 		const entries = Object.entries(data.bought_courses);
+	// 		console.log(entries);
+
+	// 		entries.forEach(course=> { 
+	// 			boughtCourses.push({ _id: course[1].course_id['_id'] ,name: course[1].course_id.name });
+	// 		});
+
+	// 		return {
+	// 			message: 'Retrieved all courses purchased by user successfully',
+	// 			status: HttpStatus.OK,
+	// 			data: boughtCourses
+	// 		};
+	// 	} catch (error) {
+	// 		throw error;
+	// 	}
+	// }
 
 	async addRating(userId: ObjectId, ratedCourse: RatedCourseDto) {
 		try {
@@ -160,63 +200,63 @@ export class CoursesService {
 		}
 	}
 
-	async findAllSortedByAverage() {
-		try {
-			const calculates = [];
-			const idCoursesAll = await this.courseModel.find({}, { _id: 1, name: 1 }); //id de todos los cursos
-			const { data } = await this.userService.findAllBoughtCourses({},{ bought_courses: 1, _id: 0 }); //cursos comprados de cada usuario
+	// async findAllSortedByAverage() {
+	// 	try {
+	// 		const calculates = [];
+	// 		const idCoursesAll = await this.courseModel.find({}, { _id: 1, name: 1 }); //id de todos los cursos
+	// 		const { data } = await this.userService.findAllBoughtCourses({},{ bought_courses: 1, _id: 0 }); //cursos comprados de cada usuario
 
-			// return 'This action find all users';
-			// const courses = this.courseModel.find();
-			idCoursesAll.forEach((course) => {
-				const courseId = course._id;
-				let totalStars = 0;
-				let numRating = 0;
+	// 		// return 'This action find all users';
+	// 		// const courses = this.courseModel.find();
+	// 		idCoursesAll.forEach((course) => {
+	// 			const courseId = course._id;
+	// 			let totalStars = 0;
+	// 			let numRating = 0;
 
-				// Buscar las puntuaciones del curso
-				data.forEach((boughtCourses) => {
-					const bcourses = Array.from(boughtCourses.bought_courses);
-					bcourses.forEach((courseObj) => {
-						if (String(courseObj.course_id) === String(courseId)) {
-							totalStars += courseObj.stars;
-							numRating++;
-						}
-					});
-				});
-				calculates.push({
-					_id: courseId,
-					name: course.name,
-					totalStars,
-					numRating,
-				});
-			});
+	// 			// Buscar las puntuaciones del curso
+	// 			data.forEach((boughtCourses) => {
+	// 				const bcourses = Array.from(boughtCourses.bought_courses);
+	// 				bcourses.forEach((courseObj) => {
+	// 					if (String(courseObj.course_id) === String(courseId)) {
+	// 						totalStars += courseObj.stars;
+	// 						numRating++;
+	// 					}
+	// 				});
+	// 			});
+	// 			calculates.push({
+	// 				_id: courseId,
+	// 				name: course.name,
+	// 				totalStars,
+	// 				numRating,
+	// 			});
+	// 		});
 
-			const hash = {};
-			const filteredCourses = calculates.filter((course) => {
-				return hash[course._id] || course.numRating === 0
-					? false
-					: (hash[course._id] = true);
-			});
+	// 		const hash = {};
+	// 		const filteredCourses = calculates.filter((course) => {
+	// 			return hash[course._id] || course.numRating === 0
+	// 				? false
+	// 				: (hash[course._id] = true);
+	// 		});
 
-			filteredCourses.map((course) => {
-				if (course.numRating > 0) {
-					course.average = course.totalStars / course.numRating;
-					return Number(course.average.toFixed(2));
-				}
-			});
+	// 		filteredCourses.map((course) => {
+	// 			if (course.numRating > 0) {
+	// 				course.average = course.totalStars / course.numRating;
+	// 				return Number(course.average.toFixed(2));
+	// 			}
+	// 		});
 
-			const sortedCourses = filteredCourses.sort((a, b) => b.average - a.average);
+	// 		const sortedCourses = filteredCourses.sort((a, b) => b.average - a.average);
 
-			//   respuesta
-			return {
-				message: 'Retrieved all courses succesfully',
-				status: 200,
-				data: sortedCourses,
-			};
-		} catch (error) {
-			throw error;
-		}
-	}
+	// 		//   respuesta
+	// 		return {
+	// 			message: 'Retrieved all courses succesfully',
+	// 			status: 200,
+	// 			data: sortedCourses,
+	// 		};
+	// 	} catch (error) {
+	// 		throw error;
+	// 	}
+	// }
 
 	async findCreatedCourses(userId: ObjectId) {
 		try{
@@ -392,39 +432,6 @@ export class CoursesService {
 				throw new HttpException('Course not found.', HttpStatus.NOT_FOUND);
 			}
 		} catch (error) {
-			throw error;
-		}
-	}
-
-	async purchaseCourse(purchaseCourseDto: PurchaseCourseDto) {
-		try{
-			const user = (await this.userService.findOne(purchaseCourseDto.userId)).data;
-			const course = await this.courseModel.findOne({ _id: purchaseCourseDto.courseId });
-			
-			if (user.wallet_balance < course.price) {
-				throw new HttpException('INSUFFICIENT_BALANCE', HttpStatus.FORBIDDEN);
-			} else {
-				if (!course.bought) {
-					await this.courseModel.findOneAndUpdate(
-						{ _id: course._id },
-						{ bought: true },
-					);
-				}
-				user.wallet_balance -= course.price;
-				const object = {
-					course_id: course.id,
-					stars: 0,
-					commented: false
-				};
-				await this.userService.updateUserBoughtCourses(user._id, object);
-
-				return {
-					message: 'Course purchased.',
-					status: HttpStatus.OK,
-					data: ''
-				};
-			}
-		}catch (error){
 			throw error;
 		}
 	}
