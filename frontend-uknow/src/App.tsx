@@ -1,7 +1,7 @@
 import { Route, Routes, useLocation } from 'react-router-dom'
 import { LandingPage } from './pages/LandingPage/LandingPage'
 import CourseDetail from './components/CourseDetail/CourseDetail'
-import { AddCoursePage } from './pages/AddCoursePage'
+import { AddCoursePage } from './pages/AddCoursePage/AddCoursePage'
 import { AllUsersPage } from './pages/AllUsersPage'
 import { Auth } from './pages/Auth/Auth'
 import { CoursePage } from './pages/CoursePage'
@@ -15,7 +15,7 @@ import { Footer } from './components/Footer/Footer'
 import { FilterByCategory } from './components/FilterByCategory/FilterByCategory'
 import { FilterByTopic } from './components/FilterByTopic/FilterByTopic'
 
-function Layout ({ children }:any) {
+function Layout({ children }: any) {
   return (
     <>
       <Header />
@@ -27,7 +27,7 @@ function Layout ({ children }:any) {
   )
 }
 
-function App () {
+function App() {
   const location = useLocation()
   const isLandingPage = location.pathname === '/' || location.pathname === '/auth'
 
@@ -52,7 +52,7 @@ function App () {
               <Route path='/topic' element={<FilterByTopic />} />
             </Routes>
           </Layout>
-          )}
+        )}
     </>
   )
 }
