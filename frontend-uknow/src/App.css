@@ -1,9 +1,3 @@
-/* * {
-  overflow: hidden;
-} */
-
-/* globals.css */
-
 :root {
   /* Colores */
   --color-text-primary: #777777;
@@ -28,10 +22,15 @@
 
 body {
   color: var(--color-text-primary);
-  padding-top: 350px;
+  padding-top: 290px;
 }
 
 h1{
   font-size: var(--font-size-h1);
   color: var(--color-heading-primary);
+}
+
+p {
+  font-size: var(--font-size-h6);
+  color: var(--color-text-primary);
 }

@@ -1,17 +1,17 @@
 import styles from './AllCoursesCard.module.css'
 
-interface AllCoursesCardProps {
-    img: string,
+export interface AllCoursesCardProps {
+    image: string,
     rating: number,
     title: string,
     price:number,
 }
 
-export const AllCoursesCard = ({ img, rating, title, price }: AllCoursesCardProps) => {
+export const AllCoursesCard = ({ image, rating, title, price }: AllCoursesCardProps) => {
   return (
     <div className={styles.courseCard}>
       <div>
-        <img className={styles.cardImg} src={img} alt='logo' />
+        <img className={styles.cardImg} src={image} alt='logo' />
       </div>
       <p className='fw-bold'>{title}</p>
       <p className='fw-semibold'>{rating} ⭐</p>

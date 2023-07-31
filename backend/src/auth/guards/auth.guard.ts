@@ -9,27 +9,29 @@ export class AuthGuard implements CanActivate {
 		private jwtService: JwtService
 	) {}
 
-	async canActivate(context: ExecutionContext,): Promise<boolean>{
+	async canActivate(context: ExecutionContext): Promise<boolean> {
 		const request = context.switchToHttp().getRequest();
 		const token = this._extractTokenFromHeader(request);
 
-		if(!token) throw new Error('No token in request');
+		if (!token) {
+			throw new UnauthorizedException();
+		}
 
 		try {
 			const payload = await this.jwtService.verifyAsync(token, { secret: 'SECRET' });
 			request['user'] = payload;
 			return true;
 		} catch (error) {
-			throw new UnauthorizedException();
+			return false;
 		}
 	}
 
 	private _extractTokenFromHeader(req: Request) {
-		try{ 
+		try {
 			const [ type, token ] = req.headers.authorization.split(' ');
 			return type === 'Bearer' ? token : undefined;
-		} catch(error) {
-			throw new UnauthorizedException();
+		} catch (error) {
+			return undefined;
 		}
 	}
 }
