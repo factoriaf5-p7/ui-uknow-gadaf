@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import styles from './Auth.module.css'
 import Logo from '../../assets/LOGO.png'
 import { LogInForm } from '../../components/LogInForm/LogInForm'
