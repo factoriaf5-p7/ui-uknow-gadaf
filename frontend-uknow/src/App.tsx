@@ -1,7 +1,7 @@
 import { Route, Routes, useLocation } from 'react-router-dom'
 import { LandingPage } from './pages/LandingPage/LandingPage'
 import { AddCoursePage } from './pages/AddCoursePage/AddCoursePage'
-import { AllUsersPage } from './pages/AllUsersPage'
+import { AllUsersPage } from './pages/Admin/AllUsersPage'
 import { Auth } from './pages/Auth/Auth'
 import { HomePage } from './pages/HomePage/HomePage'
 import PrivateRoute from './routeGuard'
@@ -13,6 +13,7 @@ import { Footer } from './components/Footer/Footer'
 import { FilterByCategory } from './components/FilterByCategory/FilterByCategory'
 import { FilterByTopic } from './components/FilterByTopic/FilterByTopic'
 import CoursePage from './pages/CoursePage/CoursePage'
+import { MyCourses } from './pages/MyCourses/MyCourses'
 
 function Layout({ children }: any) {
   return (
@@ -42,7 +43,7 @@ function App() {
           <Layout>
             <Routes>
               <Route path='/home' element={<HomePage />} />
-              <Route path='/course' element={<PrivateRoute element={<CoursePage />} />} />
+              <Route path='/mycourses' element={<PrivateRoute element={<MyCourses />} />} />
               <Route path='/addcourse' element={<PrivateRoute element={<AddCoursePage />} />} />
               <Route path='/allusers' element={<AllUsersPage />} />
               <Route path='/profile' element={<PrivateRoute element={<Profile />} />} />

@@ -1,8 +1,9 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap'
+import { CreatedCourses } from '../../components/CreatedCourses/CreatedCourses'
 
-export const Profile = () => {
+export const MyCourses = () => {
     const [profile, setProfile] = useState({
         _id: '',
         name: '',
@@ -41,9 +42,9 @@ export const Profile = () => {
 
     return (
         <Container>
-            <h4>My Courses</h4>
-            <h6>{profile.name}</h6>
-            <p>{profile._id}</p>
+            <CreatedCourses>
+                
+            </CreatedCourses>
         </Container>
     )
 }
