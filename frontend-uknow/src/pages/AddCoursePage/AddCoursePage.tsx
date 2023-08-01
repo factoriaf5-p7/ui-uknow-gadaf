@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import styles from './AddCoursePage.module.css'
+
 
 interface FormType {
     name: string;
@@ -11,6 +13,7 @@ interface FormType {
     image: string,
     category: string
 }
+
 
 export const AddCoursePage = () => {
     const [newCourse, setNewCourse] = useState<FormType>({
@@ -49,9 +52,12 @@ export const AddCoursePage = () => {
         }
     }
 
+
+
     return (
-        <>
-            <form onSubmit={handleSubmit}>
+        <div className={styles.formContainer}>
+            <form className={styles.form} onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit}>
                 <label>
                     Name
                     <input
@@ -61,6 +67,7 @@ export const AddCoursePage = () => {
                         onChange={handleChange}
                     />
                 </label>
+                
                 <label>
                     Price
                     <input
@@ -122,9 +129,12 @@ export const AddCoursePage = () => {
                         onChange={handleChange}
                     />
                 </label>
-                <button type='submit'>Add Course</button>
+                <button type='submit'>
+                <i className='fa fa-plus-circle' aria-hidden='true'></i>Add Course
+                </button>
+                </form>
             </form>
-        </>
-    )
-}
+        </div>
+    );
+};
 
