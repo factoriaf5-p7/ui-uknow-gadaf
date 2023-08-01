@@ -2,12 +2,17 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { ApiProperty } from '@nestjs/swagger';
+import { ObjectId } from 'mongoose';
 
 @Schema({ timestamps: true })
 export class Course {
   @ApiProperty({ example: 'Introduction to Web Development' })
   @Prop({ required: true })
   	name: string;
+  
+  @ApiProperty({ example: '32u4h91v23um4' })
+  @Prop()
+  	userId: string;
 
   @ApiProperty({ example: 59.99 })
   @Prop({ required: true, default: 100 })
