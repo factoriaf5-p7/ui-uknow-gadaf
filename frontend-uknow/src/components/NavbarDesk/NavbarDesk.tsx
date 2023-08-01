@@ -3,6 +3,7 @@ import Nav from 'react-bootstrap/Nav'
 import styles from './NavbarDesk.module.css'
 import LogoImg from '../../assets/LogoGris.png'
 import LogoText from '../../assets/LogoText.svg'
+import { NavDropdown } from 'react-bootstrap'
 
 export const NavbarDesk = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
@@ -20,6 +21,10 @@ export const NavbarDesk = () => {
       window.removeEventListener('scroll', handleScroll)
     }
   }, [prevScrollPos])
+
+  const handleLogOut = () => {
+    localStorage.removeItem('token')
+  }
 
   return (
     <section className={styles.navBarSection}>
@@ -64,10 +69,22 @@ export const NavbarDesk = () => {
               <Nav.Link href='/profile'>
                 <span className={styles.item}>
                   Profile
-
-                  {/* <Person className={styles.icon} /> */}
                 </span>
               </Nav.Link>
+            </Nav.Item>
+            <Nav.Item as='li'>
+              <NavDropdown title='Have account?' id='basic-nav-dropdown' className={styles.item}>
+                <NavDropdown.Item href='/auth'>
+                  Sign up
+                </NavDropdown.Item>
+                <NavDropdown.Item href='/auth'>
+                  Log in
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href='/auth' onClick={handleLogOut}>
+                  Log out
+                </NavDropdown.Item>
+              </NavDropdown>
             </Nav.Item>
           </div>
         </div>
