@@ -29,6 +29,11 @@ export class UsersController {
   		return this.usersService.findAllAdmin();
   	}
 
+	@Get('verify/:userId/:courseId')
+	verifyBoughtCourses(@Param('userId') userId: any, @Param('courseId') courseId: any) {
+		return this.usersService.verifyBoughtCourses(userId, courseId);
+	}
+
 	  // @UseGuards(JwtStrategy)
 	  @UseGuards(AuthGuard)
 	@Get('profile')

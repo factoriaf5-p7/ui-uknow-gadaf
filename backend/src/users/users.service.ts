@@ -7,11 +7,13 @@ import { RegisterUserDto } from 'src/auth/dto/register-user.dto';
 import { RecoverUserDto } from 'src/auth/dto/recover-user.dto';
 import { RecoverRequestDto } from 'src/auth/dto/recover-request.dto';
 import { RatedCourseDto } from '../courses/dto/rate-course.dto';
+import { Course } from 'src/courses/schemas/course.schema';
 
 @Injectable()
 export class UsersService {
 	constructor(
 		@InjectModel(User.name) private userModel: Model<User>,
+		@InjectModel(Course.name) private courseModel: Model<Course>,
 	) { }
 
 	async create(user: RegisterUserDto) {
@@ -234,4 +236,12 @@ export class UsersService {
 
 		  return this.userModel.findOneAndUpdate(userId, update);
 	}
+
+	async verifyBoughtCourses(userId: any, courseId: any) {
+		const user = await this.userModel.findOne({ _id: userId }).select('bought_courses');
+		const course = await this.courseModel.findOne({ _id: courseId });
+
+		return user.bought_courses.some((item) => item.course_id === course.id);			
+	}
+
 }
