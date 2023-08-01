@@ -5,9 +5,9 @@ import { IsNotEmpty } from 'class-validator';
 export class PurchaseCourseDto {
 	@ApiProperty({ example: '64134kjh2h2asd34' })
 	@IsNotEmpty()
-		userId: ObjectId;
+		userId: ObjectId | string;
 
 	@ApiProperty({ example: '64134kjh2h2asd34' })
 	@IsNotEmpty()
-		courseId: ObjectId;
+		courseId: ObjectId | string;
 }

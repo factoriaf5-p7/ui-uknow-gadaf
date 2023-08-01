@@ -29,11 +29,9 @@ export class User {
   	wallet_balance: number;
 
   @ApiProperty({ example: [ 'Bought Course 1', 'Bought Course 2' ] })
-  @Prop({ type: [ { course_id: { type: mongoose.Schema.Types.ObjectId, ref: Course.name }, stars: { type: Number }, commented: { type: Boolean } }  ] })
+  @Prop()
   	bought_courses: {
-    course_id: Course,
-    stars: number,
-    commented: boolean
+    course_id: []
   }[];
 
   @ApiProperty({ example: [ 'Created Course 1', 'Created Course 2' ] })
