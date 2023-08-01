@@ -273,9 +273,9 @@ export class CoursesService {
 			 });
 			 console.log(boughtCourses);
 			 return {
-			 	message: 'Retrieved all bought courses successfully',
-			 	status: HttpStatus.OK,
-			 	data: boughtCourses,
+				message: 'Retrieved all bought courses successfully',
+				status: HttpStatus.OK,
+				data: boughtCourses,
 			 };
 			
 		}catch(error) {
