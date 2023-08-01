@@ -53,7 +53,7 @@ export const NavbarDesk = () => {
               </Nav.Link>
             </Nav.Item>
             <Nav.Item as='li'>
-              <Nav.Link href='/course'>
+              <Nav.Link href='/mycourses'>
                 <span className={styles.item}>
                   My courses
 

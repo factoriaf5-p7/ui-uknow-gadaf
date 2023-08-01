@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { User } from "../components/Interfaces/UserInterface";
+import { User } from "../../components/Interfaces/UserInterface";
 
 export const AllUsersPage: React.FC = () => {
     const [users, setUsers] = useState<User[]>([]);

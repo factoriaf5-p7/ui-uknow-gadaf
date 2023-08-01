@@ -17,7 +17,7 @@ export const NavbarBottom = () => {
           </Nav.Link>
         </Nav.Item>
         <Nav.Item as='li'>
-          <Nav.Link href='/course'>
+          <Nav.Link href='/mycourses'>
             <BookHalf className={styles.icon} />
           </Nav.Link>
         </Nav.Item>
