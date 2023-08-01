@@ -9,9 +9,11 @@ interface FormType {
     topic: string;
     difficulty: string;
     tags: string;
-    content: string;
-    image: string,
-    category: string
+    description: string;
+    image: string;
+    category: string;
+    videoURL: string;
+    videoTitle: string;
 }
 
 
@@ -22,13 +24,15 @@ export const AddCoursePage = () => {
         topic: '',
         difficulty: '',
         tags: '',
-        content: '',
+        description: '',
         image: '',
-        category: ''
+        category: '',
+        videoURL: '',
+        videoTitle: '',
     })
 
     const handleChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
     ) => {
         const { name, value } = e.target
         setNewCourse((prevNewCourse) => ({
@@ -58,80 +62,115 @@ export const AddCoursePage = () => {
         <div className={styles.formContainer}>
             <form className={styles.form} onSubmit={handleSubmit}>
                 <form onSubmit={handleSubmit}>
-                <label>
-                    Name
-                    <input
-                        type='text'
-                        name='name'
-                        value={newCourse.name}
-                        onChange={handleChange}
-                    />
-                </label>
-                
-                <label>
-                    Price
-                    <input
-                        type='number'
-                        name='price'
-                        value={newCourse.price}
-                        onChange={handleChange}
-                    />
-                </label>
-                <label>
-                    Topic
-                    <input
-                        name='topic'
-                        value={newCourse.topic}
-                        onChange={handleChange}
-                    />
-                </label>
-                <label>
-                    Category
-                    <input
-                        name='category'
-                        value={newCourse.category}
-                        onChange={handleChange}
-                    />
-                </label>
-                <label>
-                    Difficulty
-                    <input
-                        type='text'
-                        name='difficulty'
-                        value={newCourse.difficulty}
-                        onChange={handleChange}
-                    />
-                </label>
-                <label>
-                    Tags
-                    <input
-                        type='text'
-                        name='tags'
-                        value={newCourse.tags}
-                        onChange={handleChange}
-                    />
-                </label>
-                <label>
-                    Upload img
-                    <input
-                        type='text'
-                        name='image'
-                        value={newCourse.image}
-                        onChange={handleChange}
-                    />
-                </label>
-                <label>
-                    Content
-                    <input
-                        type='text'
-                        name='content'
-                        value={newCourse.content}
-                        onChange={handleChange}
-                    />
-                </label>
-                <button type='submit'>
-                <i className='fa fa-plus-circle' aria-hidden='true'></i>Add Course
-                </button>
+                    <label>
+                        Name
+                        <input
+                            type='text'
+                            name='name'
+                            value={newCourse.name}
+                            onChange={handleChange}
+                        />
+                    </label>
+                    <label>
+                        Price
+                        <input
+                            type='number'
+                            name='price'
+                            value={newCourse.price}
+                            onChange={handleChange}
+                        />
+                    </label>
+                    <label>
+                        Topic
+                        <input
+                            name='topic'
+                            value={newCourse.topic}
+                            onChange={handleChange}
+                        />
+                    </label>
+                    <label>
+                        Category
+                        <select
+                            name='category'
+                            value={newCourse.category}
+                            onChange={handleChange}
+                        >
+                            <option value=''>Select category</option>
+                            <option value='Big Data'>Big Data</option>
+                            <option value='Cloud Computing'>Cloud Computing</option>
+                            <option value='Cybersecurity'>Cybersecurity</option>
+                            <option value='Data Science'>Data Science</option>
+                            <option value='Design'>Design</option>
+                            <option value='DevOps'>DevOps</option>
+                            <option value='Electronics'>Electronics</option>
+                            <option value='Game Development'>Game Development</option>
+                            <option value='Internet of Things'>Internet of Things</option>
+                            <option value='Mobile App Development'>Mobile App Development</option>
+                            <option value='Programming Languages'>Programming Languages</option>
+                            <option value='Quality Assurance'>Quality Assurance</option>
+                            <option value='Software Engineering'>Software Engineering</option>
+                            <option value='Web Development'>Web Development</option>
+                        </select>
+                    </label>
+                    <label>
+                        Difficulty
+                        <select
+                            name='difficulty'
+                            value={newCourse.difficulty}
+                            onChange={handleChange}
+
+                        >
+                            <option value=''>Select difficulty</option>
+                            <option value='Beginner'>Beginner</option>
+                            <option value='Intermediate'>Intermediate</option>
+                            <option value='Advanced'>Advanced</option>
+                            <option value='Expert'>Expert</option>
+                            <option value='All Levels'>All Levels</option>
+                        </select>
+                    </label>
+                    <label>
+                        Tags
+                        <input
+                            type='text'
+                            name='tags'
+                            value={newCourse.tags}
+                            onChange={handleChange}
+                            placeholder='tag1,tag2'
+                        />
+                    </label>
+                    <label>
+                        Description
+                        <input
+                            type='text'
+                            name='description'
+                            value={newCourse.description}
+                            onChange={handleChange}
+                        />
+                    </label>
+
+                    <label>
+                        Video Title
+                        <input
+                            type='text'
+                            name='videoTitle'
+                            value={newCourse.videoTitle}
+                            onChange={handleChange}
+                        />
+                    </label>
+
+                    <label>
+                        Video Link
+                        <input
+                            type='text'
+                            name='videoURL'
+                            value={newCourse.videoURL}
+                            onChange={handleChange}
+                        />
+                    </label>
+
+                    <button type='submit'>
+                        <i className='fa fa-plus-circle' aria-hidden='true'></i>Add Course
+                    </button>
                 </form>
             </form>
         </div>

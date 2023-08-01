@@ -1,6 +1,6 @@
 import { Route, Routes, useLocation } from 'react-router-dom'
 import { LandingPage } from './pages/LandingPage/LandingPage'
-import { AddCoursePage } from './pages/AddCoursePage'
+import { AddCoursePage } from './pages/AddCoursePage/AddCoursePage'
 import { AllUsersPage } from './pages/AllUsersPage'
 import { Auth } from './pages/Auth/Auth'
 import { HomePage } from './pages/HomePage/HomePage'
