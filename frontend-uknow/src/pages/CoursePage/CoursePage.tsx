@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { StarRating } from '../../components/StarRating/StarRating'
 import DemoImg from '../../assets/demoImg.jpeg'
 import styles from './CoursePage.module.css'
-import { PlayFill, Clock, BarChartFill } from 'react-bootstrap-icons'
+import { PlayFill, Clock, BarChartFill, Lock } from 'react-bootstrap-icons'
 import axios from 'axios'
 
 const CourseDetail = () => {
@@ -39,6 +39,7 @@ const CourseDetail = () => {
           userId: localStorage.getItem('id'),
           courseId: id
         })
+        //Estilos Message
         setMessage(<h4 className='text-success'>Course purchased!</h4>)
         return res
       } catch (error: any) {
@@ -55,7 +56,6 @@ const CourseDetail = () => {
     <>
       <div className={styles.courseContainer}>
         <section className={styles.courseHeader}>
-          {message}
           <img src={DemoImg} alt={courseDetails.name} className={styles.courseImg} />
           <hr />
           <h2>{courseDetails.name}</h2>
@@ -69,34 +69,52 @@ const CourseDetail = () => {
             </div>
             <div className={styles.courseCategory}>{courseDetails.category}</div>
           </div>
-          <div className={styles.buyButton} onClick={handleBuyCourse}>
-            <p className={styles.priceCourse}>Buy for {courseDetails.price}$</p>
-          </div>
+          {message}
+          {/* Conditionally display the buy button or success message */}
+          {courseDetails.purchased
+            ? (
+              <div className={styles.buyButton}>
+                <p className={styles.priceCourse}>Course purchased!</p>
+              </div>
+              )
+            : (
+              <div className={styles.buyButton} onClick={handleBuyCourse}>
+                <p className={styles.priceCourse}>Buy for {courseDetails.price}$</p>
+              </div>
+              )}
           <hr />
-
           <p className={styles.courseDescription}>{courseDetails.description}</p>
         </section>
 
         <section className={styles.courseContent}>
+
           <h4 className={styles.courseContentTitle}>Course's content</h4>
           <p>{courseDetails.content}</p>
 
-          <a href={courseDetails.videoUrl} className={styles.videoLink}>
-            <div className={styles.videoBox}>
-              <div className={styles.squareButton}>
-                <button className={styles.circleButton}>
-                  <PlayFill className={styles.playIcon} />
-                </button>
+          {/* Show video link only if the course is purchased */}
+          {courseDetails.purchased ? (
+            <a href={courseDetails.videoUrl} className={styles.videoLink}>
+              <div className={styles.videoBox}>
+                <div className={styles.squareButton}>
+                  <button className={styles.circleButton}>
+                    <PlayFill className={styles.playIcon} />
+                  </button>
+                </div>
+                <div className={styles.videoInfo}>
+                  <h3 className={styles.videoTitle}>{courseDetails.videoTitle}What is Scala for Spark?</h3>
+                  <p className={styles.videoDuration}>
+                    <Clock className={styles.clockIcon} /> {courseDetails.videoDuration} 20 Minutes
+                  </p>
+                </div>
               </div>
-              <div className={styles.videoInfo}>
-                <h3 className={styles.videoTitle}>{courseDetails.videoTitle}What is Scala for Spark?</h3>
-                <p className={styles.videoDuration}>
-                  <Clock className={styles.clockIcon} /> {courseDetails.videoDuration} 20 Minutes
-                </p>
-              </div>
+            </a>
+          ) : (
+          /* If the course is NOT purchased, show only the video title */
+            <div className={styles.videoTitleUnbought}>
+              <Lock />
+              {courseDetails.videoTitle}What is Scala for Spark?
             </div>
-          </a>
-
+          )}
         </section>
       </div>
     </>
