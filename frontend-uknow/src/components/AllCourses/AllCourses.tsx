@@ -5,29 +5,36 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Dropdown } from '../Dropdown/Dropdown'
 import { useSearchContext } from '../../SearchContext'
+import { SearchBar } from '../SearchBar'
 
 export const AllCourses = () => {
-  const [course, setCourse] = useState<any[]>([])
-  const { searchKeywords } = useSearchContext()
+  const [courses, setCourses] = useState<any[]>([])
+  const [searchKeywords, setSearchKeywords] = useState('')
 
   useEffect(() => {
-    const fetchCourse = async () => {
+    const fetchCourses = async () => {
       try {
         const response = await fetch('http://localhost:3000/api/courses')
         const data = await response.json()
-        setCourse(data.data)
+        setCourses(data.data)
       } catch (error) {
-        console.log('No se encuentra ese curso por su:', error)
+        console.log('Error fetching courses:', error)
       }
     }
-    fetchCourse()
+    fetchCourses()
   }, [])
 
-  const filteredCourses = course.filter((course) =>
+  const filteredCourses = courses.filter((course) =>
     course.name.toLowerCase().includes(searchKeywords.toLowerCase())
   )
+
+  const handleSearch = (keywords: string) => {
+    setSearchKeywords(keywords)
+  }
+
   return (
     <Container className={styles.container}>
+      <SearchBar onSearch={handleSearch} />
       <div className={styles.topBar}>
         <h4 className={styles.sectionTitle}>All courses</h4>
 
