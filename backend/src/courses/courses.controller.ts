@@ -30,10 +30,11 @@ export class CoursesController {
   	return this.coursesService.findCreatedCourses(userId);
   }
 
-  @Get('average')
-  findAllSortedByAverage() {
-  	return this.coursesService.findAllSortedByAverage();
-  }
+  // @Get('average')
+  // findAllSortedByAverage() {
+  // 	return this.coursesService.findAllSortedByAverage();
+  // }
+  
   @Get('order-courses-price')
   findAllSortedByPriceDesc() {
   	return this.coursesService.findAllSortedByPriceDesc();
@@ -70,11 +71,11 @@ export class CoursesController {
   	return this.coursesService.findAll();
   }
 
-  @Get('bought-courses/:userid')
-  // @UseGuards(AuthGuard)
-  findBoughtCourses(@Param('userid') userId: ObjectId) {
-  	return this.coursesService.findBoughtCourses(userId);
-  }
+  // @Get('bought-courses/:userid')
+  // // @UseGuards(AuthGuard)
+  // findBoughtCourses(@Param('userid') userId: ObjectId) {
+  // 	return this.coursesService.findBoughtCourses(userId);
+  // }
 
   @Get('search')
   search(@Query() query) {
