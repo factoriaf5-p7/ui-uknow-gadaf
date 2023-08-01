@@ -1,9 +1,14 @@
-import { BellFill, Search } from 'react-bootstrap-icons'
 import LogoText from '../../assets/LogoText.svg'
 import Nav from 'react-bootstrap/Nav'
 import styles from './Header.module.css'
+import React from 'react'
+import { SearchBar } from '../SearchBar'
 
-export const Header = () => {
+interface HeaderProps {
+  onSearch: (keywords: string) => void;
+}
+
+export const Header: React.FC<HeaderProps> = ({ onSearch }) => {
   return (
     <Nav defaultActiveKey='/home' as='ul' className={styles.navContainer}>
       <div>
@@ -14,16 +19,7 @@ export const Header = () => {
         </Nav.Item>
       </div>
       <div className={styles.iconsContainer}>
-        <Nav.Item as='li'>
-          <Nav.Link href='/searchbykeyword'>
-            <Search className={styles.icon} />
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item as='li'>
-          <Nav.Link href='/notifications'>
-            <BellFill className={styles.icon} />
-          </Nav.Link>
-        </Nav.Item>
+        <SearchBar onSearch={onSearch} />
       </div>
     </Nav>
   )
