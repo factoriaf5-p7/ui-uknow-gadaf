@@ -40,9 +40,24 @@ export class CreateCourseDto {
 
 	@ApiProperty({ example: 'img.png', default: 'https://images.vexels.com/media/users/3/224169/isolated/preview/dbfe1f493ad01117fa4ec5ba10150e4d-computer-programming-logo.png' })
 		image: string;
-	
-	@ApiProperty({ example: '### How to validate dtos properties<br>## Class-validator<br>To validate install the package as follow: nmp i class-validator.' })
+
+	@ApiProperty({ example: 'This course will immerse you in the fascinating realm of cybersecurity, offering a practical and detailed approach to securing your data and valuable information.' })
 	@IsString()
 	@IsNotEmpty()
-		content: string;
+		description: string;
+
+	@ApiProperty({ example: 'https://www.youtube.com/watch?v=SqcY0GlETPk' })
+	@IsString()
+	@IsNotEmpty()
+		videoURL: string;
+	
+	@ApiProperty({ example: 'What is Scala for Spark?' })
+	@IsString()
+	@IsNotEmpty()
+		videoTitle: string;
+
+	@ApiProperty({ example: '20' })
+	@IsString()
+	@IsNotEmpty()
+		videoDuration: number;
 }

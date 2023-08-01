@@ -26,8 +26,20 @@ export class UpdateCourseDto {
 	@ArrayMaxSize(3)
 		tags: [string, string, string];
 
-	@ApiProperty({ example: '### New course name' })
+	@ApiProperty({ example: 'This course will immerse you in the fascinating realm of cybersecurity, offering a practical and detailed approach to securing your data and valuable information.' })
 	@IsNotEmpty()
-		content: string;
+		description: string;
+	
+	@ApiProperty({ example: 'https://www.youtube.com/watch?v=SqcY0GlETPk' })
+	@IsNotEmpty()
+		videoURL: string;
+	
+	@ApiProperty({ example: 'What is Scala for Spark?' })
+	@IsNotEmpty()
+		videoTitle: string;
+
+	@ApiProperty({ example: '20' })
+	@IsNotEmpty()
+		videoDuration: number;
 	
 }
