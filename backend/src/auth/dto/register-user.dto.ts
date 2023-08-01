@@ -1,5 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsEmail,IsString, IsNotEmpty } from 'class-validator';
+import { IsTrue } from './is-true.validator';
 
 export class RegisterUserDto {
 	@ApiProperty({ example: 'Jhon' })
@@ -20,4 +21,10 @@ export class RegisterUserDto {
 	@ApiProperty({ example: '12345' })
 	@IsNotEmpty()
 		password: string;
+	
+		@ApiProperty({ example: true })
+		@IsNotEmpty()
+		@IsTrue({ message: 'Please read and accept our Terms of service and Privacy policy.' })
+			checkbox: boolean;
 }
+

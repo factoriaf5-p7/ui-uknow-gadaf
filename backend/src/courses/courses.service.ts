@@ -269,7 +269,7 @@ export class CoursesService {
 			 //console.log(entries);
 			 entries.forEach((course) => {
 				console.log(course);
-			 	boughtCourses.push({ _id: course[1]._id, name: course[1].name, image: course[1].image, rating: course[1].rating, price: course[1] .price });
+				boughtCourses.push({ _id: course[1]._id, name: course[1].name, image: course[1].image, rating: course[1].rating, price: course[1] .price });
 			 });
 			 console.log(boughtCourses);
 			 return {
@@ -291,37 +291,48 @@ export class CoursesService {
 		);
 	}
 
-	async search(filters: string, keywords: string) {
+	// async search(filters: string, keywords: string) {
+	// 	try {
+	// 		  const arrFilters = filters.split(',');
+	// 		  const query: any = {};
+		  
+	// 		  for await (const filter of arrFilters) {
+	// 			if (filter !== 'price') {
+	// 			  query[filter] = new RegExp(keywords, 'i');
+	// 			} else if (!isNaN(+keywords)) {
+	// 			  query[filter] = +keywords;
+	// 			}
+	// 		  }
+		  
+	// 		  const allCourses = await this.courseModel.find(query).select('_id name');
+	// 		  const hash = {};
+	// 		  const filteredCourses = allCourses.filter((course) => {
+	// 			return hash[course._id] ? false : (hash[course._id] = true);
+	// 		  });
+		  
+	// 		  return filteredCourses;
+	// 	} catch (error) {
+	// 		  console.log('Error searching courses:', error);
+	// 		  throw error; // or return an error message
+	// 	}
+	// 	  }
+	async search(keywords: string) {
 		try {
-			let allCourses = [];
-			let regex;
-			const arrFilters = filters.split(',');
-
-			for await (const filter of arrFilters) {
-				if (filter !== 'price'){
-					regex = new RegExp(keywords, 'i');
-				} else if(!isNaN(+keywords)) {
-					regex = +keywords;
-				}
-				allCourses.push(...await this.courseModel.find({ [filter] : regex }).select('_id name'));
-			}
-
-			allCourses = allCourses.flat(Infinity);
-
-			const hash = {};
-			const filteredCourses = allCourses.filter((course) => {
-				return hash[course._id] ? false : (hash[course._id] = true);
-			});
-
-			return {
-				message: 'Retrieved filtered courses successfully',
-				status: HttpStatus.OK,
-				data: filteredCourses,
-			};
+		  const allCourses = await this.courseModel.find({
+				name: { $regex: new RegExp(keywords, 'i') },
+		  }).select('_id name');
+	  
+		  const  hash: Record<string, boolean> = {};
+		  const filteredCourses = allCourses.filter((course) => {
+				const courseIdString = course._id.toString(); 
+				return hash[courseIdString] ? false : (hash[courseIdString] = true);
+		  });
+	  
+		  return filteredCourses;
 		} catch (error) {
-			throw error;
+		  throw new Error('Error searching for courses: ' + error);
 		}
-	}
+	  }
 
 	async findOne(id: ObjectId) {
 		try {

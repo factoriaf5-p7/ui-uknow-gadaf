@@ -2,7 +2,9 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { ApiProperty } from '@nestjs/swagger';
-import { ObjectId } from 'mongoose';
+import { Document } from 'mongoose';
+
+export type CoursesDocument = Course & Document;
 
 @Schema({ timestamps: true })
 export class Course {
@@ -47,10 +49,10 @@ export class Course {
   	bought: boolean;
 
   @ApiProperty({ example: 'https://www.youtube.com/watch?v=SqcY0GlETPk' })
-    videoURL: string;
+  	videoURL: string;
       
   @ApiProperty({ example: 'What is Scala for Spark?' })
-   videoTitle: string;
+  	videoTitle: string;
 }
 
 export const CourseSchema = SchemaFactory.createForClass(Course);

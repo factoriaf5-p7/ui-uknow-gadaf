@@ -53,7 +53,7 @@ export const Profile = () => {
         <section className={styles.userInfo}>
           <p>{profile.email}</p>
           <p>{profile.profile} : {profile._id}</p>
-          <h6 className={styles.chip}><Coin />  {profile.wallet_balance}</h6>
+          <h6 className={styles.chip}><Coin className={styles.coin} />  {profile.wallet_balance}</h6>
         </section>
         <div className={styles.courses}>
           <section className={styles.createdCourses}> <CreatedCourses /></section>

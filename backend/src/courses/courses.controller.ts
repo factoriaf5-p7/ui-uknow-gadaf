@@ -77,9 +77,14 @@ export class CoursesController {
   // 	return this.coursesService.findBoughtCourses(userId);
   // }
 
+  // @Get('search')
+  // search(@Query('filters') filters: string, @Query('keywords') keywords: string) {
+  // 	return this.coursesService.search(filters, keywords);
+  // }
+
   @Get('search')
-  search(@Query() query) {
-  	return this.coursesService.search(query.filters, query.keywords);
+  async search(@Query() query) {
+  	return this.coursesService.search(query.keywords);
   }
 
   @Get('search/admin')

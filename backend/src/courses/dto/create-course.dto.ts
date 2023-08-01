@@ -54,6 +54,4 @@ export class CreateCourseDto {
 	@IsString()
 	@IsNotEmpty()
 		videoTitle: string;
-
-	
 }

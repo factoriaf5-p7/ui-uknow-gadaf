@@ -41,7 +41,7 @@ export class UsersController {
 		return this.usersService.getProfile(request['user']);
   	}
 
-	  @UseGuards(AuthGuard)
+	@UseGuards(AuthGuard)
 	@Get('created-courses')
   	getCreatedCourses(@Req() request: Request) {
 	  	return this.usersService.getCreatedCourses(request['user']);
