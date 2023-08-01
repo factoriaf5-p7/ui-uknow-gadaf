@@ -42,9 +42,7 @@ export const MyCourses = () => {
 
     return (
         <Container>
-            <CreatedCourses>
-                
-            </CreatedCourses>
+            <CreatedCourses />
         </Container>
     )
 }
