@@ -267,7 +267,7 @@ export class CoursesService {
 
 			const entries = Object.entries(data.created_courses);
 			entries.forEach((course) => {
-				createdCourses.push({ _id: course[1]._id, name: course[1].name, image: course[1].image, rating: course[1].rating, price: course[1] .price});
+				createdCourses.push({ _id: course[1]._id, name: course[1].name, image: course[1].image, rating: course[1].rating, price: course[1] .price });
 			});
 
 			return {

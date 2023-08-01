@@ -47,10 +47,10 @@ export class Course {
   	bought: boolean;
 
   @ApiProperty({ example: 'https://www.youtube.com/watch?v=SqcY0GlETPk' })
-    videoURL: string;
+  	videoURL: string;
       
   @ApiProperty({ example: 'What is Scala for Spark?' })
-   videoTitle: string;
+  	videoTitle: string;
 }
 
 export const CourseSchema = SchemaFactory.createForClass(Course);
