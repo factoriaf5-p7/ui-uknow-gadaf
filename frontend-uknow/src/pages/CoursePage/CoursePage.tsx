@@ -38,12 +38,12 @@ const CourseDetail = () => {
 
   return (
     <>
-      <Container className={styles.courseContainer}>
-        <section>
+      <div className={styles.courseContainer}>
+        <section className={styles.courseHeader}>
           <img src={DemoImg} alt={courseDetails.name} className={styles.courseImg} />
           <hr />
           <h2>{courseDetails.name}</h2>
-          <div className={styles.ratingDifficulty}>
+          <div className={styles.courseSpecs}>
             <div className={styles.rating}>
               <StarRating stars={courseDetails.rating} /> {courseDetails.rating}
             </div>
@@ -51,15 +51,14 @@ const CourseDetail = () => {
               <BarChartFill />
               {courseDetails.difficulty}
             </div>
-
+            <div className={styles.courseCategory}>{courseDetails.category}</div>
           </div>
           <div className={styles.buyButton} onClick={handleBuyCourse}>
             <p className={styles.priceCourse}>Buy for {courseDetails.price}$</p>
           </div>
           <hr />
 
-          <p className={styles.courseDescription}>{courseDetails.courseDescription}</p>
-          <p>{courseDetails.category}</p>
+          <p className={styles.courseDescription}>{courseDetails.description}</p>
         </section>
 
         <section className={styles.courseContent}>
@@ -74,7 +73,7 @@ const CourseDetail = () => {
                 </button>
               </div>
               <div className={styles.videoInfo}>
-                <h3 className={styles.videoTitle}>What is Scala for Spark?</h3>
+                <h3 className={styles.videoTitle}>{courseDetails.videoTitle}What is Scala for Spark?</h3>
                 <p className={styles.videoDuration}>
                   <Clock className={styles.clockIcon} /> {courseDetails.videoDuration} 20 Minutes
                 </p>
@@ -83,7 +82,7 @@ const CourseDetail = () => {
           </a>
 
         </section>
-      </Container>
+      </div>
     </>
   )
 }

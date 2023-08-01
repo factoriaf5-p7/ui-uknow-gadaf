@@ -2,10 +2,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: left;
     flex-direction: column;
     margin: 1.5rem;
     width: auto;
+    padding-bottom: 4rem !important;
 }
 
 .courseImg {
@@ -14,7 +14,7 @@
     border-radius: 20px;
 }
 
-.ratingDifficulty {
+.courseSpecs {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     display: flex;
@@ -39,6 +39,30 @@
     background-color: #f6f6f6;  
     box-shadow: 0 2px 4px rgba(220, 220, 220, 0.2);
 }
+
+.courseCategory {
+    height: 25px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px !important;
+    cursor: pointer;
+    outline: none;
+      background-image: 
+    radial-gradient(circle at 100% 0, #f0f2e4, transparent),
+    radial-gradient(circle at 0 100%, #eaf4c2, transparent),
+    radial-gradient(circle at 100% 100%, #E3DB8A, transparent),
+    radial-gradient(circle at 50% 50%, transparent, rgb(0, 166, 255)) !important;
+    border-style: none !important;
+    color: #222222 !important;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.courseCategory:hover {
+    background-color: rgb(255, 255, 255) !important;;
+    border: 1px solid #AED581 !important;
+  }
 
 hr {
     color: transparent;
@@ -148,7 +172,6 @@ h3 {
     background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
   }
-  
 
 .playIcon {
     color: white;
@@ -162,4 +185,50 @@ h3 {
     display: flex;
     align-items: center;
     gap: 0.3rem;
+}
+
+@media (min-width: 600px) {
+    .courseContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90vw;
+        padding-bottom: 0;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .courseHeader {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .courseContent {
+        text-align: left;
+    }
+
+    .courseImg {
+        width: 40vw;
+    }
+
+    .courseSpecs {
+        justify-content: center;
+        gap: 2rem;
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .buyButton {
+         width: 150px;
+         height: 35px;
+    }
+
+    .priceCourse {
+        font-size: 18px;
+    }
+
+    .videoBox {
+        width: 55vw;
+    }
 }
