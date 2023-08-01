@@ -20,7 +20,7 @@ export class CoursesController {
 
   @Post('create/:userid')
   // @UseGuards(AuthGuard)
-	create(@Param('userid') userId: ObjectId, @Body() createCourseDto: CreateCourseDto) {
+	create(@Param('userid') userId: ObjectId | string, @Body() createCourseDto: CreateCourseDto) {
 		return this.coursesService.create(userId, createCourseDto);
 	}
 
