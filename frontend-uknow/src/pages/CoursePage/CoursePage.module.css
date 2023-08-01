@@ -4,7 +4,7 @@
     align-items: center;
     flex-direction: column;
     margin: 1.5rem;
-    width: auto;
+    width: 90vw;
     padding-bottom: 4rem !important;
 }
 
@@ -19,7 +19,6 @@
     margin-bottom: 0.5rem;
     display: flex;
     justify-content: space-between;
-    width: 80vw;
 }
 
 .rating {
@@ -100,6 +99,14 @@ h2 {
     color: white;
 }
 
+.courseContent {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
 .courseContentTitle {
     text-align: left;   
     padding-bottom: 0.4rem;
@@ -131,13 +138,6 @@ h2 {
     box-shadow: 0 2px 4px rgba(220, 220, 220, 0.2);
 }
 
-.videoBox {
-    width: 300px;
-    height: 80px;
-    justify-content: flex-start;
-    padding-left: 1rem;
-}
-
 .videoInfo {
     display: flex;
     flex-direction: column;
@@ -146,8 +146,8 @@ h2 {
 
 h3 {
     color: rgb(106, 106, 106);
-    font-size: 16px    ;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .squareButton {
@@ -187,25 +187,22 @@ h3 {
     gap: 0.3rem;
 }
 
+.videoTitleUnbought {
+    color: rgb(163, 163, 163);
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem
+}
+
 @media (min-width: 600px) {
     .courseContainer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 90vw;
+        border: 1px solid blue;
         padding-bottom: 0;
-        text-align: center;
         gap: 0.5rem;
-    }
-
-    .courseHeader {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    .courseContent {
-        text-align: left;
+        width: 80vw;
     }
 
     .courseImg {
@@ -213,9 +210,10 @@ h3 {
     }
 
     .courseSpecs {
-        justify-content: center;
+        justify-content: flex-start;
         gap: 2rem;
         align-items: center;
+        margin-top: 1rem;
         margin-bottom: 1.5rem;
     }
 
@@ -226,6 +224,15 @@ h3 {
 
     .priceCourse {
         font-size: 18px;
+    }
+
+    .courseContent {
+        width: 40vw;
+        border: 1px solid blue;
+    }
+    
+    .videoTitleUnbought {
+        justify-content: flex-start;
     }
 
     .videoBox {
