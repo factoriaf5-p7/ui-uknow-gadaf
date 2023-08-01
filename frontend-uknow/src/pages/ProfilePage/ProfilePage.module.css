@@ -1,7 +1,8 @@
 .user {
     padding: 20px;
 }
-section {
+
+  .userInfo {
     width:100%;
     padding:20px;
     margin: 10px;
@@ -17,6 +18,18 @@ section {
       radial-gradient(circle at 10% 10%, transparent, rgb(187, 220, 237));
       box-shadow: 0 2px 4px rgba(220, 220, 220, 0.2);
 }
+
+.createdCourses {
+    width:100%;
+    padding:20px;
+    margin: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #e2e2e2;
+    box-shadow: #e2e2e2;
+    border-radius: 15px;
+    gap: 1rem;
+}
+
 .intro {
     display: flex;
     flex-direction: column;
