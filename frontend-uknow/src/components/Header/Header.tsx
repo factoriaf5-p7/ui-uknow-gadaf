@@ -2,7 +2,7 @@ import LogoText from '../../assets/LogoText.svg'
 import Nav from 'react-bootstrap/Nav'
 import styles from './Header.module.css'
 import React from 'react'
-import { SearchBar } from '../SearchBar'
+import { SearchBar } from '../SearchBar/SearchBar'
 
 interface HeaderProps {
   onSearch: (keywords: string) => void;
