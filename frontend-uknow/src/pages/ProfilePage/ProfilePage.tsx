@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap'
 import styles from './ProfilePage.module.css'
 import { Coin } from 'react-bootstrap-icons'
 import { CreatedCourses } from '../../components/CreatedCourses/CreatedCourses'
+import { BoughtCourses } from '../../components/BoughtCourses/BoughtCourses'
 
 export const Profile = () => {
   const [profile, setProfile] = useState({
@@ -45,16 +46,19 @@ export const Profile = () => {
   return (
     <Container>
       <div className={styles.intro}>
-        <div><img src='https://xsgames.co/randomusers/avatar.php?g=female' className={styles.img}/></div>
+        <div><img src='https://xsgames.co/randomusers/avatar.php?g=female' className={styles.img} /></div>
         <h1>Welcome  {profile.name} {profile.last_name}</h1>
       </div>
       <div className={styles.user}>
         <section className={styles.userInfo}>
-          <h4>{profile.email}</h4>
+          <p>{profile.email}</p>
           <p>{profile.profile} : {profile._id}</p>
           <h6 className={styles.chip}><Coin />  {profile.wallet_balance}</h6>
         </section>
-        <section className={styles.createdCourses}> <CreatedCourses /></section>
+        <div className={styles.courses}>
+          <section className={styles.createdCourses}> <CreatedCourses /></section>
+          <section className={styles.createdCourses}> <BoughtCourses /></section>
+        </div>
       </div>
     </Container>
   )

@@ -128,29 +128,6 @@ export class CoursesService {
 		}
 	}
 
-	// async findBoughtCourses(id: ObjectId) {
-	// 	try {
-	// 		const { data } = await this.userService.findOneWithBoughtCourses(id);
-	
-	// 		const boughtCourses = [];
-
-	// 		const entries = Object.entries(data.bought_courses);
-	// 		console.log(entries);
-
-	// 		entries.forEach(course=> { 
-	// 			boughtCourses.push({ _id: course[1].course_id['_id'] ,name: course[1].course_id.name });
-	// 		});
-
-	// 		return {
-	// 			message: 'Retrieved all courses purchased by user successfully',
-	// 			status: HttpStatus.OK,
-	// 			data: boughtCourses
-	// 		};
-	// 	} catch (error) {
-	// 		throw error;
-	// 	}
-	// }
-
 	async addRating(userId: ObjectId, ratedCourse: RatedCourseDto) {
 		try {
 			const { data } = await this.userService.addRating(
@@ -266,8 +243,10 @@ export class CoursesService {
 			const createdCourses = [];
 
 			const entries = Object.entries(data.created_courses);
+			//console.log(entries);
 			entries.forEach((course) => {
-				createdCourses.push({ _id: course[1]._id, name: course[1].name, image: course[1].image, rating: course[1].rating, price: course[1] .price});
+				console.log(course);
+				createdCourses.push({ _id: course[1]._id, name: course[1].name, image: course[1].image, rating: course[1].rating, price: course[1] .price });
 			});
 
 			return {
@@ -275,6 +254,30 @@ export class CoursesService {
 				status: HttpStatus.OK,
 				data: createdCourses,
 			};
+		}catch(error) {
+			throw error;
+		}
+	}
+	
+	async findBoughtCourses(userId: ObjectId) {
+		try{
+			const { data } =
+			await this.userService.findOneWithBoughtCourses(userId);
+			const boughtCourses = [];
+
+			 const entries = Object.entries(data.bought_courses);
+			 //console.log(entries);
+			 entries.forEach((course) => {
+				console.log(course);
+			 	boughtCourses.push({ _id: course[1]._id, name: course[1].name, image: course[1].image, rating: course[1].rating, price: course[1] .price });
+			 });
+			 console.log(boughtCourses);
+			 return {
+			 	message: 'Retrieved all bought courses successfully',
+			 	status: HttpStatus.OK,
+			 	data: boughtCourses,
+			 };
+			
 		}catch(error) {
 			throw error;
 		}

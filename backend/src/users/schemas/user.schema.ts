@@ -31,6 +31,11 @@ export class User {
   @ApiProperty({ example: [ 'Bought Course 1', 'Bought Course 2' ] })
   @Prop()
   	bought_courses: {
+	_id: any;
+	name: any;
+	image: any;
+	rating: any;
+	price: any;
     course_id: []
   }[];
 
