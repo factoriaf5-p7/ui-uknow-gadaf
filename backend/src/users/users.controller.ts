@@ -36,11 +36,17 @@ export class UsersController {
 		return this.usersService.getProfile(request['user']);
   	}
 
-  	@Get(':id')
-	  // @UseGuards(AuthGuard) //admin
-  	findOne(@Param('id') id: ObjectId) {
-  		return this.usersService.findOne(id);
+	  @UseGuards(AuthGuard)
+	@Get('created-courses')
+  	getCreatedCourses(@Req() request: Request) {
+	  	return this.usersService.getCreatedCourses(request['user']);
   	}
+
+  	// @Get(':id')
+	  //     // @UseGuards(AuthGuard) //admin
+  	// findOne(@Param('id') id: ObjectId) {
+  	// 	return this.usersService.findOne(id);
+  	// }
 
 	  // @UseGuards(AuthGuard) //admin
 	// @UseGuards(JwtAuthGuard)

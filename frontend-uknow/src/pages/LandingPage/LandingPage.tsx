@@ -8,7 +8,7 @@ export const LandingPage = () => {
   return (
     <div className={`${styles.container} d-flex flex-column justify-content-center align-items-center`} style={{ gap: 100 }}>
       <div>
-        <img src={Logo} alt='logo' style={{ width: '150px', height: '150px' }} />
+        <img src={Logo} alt='logo' className={styles.logo} />
       </div>
       <div className='border border-dark p-2'>
         <p>Sign up and get 1000 knowlitos to get you started</p>

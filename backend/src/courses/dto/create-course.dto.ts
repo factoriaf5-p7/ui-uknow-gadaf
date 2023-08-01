@@ -1,17 +1,16 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { ArrayMaxSize, IsArray, IsNotEmpty, IsString, IsEnum, IsNumber } from 'class-validator';
-
-enum Difficulty {
-	Begginer = 'Begginer',
-	Medium = 'Medium',
-	Advanced = 'Advanced'
-}
+import { IsNotEmpty, IsString } from 'class-validator';
+import { ObjectId } from 'mongoose';
 
 export class CreateCourseDto {
 	@ApiProperty({ example: 'How to validate dtos properties' })
 	@IsString()
 	@IsNotEmpty()
 		name: string;
+	
+	@ApiProperty({ example: '423un4v89423' })
+	@IsString()
+		userId: ObjectId;
 
 	@ApiProperty({ example: 'How to validate dtos properties' })
 	@IsString()

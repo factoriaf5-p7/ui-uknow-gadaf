@@ -1,0 +1,82 @@
+.courseContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    flex-direction: column;
+    margin: 1.5rem;
+    width: auto;
+}
+
+.courseImg {
+    width: 80vw;
+    height: auto;
+    border-radius: 20px;
+    
+}
+
+.ratingLevel {
+    margin-top: 0.5rem;
+display: flex;
+justify-content: flex-start;
+gap: 1rem;
+width: 80vw;
+
+}
+
+.priceButton {
+    margin-top: 0.5rem;
+display: flex;
+justify-content: space-between;
+gap: 3rem;
+width: 80vw;
+
+
+}
+
+hr {
+    color: transparent;
+    margin: 10px;
+}
+
+h2 {
+    font-weight: 700;
+}
+
+.courseDescription {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.buyButton {
+    width: fit-content;
+    height: 35px;
+  padding: 0 26px;
+  border: none;
+  border-radius: 20px !important;
+  cursor: pointer;
+  outline: none;
+  background-color: #92A65F !important;  
+  box-shadow: 0 2px 4px rgba(220, 220, 220, 0.2);
+color: white;
+text-transform: uppercase ;
+font-weight: 00;
+  border-style: none !important;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.8px;
+}
+
+.courseContentTitle {
+    text-align: left;   
+  padding-bottom: 0.7rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #efefef;
+}
+
+.priceCourse {
+    font-weight: 600;
+    font-size: 18px;
+}
+

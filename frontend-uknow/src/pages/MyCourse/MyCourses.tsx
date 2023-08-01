@@ -41,7 +41,7 @@ export const Profile = () => {
 
     return (
         <Container>
-            <h4>Profile</h4>
+            <h4>My Courses</h4>
             <h6>{profile.name}</h6>
             <p>{profile._id}</p>
         </Container>

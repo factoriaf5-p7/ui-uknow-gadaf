@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap'
-import { useSearchParams } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { AllCoursesCard } from '../AllCourses/AllCoursesCard'
 
 export const FilterByTopic = () => {
@@ -35,9 +35,11 @@ export const FilterByTopic = () => {
       </div>
 
       <div className='d-flex flex-wrap justify-content-center mt-4' style={{ display: 'inline-block', gap: 10 }}>
-        {filteredTopic.map((topic, i) => (
+        {filteredTopic.map((course, i) => (
           <div key={i}>
-            <AllCoursesCard image={topic.image} rating={topic.rating} title={topic.name} price={topic.price} />
+            <Link to={`/course/${course._id}`}>
+              <AllCoursesCard image={course.image} rating={course.rating} title={course.name} price={course.price} />
+            </Link>
           </div>
         ))}
       </div>
