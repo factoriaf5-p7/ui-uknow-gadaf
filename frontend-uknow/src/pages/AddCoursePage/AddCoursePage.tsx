@@ -112,7 +112,7 @@ export const AddCoursePage = () => {
                     />
                 </label>
                 <label>
-                    Upload image
+                    Upload img
                     <input
                         type='text'
                         name='image'
