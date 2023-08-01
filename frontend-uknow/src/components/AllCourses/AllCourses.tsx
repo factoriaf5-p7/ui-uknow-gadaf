@@ -4,9 +4,11 @@ import styles from './AllCourses.module.css'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Dropdown } from '../Dropdown/Dropdown'
+import { useSearchContext } from '../../SearchContext'
 
 export const AllCourses = () => {
   const [course, setCourse] = useState<any[]>([])
+  const { searchKeywords } = useSearchContext()
 
   useEffect(() => {
     const fetchCourse = async () => {
@@ -21,6 +23,9 @@ export const AllCourses = () => {
     fetchCourse()
   }, [])
 
+  const filteredCourses = course.filter((course) =>
+    course.name.toLowerCase().includes(searchKeywords.toLowerCase())
+  )
   return (
     <Container className={styles.container}>
       <div className={styles.topBar}>
@@ -31,7 +36,7 @@ export const AllCourses = () => {
       </div>
 
       <div className='d-flex flex-wrap justify-content-center' style={{ display: 'inline-block', gap: 10 }}>
-        {course.map((course, i) => (
+        {filteredCourses.map((course, i) => (
           <div key={i}>
             <Link to={`/course/${course._id}`}>
               <AllCoursesCard

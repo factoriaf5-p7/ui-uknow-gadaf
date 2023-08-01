@@ -13,15 +13,18 @@ import { Footer } from './components/Footer/Footer'
 import { FilterByCategory } from './components/FilterByCategory/FilterByCategory'
 import { FilterByTopic } from './components/FilterByTopic/FilterByTopic'
 import CoursePage from './pages/CoursePage/CoursePage'
+import { SearchContextProvider } from './SearchContext'
 
 function Layout ({ children }:any) {
   return (
     <>
-      <Header />
-      <NavbarDesk />
-      {children}
-      <NavbarBottom />
-      <Footer />
+      <SearchContextProvider>
+        <Header />
+        <NavbarDesk />
+        {children}
+        <NavbarBottom />
+        <Footer />
+      </SearchContextProvider>
     </>
   )
 }
