@@ -1,13 +1,8 @@
 import LogoText from '../../assets/LogoText.svg'
 import Nav from 'react-bootstrap/Nav'
 import styles from './Header.module.css'
-import React from 'react'
 
-interface HeaderProps {
-  onSearch: (keywords: string) => void;
-}
-
-export const Header: React.FC<HeaderProps> = () => {
+export const Header = () => {
   return (
     <Nav defaultActiveKey='/home' as='ul' className={styles.navContainer}>
       <div>

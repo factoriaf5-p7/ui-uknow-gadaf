@@ -14,18 +14,17 @@ import { FilterByCategory } from './components/FilterByCategory/FilterByCategory
 import { FilterByTopic } from './components/FilterByTopic/FilterByTopic'
 import CoursePage from './pages/CoursePage/CoursePage'
 import { MyCourses } from './pages/MyCourses/MyCourses'
-import { SearchContextProvider } from './SearchContext'
 
 function Layout ({ children }: any) {
   return (
     <>
-      <SearchContextProvider>
-        <Header />
-        <NavbarDesk />
-        {children}
-        <NavbarBottom />
-        <Footer />
-      </SearchContextProvider>
+
+      <Header />
+      <NavbarDesk />
+      {children}
+      <NavbarBottom />
+      <Footer />
+
     </>
   )
 }
