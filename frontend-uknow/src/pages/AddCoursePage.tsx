@@ -29,6 +29,7 @@ export const AddCoursePage = () => {
     const { name, value } = e.target
     setNewCourse((prevNewCourse) => ({
       ...prevNewCourse,
+      userId: localStorage.getItem('id'),
       [name]: value
     }))
   }
