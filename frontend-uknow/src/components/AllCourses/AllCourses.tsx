@@ -3,9 +3,7 @@ import { AllCoursesCard } from './AllCoursesCard'
 import styles from './AllCourses.module.css'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Dropdown } from '../Dropdown/Dropdown'
-import { useSearchContext } from '../../SearchContext'
-import { SearchBar } from '../SearchBar'
+import { SearchBar } from '../SearchBar/SearchBar'
 
 export const AllCourses = () => {
   const [courses, setCourses] = useState<any[]>([])
@@ -14,7 +12,7 @@ export const AllCourses = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/courses')
+        const response = await fetch('http://localhost:3000/api/courses/rating')
         const data = await response.json()
         setCourses(data.data)
       } catch (error) {
@@ -34,13 +32,10 @@ export const AllCourses = () => {
 
   return (
     <Container className={styles.container}>
-      <SearchBar onSearch={handleSearch} />
       <div className={styles.topBar}>
         <h4 className={styles.sectionTitle}>All courses</h4>
-
-        {/* <div className='dropdown'> */}
-        <Dropdown />
       </div>
+      <SearchBar onSearch={handleSearch} />
 
       <div className='d-flex flex-wrap justify-content-center' style={{ display: 'inline-block', gap: 10 }}>
         {filteredCourses.map((course, i) => (
