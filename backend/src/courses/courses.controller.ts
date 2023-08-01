@@ -92,6 +92,10 @@ export class CoursesController {
   findOne(@Param('id') id: ObjectId) {
   	return this.coursesService.findOne(id);
   }
+  @Get('created-courses/:id')
+  findCreatedCourses(@Param('id') userId: ObjectId) {
+  	return this.coursesService.findCreatedCourses(userId);
+  }
 
   @Patch('purchase')
   //@UseGuards(AuthGuard)
