@@ -55,8 +55,5 @@ export class CreateCourseDto {
 	@IsNotEmpty()
 		videoTitle: string;
 
-	@ApiProperty({ example: '20' })
-	@IsString()
-	@IsNotEmpty()
-		videoDuration: number;
+	
 }

@@ -51,9 +51,6 @@ export class Course {
       
   @ApiProperty({ example: 'What is Scala for Spark?' })
    videoTitle: string;
-    
-  @ApiProperty({ example: '20' })
-    videoDuration: number;
 }
 
 export const CourseSchema = SchemaFactory.createForClass(Course);

@@ -58,10 +58,6 @@ const CourseDetail = () => {
           {message}
           <img src={DemoImg} alt={courseDetails.name} className={styles.courseImg} />
           <hr />
-          <div className={styles.ratingLevel}>
-            <StarRating stars={courseDetails.rating} /> {courseDetails.rating}
-            <p>{courseDetails.difficulty}</p>
-          </div>
           <h2>{courseDetails.name}</h2>
           <div className={styles.courseSpecs}>
             <div className={styles.rating}>

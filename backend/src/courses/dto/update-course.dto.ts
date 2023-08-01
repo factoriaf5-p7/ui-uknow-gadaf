@@ -37,9 +37,5 @@ export class UpdateCourseDto {
 	@ApiProperty({ example: 'What is Scala for Spark?' })
 	@IsNotEmpty()
 		videoTitle: string;
-
-	@ApiProperty({ example: '20' })
-	@IsNotEmpty()
-		videoDuration: number;
 	
 }
