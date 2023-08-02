@@ -10,14 +10,14 @@ export type CoursesDocument = Course & Document;
 export class Course {
   @ApiProperty({ example: 'Introduction to Web Development' })
   @Prop({ required: true })
-  	name: string;
+  	title: string;
   
   @ApiProperty({ example: '32u4h91v23um4' })
   @Prop()
   	userId: string;
 
   @ApiProperty({ example: 59.99 })
-  @Prop({ required: true, default: 100 })
+  @Prop({ default: 100 })
   	price: number;
 
   @ApiProperty({ example: 'Web Development' })
@@ -25,7 +25,7 @@ export class Course {
   	topic: string;
 
   @ApiProperty({ example: 'image.png' })
-  @Prop({ default: 'https://images.vexels.com/media/users/3/224169/isolated/preview/dbfe1f493ad01117fa4ec5ba10150e4d-computer-programming-logo.png' })
+  @Prop({ required: true, default: 'https://images.vexels.com/media/users/3/224169/isolated/preview/dbfe1f493ad01117fa4ec5ba10150e4d-computer-programming-logo.png' })
   	image: string;
 
   @ApiProperty({ example: 'image.png' })
@@ -35,10 +35,6 @@ export class Course {
   @ApiProperty({ example: 'Beginner' })
   @Prop({ required: true })
   	difficulty: string;
-
-  @ApiProperty({ example: 'HTML, CSS, JavaScript' })
-  @Prop()
-  	tags: string;
 
     @ApiProperty({ example: 'This course will immerse you in the fascinating realm of cybersecurity, offering a practical and detailed approach to securing your data and valuable information.' })
   @Prop( { required: true })
