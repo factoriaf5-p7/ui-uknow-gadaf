@@ -6,7 +6,7 @@ export const ProfileActions = () => {
   return (
     <Container className={styles.container}>
       <h4>Actions</h4>
-      <div><button> Edit profile </button> <button>Be Happy</button></div>
+      <div><button className={styles.button}> Edit profile </button> <button className={styles.button}>Be Happy</button></div>
     </Container>
   )
 }

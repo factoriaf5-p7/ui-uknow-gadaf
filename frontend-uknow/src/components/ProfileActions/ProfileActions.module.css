@@ -13,3 +13,18 @@
       radial-gradient(circle at 10% 10%, transparent, rgb(187, 220, 237));
       box-shadow: 0 2px 4px rgba(220, 220, 220, 0.2);
 }
+.button {
+    width: 110px;
+    height: 30px;
+    padding-top: 3px;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    background-color: #92A65F;
+    box-shadow: 0 2px 4px rgba(220, 220, 220, 0.2);
+    color: white;
+    border-style: none;
+    letter-spacing: 0.8px; 
+}
