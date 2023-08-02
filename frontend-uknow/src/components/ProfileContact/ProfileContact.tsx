@@ -27,7 +27,7 @@ export const ProfileContact = () => {
           <Form.Control as='textarea' aria-label='With textarea' placeholder='Message' rows={8} />
         </InputGroup>
         <br />
-        <ButtonP text='Send' />
+        <ButtonP className={styles.button} text='Send' />
       </Form>
     </Container>
   )
