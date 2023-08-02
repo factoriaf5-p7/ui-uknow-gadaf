@@ -1,11 +1,9 @@
-import { Container, Form, Textarea } from 'react-bootstrap'
+import { Container, Form } from 'react-bootstrap'
 import styles from './ProfileContact.module.css'
 import { ButtonP } from '../ButtonP'
-import { useState, FormEvent, ChangeEvent } from 'react'
+
 
 export const ProfileContact = () => {
-  
-
   return (
     <Container className={styles.container}>
       <Form>
