@@ -3,6 +3,7 @@ import styles from './BoughtCourses.module.css'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { AllCoursesCard } from '../AllCourses/AllCoursesCard'
+import { Link } from 'react-router-dom'
 
 export const BoughtCourses = () => {
   const [courses, setCourses] = useState<any[]>([])
@@ -58,7 +59,9 @@ export const BoughtCourses = () => {
             <div className='d-flex flex-wrap justify-content-center' style={{ display: 'inline-block', gap: 10 }}>
               {courseData.map((course, i) => (
                 <div key={i}>
-                  <AllCoursesCard image={course.image} rating={course.rating} title={course.title} price={course.price} />
+                  <Link to={`/course/${course._id}`}>
+                    <AllCoursesCard image={course.image} rating={course.rating} title={course.title} price={course.price} />
+                  </Link>
                 </div>
               ))}
             </div>
