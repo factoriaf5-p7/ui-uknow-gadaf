@@ -166,6 +166,13 @@
 .titleAnim{
   display: flex;
 }
+.box {
+  border: 1px rgb(230, 230, 230) solid;
+  padding: 2rem;
+  border-radius: 8px;
+  background-color:white;
+  box-shadow: 0 2px 4px rgba(220, 220, 220, 0.2);
+}
 h3 {
   color: #333;
   font-family: tahoma;
