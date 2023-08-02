@@ -11,10 +11,8 @@ export class CreateCourseDto {
 	@IsString()
 		userId: string;
 
-	// @ApiProperty({ example: 'How to validate dtos properties' })
-	// @IsString()
-	// @IsNotEmpty()
-	// 	price: string;
+	@ApiProperty({ example: 'How to validate dtos properties' })
+		price: string;
 
 	@ApiProperty({ example: 'Web development | Backend | Frontend ' })
 	@IsString()

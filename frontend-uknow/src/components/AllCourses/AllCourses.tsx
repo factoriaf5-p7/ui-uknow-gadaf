@@ -22,9 +22,11 @@ export const AllCourses = () => {
     fetchCourses()
   }, [])
 
-  const filteredCourses = courses.filter((course) =>
-    course.name.toLowerCase().includes(searchKeywords.toLowerCase())
-  )
+  const filteredCourses = searchKeywords
+    ? courses.filter((course) =>
+      course.name?.toLowerCase().includes(searchKeywords.toLowerCase())
+    )
+    : courses
 
   const handleSearch = (keywords: string) => {
     setSearchKeywords(keywords)
