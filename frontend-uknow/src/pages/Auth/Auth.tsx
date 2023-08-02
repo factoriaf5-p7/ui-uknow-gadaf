@@ -8,6 +8,7 @@ export const Auth = () => {
   const [activeTab, setActiveTab] = useState('logIn')
 
   return (
+
     <div className={styles.content}>
       <div className={styles.header}>
 
@@ -46,5 +47,6 @@ export const Auth = () => {
             )}
       </div>
     </div>
+
   )
 }

@@ -2,6 +2,7 @@ import { Container } from 'react-bootstrap'
 import { AllCoursesCard } from '../AllCourses/AllCoursesCard'
 import styles from './CreatedCourses.module.css'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export const CreatedCourses = () => {
   const [course, setCourse] = useState<any[]>([])
@@ -29,7 +30,9 @@ export const CreatedCourses = () => {
             <div className='d-flex flex-wrap justify-content-center' style={{ display: 'inline-block', gap: 10 }}>
               {course.map((course, i) => (
                 <div key={i}>
-                  <AllCoursesCard image={course.image} rating={course.rating} title={course.title} price={course.price} />
+                  <Link to={`/course/${course._id}`}>
+                    <AllCoursesCard image={course.image} rating={course.rating} title={course.title} price={course.price} />
+                  </Link>
                 </div>
               ))}
             </div>
