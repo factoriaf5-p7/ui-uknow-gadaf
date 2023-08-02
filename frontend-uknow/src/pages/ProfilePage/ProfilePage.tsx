@@ -6,7 +6,7 @@ import { Coin, ArrowBarRight } from 'react-bootstrap-icons'
 import { CreatedCourses } from '../../components/CreatedCourses/CreatedCourses'
 import { BoughtCourses } from '../../components/BoughtCourses/BoughtCourses'
 import { ProfileActions } from '../../components/ProfileActions/ProfileActions'
-import { ProfileContact } from '../../components/ProfileContact/ProfileActions'
+import { ProfileContact } from '../../components/ProfileContact/ProfileContact'
 
 export const Profile = () => {
   const [profile, setProfile] = useState({
