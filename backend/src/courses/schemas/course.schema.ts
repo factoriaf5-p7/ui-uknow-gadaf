@@ -25,7 +25,7 @@ export class Course {
   	topic: string;
 
   @ApiProperty({ example: 'image.png' })
-  @Prop({ required: true, default: 'https://images.vexels.com/media/users/3/224169/isolated/preview/dbfe1f493ad01117fa4ec5ba10150e4d-computer-programming-logo.png' })
+  @Prop({ default: 'https://images.vexels.com/media/users/3/224169/isolated/preview/dbfe1f493ad01117fa4ec5ba10150e4d-computer-programming-logo.png' })
   	image: string;
 
   @ApiProperty({ example: 'image.png' })

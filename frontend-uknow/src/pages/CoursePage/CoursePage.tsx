@@ -5,6 +5,7 @@ import DemoImg from '../../assets/demoImg.jpeg'
 import styles from './CoursePage.module.css'
 import { PlayFill, Clock, BarChartFill, Lock } from 'react-bootstrap-icons'
 import axios from 'axios'
+import { BackButton } from '../../components/BackButton/BackButton'
 
 const CourseDetail = () => {
   const { id } = useParams()
@@ -39,7 +40,7 @@ const CourseDetail = () => {
           userId: localStorage.getItem('id'),
           courseId: id
         })
-        //Estilos Message
+        // Estilos Message
         setMessage(<h4 className='text-success'>Course purchased!</h4>)
         return res
       } catch (error: any) {
@@ -54,11 +55,16 @@ const CourseDetail = () => {
 
   return (
     <>
+     
       <div className={styles.courseContainer}>
+      <BackButton />
         <section className={styles.courseHeader}>
-          <img src={DemoImg} alt={courseDetails.name} className={styles.courseImg} />
+          
+        <h2>{courseDetails.title}</h2>
+        <hr />
+          <img src={DemoImg} alt={courseDetails.title} className={styles.courseImg} />
           <hr />
-          <h2>{courseDetails.name}</h2>
+          
           <div className={styles.courseSpecs}>
             <div className={styles.rating}>
               <StarRating stars={courseDetails.rating} /> {courseDetails.rating}
@@ -69,6 +75,7 @@ const CourseDetail = () => {
             </div>
             <div className={styles.courseCategory}>{courseDetails.category}</div>
           </div>
+          <p className={styles.courseDescription}>{courseDetails.description}</p>
           {message}
           {/* Conditionally display the buy button or success message */}
           {courseDetails.purchased
@@ -83,7 +90,7 @@ const CourseDetail = () => {
               </div>
               )}
           <hr />
-          <p className={styles.courseDescription}>{courseDetails.description}</p>
+          
         </section>
 
         <section className={styles.courseContent}>
