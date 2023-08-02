@@ -1,13 +1,16 @@
 .courseContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     margin: 1.5rem;
     width: 90vw;
+    height: fit-content;
     padding-bottom: 4rem !important;
 }
 
+.courseHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+    
 .courseImg {
     width: 80vw;
     height: auto;
@@ -15,10 +18,11 @@
 }
 
 .courseSpecs {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 0.2rem;
 }
 
 .rating {
@@ -75,6 +79,7 @@ h2 {
 .courseDescription {
     font-weight: 600;
     font-size: 14px;
+    text-align: center;
 }
 
 .buyButton {
@@ -100,17 +105,14 @@ h2 {
 }
 
 .courseContent {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    width: auto;
+    margin-top: 1.5rem;
+    width: 90vw;
+    height: fit-content;
 }
 
 .courseContentTitle {
-    text-align: left;   
-    padding-bottom: 0.4rem;
-    margin-bottom: 1rem;
+    text-align: left;
+    padding-bottom: 0.5rem;
     border-bottom: 1px solid #efefef;
     font-weight: 600;
 }
@@ -192,14 +194,12 @@ h3 {
     font-size: 16px;
     font-weight: 400;
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 0.5rem
+    gap: 0.5rem;
 }
 
 @media (min-width: 600px) {
     .courseContainer {
-        border: 1px solid blue;
         padding-bottom: 0;
         gap: 0.5rem;
         width: 80vw;
@@ -228,7 +228,6 @@ h3 {
 
     .courseContent {
         width: 40vw;
-        border: 1px solid blue;
     }
     
     .videoTitleUnbought {
