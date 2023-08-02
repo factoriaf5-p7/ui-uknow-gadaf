@@ -1,33 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Lemon&display=swap");
 
-.container {
+.containerLandingPage {
+  width: 100vw;
+  height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100vh;
   background-color: var(--color-green-light);
   background-image: radial-gradient(circle at 100% 0, #f0f2e4, transparent),
     radial-gradient(circle at 0 100%, #eaf4c2, transparent),
     radial-gradient(circle at 100% 100%, #e3db8a, transparent),
     radial-gradient(circle at 50% 50%, transparent, #00a6ff) !important; 
-
 }
-.logo {
+
+.landingPagelogo {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
 .textLogoAnimation {
   display: flex;
-  font-size: 5rem;
+  font-size: 4rem;
   margin: 1.5rem;
   font-weight: 900;
   font-family: "Lemon", cursive;
 }
+
 .u {
   opacity: 0;
   animation: drop 0.8s linear forwards;
@@ -75,10 +76,11 @@
     opacity: 1;
   }
 }
+
 /* ----- Logo Img animation----- */
 
 .logoImg {
-  width: 120px;
+  width: 150px;
   
   -webkit-animation-name: bounceInDown;
   animation-name: bounceInDown;
@@ -88,6 +90,7 @@
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   }
+  
   @-webkit-keyframes bounceInDown {
   0%, 60%, 75%, 90%, 100% {
   -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
@@ -216,29 +219,87 @@
     transform: rotate(0turn);
   }
 }
+
 .titleAnim{
   display: flex;
 }
-.buttons {
+
+.landingPageText {  
+ margin: 1rem 3rem 3rem 3rem ;
+}
+
+.landingPageButtons {
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px rgb(230, 230, 230) solid;
-  padding: 2rem;
-  border-radius: 8px;
-  background-color:white;
-  box-shadow: 0 2px 4px rgba(220, 220, 220, 0.2);
+  gap: 0.5rem;
 }
-@media (min-width: 800px) {
-  .container {
-      display: flex;
-      justify-content: space-around;
+
+.slogan {
+  color: rgb(0, 0, 0);
+text-transform: uppercase;
+font-size: 20px;
+font-weight: 700;
+text-align: center;
+}
+
+.catchPhrase {
+  color: rgba(96, 96, 96, 0.671);
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+
+
+@media (min-width: 600px) {
+  .containerLandingPage {
+    display: flex;
+    flex-direction: column;
+  }
+
+.landingPageText {
+  margin: 2rem;
+}
+
+  .slogan {
+    font-size: 30px;
+    margin-bottom: 2rem;
+  }
+
+  .catchPhrase {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .landingPageButtons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .getStartedButton {
+    width: fit-content;
+    padding: 0.7rem 2rem;
+    font-size: 20px;
+  }
+
+  .exploreButton {
+    width: fit-content;
+    padding: 0.7rem 2rem;
+    font-size: 20px;
   }
 }
-@media (max-width: 800px) {
+
+ @media (max-width: 800px) {
   .container {
     display: flex;
     flex-direction: column;
 }
-}
+} 
