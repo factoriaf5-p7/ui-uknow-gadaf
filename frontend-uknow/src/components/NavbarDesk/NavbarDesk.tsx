@@ -66,23 +66,21 @@ export const NavbarDesk = () => {
                 </span>
               </Nav.Link>
             </Nav.Item>
-            <Nav.Item as='li'>
-              <NavDropdown title='Profile' id='basic-nav-dropdown' className={styles.item}>
-                <NavDropdown.Item href='/profile'>
+              <NavDropdown title='Profile'>
+                <NavDropdown.Item href='/profile' className={styles.dropDownItem}>
                   My profile
                 </NavDropdown.Item>
-                <NavDropdown.Item href='/auth'>
+                <NavDropdown.Item href='/auth' className={styles.dropDownItem}>
                   Sign up
                 </NavDropdown.Item>
-                <NavDropdown.Item href='/auth'>
+                <NavDropdown.Item href='/auth' className={styles.dropDownItem}>
                   Log in
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href='/auth' onClick={handleLogOut}>
+                <NavDropdown.Item href='/auth' onClick={handleLogOut} className={styles.dropDownItem}>
                   Log out
                 </NavDropdown.Item>
               </NavDropdown>
-            </Nav.Item>
           </div>
         </div>
       </div>
