@@ -1,7 +1,6 @@
 .topBar {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1.5rem;
     border-bottom: 1px solid #efefef;
 }
 
@@ -10,12 +9,10 @@
 }
 
 .container{
-    margin-top: 2.5rem;
 }
 
 .sectionTitle{
     padding-bottom: 0.7rem;
-    margin-bottom: 1.5rem;
     border-bottom: 1px solid #efefef;
   }
   
