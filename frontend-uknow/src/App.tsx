@@ -14,16 +14,18 @@ import { FilterByCategory } from './components/FilterByCategory/FilterByCategory
 import { FilterByTopic } from './components/FilterByTopic/FilterByTopic'
 import CoursePage from './pages/CoursePage/CoursePage'
 import { MyCourses } from './pages/MyCourses/MyCourses'
+import { TokenProvider } from './context/TokenContext'
 
 function Layout ({ children }: any) {
   return (
     <>
-
-      <Header />
-      <NavbarDesk />
-      {children}
-      <NavbarBottom />
-      <Footer />
+      <TokenProvider>
+        <Header />
+        <NavbarDesk />
+        {children}
+        <NavbarBottom />
+        <Footer />
+      </TokenProvider>
 
     </>
   )
@@ -40,15 +42,16 @@ function App () {
           <Routes>
             <Route path='/' element={<LandingPage />} />
             <Route path='/auth' element={<Auth />} />
-          </Routes>)
+          </Routes>
+          )
         : (
           <Layout>
             <Routes>
               <Route path='/home' element={<HomePage />} />
-              <Route path='/mycourses' element={<PrivateRoute element={<MyCourses />} />} />
-              <Route path='/addcourse' element={<PrivateRoute element={<AddCoursePage />} />} />
+              <Route path='/mycourses' element={<PrivateRoute><MyCourses /></PrivateRoute>} />
+              <Route path='/addcourse' element={<PrivateRoute><AddCoursePage /></PrivateRoute>} />
               <Route path='/allusers' element={<AllUsersPage />} />
-              <Route path='/profile' element={<PrivateRoute element={<Profile />} />} />
+              <Route path='/profile' element={<PrivateRoute><Profile /></PrivateRoute>} />
               <Route path='/course/:id' element={<CoursePage />} />
               <Route path='/category' element={<FilterByCategory />} />
               <Route path='/topic' element={<FilterByTopic />} />

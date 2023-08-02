@@ -4,10 +4,12 @@ import styles from './NavbarDesk.module.css'
 import LogoImg from '../../assets/LogoGris.png'
 import LogoText from '../../assets/LogoText.svg'
 import { NavDropdown } from 'react-bootstrap'
+import { useToken } from '../../context/TokenContext'
 
 export const NavbarDesk = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
   const [visible, setVisible] = useState(true)
+  const { isTokenValid } = useToken()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,21 +68,34 @@ export const NavbarDesk = () => {
                 </span>
               </Nav.Link>
             </Nav.Item>
-              <NavDropdown title='Profile' className={styles.item}>
-                <NavDropdown.Item href='/profile' className={styles.dropDownItem}>
-                  My profile
-                </NavDropdown.Item>
-                <NavDropdown.Item href='/auth' className={styles.dropDownItem}>
-                  Sign up
-                </NavDropdown.Item>
-                <NavDropdown.Item href='/auth' className={styles.dropDownItem}>
-                  Log in
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href='/auth' onClick={handleLogOut} className={styles.dropDownItem}>
-                  Log out
-                </NavDropdown.Item>
-              </NavDropdown>
+            <NavDropdown title='Profile' className={styles.item}>
+              {isTokenValid
+                ? (
+                  <>
+                    <NavDropdown.Item href='/profile' className={styles.dropDownItem}>
+                      My profile
+                    </NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item href='/auth' onClick={handleLogOut} className={styles.dropDownItem}>
+                      Log out
+                    </NavDropdown.Item>
+                  </>
+                  )
+                : (
+                  <>
+                    <NavDropdown.Item href='/profile' className={styles.dropDownItem}>
+                      My profile
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href='/auth' className={styles.dropDownItem}>
+                      Sign up
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href='/auth' className={styles.dropDownItem}>
+                      Log in
+                    </NavDropdown.Item>
+                    <NavDropdown.Divider />
+                  </>
+                  )}
+            </NavDropdown>
           </div>
         </div>
       </div>
