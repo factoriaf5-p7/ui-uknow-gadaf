@@ -23,7 +23,6 @@ export const CreatedCourses = () => {
 
   return (
     <Container className={styles.container}>
-      
       <h4 className={styles.sectionTitle}>Created courses</h4>
       <div className='d-flex flex-wrap justify-content-center' style={{ display: 'inline-block', gap: 10 }}>
         {course.length > 0
