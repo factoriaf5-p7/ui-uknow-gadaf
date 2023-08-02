@@ -44,12 +44,58 @@
   padding: 0;
 }
 
-p {
-  font-size: 14px;
-  color: #777777;
-}
 
 #welcome {
   font-size: 20px;
   font-weight: 600;
 }
+
+@media (min-width: 600px) {
+
+  #welcome {
+    font-size: 25px;
+  }
+ 
+  .tabs{
+    width: 30vh;
+  }
+
+ .body { 
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;
+   width: 100vw;
+   height: 70vh;
+   padding: 70px 0 100px 0;
+  }
+
+  .header  {
+    margin: 100px 0 100px 0;
+    
+   width: 100vw;
+   height: 30vh;
+  }
+}
+
+/* @media (min-width: 600px) {
+
+  .tabs {
+    height: 30px;
+    width: 20vw;
+    bottom: 25%;
+    margin-left: 17%;
+  }
+  .header {
+    width: 50vw;
+    height: 325px;
+    top: 25%;
+  }
+  .body {
+    position: absolute;
+    bottom: 25%;
+    left:50%;
+  }
+  
+} */
+

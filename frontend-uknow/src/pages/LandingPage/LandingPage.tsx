@@ -2,25 +2,33 @@ import { Link } from 'react-router-dom'
 import { ButtonP } from '../../components/ButtonP'
 import { ButtonS } from '../../components/ButtonS'
 import styles from './LandingPage.module.css'
-import Logo from '../../assets/LOGO.png'
+import Logo from '../../assets/LogoGris.png'
 
 export const LandingPage = () => {
   return (
-    <div className={`${styles.container} d-flex flex-column justify-content-center align-items-center`} style={{ gap: 100 }}>
-      <div>
-        <img src={Logo} alt='logo' className={styles.logo} />
-      </div>
-      <div className='border border-dark p-2'>
-        <p>Sign up and get 1000 knowlitos to get you started</p>
-        <div className='d-flex flex-column justify-content-center align-items-center'>
+    <>      {/* <div className={styles.interrogantes}>
+    <div className={styles.i1}>?</div><div className={styles.i2}>?</div><div className={styles.i3}>?</div>
+  </div> */}
+      <div className={styles.container} style={{ gap: 100 }}>
+
+        <section className={styles.logo}>
+          <img src={Logo} alt='logo' className={styles.logoImg} />
+          <h1 className={styles.textLogoAnimation}>
+            <span className={styles.u}>u</span>
+            <span className={styles.guion}>-</span>
+            <span className={styles.k}>k</span><span className={styles.n}>n</span><span className={styles.o}>o</span><span className={styles.w}>w</span>
+          </h1>
+        </section>
+        <section className={styles.box}>
           <Link to='/auth'>
-            <ButtonP className={styles.button} text='Get Started' />
+            <ButtonP text='Get Started' />
           </Link>
+          <br />
           <Link to='/home'>
-            <ButtonS className={styles.button} text='Explore' />
+            <ButtonS text='Explore' />
           </Link>
-        </div>
+        </section>
       </div>
-    </div>
+    </>
   )
 }

@@ -245,8 +245,7 @@ export class CoursesService {
 			const entries = Object.entries(data.created_courses);
 			//console.log(entries);
 			entries.forEach((course) => {
-				console.log(course);
-				createdCourses.push({ _id: course[1]._id, name: course[1].name, image: course[1].image, rating: course[1].rating, price: course[1] .price });
+				createdCourses.push({ _id: course[1]._id, title: course[1].title, image: course[1].image, rating: course[1].rating, price: course[1].price });
 			});
 
 			return {
@@ -268,10 +267,8 @@ export class CoursesService {
 			 const entries = Object.entries(data.bought_courses);
 			 //console.log(entries);
 			 entries.forEach((course) => {
-				console.log(course);
 				boughtCourses.push({ _id: course[1]._id, name: course[1].name, image: course[1].image, rating: course[1].rating, price: course[1] .price });
 			 });
-			 console.log(boughtCourses);
 			 return {
 				message: 'Retrieved all bought courses successfully',
 				status: HttpStatus.OK,

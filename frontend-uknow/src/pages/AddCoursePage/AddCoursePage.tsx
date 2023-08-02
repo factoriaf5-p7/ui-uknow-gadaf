@@ -4,30 +4,30 @@ import styles from './AddCoursePage.module.css'
 import { Container } from 'react-bootstrap'
 
 interface FormType {
-    name: string;
-    price: string;
+    title: string;
     topic: string;
     difficulty: string;
-    tags: string;
     description: string;
     category: string;
     videoURL: string;
     videoTitle: string;
     userId: string;
+    image: string,
+
 }
 
 export const AddCoursePage = () => {
   const [newCourse, setNewCourse] = useState<FormType>({
-    name: '',
-    price: '',
+    title: '',
     topic: '',
     difficulty: '',
-    tags: '',
     description: '',
+    image: '',
     category: '',
     videoURL: '',
     videoTitle: '',
     userId: ''
+
   })
 
   const handleChange = (
@@ -62,20 +62,11 @@ export const AddCoursePage = () => {
     <Container className={styles.formContainer}>
       <form className={styles.form} onSubmit={handleSubmit}>
         <label>
-          Name
+          Title
           <input
             type='text'
-            name='name'
-            value={newCourse.name}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Price
-          <input
-            type='number'
-            name='price'
-            value={newCourse.price}
+            name='title'
+            value={newCourse.title}
             onChange={handleChange}
           />
         </label>
@@ -84,6 +75,14 @@ export const AddCoursePage = () => {
           <input
             name='topic'
             value={newCourse.topic}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Image
+          <input
+            name='image'
+            value={newCourse.image}
             onChange={handleChange}
           />
         </label>
@@ -125,16 +124,6 @@ export const AddCoursePage = () => {
             <option value='Expert'>Expert</option>
             <option value='All Levels'>All Levels</option>
           </select>
-        </label>
-        <label>
-          Tags
-          <input
-            type='text'
-            name='tags'
-            value={newCourse.tags}
-            onChange={handleChange}
-            placeholder='tag1,tag2'
-          />
         </label>
         <label>
           Description

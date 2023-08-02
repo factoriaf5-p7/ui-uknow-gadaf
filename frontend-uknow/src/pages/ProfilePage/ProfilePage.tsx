@@ -2,9 +2,9 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap'
 import styles from './ProfilePage.module.css'
-import { Coin } from 'react-bootstrap-icons'
-import { CreatedCourses } from '../../components/CreatedCourses/CreatedCourses'
-import { BoughtCourses } from '../../components/BoughtCourses/BoughtCourses'
+import { Coin, ArrowBarRight } from 'react-bootstrap-icons'
+import { ProfileActions } from '../../components/ProfileActions/ProfileActions'
+import { ProfileContact } from '../../components/ProfileContact/ProfileContact'
 
 export const Profile = () => {
   const [profile, setProfile] = useState({
@@ -42,22 +42,30 @@ export const Profile = () => {
 
     getData()
   }, [])
-
+  const handleLogOut = () => {
+    localStorage.removeItem('token')
+    localStorage.removeItem('id')
+    window.location.href = '/'
+  }
   return (
     <Container>
       <div className={styles.intro}>
         <div><img src='https://xsgames.co/randomusers/avatar.php?g=female' className={styles.img} /></div>
-        <h1>Welcome  {profile.name} {profile.last_name}</h1>
+        <h1 className={styles.animateCharcter}>Welcome </h1>
       </div>
       <div className={styles.user}>
         <section className={styles.userInfo}>
-          <p>{profile.email}</p>
-          <p>{profile.profile} : {profile._id}</p>
-          <h6 className={styles.chip}><Coin className={styles.coin} />  {profile.wallet_balance}</h6>
+          <h4>{profile.name} {profile.last_name}</h4>
+          <h6>{profile.email}</h6>
+          <br />
+          <p className={styles.chip}><Coin />  {profile.wallet_balance}</p>
+          <br />
+          <button className={styles.logoutBtn} onClick={handleLogOut}> Logout <ArrowBarRight /> </button>
+
         </section>
         <div className={styles.courses}>
-          <section className={styles.createdCourses}> <CreatedCourses /></section>
-          <section className={styles.createdCourses}> <BoughtCourses /></section>
+          <section className={styles.actions}> <ProfileActions /></section>
+          <section className={styles.contact}> <ProfileContact /></section>
         </div>
       </div>
     </Container>
