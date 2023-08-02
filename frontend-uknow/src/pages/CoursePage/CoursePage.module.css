@@ -1,13 +1,16 @@
 .courseContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     margin: 1.5rem;
     width: 90vw;
+    height: fit-content;
     padding-bottom: 4rem !important;
 }
 
+.courseHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+    
 .courseImg {
     width: 80vw;
     height: auto;
@@ -15,10 +18,11 @@
 }
 
 .courseSpecs {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
 }
 
 .rating {
@@ -40,10 +44,10 @@
 }
 
 .courseCategory {
-    height: 25px;
-    padding: 10px;
+    height: 20px;
+    padding: 5px;
     border: none;
-    border-radius: 20px !important;
+    border-radius: 5px !important;
     cursor: pointer;
     outline: none;
       background-image: 
@@ -56,6 +60,7 @@
     font-size: 14px;
     display: flex;
     align-items: center;
+    font-size: 12px;
 }
 
 .courseCategory:hover {
@@ -75,42 +80,36 @@ h2 {
 .courseDescription {
     font-weight: 600;
     font-size: 14px;
+    text-align: center;
 }
 
 .buyButton {
-    width: 110px;
+    width: 150px;
     height: 30px;
-    padding-top: 3px;
-    text-align: center;
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
     cursor: pointer;
-    outline: none;
     background-color: #92A65F;
-    box-shadow: 0 2px 4px rgba(220, 220, 220, 0.2);
-    color: white;
-    border-style: none;
-    letter-spacing: 0.8px;
+    box-shadow: 0 2px 4px rgba(72, 72, 72, 0.2);
 }
 
 .priceCourse {
     font-weight: 600;
-    font-size: 14px;
+    font-size: 18px;
     color: white;
+    letter-spacing: 0.8px;
+    text-align: center;
 }
 
 .courseContent {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    width: auto;
+    margin-top: 1.5rem;
+    width: 90vw;
+    height: fit-content;
 }
 
 .courseContentTitle {
-    text-align: left;   
-    padding-bottom: 0.4rem;
-    margin-bottom: 1rem;
+    text-align: left;
+    padding-bottom: 0.5rem;
     border-bottom: 1px solid #efefef;
     font-weight: 600;
 }
@@ -192,14 +191,12 @@ h3 {
     font-size: 16px;
     font-weight: 400;
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 0.5rem
+    gap: 0.5rem;
 }
 
 @media (min-width: 600px) {
     .courseContainer {
-        border: 1px solid blue;
         padding-bottom: 0;
         gap: 0.5rem;
         width: 80vw;
@@ -228,7 +225,6 @@ h3 {
 
     .courseContent {
         width: 40vw;
-        border: 1px solid blue;
     }
     
     .videoTitleUnbought {
