@@ -24,6 +24,7 @@ export const NavbarDesk = () => {
 
   const handleLogOut = () => {
     localStorage.removeItem('token')
+    localStorage.removeItem('id')
   }
 
   return (
@@ -73,7 +74,10 @@ export const NavbarDesk = () => {
               </Nav.Link>
             </Nav.Item>
             <Nav.Item as='li'>
-              <NavDropdown title='Have account?' id='basic-nav-dropdown' className={styles.item}>
+              <NavDropdown title='Profile' id='basic-nav-dropdown' className={styles.item}>
+                <NavDropdown.Item href='/auth'>
+                  My profile
+                </NavDropdown.Item>
                 <NavDropdown.Item href='/auth'>
                   Sign up
                 </NavDropdown.Item>
