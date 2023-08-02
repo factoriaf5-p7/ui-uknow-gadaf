@@ -3,6 +3,7 @@ import styles from './BoughtCourses.module.css'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { AllCoursesCard } from '../AllCourses/AllCoursesCard'
+import { Link } from 'react-router-dom'
 
 export const BoughtCourses = () => {
   const [courses, setCourses] = useState<any[]>([])
@@ -51,14 +52,16 @@ export const BoughtCourses = () => {
 
   return (
     <Container className={styles.container}>
-      <h6>Bought Courses</h6>
+      <h4 className={styles.sectionTitle}>Bought courses</h4>
       <div className='d-flex flex-wrap justify-content-center' style={{ display: 'inline-block', gap: 10 }}>
         {courseData.length > 0
           ? (
             <div className='d-flex flex-wrap justify-content-center' style={{ display: 'inline-block', gap: 10 }}>
               {courseData.map((course, i) => (
                 <div key={i}>
-                  <AllCoursesCard image={course.image} rating={course.rating} title={course.title} price={course.price} />
+                  <Link to={`/course/${course._id}`}>
+                    <AllCoursesCard image={course.image} rating={course.rating} title={course.title} price={course.price} />
+                  </Link>
                 </div>
               ))}
             </div>

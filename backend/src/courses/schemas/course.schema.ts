@@ -16,6 +16,10 @@ export class Course {
   @Prop()
   	userId: string;
 
+    @ApiProperty({ example: '32u4h91v23um4' })
+    @Prop()
+    	rating: number;
+
   @ApiProperty({ example: 59.99 })
   @Prop({ default: 100 })
   	price: number;

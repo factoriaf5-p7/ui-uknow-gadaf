@@ -8,45 +8,45 @@ export const Auth = () => {
   const [activeTab, setActiveTab] = useState('logIn')
 
   return (
-
-    <div className={styles.content}>
-      <div className={styles.header}>
-
-        <h2 id={styles.welcome}>Welcome to</h2>
-        <div className={styles.logo}>
-          <a href='/home'><img src={Logo} alt='U-know logo' /></a>
+    <>
+      <div className={styles.content}>
+        <div className={styles.header}>
+          <h2 id={styles.welcome}>Welcome to</h2>
+          <div className={styles.logo}>
+            <a href='/home'><img src={Logo} alt='U-know logo' /></a>
+          </div>
         </div>
-      </div>
 
-      <div className={styles.body}>
-        <div className={styles.tabs}>
-          <div
-            className={`${styles.tab} ${
+        <div className={styles.body}>
+          <div className={styles.tabs}>
+            <div
+              className={`${styles.tab} ${
               activeTab === 'logIn' ? styles.active : ''
             }`}
-            onClick={() => setActiveTab('logIn')}
-          >
-            <p>Log In</p>
-          </div>
-          <div
-            className={`${styles.tab} ${
+              onClick={() => setActiveTab('logIn')}
+            >
+              <p>Log In</p>
+            </div>
+            <div
+              className={`${styles.tab} ${
               activeTab === 'signUp' ? styles.active : ''
             }`}
-            onClick={() => setActiveTab('signUp')}
-          >
-            <p>Sign Up</p>
+              onClick={() => setActiveTab('signUp')}
+            >
+              <p>Sign Up</p>
+            </div>
           </div>
-        </div>
 
-        {activeTab === 'logIn'
-          ? (
-            <LogInForm />
-            )
-          : (
-            <SignUpForm />
-            )}
+          {activeTab === 'logIn'
+            ? (
+              <LogInForm />
+              )
+            : (
+              <SignUpForm />
+              )}
+        </div>
       </div>
-    </div>
+    </>
 
   )
 }

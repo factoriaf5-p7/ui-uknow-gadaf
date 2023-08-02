@@ -1,5 +1,6 @@
 .navBarSection {
     width: 100vw;
+    background-color: rgb(255, 255, 255);
     background-image: 
   radial-gradient(circle at 100% 0, #f0f2e4, transparent),
   radial-gradient(circle at 0 100%, #eaf4c2, transparent),
@@ -9,8 +10,8 @@
     padding-bottom: 1rem;
     position: fixed;
     top: 0;
+    z-index: 1999;
   }
-
 
   .navBarContainer {
     display: flex;
@@ -22,11 +23,11 @@
   }
   
   .item {
-    color: #2d2d2d !important;
+    color: #6f6f6f !important;
     font-weight: 600 !important;
-    /* border-right: 1px solid #ffffff; */
+    font-size: 18px;
     padding-right: 3rem;
-   
+    text-shadow: 5px 2px 5px rgb(255, 255, 255);
   }
   
   .logoText img {
@@ -43,25 +44,33 @@
     display: none;
   }
   
- 
 .navBarLinks{
     display: flex;
-    justify-content: space-evenly; 
-    width: 90%; 
+    align-items: center;
+    justify-content: space-around; 
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    gap: 5%;
 }
 
    .navBarItems {
-    display: flex;
-    align-items: center;
-    width: 90%; 
+    gap: 20rem;
+    width: 70%; 
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     border-top: 1px solid #ffffff;
     border-bottom: 1px solid #ffffff;
   }
   
+   .dropDownItem:hover {
+    background-color: #e5ecc9;
+  }
+
+  .dropDownItem:focus, .dropDownItem::after {
+    background-color: #c9d0a5;
+  }
+
+
   @media (max-width: 600px) {
     .navBarSection {
       display: none !important;

@@ -26,6 +26,7 @@ export const Profile = () => {
     async function getData () {
       try {
         const token = localStorage.getItem('token')
+        console.log(token)
         const response = await axios.get('http://localhost:3000/api/users/profile', {
           headers: {
             Authorization: `Bearer ${token}`
@@ -41,7 +42,11 @@ export const Profile = () => {
 
     getData()
   }, [])
-
+  const handleLogOut = () => {
+    localStorage.removeItem('token')
+    localStorage.removeItem('id')
+    window.location.href = '/'
+  }
   return (
     <Container>
       <div className={styles.intro}>
@@ -51,12 +56,11 @@ export const Profile = () => {
       <div className={styles.user}>
         <section className={styles.userInfo}>
           <h4>{profile.name} {profile.last_name}</h4>
-          <h5>{profile.email}</h5>
-          <h6>Profile: {profile.profile}</h6>
-          <p> id:  {profile._id}</p>
+          <h6>{profile.email}</h6>
+          <br />
           <p className={styles.chip}><Coin />  {profile.wallet_balance}</p>
           <br />
-          <button className={styles.logoutBtn}> Logout <ArrowBarRight /> </button>
+          <button className={styles.logoutBtn} onClick={handleLogOut}> Logout <ArrowBarRight /> </button>
 
         </section>
         <div className={styles.courses}>
