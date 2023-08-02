@@ -20,17 +20,20 @@ form {
   margin-bottom: 50px;
 }
 
+
+
+
 @media (min-width: 600px) {
+
   .logInContainer {
     width: 30vw;
     height: 50vh;
-    transform: translatex(175%) translatey(-40%);
     border-radius: 5%;
     background-image: 
-  radial-gradient(circle at 100% 0, #ffffff, transparent),
-  radial-gradient(circle at 70% 100%, #fbffea, transparent),
-  radial-gradient(circle at 100% 100%, #ffffff, transparent),
-  radial-gradient(circle at 10% 10%, transparent, rgb(187, 220, 237));
-  box-shadow: 0 2px 4px rgba(220, 220, 220, 0.2);
+      radial-gradient(circle at 100% 0, #ffffff, transparent),
+      radial-gradient(circle at 70% 100%, #fbffea, transparent),
+      radial-gradient(circle at 100% 100%, #ffffff, transparent),
+      radial-gradient(circle at 10% 10%, transparent, rgb(187, 220, 237));
+    box-shadow: 0 2px 4px rgba(220, 220, 220, 0.2);
   }
 }

@@ -19,12 +19,13 @@ form {
 }
 
 
+
+
 @media (min-width: 600px) {
 
   .signUpContainer {
     width: 30vw;
     height: 50vh;
-    transform: translatex(175%) translatey(-40%);
     border-radius: 5%;
     background-image: 
   radial-gradient(circle at 100% 0, #ffffff, transparent),
@@ -34,3 +35,4 @@ form {
   box-shadow: 0 2px 4px rgba(220, 220, 220, 0.2);
   }
 }
+ 
