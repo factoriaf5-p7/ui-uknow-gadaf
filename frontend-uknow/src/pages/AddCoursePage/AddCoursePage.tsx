@@ -59,6 +59,8 @@ export const AddCoursePage = () => {
 
     return (
         <Container className={styles.formContainer}>
+            <h4 className={styles.sectionTitle}>Create your own course</h4>
+            
             <form className={styles.form} onSubmit={handleSubmit}>
                 <label>
                     Title
