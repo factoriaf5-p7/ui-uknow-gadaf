@@ -24,7 +24,6 @@ export const ProfileContact = () => {
             name='name'
           />
         </Form.Group>
-        <Textarea />
         <ButtonP text='Send' />
       </Form>
     </Container>
