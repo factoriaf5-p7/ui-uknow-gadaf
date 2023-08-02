@@ -1,0 +1,15 @@
+.container {
+    padding:20px;
+    margin: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #e2e2e2;
+    box-shadow: #e2e2e2;
+    border-radius: 15px;
+    gap: 1rem;
+    background-image: 
+      radial-gradient(circle at 100% 0, #ffffff, transparent),
+      radial-gradient(circle at 70% 100%, #fbffea, transparent),
+      radial-gradient(circle at 100% 100%, #ffffff, transparent),
+      radial-gradient(circle at 10% 10%, transparent, rgb(187, 220, 237));
+      box-shadow: 0 2px 4px rgba(220, 220, 220, 0.2);
+}
