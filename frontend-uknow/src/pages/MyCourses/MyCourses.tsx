@@ -1,8 +1,9 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { Container } from 'react-bootstrap'
 import { CreatedCourses } from '../../components/CreatedCourses/CreatedCourses'
 import { BoughtCourses } from '../../components/BoughtCourses/BoughtCourses'
+import { BackButton } from '../../components/BackButton/BackButton'
+import styles from './MyCourses.module.css'
 
 export const MyCourses = () => {
   const [profile, setProfile] = useState({
@@ -41,9 +42,10 @@ export const MyCourses = () => {
   }, [])
 
   return (
-    <Container>
+    <div className={styles.pageContent}>
+      <BackButton />
       <CreatedCourses />
       <BoughtCourses />
-    </Container>
+    </div>
   )
 }
