@@ -1,6 +1,5 @@
 .courseContainer {
     margin: 1.5rem;
-    width: 90vw;
     height: fit-content;
     padding-bottom: 4rem !important;
 }
@@ -9,6 +8,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+
+.imgSpecs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.specsDescriptionBuy {    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
     
 .courseImg {
@@ -20,32 +36,35 @@
 .courseSpecs {
     margin-bottom: 1rem;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 0.8rem;
+    gap: 1rem;
 }
 
 .rating {
     font-size: 12px;
     font-weight: 700;
     color: rgb(75, 75, 75);
+    text-align: center;
 }
 
 .difficulty {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: fit-content;
+    width: fit-content;
+    padding: 0.2rem 0.5rem;
+    text-align: center;
     font-size: 12px;
-    gap: 0.2rem;
-    color: rgb(168, 168, 168);
-    width: 100px;
+    gap: 1rem;
+    color: rgb(78, 78, 78);
     background-color: #f6f6f6;  
     box-shadow: 0 2px 4px rgba(220, 220, 220, 0.2);
 }
 
 .courseCategory {
-    height: 20px;
-    padding: 5px;
+    height: fit-content;
+    width: fit-content;
+    padding: 0.2rem 0.5rem;
     border: none;
     border-radius: 5px !important;
     cursor: pointer;
@@ -57,9 +76,7 @@
     radial-gradient(circle at 50% 50%, transparent, rgb(0, 166, 255)) !important;
     border-style: none !important;
     color: #222222 !important;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
+    text-align: center;
     font-size: 12px;
 }
 
@@ -75,22 +92,28 @@ hr {
 
 h2 {
     font-weight: 700;
+    text-align: center;
 }
 
 .courseDescription {
     font-weight: 600;
-    font-size: 14px;
+    font-size: 16px;
     text-align: center;
 }
 
 .buyButton {
-    width: 150px;
-    height: 30px;
+    width: 170px;
+    height: 45px;
+    padding-top: 0.5rem;
     border: none;
     border-radius: 20px;
     cursor: pointer;
     background-color: #92A65F;
     box-shadow: 0 2px 4px rgba(72, 72, 72, 0.2);
+}
+
+.buyButton:hover {
+    background-color: #c7dd8f;
 }
 
 .priceCourse {
@@ -105,6 +128,10 @@ h2 {
     margin-top: 1.5rem;
     width: 90vw;
     height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .courseContentTitle {
@@ -112,22 +139,19 @@ h2 {
     padding-bottom: 0.5rem;
     border-bottom: 1px solid #efefef;
     font-weight: 600;
+    text-align: center;
 }
 
 .videoBox {
-    height: fit-content;
     display: flex;
-    gap: 1rem;
-    align-items: center;
     border-radius: 20px;
     justify-content: center;
     align-items: center;
     margin: 2px;
     border: 1px solid #e2e2e2;
-    box-shadow: #e2e2e2;
     border-radius: 15px;
-    width: 250px;
-    height: 120px;
+    width: max-content;
+    padding: 1rem;
     gap: 1rem;
     background-image: 
           radial-gradient(circle at 100% 0, #ffffff, transparent),
@@ -140,7 +164,7 @@ h2 {
 .videoInfo {
     display: flex;
     flex-direction: column;
-    margin-top: 1rem;    
+    margin-top: 1rem;   
 }
 
 h3 {
@@ -179,52 +203,101 @@ h3 {
 }
 
 .videoDuration {
-    color: rgb(163, 163, 163);
-    font-size: 12px;
+    color: rgb(112, 112, 112);
+    font-size: 14px;
     display: flex;
     align-items: center;
     gap: 0.3rem;
 }
 
 .videoTitleUnbought {
-    color: rgb(163, 163, 163);
+    color: rgb(121, 121, 121);
     font-size: 16px;
     font-weight: 400;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
 }
 
 @media (min-width: 600px) {
     .courseContainer {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
         padding-bottom: 0;
         gap: 0.5rem;
-        width: 80vw;
+        width: 100vw;
+    }
+
+    h2 {
+       font-size: 40px;
     }
 
     .courseImg {
-        width: 40vw;
+        width: 30vw;
+    }
+
+    .imgSpecs {
+        display: flex;
+        width: 80vw;
+        gap: 2rem;
+    }
+
+    .specsDescriptionBuy {
+        display: flex;
+        flex-direction: column;
     }
 
     .courseSpecs {
         justify-content: flex-start;
         gap: 2rem;
-        align-items: center;
         margin-top: 1rem;
         margin-bottom: 1.5rem;
     }
 
+    .rating {
+        font-size: 16px;
+        font-weight: 700;
+        color: rgb(75, 75, 75);
+    }
+    
+    .difficulty {
+        font-size: 16px;
+        gap: 0.4rem;
+        width: fit-content;
+        height: fit-content;
+        padding: 0.5rem 1rem;
+    }
+    
+    .courseCategory {
+        width: fit-content;
+        height: fit-content;
+        padding: 0.5rem 1rem;
+        font-size: 16px;
+    }
+
+    .courseDescription {
+        font-size: 18px;
+        text-align: left;
+    }
+
     .buyButton {
-         width: 150px;
-         height: 35px;
+         width: 250px;
+         height: 50px;
+         padding-top: 0.5rem;
+         margin-top: 1rem;
     }
 
     .priceCourse {
-        font-size: 18px;
+        font-size: 22px;
     }
 
     .courseContent {
-        width: 40vw;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        width: 80vw;
     }
     
     .videoTitleUnbought {
@@ -232,6 +305,38 @@ h3 {
     }
 
     .videoBox {
-        width: 55vw;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 2rem;
+        padding: 1.5rem;
+        width: 80vw;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+    
+    .squareButton {
+        width: 100px;
+        height: 80px;
+      }
+    
+    .circleButton {
+        width: 50px;
+        height: 50px;
+      }
+    
+    .playIcon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .videoDuration {
+        font-size: 14px;
+    }
+
+    .videoTitleUnbought {
+        font-size: 20px;
     }
 }

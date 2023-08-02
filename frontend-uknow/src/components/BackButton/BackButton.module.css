@@ -1,15 +1,21 @@
 .backButton{
-width: 30px;
-height: 30px;
+width: 5rem;
+height: auto;
 margin: 1rem 0.5rem;
-display: flex;
-align-items: center;
-justify-content: center;
-align-content: center;
 }
 
 .backButtonIcon {
-    color: rgb(220, 220, 220);
-    width: 20px;
-    height: auto;
+    color: rgb(115, 115, 115);
+    width: 5rem;
+}
+
+@media (min-width: 600px) {
+.backButton {
+    margin-left: 8rem;
+}
+
+.backButtonIcon {
+    width: 2rem;
+}
+
 }

@@ -75,40 +75,43 @@ const CourseDetail = () => {
 
   return (
     <>
-
+<BackButton />
       <div className={styles.courseContainer}>
-        <BackButton />
+        
         <section className={styles.courseHeader}>
 
-          <h2>{courseDetails.title}</h2>
           <hr />
-          <img src={DemoImg} alt={courseDetails.title} className={styles.courseImg} />
-          <hr />
-
-          <div className={styles.courseSpecs}>
-            <div className={styles.rating}>
-              <StarRating stars={courseDetails.rating} /> {courseDetails.rating}
+          <div className={styles.imgSpecs}>
+            <img src={DemoImg} alt={courseDetails.title} className={styles.courseImg} />
+            <hr />
+            <div className={styles.specsDescriptionBuy}>
+              <h2>{courseDetails.title}</h2>
+              <div className={styles.courseSpecs}>
+                <div className={styles.rating}>
+                  <StarRating stars={courseDetails.rating} /> {courseDetails.rating}
+                </div>
+                <div className={styles.difficulty}>
+                  <BarChartFill />
+                  {courseDetails.difficulty}
+                </div>
+                <div className={styles.courseCategory}>{courseDetails.category}</div>
+              </div>
+              <p className={styles.courseDescription}>{courseDetails.description}</p>
+              {message}
+              {/* Conditionally display the buy button or success message */}
+              {courseDetails.purchased
+                ? (
+                  <div className={styles.buyButton}>
+                    <p className={styles.priceCourse}>Course purchased!</p>
+                  </div>
+                  )
+                : (
+                  <div className={styles.buyButton} onClick={handleBuyCourse}>
+                    <p className={styles.priceCourse}>Buy for {courseDetails.price}$</p>
+                  </div>
+                  )}
             </div>
-            <div className={styles.difficulty}>
-              <BarChartFill />
-              {courseDetails.difficulty}
-            </div>
-            <div className={styles.courseCategory}>{courseDetails.category}</div>
           </div>
-          <p className={styles.courseDescription}>{courseDetails.description}</p>
-          {message}
-          {/* Conditionally display the buy button or success message */}
-          {courseDetails.purchased
-            ? (
-              <div className={styles.buyButton}>
-                <p className={styles.priceCourse}>Course purchased!</p>
-              </div>
-              )
-            : (
-              <div className={styles.buyButton} onClick={handleBuyCourse}>
-                <p className={styles.priceCourse}>Buy for {courseDetails.price}$</p>
-              </div>
-              )}
           <hr />
 
         </section>
