@@ -4,11 +4,9 @@ import styles from './AddCoursePage.module.css'
 
 
 interface FormType {
-    name: string;
-    price: string;
+    title: string;
     topic: string;
     difficulty: string;
-    tags: string;
     description: string;
     image: string;
     category: string;
@@ -19,11 +17,9 @@ interface FormType {
 
 export const AddCoursePage = () => {
     const [newCourse, setNewCourse] = useState<FormType>({
-        name: '',
-        price: '',
+        title: '',
         topic: '',
         difficulty: '',
-        tags: '',
         description: '',
         image: '',
         category: '',
@@ -63,20 +59,11 @@ export const AddCoursePage = () => {
             <form className={styles.form} onSubmit={handleSubmit}>
                 <form onSubmit={handleSubmit}>
                     <label>
-                        Name
+                        Title
                         <input
                             type='text'
-                            name='name'
-                            value={newCourse.name}
-                            onChange={handleChange}
-                        />
-                    </label>
-                    <label>
-                        Price
-                        <input
-                            type='number'
-                            name='price'
-                            value={newCourse.price}
+                            name='title'
+                            value={newCourse.title}
                             onChange={handleChange}
                         />
                     </label>
@@ -127,16 +114,6 @@ export const AddCoursePage = () => {
                             <option value='Expert'>Expert</option>
                             <option value='All Levels'>All Levels</option>
                         </select>
-                    </label>
-                    <label>
-                        Tags
-                        <input
-                            type='text'
-                            name='tags'
-                            value={newCourse.tags}
-                            onChange={handleChange}
-                            placeholder='tag1,tag2'
-                        />
                     </label>
                     <label>
                         Description
