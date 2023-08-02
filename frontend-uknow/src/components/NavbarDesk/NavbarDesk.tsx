@@ -66,7 +66,7 @@ export const NavbarDesk = () => {
                 </span>
               </Nav.Link>
             </Nav.Item>
-              <NavDropdown title='Profile'>
+              <NavDropdown title='Profile' className={styles.item}>
                 <NavDropdown.Item href='/profile' className={styles.dropDownItem}>
                   My profile
                 </NavDropdown.Item>
