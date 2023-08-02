@@ -92,7 +92,6 @@ export const NavbarDesk = () => {
                     <NavDropdown.Item href='/auth' className={styles.dropDownItem}>
                       Log in
                     </NavDropdown.Item>
-                    <NavDropdown.Divider />
                   </>
                   )}
             </NavDropdown>
