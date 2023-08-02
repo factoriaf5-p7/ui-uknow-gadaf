@@ -52,20 +52,30 @@
 
 @media (min-width: 600px) {
 
+  #welcome {
+    font-size: 25px;
+  }
  
   .tabs{
     width: 30vh;
   }
- .body {
- 
+
+ .body { 
    display: flex;
    justify-content: center;
    flex-direction: column;
    align-items: center;
-   margin-left:35%;
-   margin-bottom: 3%;
+   width: 100vw;
+   height: 70vh;
+   padding: 70px 0 100px 0;
   }
 
+  .header  {
+    margin: 100px 0 100px 0;
+    
+   width: 100vw;
+   height: 30vh;
+  }
 }
 
 /* @media (min-width: 600px) {
