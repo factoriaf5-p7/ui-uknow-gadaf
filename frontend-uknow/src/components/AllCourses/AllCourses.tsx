@@ -24,7 +24,7 @@ export const AllCourses = () => {
 
   const filteredCourses = searchKeywords
     ? courses.filter((course) =>
-      course.name?.toLowerCase().includes(searchKeywords.toLowerCase())
+      course.title?.toLowerCase().includes(searchKeywords.toLowerCase())
     )
     : courses
 
