@@ -39,7 +39,7 @@ export const FilterByCategory = () => {
         {filteredCourses.map((course, i) => (
           <div key={i}>
             <Link to={`/course/${course._id}`}>
-              <AllCoursesCard image={course.image} rating={course.rating} title={course.name} price={course.price} />
+              <AllCoursesCard image={course.image} rating={course.rating} title={course.title} price={course.price} />
             </Link>
           </div>
         ))}
