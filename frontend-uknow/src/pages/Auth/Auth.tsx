@@ -15,8 +15,6 @@ export const Auth = () => {
         <div className={styles.logo}>
           <a href='/home'><img src={Logo} alt='U-know logo' /></a>
         </div>
-        <p>Please enter your details</p>
-        <br />
       </div>
 
       <div className={styles.body}>
