@@ -169,7 +169,7 @@
 .titleAnim{
   display: flex;
 }
-.box {
+.buttons {
   display:flex;
   flex-direction: column;
   justify-content: center;
@@ -283,7 +283,7 @@ h3 span {
 @media (min-width: 800px) {
   .container {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
   }
 }
 @media (max-width: 800px) {
@@ -291,7 +291,4 @@ h3 span {
     display: flex;
     flex-direction: column;
 }
-  .box {
-      width:70vw;
-  }
 }
