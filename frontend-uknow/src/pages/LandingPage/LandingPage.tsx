@@ -6,9 +6,10 @@ import Logo from '../../assets/LogoGris.png'
 
 export const LandingPage = () => {
   return (
-    <>      {/* <div className={styles.interrogantes}>
-    <div className={styles.i1}>?</div><div className={styles.i2}>?</div><div className={styles.i3}>?</div>
-  </div> */}
+    <>
+      {/* <div className={styles.interrogantes}>
+        <div className={styles.i1}>?</div><div className={styles.i2}>?</div><div className={styles.i3}>?</div>
+      </div> */}
       <div className={styles.container}>
         <section className={styles.logo}>
           <img src={Logo} alt='logo' className={styles.logoImg} />
@@ -20,11 +21,11 @@ export const LandingPage = () => {
         </section>
         <section className='{styles.buttons'>
           <Link to='/auth'>
-            <ButtonP text='Get Started' />
+            <ButtonP className={styles.button} text='Get Started' />
           </Link>
-          <br />
+          <br /><br />
           <Link to='/home'>
-            <ButtonS text='Explore' />
+            <ButtonS text='Explore'/>
           </Link>
         </section>
       </div>
