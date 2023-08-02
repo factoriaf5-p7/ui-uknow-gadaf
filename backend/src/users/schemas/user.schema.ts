@@ -36,7 +36,7 @@ export class User {
 	image: any;
 	rating: any;
 	price: any;
-    course_id: []
+  course_id: []
   }[];
 
   @ApiProperty({ example: [ 'Created Course 1', 'Created Course 2' ] })
