@@ -75,73 +75,77 @@ const CourseDetail = () => {
 
   return (
     <>
-
+      <BackButton />
       <div className={styles.courseContainer}>
-        <BackButton />
+
         <section className={styles.courseHeader}>
 
-          <h2>{courseDetails.title}</h2>
           <hr />
-          <img src={DemoImg} alt={courseDetails.title} className={styles.courseImg} />
-          <hr />
-
-          <div className={styles.courseSpecs}>
-            <div className={styles.rating}>
-              <StarRating stars={courseDetails.rating} /> {courseDetails.rating}
+          <div className={styles.imgSpecs}>
+            <img src={DemoImg} alt={courseDetails.title} className={styles.courseImg} />
+            <hr />
+            <div className={styles.specsDescriptionBuy}>
+              <h2 className={styles.courseTitle}>{courseDetails.title}</h2>
+              <div className={styles.courseSpecs}>
+                <div className={styles.rating}>
+                  <StarRating stars={courseDetails.rating} /> {courseDetails.rating}
+                </div>
+                <div className={styles.difficulty}>
+                  <BarChartFill />
+                  {courseDetails.difficulty}
+                </div>
+                <div className={styles.courseCategory}>{courseDetails.category}</div>
+              </div>
+              <p className={styles.courseDescription}>{courseDetails.description}</p>
+              {message}
+              {/* Conditionally display the buy button or success message */}
+              {courseDetails.purchased
+                ? (
+                  <div className={styles.buyButton}>
+                    <p className={styles.priceCourse}>Course purchased!</p>
+                  </div>
+                  )
+                : (
+                  <div className={styles.buyButton} onClick={handleBuyCourse}>
+                    <p className={styles.priceCourse}>Buy for {courseDetails.price}$</p>
+                  </div>
+                  )}
             </div>
-            <div className={styles.difficulty}>
-              <BarChartFill />
-              {courseDetails.difficulty}
-            </div>
-            <div className={styles.courseCategory}>{courseDetails.category}</div>
           </div>
-          <p className={styles.courseDescription}>{courseDetails.description}</p>
-          {message}
-          {/* Conditionally display the buy button or success message */}
-          {courseDetails.purchased
-            ? (
-              <div className={styles.buyButton}>
-                <p className={styles.priceCourse}>Course purchased!</p>
-              </div>
-              )
-            : (
-              <div className={styles.buyButton} onClick={handleBuyCourse}>
-                <p className={styles.priceCourse}>Buy for {courseDetails.price}$</p>
-              </div>
-              )}
           <hr />
 
         </section>
 
         <section className={styles.courseContent}>
+          <div className={styles.courseContentTop}>
+            <h4 className={styles.courseContentTitle}>Course's content</h4>
+            <p>{courseDetails.content}</p>
 
-          <h4 className={styles.courseContentTitle}>Course's content</h4>
-          <p>{courseDetails.content}</p>
-
-          {/* Show video link only if the course is purchased */}
-          {coursePurchased ? (
-            <a href={courseDetails.videoUrl} className={styles.videoLink}>
-              <div className={styles.videoBox}>
-                <div className={styles.squareButton}>
-                  <button className={styles.circleButton}>
-                    <PlayFill className={styles.playIcon} />
-                  </button>
+            {/* Show video link only if the course is purchased */}
+            {coursePurchased ? (
+              <a href={courseDetails.videoUrl} className={styles.videoLink}>
+                <div className={styles.videoBox}>
+                  <div className={styles.squareButton}>
+                    <button className={styles.circleButton}>
+                      <PlayFill className={styles.playIcon} />
+                    </button>
+                  </div>
+                  <div className={styles.videoInfo}>
+                    <h3 className={styles.videoTitle}>{courseDetails.videoTitle}What is Scala for Spark?</h3>
+                    <p className={styles.videoDuration}>
+                      <Clock className={styles.clockIcon} /> {courseDetails.videoDuration} 20 Minutes
+                    </p>
+                  </div>
                 </div>
-                <div className={styles.videoInfo}>
-                  <h3 className={styles.videoTitle}>{courseDetails.videoTitle}What is Scala for Spark?</h3>
-                  <p className={styles.videoDuration}>
-                    <Clock className={styles.clockIcon} /> {courseDetails.videoDuration} 20 Minutes
-                  </p>
-                </div>
+              </a>
+            ) : (
+            /* If the course is NOT purchased, show only the video title */
+              <div className={styles.videoTitleUnbought}>
+                <Lock />
+                {courseDetails.videoTitle}What is Scala for Spark?
               </div>
-            </a>
-          ) : (
-          /* If the course is NOT purchased, show only the video title */
-            <div className={styles.videoTitleUnbought}>
-              <Lock />
-              {courseDetails.videoTitle}What is Scala for Spark?
-            </div>
-          )}
+            )}
+          </div>
         </section>
       </div>
     </>
