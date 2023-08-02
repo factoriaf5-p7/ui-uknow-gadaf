@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap'
 import styles from './ProfilePage.module.css'
 import { Coin, ArrowBarRight } from 'react-bootstrap-icons'
-import { CreatedCourses } from '../../components/CreatedCourses/CreatedCourses'
-import { BoughtCourses } from '../../components/BoughtCourses/BoughtCourses'
 import { ProfileActions } from '../../components/ProfileActions/ProfileActions'
 import { ProfileContact } from '../../components/ProfileContact/ProfileContact'
 
@@ -59,7 +57,7 @@ export const Profile = () => {
           <p> id:  {profile._id}</p>
           <p className={styles.chip}><Coin />  {profile.wallet_balance}</p>
           <br />
-          <button> Logout <ArrowBarRight /> </button>
+          <button className={styles.logoutBtn}> Logout <ArrowBarRight /> </button>
 
         </section>
         <div className={styles.courses}>
@@ -67,8 +65,6 @@ export const Profile = () => {
           <section className={styles.contact}> <ProfileContact /></section>
         </div>
       </div>
-      <section className={styles.createdCourses}> <CreatedCourses /></section>
-
     </Container>
   )
 }
