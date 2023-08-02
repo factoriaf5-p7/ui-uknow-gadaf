@@ -6,7 +6,7 @@ export const ProfileContact = () => {
   return (
     <Container className={styles.container}>
       <h4>Contact Form</h4>
-      <div>Name <input /> <br />email <input /><br /> Comments <textarea name='' id='' /><button>Send</button></div>
+      <div>Name <input /> <br />email <input /><br /> Comments <textarea name='' id='' /><br /><button>Send</button></div>
     </Container>
   )
 }
