@@ -22,7 +22,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 0.2rem;
+    gap: 0.8rem;
 }
 
 .rating {
@@ -44,10 +44,10 @@
 }
 
 .courseCategory {
-    height: 25px;
-    padding: 10px;
+    height: 20px;
+    padding: 5px;
     border: none;
-    border-radius: 20px !important;
+    border-radius: 5px !important;
     cursor: pointer;
     outline: none;
       background-image: 
@@ -60,6 +60,7 @@
     font-size: 14px;
     display: flex;
     align-items: center;
+    font-size: 12px;
 }
 
 .courseCategory:hover {
@@ -83,25 +84,21 @@ h2 {
 }
 
 .buyButton {
-    width: 110px;
+    width: 150px;
     height: 30px;
-    padding-top: 3px;
-    text-align: center;
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
     cursor: pointer;
-    outline: none;
     background-color: #92A65F;
-    box-shadow: 0 2px 4px rgba(220, 220, 220, 0.2);
-    color: white;
-    border-style: none;
-    letter-spacing: 0.8px;
+    box-shadow: 0 2px 4px rgba(72, 72, 72, 0.2);
 }
 
 .priceCourse {
     font-weight: 600;
-    font-size: 14px;
+    font-size: 18px;
     color: white;
+    letter-spacing: 0.8px;
+    text-align: center;
 }
 
 .courseContent {
