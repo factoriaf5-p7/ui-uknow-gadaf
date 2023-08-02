@@ -1,3 +1,4 @@
+/* eslint-disable multiline-ternary */
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { StarRating } from '../../components/StarRating/StarRating'
@@ -9,8 +10,27 @@ import { BackButton } from '../../components/BackButton/BackButton'
 
 const CourseDetail = () => {
   const { id } = useParams()
-
   const [courseDetails, setCourseDetails] = useState<any>([])
+  const [coursePurchased, setCoursePurchased] = useState(false)
+
+  useEffect(() => {
+    async function getProfileData () {
+      try {
+        const token = localStorage.getItem('token')
+        const userId = localStorage.getItem('id')
+        const response = await axios.get(`http://localhost:3000/api/users/verify/${userId}/${id}`, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+        setCoursePurchased(response.data)
+      } catch (error) {
+        console.error(error)
+      }
+    }
+    console.log(id)
+    getProfileData()
+  }, [])
 
   useEffect(() => {
     const fetchCourseDetails = async () => {
@@ -55,16 +75,16 @@ const CourseDetail = () => {
 
   return (
     <>
-     
+
       <div className={styles.courseContainer}>
-      <BackButton />
+        <BackButton />
         <section className={styles.courseHeader}>
-          
-        <h2>{courseDetails.title}</h2>
-        <hr />
+
+          <h2>{courseDetails.title}</h2>
+          <hr />
           <img src={DemoImg} alt={courseDetails.title} className={styles.courseImg} />
           <hr />
-          
+
           <div className={styles.courseSpecs}>
             <div className={styles.rating}>
               <StarRating stars={courseDetails.rating} /> {courseDetails.rating}
@@ -90,7 +110,7 @@ const CourseDetail = () => {
               </div>
               )}
           <hr />
-          
+
         </section>
 
         <section className={styles.courseContent}>
@@ -99,7 +119,7 @@ const CourseDetail = () => {
           <p>{courseDetails.content}</p>
 
           {/* Show video link only if the course is purchased */}
-          {courseDetails.purchased ? (
+          {coursePurchased ? (
             <a href={courseDetails.videoUrl} className={styles.videoLink}>
               <div className={styles.videoBox}>
                 <div className={styles.squareButton}>
