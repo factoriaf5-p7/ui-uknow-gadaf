@@ -46,7 +46,7 @@ export const AllCourses = () => {
               <AllCoursesCard
                 image={course.image}
                 rating={course.rating}
-                title={course.name}
+                title={course.title}
                 price={course.price}
               />
             </Link>

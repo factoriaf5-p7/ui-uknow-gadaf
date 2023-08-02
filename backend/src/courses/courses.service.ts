@@ -246,7 +246,7 @@ export class CoursesService {
 			//console.log(entries);
 			entries.forEach((course) => {
 				console.log(course);
-				createdCourses.push({ _id: course[1]._id, name: course[1].name, image: course[1].image, rating: course[1].rating, price: course[1] .price });
+				createdCourses.push({ _id: course[1]._id, name: course[1].title, image: course[1].image, rating: course[1].rating, price: course[1].price });
 			});
 
 			return {
