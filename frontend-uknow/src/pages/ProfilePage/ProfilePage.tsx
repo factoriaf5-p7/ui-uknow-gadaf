@@ -26,7 +26,6 @@ export const Profile = () => {
     async function getData () {
       try {
         const token = localStorage.getItem('token')
-        console.log(token)
         const response = await axios.get('http://localhost:3000/api/users/profile', {
           headers: {
             Authorization: `Bearer ${token}`
