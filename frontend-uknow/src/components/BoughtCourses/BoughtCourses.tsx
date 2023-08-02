@@ -52,7 +52,7 @@ export const BoughtCourses = () => {
 
   return (
     <Container className={styles.container}>
-      <h6>Bought Courses</h6>
+      <h4 className={styles.sectionTitle}>Bought courses</h4>
       <div className='d-flex flex-wrap justify-content-center' style={{ display: 'inline-block', gap: 10 }}>
         {courseData.length > 0
           ? (
