@@ -68,7 +68,7 @@ export const NavbarDesk = () => {
             </Nav.Item>
             <Nav.Item as='li'>
               <NavDropdown title='Profile' id='basic-nav-dropdown' className={styles.item}>
-                <NavDropdown.Item href='/auth'>
+                <NavDropdown.Item href='/profile'>
                   My profile
                 </NavDropdown.Item>
                 <NavDropdown.Item href='/auth'>
