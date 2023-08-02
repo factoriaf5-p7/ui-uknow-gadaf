@@ -1,6 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsNotEmpty, IsString } from 'class-validator';
-import { ObjectId } from 'mongoose';
 
 export class CreateCourseDto {
 	@ApiProperty({ example: 'How to validate dtos properties' })
@@ -10,7 +9,7 @@ export class CreateCourseDto {
 	
 	@ApiProperty({ example: '423un4v89423' })
 	@IsString()
-		userId: ObjectId;
+		userId: string;
 
 	@ApiProperty({ example: 'How to validate dtos properties' })
 	@IsString()

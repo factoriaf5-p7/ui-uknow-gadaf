@@ -3,7 +3,6 @@ import Nav from 'react-bootstrap/Nav'
 import styles from './NavbarDesk.module.css'
 import LogoImg from '../../assets/LogoGris.png'
 import LogoText from '../../assets/LogoText.svg'
-import { BellFill, Search } from 'react-bootstrap-icons'
 
 export const NavbarDesk = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
@@ -68,18 +67,6 @@ export const NavbarDesk = () => {
 
                   {/* <Person className={styles.icon} /> */}
                 </span>
-              </Nav.Link>
-            </Nav.Item>
-          </div>
-          <div className={styles.iconsContainer}>
-            <Nav.Item as='li'>
-              <Nav.Link href='/searchbykeyword'>
-                <Search className={styles.iconBubble} />
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item as='li'>
-              <Nav.Link href='/notifications'>
-                <BellFill className={styles.iconBubble} />
               </Nav.Link>
             </Nav.Item>
           </div>

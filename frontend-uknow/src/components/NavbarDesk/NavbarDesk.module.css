@@ -43,11 +43,7 @@
     display: none;
   }
   
-  .iconsContainer{
-    display: flex;
-    gap: 1rem;
-}
-
+ 
 .navBarLinks{
     display: flex;
     justify-content: space-evenly; 
@@ -56,19 +52,7 @@
     padding-bottom: 0.5rem;
 }
 
-  /* .icon{
-    width: 25px;
-    padding-right: 3px;
-    color: #2d2d2d;
-} */
-  .iconBubble {
-    color:#657c71;
-    font-size: 25px !important;
-    background-color: #ffffff;
-    padding: 20%;
-    border-radius: 50%;
-  }
-  .navBarItems {
+   .navBarItems {
     display: flex;
     align-items: center;
     width: 90%; 
