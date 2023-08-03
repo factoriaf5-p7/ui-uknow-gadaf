@@ -1,11 +1,11 @@
-import { ButtonHTMLAttributes, FC } from 'react'
+import React, { ButtonHTMLAttributes, FC } from 'react'
 import Button from 'react-bootstrap/Button'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
   onClick?: () => void;
   className?: string;
-  icon: HTMLElement;
+  icon: React.ReactNode;
 }
 
 export const ButtonP: FC<ButtonProps> = ({ type, text, icon, onClick, className }) => {

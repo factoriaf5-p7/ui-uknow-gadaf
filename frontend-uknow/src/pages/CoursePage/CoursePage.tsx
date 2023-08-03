@@ -129,7 +129,7 @@ const CourseDetail = () => {
 
             {/* Show video link only if the course is purchased */}
             {coursePurchased ? (
-              <a href={courseDetails.videoUrl} className={styles.videoLink}>
+              <a href={courseDetails.videoURL} className={styles.videoLink}>
                 <div className={styles.videoBox}>
                   <div className={styles.squareButton}>
                     <button className={styles.circleButton}>
@@ -138,9 +138,6 @@ const CourseDetail = () => {
                   </div>
                   <div className={styles.videoInfo}>
                     <h3 className={styles.videoTitle}>{courseDetails.videoTitle}</h3>
-                    <p className={styles.videoDuration}>
-                      <Clock className={styles.clockIcon} /> {courseDetails.videoDuration}
-                    </p>
                   </div>
                 </div>
               </a>
