@@ -45,27 +45,23 @@ export const AddCoursePage = () => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        let createdCourseId = ''
         try {
             const userId = localStorage.getItem('id')
             const response = await axios.post(
                 `http://localhost:3000/api/courses/create/${userId}`,
                 {
                     ...newCourse,
-                    userId
+                    userId: localStorage.getItem('id')
                 }
-            
-                )
-            createdCourseId = response.data._id;
+            )
             console.log(response.data)
             console.log(newCourse)
-            
-            
+
+            navigate('/mycourses');
+
         } catch (error) {
             console.log(error)
         }
-        // navigate(`/course/${createdCourseId}`);
-        console.log(createdCourseId)
     }
 
     return (
