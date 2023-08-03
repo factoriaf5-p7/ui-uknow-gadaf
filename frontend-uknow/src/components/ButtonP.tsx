@@ -17,6 +17,7 @@ export const ButtonP: FC<ButtonProps> = ({ type, text, onClick, className }) => 
       color: white;
       font-weight:600;
       border-color:#3A591E;
+      border-radius: 30px;
     }
     `}
       </style>

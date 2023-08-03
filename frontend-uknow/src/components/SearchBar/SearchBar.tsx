@@ -9,8 +9,9 @@ export const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   const [keywords, setKeywords] = useState('')
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setKeywords(event.target.value)
-    onSearch(keywords)
+    const newKeywords = event.target.value
+    setKeywords(newKeywords)
+    onSearch(newKeywords)
   }
 
   return (

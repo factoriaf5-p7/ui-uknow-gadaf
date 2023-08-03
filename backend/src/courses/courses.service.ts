@@ -23,7 +23,10 @@ export class CoursesService {
 	async create(userId: ObjectId | string, createCourseDto: CreateCourseDto) {
 		try {
 			const newCourse = await this.courseModel.create(createCourseDto);
-			await this.userModel.findByIdAndUpdate(userId, { $push: { created_courses: newCourse._id } });
+			await this.userModel.findByIdAndUpdate(userId, {
+				$push: { created_courses: newCourse._id },
+				$inc: { wallet_balance: 100 },
+			});
 
 			return {
 				message: 'New course created successfully.',

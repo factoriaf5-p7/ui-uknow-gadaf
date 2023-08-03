@@ -13,10 +13,16 @@ export const ButtonS: FC<ButtonProps> = ({ text, onClick, className }) => {
       <style type='text/css'>
         {`
     .btn-secondary {
-      background-color: #D7E0D0;
+      background-color: white;
       color: #777777;
       font-weight:600;
       border-color: #D7E0D0;
+      border-radius: 30px;
+    }
+
+    .btn-secondary:hover {
+      background-color: #AED581;
+      border: none;
     }
     `}
       </style>

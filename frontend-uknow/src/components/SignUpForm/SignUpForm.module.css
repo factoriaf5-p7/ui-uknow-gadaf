@@ -30,9 +30,10 @@ form {
 @media (min-width: 600px) {
 
   .signUpContainer {
+    
     width: fit-content;
     padding: 3rem;
-    height: 45vh;
+    height: 55vh;
     border-radius: 5%;
     background-image: 
   radial-gradient(circle at 100% 0, #ffffff, transparent),

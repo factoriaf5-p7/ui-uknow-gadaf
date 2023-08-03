@@ -42,11 +42,13 @@ export const Profile = () => {
 
     getData()
   }, [])
-  const handleLogOut = () => {
-    localStorage.removeItem('token')
-    localStorage.removeItem('id')
-    window.location.href = '/'
-  }
+
+  // const handleLogOut = () => {
+  //   localStorage.removeItem('token')
+  //   localStorage.removeItem('id')
+  //   window.location.href = '/'
+  // }
+
   return (
     <Container>
       <div className={styles.intro}>
@@ -60,7 +62,7 @@ export const Profile = () => {
           <br />
           <p className={styles.chip}><Coin />  {profile.wallet_balance}</p>
           <br />
-          <button className={styles.logoutBtn} onClick={handleLogOut}> Logout <ArrowBarRight /> </button>
+          <button className={styles.logOutBtn}> Logout <ArrowBarRight /> </button>
 
         </section>
         <div className={styles.courses}>
