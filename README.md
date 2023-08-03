@@ -5,11 +5,11 @@ UI Design and Development
 
 ## Team
 
-- Alejandra Naranjo,
-- Andreu baltazar
-- Georgina Tomás
-- Federico Martino
-- Teresa Madridejos
+- [Alejandra Naranjo](https://github.com/Alens678)
+- [Andreu baltazar](https://github.com/andreubltzr)
+- [Georgina Tomás](https://github.com/GeorginaTS)
+- [Federico Martino](https://github.com/Federicojaviermartino)
+- [Teresa Madridejos](https://github.com/teresamadridejos)
 
 ## U-KNOW platform
 
