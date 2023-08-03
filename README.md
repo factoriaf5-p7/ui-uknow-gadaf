@@ -1,7 +1,7 @@
 
 # :monkey::atom_symbol: U-KNOW: the new sharing & learning platform 
 
-UI Design and Development
+Design and creation of a responsive website for buying and selling programming courses.
 
 ## Team
 
@@ -13,13 +13,9 @@ UI Design and Development
 
 ## U-KNOW platform
 
-Design and creation of a responsive website for buying and selling programming courses.
+The platform has a **Home page** where the courses are filtered by **category**, **popularity** and **topic**. There is also a list of all the courses ordered by ranking, with a **search bar** in real time. 
 
-By signing up, the user automatically gets **1000 Knowlitos**, with which they can start buying and consuming courses. The user can create their own content and sell it to other users. The user's **wallet** is automatically updated with each of these interactions.
-
-The platform has a **Home page** where the courses are filtered by **category**, **popularity** and **topic**. There is also a list of all the courses ordered by ranking, with a **search bar** in real time.
-
-In the **New course** section, the user can create their own course by filling in the fields provided. The courses have an initial price of 100 knowlitos. Once created, it will automatically appear in the **My courses** section, divided between **Created courses** and **Bought courses**.
+In the **New course** section, the user can create their own course by filling in the fields provided. The courses have an initial price of 100 knowlitos. Once created, they will automatically appear in the **My courses** section, divided between **Created courses** and **Bought courses**. By signing up, the user automatically gets **1000 Knowlitos**, with which they can start buying and consuming courses. The user's **wallet** is automatically updated with each of these interactions.
 
 Each course has its individual page with its information. If the user has purchased or created the course, they can view the full content and click the links. If not, the content is protected and the user is prompted to purchase the course.
 
