@@ -14,6 +14,7 @@ import { FilterByTopic } from './components/FilterByTopic/FilterByTopic'
 import CoursePage from './pages/CoursePage/CoursePage'
 import { MyCourses } from './pages/MyCourses/MyCourses'
 import { TokenProvider } from './context/TokenContext'
+import { Admin } from './pages/Admin/Admin'
 
 function Layout ({ children }: any) {
   return (
@@ -32,10 +33,13 @@ function Layout ({ children }: any) {
 
 function App () {
   const location = useLocation()
-  const isLandingPage = location.pathname === '/' || location.pathname === '/auth'
+  const isLandingPage = location.pathname === '/' || location.pathname === '/auth' || location.pathname === '/verysecretroute'
 
   return (
     <>
+      <Routes>
+        <Route path='/verysecretroute' element={<Admin />} />
+      </Routes>
       {isLandingPage
         ? (
           <Routes>

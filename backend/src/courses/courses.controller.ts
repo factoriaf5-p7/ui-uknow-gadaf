@@ -1,5 +1,5 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
-import { Controller, Get, Post, Body, Patch, Param, Delete, Query, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query } from '@nestjs/common';
 import { CoursesService } from './courses.service';
 import { CreateCourseDto } from './dto/create-course.dto';
 import { UpdateCourseDto } from './dto/update-course.dto';
@@ -7,9 +7,9 @@ import { ObjectId } from 'mongoose';
 // import { AuthGuard } from 'src/auth/guards/auth.guard';
 import { RatedCourseDto } from './dto/rate-course.dto';
 import { PurchaseCourseDto } from './dto/buy-course.dto';
-import { Roles } from 'src/auth/guards/roles';
-import { Role } from 'src/auth/guards/roles.enum';
-import { RolesGuard } from 'src/auth/guards/role.guard';
+// import { Roles } from 'src/auth/guards/roles';
+// import { Role } from 'src/auth/guards/roles.enum';
+// import { RolesGuard } from 'src/auth/guards/role.guard';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 
 @ApiBearerAuth()
@@ -113,8 +113,8 @@ export class CoursesController {
   }
 
   @Get('admin/:id')
-  @Roles(Role.Admin)
-  @UseGuards(RolesGuard)
+  // @Roles(Role.Admin)
+  // @UseGuards(RolesGuard)
   // @UseGuards(AuthGuard)
   findOneAdmin(@Param('id') id: ObjectId ) {
   	return this.coursesService.findOneAdmin(id);

@@ -440,7 +440,7 @@ export class CoursesService {
 				return {
 					message: 'Course deleted by admin',
 					status: HttpStatus.OK,
-					data: '',
+					data: 'Deleted.',
 				};
 			} else {
 				throw new HttpException('Course not found.', HttpStatus.NOT_FOUND);

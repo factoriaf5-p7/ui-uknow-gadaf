@@ -197,7 +197,7 @@ export class UsersService {
 			return {
 				message: 'User deleted by Admin',
 				status: HttpStatus.OK,
-				data: ''
+				data: 'Deleted.'
 			};
 		} catch (error) {
 			throw error;
