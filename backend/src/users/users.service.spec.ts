@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { UsersService } from './users.service';
 import { RecoverUserDto } from 'src/auth/dto/recover-user.dto';
-import mongoose, { ObjectId } from 'mongoose';
+import mongoose from 'mongoose';
 import { HttpStatus } from '@nestjs/common';
 
 const recoveryUser: RecoverUserDto = {
@@ -15,7 +15,7 @@ describe('UsersService', () => {
 	let service: UsersService;
 
 	const mockUsersService = {
-		updatePassword: jest.fn().mockImplementation((recoveryUser: RecoverUserDto) => {
+		updatePassword: jest.fn().mockImplementation(() => {
 			return {
 				message: 'Password updated successfully',
 				status: 200,
@@ -23,7 +23,7 @@ describe('UsersService', () => {
 			};
 		}),
 
-		deleteUserByAdmin: jest.fn().mockImplementation((id: ObjectId) => {
+		deleteUserByAdmin: jest.fn().mockImplementation(() => {
 			return {
 				message: 'User deleted by Admin',
 				status: HttpStatus.OK,
