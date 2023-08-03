@@ -22,14 +22,17 @@ export const LandingPage = () => {
           </section>
 
           <section className={styles.landingPageText}>
-            <h1 className={styles.slogan}>The new sharing & learning platform </h1>
+            <div className={styles.sloganContainer}>
+            <h1 className={styles.slogan}>The new sharing</h1>
+            <h1 className={styles.slogan}> 
+            & learning platform </h1></div>
             <h2 className={styles.catchPhrase}>Sign up and get 1000 free knowlitos to get you started</h2>
           </section>
           <div className={styles.landingPageButtons}>
             <Link to='/auth'>
               <ButtonP className={styles.getStartedButton} text='Get started' />
             </Link>
-            <br /><br />
+            <br />
             <Link to='/home'>
               <ButtonS className={styles.exploreButton} text='Explore' />
             </Link>
