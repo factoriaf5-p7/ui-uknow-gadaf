@@ -101,9 +101,7 @@ const CourseDetail = () => {
               {/* Conditionally display the buy button or success message */}
               {coursePurchased
                 ? (
-                  <div className={styles.buyButton}>
-                    <p className={styles.priceCourse}>Course purchased!</p>
-                  </div>
+                  <></>
                   )
                 : (
                   <div className={styles.buyButton} onClick={handleBuyCourse}>
