@@ -22,7 +22,7 @@ export const NavbarBottom = () => {
           </Nav.Link>
         </Nav.Item>
         <Nav.Item as='li'>
-          <Nav.Link href='/auth'>
+          <Nav.Link href='/profile'>
             <PersonCircle className={styles.icon} />
           </Nav.Link>
         </Nav.Item>

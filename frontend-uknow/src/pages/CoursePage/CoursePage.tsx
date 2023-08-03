@@ -130,7 +130,7 @@ const CourseDetail = () => {
                     </button>
                   </div>
                   <div className={styles.videoInfo}>
-                    <h3 className={styles.videoTitle}>{courseDetails.videoTitle}courseDetails.videoTitle</h3>
+                    <h3 className={styles.videoTitle}>{courseDetails.videoTitle}</h3>
                     <p className={styles.videoDuration}>
                       <Clock className={styles.clockIcon} /> {courseDetails.videoDuration}
                     </p>
@@ -141,7 +141,7 @@ const CourseDetail = () => {
             /* If the course is NOT purchased, show only the video title */
               <div className={styles.videoTitleUnbought}>
                 <Lock />
-                {courseDetails.videoTitle}What is Scala for Spark?
+                {courseDetails.videoTitle}
               </div>
             )}
           </div>
