@@ -99,7 +99,7 @@ const CourseDetail = () => {
               <p className={styles.courseDescription}>{courseDetails.description}</p>
               {message}
               {/* Conditionally display the buy button or success message */}
-              {courseDetails.purchased
+              {coursePurchased
                 ? (
                   <div className={styles.buyButton}>
                     <p className={styles.priceCourse}>Course purchased!</p>
