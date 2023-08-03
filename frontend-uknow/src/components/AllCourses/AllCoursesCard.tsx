@@ -2,7 +2,7 @@ import styles from './AllCoursesCard.module.css'
 
 export interface AllCoursesCardProps {
     image: string,
-    rating: number,
+    rating: string,
     title: string,
     price:number,
 }

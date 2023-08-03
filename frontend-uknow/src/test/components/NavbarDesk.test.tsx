@@ -1,6 +1,5 @@
 import { describe, test, expect } from 'vitest'
-import { render, waitFor } from '@testing-library/react'
-import { MemoryRouter } from 'react-router-dom'
+import { render } from '@testing-library/react'
 import { NavbarDesk } from '../../components/NavbarDesk/NavbarDesk'
 import { TokenProvider } from '../../context/TokenContext'
 

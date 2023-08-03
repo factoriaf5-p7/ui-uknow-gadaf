@@ -18,7 +18,7 @@ describe('SearchBar', () => {
   test('renders an input field to search', async () => {
     const { container } = render(
       <MemoryRouter>
-        <SearchBar onSearch={function (keywords: string): void {
+        <SearchBar onSearch={function (): void {
           throw new Error('Function not implemented.')
         }}
         />

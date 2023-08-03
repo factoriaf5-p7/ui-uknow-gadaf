@@ -15,7 +15,7 @@ describe('PROFILE PAGE', () => {
       )
     })
     test('component ProfileActions mounts properly', () => {
-      const wrapper = render(<ButtonP text='' />)
+      const wrapper = render(<ButtonP text='' icon={undefined} />)
       expect(wrapper).toBeTruthy()
     })
     test('Component ProfileContact mounts properly', () => {
