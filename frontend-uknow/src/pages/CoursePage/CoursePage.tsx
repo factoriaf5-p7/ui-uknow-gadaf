@@ -1,3 +1,4 @@
+/* eslint-disable multiline-ternary */
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { StarRating } from '../../components/StarRating/StarRating'
@@ -55,16 +56,16 @@ const CourseDetail = () => {
 
   return (
     <>
-     
+
       <div className={styles.courseContainer}>
-      <BackButton />
+        <BackButton />
         <section className={styles.courseHeader}>
-          
-        <h2>{courseDetails.title}</h2>
-        <hr />
+
+          <h2>{courseDetails.title}</h2>
+          <hr />
           <img src={DemoImg} alt={courseDetails.title} className={styles.courseImg} />
           <hr />
-          
+
           <div className={styles.courseSpecs}>
             <div className={styles.rating}>
               <StarRating stars={courseDetails.rating} /> {courseDetails.rating}
@@ -90,7 +91,7 @@ const CourseDetail = () => {
               </div>
               )}
           <hr />
-          
+
         </section>
 
         <section className={styles.courseContent}>
