@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { StarRating } from '../../components/StarRating/StarRating'
-import DemoImg from '../../assets/demoImg.jpeg'
 import styles from './CoursePage.module.css'
 import { PlayFill, Clock, BarChartFill, Lock } from 'react-bootstrap-icons'
 import axios from 'axios'
