@@ -5,9 +5,10 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
   onClick?: () => void;
   className?: string;
+  icon: HTMLElement;
 }
 
-export const ButtonP: FC<ButtonProps> = ({ type, text, onClick, className }) => {
+export const ButtonP: FC<ButtonProps> = ({ type, text, icon, onClick, className }) => {
   return (
     <>
       <style type='text/css'>
@@ -23,6 +24,7 @@ export const ButtonP: FC<ButtonProps> = ({ type, text, onClick, className }) => 
       </style>
       <Button variant='success' className={className} onClick={onClick} type={type}>
         {text}
+        {icon}
       </Button>
     </>
   )
