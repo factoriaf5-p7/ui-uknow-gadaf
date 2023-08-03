@@ -334,7 +334,7 @@ export class CoursesService {
 		}
 	  }
 
-	async findOne(id: ObjectId) {
+	async findOne(id: ObjectId | string) {
 		try {
 			const course = await this.courseModel.findById(id);
 			return {

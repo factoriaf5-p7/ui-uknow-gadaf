@@ -32,12 +32,18 @@ export const BoughtCourses = () => {
       const courseDataArray = []
 
       for (const course of courses) {
-        try {
-          const courseId = course.course_id
-          const response = await axios.get(`http://localhost:3000/api/courses/${courseId}`)
-          courseDataArray.push(response.data.data)
-        } catch (error) {
-          console.error(`Error fetching data for course_id: ${course.course_id}`, error)
+        if (course && course.course_id) {
+          try {
+            const courseId = course.course_id
+            const response = await axios.get(`http://localhost:3000/api/courses/${courseId}`)
+            if (response.data.data) {
+              courseDataArray.push(response.data.data)
+            } else {
+              console.error(`Course data is null for course_id: ${courseId}`)
+            }
+          } catch (error) {
+            console.error(`Error fetching data for course_id: ${course.course_id}`, error)
+          }
         }
       }
       setCourseData(courseDataArray)
