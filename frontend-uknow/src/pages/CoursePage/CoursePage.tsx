@@ -91,7 +91,7 @@ const CourseDetail = () => {
 
           <hr />
           <div className={styles.imgSpecs}>
-            <img src={DemoImg} alt={courseDetails.title} className={styles.courseImg} />
+            <img src={courseDetails.image} alt={courseDetails.title} className={styles.courseImg} />
             <hr />
             <div className={styles.specsDescriptionBuy}>
               <h2 className={styles.courseTitle}>{courseDetails.title}</h2>
