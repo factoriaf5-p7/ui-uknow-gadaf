@@ -6,7 +6,7 @@ Design and creation of a responsive website for buying and selling programming c
 ## Team
 
 - [Alejandra Naranjo](https://github.com/Alens678)
-- [Andreu baltazar](https://github.com/andreubltzr)
+- [Andreu Baltazar](https://github.com/andreubltzr)
 - [Georgina Tomás](https://github.com/GeorginaTS)
 - [Federico Martino](https://github.com/Federicojaviermartino)
 - [Teresa Madridejos](https://github.com/teresamadridejos)
