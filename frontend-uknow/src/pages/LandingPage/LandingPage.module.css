@@ -169,42 +169,6 @@ width: 100vw;
 }
 
 
- /* .interrogantes {
-  display: flex;
-}
-
-.i1 {
-  position: absolute;
-  font-size: 6rem;
-  font-weight: 900;
-  font-family: "Lemon", cursive;
-  opacity: 0;
-  animation: anim 3s infinite;
-  z-index: 99;
-}
-.i2 {
-  position: absolute;
-  font-size: 4rem;
-  font-weight: 900;
-  font-family: "Lemon", cursive;
-  opacity: 0;
-  animation: anim 3s infinite;
-  z-index: 99;
-  right: 35vw;
-  transform: rotate(0.2turn);
-}
-.i3 {
-  position: absolute;
-  font-size: 6rem;
-  font-weight: 900;
-  font-family: "Lemon", cursive;
-  opacity: 0;
-  animation: anim 3s infinite;
-  z-index: 99;
-  left: 35vw;
-  transform: rotate(-0.2turn);
-} */
-
 @keyframes anim {
   0% {
     transform: scale(0.2);
@@ -239,10 +203,11 @@ width: 100vw;
 
 /* DEMO-SPECIFIC STYLES */
 .landingPageText h1 {
+  display: flex;
+  flex: wrap;
   font-family: monospace;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: .15em solid var(--color-green); /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: .15em; /* Adjust as needed */
   animation: 
@@ -255,12 +220,12 @@ width: 100vw;
   from { width: 0 }
   to { width: 100% }
 }
-/* The typewriter cursor effect
+/* The typewriter cursor effect */
 @keyframes blink-caret {
   from, to { border-color: transparent }
   50% { border-color: var(--color-green) }
   100% { border-color: var(--color-green-dark) }
-} */
+}
 
 .landingPageButtons {
   display:flex;

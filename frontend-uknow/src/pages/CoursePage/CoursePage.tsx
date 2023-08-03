@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { StarRating } from '../../components/StarRating/StarRating'
 import styles from './CoursePage.module.css'
-import { PlayFill, Clock, BarChartFill, Lock } from 'react-bootstrap-icons'
+import { PlayFill, Clock, BarChartFill, Lock, Coin } from 'react-bootstrap-icons'
 import axios from 'axios'
 import { BackButton } from '../../components/BackButton/BackButton'
 
@@ -113,7 +113,7 @@ const CourseDetail = () => {
                   )
                 : (
                   <div className={styles.buyButton} onClick={handleBuyCourse}>
-                    <p className={styles.priceCourse}>Buy for {courseDetails.price}$</p>
+                    <p className={styles.priceCourse}>Buy for {courseDetails.price} <Coin /></p>
                   </div>
                   )}
             </div>

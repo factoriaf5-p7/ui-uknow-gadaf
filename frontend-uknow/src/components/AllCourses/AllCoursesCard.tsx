@@ -1,3 +1,4 @@
+import { Coin } from 'react-bootstrap-icons'
 import styles from './AllCoursesCard.module.css'
 
 export interface AllCoursesCardProps {
@@ -15,7 +16,7 @@ export const AllCoursesCard = ({ image, rating, title, price }: AllCoursesCardPr
       </div>
       <p className='fw-bold'>{title}</p>
       <p className='fw-semibold'>{rating} ⭐</p>
-      <p className='fw-semibold'>{price}</p>
+      <p className='fw-semibold'>{price}<Coin /></p>
     </div>
   )
 }
