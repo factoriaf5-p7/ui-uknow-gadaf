@@ -94,7 +94,7 @@ export class CoursesController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: ObjectId) {
+  findOne(@Param('id') id: ObjectId | string) {
   	return this.coursesService.findOne(id);
   }
   @Get('created-courses/:id')
