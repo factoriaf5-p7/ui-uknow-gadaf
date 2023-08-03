@@ -73,7 +73,7 @@ export const BoughtCourses = () => {
             </div>
             )
           : (
-            <p>No bought courses available.</p>
+            <p>No bought courses yet.</p>
             )}
       </div>
     </Container>

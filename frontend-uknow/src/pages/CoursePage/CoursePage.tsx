@@ -58,6 +58,7 @@ const CourseDetail = () => {
   const navigate = useNavigate()
   const handleBuyCourse = async () => {
     const isConfirmed = window.confirm('Are you sure you want to buy this course?')
+    window.location.reload()
     if (isConfirmed) {
       try {
         const res = await axios.patch('http://localhost:3000/api/courses/purchase', {

@@ -6,8 +6,8 @@ import { BackButton } from '../../components/BackButton/BackButton'
 import styles from './MyCourses.module.css'
 
 export const MyCourses = () => {
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
+  // const [loading, setLoading] = useState(true)
+  // const [error, setError] = useState<string | null>(null)
   const [profile, setProfile] = useState({
     _id: '',
     name: '',
@@ -34,27 +34,24 @@ export const MyCourses = () => {
         })
 
         setProfile(response.data)
-        setLoading(false)
+        // setLoading(false)
         return profile
       } catch (error) {
-        console.error('Error fetching courses:', error)
-        setError('Failed to connect to server :(')
-        setLoading(false)
       }
     }
 
     getData()
   }, [])
 
-  if (loading) {
-    // Display loading state
-    return <div>Loading...</div>
-  }
-  if (error) {
-    // Display error message
-    alert(error)
-    return <div className='error-messages'>Something went wrong: {error}</div>
-  }
+  // if (loading) {
+  //   // Display loading state
+  //   return <div>Loading...</div>
+  // }
+  // if (error) {
+  //   // Display error message
+  //   alert(error)
+  //   return <div className='error-messages'>Something went wrong: {error}</div>
+  // }
 
   return (
     <div className={styles.pageContent}>

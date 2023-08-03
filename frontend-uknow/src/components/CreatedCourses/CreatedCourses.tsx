@@ -38,7 +38,7 @@ export const CreatedCourses = () => {
             </div>
             )
           : (
-            <p>No created courses available.</p>
+            <p>No created courses yet.</p>
             )}
       </div>
     </Container>
