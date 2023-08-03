@@ -56,8 +56,8 @@ export const MyCourses = () => {
   return (
     <div className={styles.pageContent}>
       <BackButton />
-      <CreatedCourses />
       <BoughtCourses />
+      <CreatedCourses />
     </div>
   )
 }
