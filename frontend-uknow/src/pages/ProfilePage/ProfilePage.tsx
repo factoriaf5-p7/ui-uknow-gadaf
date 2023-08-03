@@ -59,7 +59,8 @@ export const Profile = () => {
         <section className={styles.userInfo}>
           <h4>{profile.name} {profile.last_name}</h4>
           <h6>{profile.email}</h6>
-          <br />
+          <br /><br />
+          <h3>My wallet</h3>
           <p className={styles.chip}><Coin />  {profile.wallet_balance}</p>
           <br />
           <button className={styles.logOutBtn}> Logout <ArrowBarRight /> </button>
