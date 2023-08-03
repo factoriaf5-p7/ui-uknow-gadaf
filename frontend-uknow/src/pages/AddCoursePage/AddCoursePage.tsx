@@ -48,7 +48,7 @@ export const AddCoursePage = () => {
                 `http://localhost:3000/api/courses/create/${userId}`,
                 {
                   ...newCourse,
-                  userId
+                  userId: localStorage.getItem('id')
                 }
       )
       console.log(response.data)
