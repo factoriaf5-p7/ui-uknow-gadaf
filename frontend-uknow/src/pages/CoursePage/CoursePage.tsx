@@ -38,6 +38,7 @@ const CourseDetail = () => {
         const response = await fetch(`http://localhost:3000/api/courses/${id}`)
         const data = await response.json()
         setCourseDetails(data.data)
+        console.log(data.data)
       } catch (error) {
         console.log('Error fetching course details:', error)
       }
@@ -131,9 +132,9 @@ const CourseDetail = () => {
                     </button>
                   </div>
                   <div className={styles.videoInfo}>
-                    <h3 className={styles.videoTitle}>{courseDetails.videoTitle}What is Scala for Spark?</h3>
+                    <h3 className={styles.videoTitle}>{courseDetails.videoTitle}courseDetails.videoTitle</h3>
                     <p className={styles.videoDuration}>
-                      <Clock className={styles.clockIcon} /> {courseDetails.videoDuration} 20 Minutes
+                      <Clock className={styles.clockIcon} /> {courseDetails.videoDuration}
                     </p>
                   </div>
                 </div>
