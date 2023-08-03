@@ -23,6 +23,12 @@
   justify-content: center;
 }
 
+.sloganContainer{
+display: flex;
+flex-wrap: wrap;
+width: 100vw;
+}
+
 .textLogoAnimation {
   display: flex;
   font-size: 4rem;
@@ -56,6 +62,7 @@
   animation: drop 0.8s linear forwards 0.8s;
   color: var(--color-green);
 }
+
 @keyframes drop {
   0% {
     transform: translateY(-200px);
@@ -162,7 +169,7 @@
 }
 
 
- .interrogantes {
+ /* .interrogantes {
   display: flex;
 }
 
@@ -196,7 +203,7 @@
   z-index: 99;
   left: 35vw;
   transform: rotate(-0.2turn);
-}
+} */
 
 @keyframes anim {
   0% {
@@ -248,12 +255,12 @@
   from { width: 0 }
   to { width: 100% }
 }
-/* The typewriter cursor effect */
+/* The typewriter cursor effect
 @keyframes blink-caret {
   from, to { border-color: transparent }
   50% { border-color: var(--color-green) }
   100% { border-color: var(--color-green-dark) }
-}
+} */
 
 .landingPageButtons {
   display:flex;
