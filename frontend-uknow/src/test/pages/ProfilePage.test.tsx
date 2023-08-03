@@ -14,10 +14,10 @@ describe('PROFILE PAGE', () => {
         </MemoryRouter>
       )
     })
-    // test('component ProfileActions mounts properly', () => {
-    //   const wrapper = render(<ProfileActions />)
-    //   expect(wrapper).toBeTruthy()
-    // })
+    test('component ProfileActions mounts properly', () => {
+      const wrapper = render(<ProfileActions />)
+      expect(wrapper).toBeTruthy()
+    })
     test('Component ProfileContact mounts properly', () => {
       const wrapper = render(<ProfileContact />)
       expect(wrapper).toBeTruthy()
