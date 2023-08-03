@@ -2,8 +2,8 @@ import { describe, test, expect, beforeEach } from 'vitest'
 import { render } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { PopularCourses } from '../../components/PopularCourses/PopularCourses'
-import { CourseCard } from '../../components/PopularCourses/CourseCard'
 import { Link } from 'react-bootstrap-icons'
+import { AllCoursesCard } from '../../components/AllCourses/AllCoursesCard'
 
 describe('POPULAR COURSES COMPONENT', () => {
   describe('component CourseCard', () => {
@@ -15,7 +15,7 @@ describe('POPULAR COURSES COMPONENT', () => {
       )
     })
     test('component CourseCard mounts properly', () => {
-      const wrapper = render(<CourseCard img='' rating='' title='' price={100} />)
+      const wrapper = render(<AllCoursesCard image='' rating='' title='' price={100} />)
       expect(wrapper).toBeTruthy()
     })
 
