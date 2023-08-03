@@ -30,24 +30,26 @@ export const CreatedCourses = () => {
   }
 
   return (
-    <Container className={styles.container}>
-      <h4 className={styles.sectionTitle}>Created courses</h4>
-      <div className='d-flex flex-wrap justify-content-center' style={{ display: 'inline-block', gap: 10 }}>
-        {course.length > 0
-          ? (
-            <div className='d-flex flex-wrap justify-content-center' style={{ display: 'inline-block', gap: 10 }}>
-              {course.map((course, i) => (
-                <div key={i}>
-                  <Link to={`/course/${course._id}`}>
-                    <AllCoursesCard image={course.image} rating={course.rating} title={course.title} price={course.price} />
-                  </Link>
-                </div>
-              ))}
-            </div>
-            )
-          : (
-            <p>No created courses yet.</p>
-            )}
+    <Container>
+      <div className={styles.containerCreatedCourses}>
+        <h4 className={styles.sectionTitle}>Created courses</h4>
+        <div className='d-flex flex-wrap justify-content-center' style={{ display: 'inline-block', gap: 10 }}>
+          {course.length > 0
+            ? (
+              <div className='d-flex flex-wrap justify-content-center' style={{ display: 'inline-block', gap: 10 }}>
+                {course.map((course, i) => (
+                  <div key={i}>
+                    <Link to={`/course/${course._id}`}>
+                      <AllCoursesCard image={course.image} rating={course.rating} title={course.title} price={course.price} />
+                    </Link>
+                  </div>
+                ))}
+              </div>
+              )
+            : (
+              <p>No created courses yet.</p>
+              )}
+        </div>
       </div>
     </Container>
   )

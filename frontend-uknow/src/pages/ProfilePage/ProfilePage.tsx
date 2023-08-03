@@ -5,6 +5,8 @@ import styles from './ProfilePage.module.css'
 import { Coin, ArrowBarRight, PencilFill, BellFill, ShieldFillCheck, ChatDotsFill, InfoSquareFill } from 'react-bootstrap-icons'
 import { ProfileActions } from '../../components/ProfileActions/ProfileActions'
 import { ProfileContact } from '../../components/ProfileContact/ProfileContact'
+import { ButtonP } from '../../components/ButtonP'
+import { BackButton } from '../../components/BackButton/BackButton'
 
 export const Profile = () => {
   const [profile, setProfile] = useState({
@@ -51,6 +53,7 @@ export const Profile = () => {
 
   return (
     <Container>
+      <BackButton />
       <div className={styles.intro}>
         <h1 className={styles.animateCharacter}>Welcome </h1>
       </div>
@@ -72,7 +75,7 @@ export const Profile = () => {
           <h6 className={styles.profileSettings}><ChatDotsFill />Help and Support</h6>
           <h6 className={styles.profileSettings}><InfoSquareFill />Terms of Service</h6>
           <h6 className={styles.profileSettings}><ShieldFillCheck />Privacy Policy</h6>
-          <button className={styles.logOutBtn} onClick={handleLogOut}> Logout <ArrowBarRight /> </button>
+          <ButtonP className={styles.logOutBtn} onClick={handleLogOut} text={'Logout'} icon={<ArrowBarRight />} >  </ButtonP>
         </section>
         <div className={styles.courses}>
           <section className={styles.contact}> <ProfileContact /></section>

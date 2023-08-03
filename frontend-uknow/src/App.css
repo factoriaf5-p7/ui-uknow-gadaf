@@ -23,6 +23,9 @@
 body {
   color: var(--color-text-primary);
   padding-top: 290px;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 h1 {
