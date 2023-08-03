@@ -50,12 +50,16 @@ export const NavbarDesk = () => {
         <div className={styles.navBarItems}>
           <div className={styles.navBarLinks}>
             <Nav.Item as='li'>
+              <Nav.Link href='/home'>
+                <span className={styles.item}>
+                  Home
+                </span>
+              </Nav.Link>
+            </Nav.Item>
+            <Nav.Item as='li'>
               <Nav.Link href='/addcourse'>
                 <span className={styles.item}>
                   New Course
-
-                  {/* <PlusCircle className={styles.icon} /> */}
-
                 </span>
               </Nav.Link>
             </Nav.Item>
@@ -63,8 +67,6 @@ export const NavbarDesk = () => {
               <Nav.Link href='/mycourses'>
                 <span className={styles.item}>
                   My courses
-
-                  {/* <Heart className={styles.icon} /> */}
                 </span>
               </Nav.Link>
             </Nav.Item>
