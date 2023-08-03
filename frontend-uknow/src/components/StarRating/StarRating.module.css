@@ -1,0 +1,29 @@
+#rating {
+  color: #FFD344;
+}
+
+.starsGray {
+  position: relative;
+  display: inline-block;
+}
+
+.starsYellow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+
+.starsGray::before {
+  content: " ★ ★ ★ ★ ★ ";
+  font-weight: 900;
+  color: #ccc;
+}
+
+.starsYellow::before {
+  content: " ★ ★ ★ ★ ★ ";
+  font-weight: 900;
+  color: #f8ce0b;
+}

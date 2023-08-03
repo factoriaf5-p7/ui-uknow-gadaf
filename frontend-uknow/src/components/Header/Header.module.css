@@ -1,0 +1,45 @@
+.navContainer{
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    height: 7vh;
+    align-items: center;
+    background-image: 
+  radial-gradient(circle at 100% 0, #f0f2e4, transparent),
+  radial-gradient(circle at 0 100%, #eaf4c2, transparent),
+  radial-gradient(circle at 100% 100%, #E3DB8A, transparent),
+  radial-gradient(circle at 50% 50%, transparent, rgb(0, 166, 255)) !important;
+    box-shadow: 0 2px 1px rgba(160, 160, 160, 0.2);
+}
+
+.logoText {
+    width: 5rem;
+    height: auto;
+}
+
+.iconsContainer{
+    display: flex;
+    flex-direction: row;
+    max-width: 50%;
+}
+
+.icon{
+    color:#3A591E;
+    font-size: 37px !important;
+    background-color: #ffffff;
+    padding: 0%;
+    border-radius: 50%;
+}
+
+
+.outline-success{
+    width: 20px !important;
+}
+
+
+@media (min-width: 600px) {
+    .navContainer{
+        display: none !important;
+    }
+    
+}

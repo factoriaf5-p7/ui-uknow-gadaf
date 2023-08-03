@@ -1,0 +1,19 @@
+.topBar {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #efefef;
+}
+
+.dropdown {
+    color: #F3F6F8;
+}
+
+.containerCreatedCourses{
+    margin-bottom: 4rem;
+}
+
+.sectionTitle{
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid #efefef;
+  }
+  

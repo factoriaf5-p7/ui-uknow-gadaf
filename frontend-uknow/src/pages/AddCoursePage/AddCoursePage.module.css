@@ -1,0 +1,33 @@
+ .formCreateCourse{
+    display: flex;
+    align-items: center;
+    margin: 1rem 1rem 4rem 1rem;
+    flex-direction: column;
+    background-image: 
+      radial-gradient(circle at 100% 0, #ffffff, transparent),
+      radial-gradient(circle at 70% 100%, #fbffea, transparent),
+      radial-gradient(circle at 100% 100%, #ffffff, transparent),
+      radial-gradient(circle at 10% 10%, transparent, rgb(187, 220, 237));
+    box-shadow: 0 2px 4px rgba(220, 220, 220, 0.2);
+    border: 1px solid #e2e2e2;
+    border-radius: 15px;
+    padding: 1rem 4rem;
+    max-height: 100vh;
+    max-width: 100%;
+ }
+
+ .labelForm{
+    font-weight: 600;
+ }
+
+ .sectionTitle{
+    color: rgb(43, 42, 42);
+ }
+
+ @media (min-width: 600px){
+    .formCreateCourse {
+        margin:0 auto 0 auto;
+        width: fit-content;
+        max-height: 100%;
+    }
+ }
