@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import styles from './AddCoursePage.module.css'
 import { Container, Form } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
+
 
 interface FormType {
     title: string;
@@ -16,6 +18,9 @@ interface FormType {
 }
 
 export const AddCoursePage = () => {
+
+    const navigate = useNavigate();
+
     const [newCourse, setNewCourse] = useState<FormType>({
         title: '',
         description: '',
@@ -40,20 +45,27 @@ export const AddCoursePage = () => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+        let createdCourseId = ''
         try {
             const userId = localStorage.getItem('id')
             const response = await axios.post(
                 `http://localhost:3000/api/courses/create/${userId}`,
                 {
                     ...newCourse,
-                    userId: localStorage.getItem('id')
+                    userId
                 }
-            )
+            
+                )
+            createdCourseId = response.data._id;
             console.log(response.data)
             console.log(newCourse)
+            
+            
         } catch (error) {
             console.log(error)
         }
+        // navigate(`/course/${createdCourseId}`);
+        console.log(createdCourseId)
     }
 
     return (
