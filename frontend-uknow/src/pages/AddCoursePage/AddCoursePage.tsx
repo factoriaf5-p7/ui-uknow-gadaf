@@ -3,30 +3,35 @@ import axios from 'axios'
 import styles from './AddCoursePage.module.css'
 import { ButtonP } from '../../components/ButtonP'
 import { Form } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 
 interface FormType {
     title: string;
-    description: string;
-    image: string,
-    category: string;
     topic: string;
     difficulty: string;
+    description: string;
+    category: string;
     videoURL: string;
     videoTitle: string;
     userId: string;
+    image: string,
+
 }
 
 export const AddCoursePage = () => {
+  const navigate = useNavigate()
+
   const [newCourse, setNewCourse] = useState<FormType>({
     title: '',
+    topic: '',
+    difficulty: '',
     description: '',
     image: '',
     category: '',
-    topic: '',
-    difficulty: '',
     videoURL: '',
     videoTitle: '',
     userId: ''
+
   })
 
   const handleChange = (
@@ -47,11 +52,13 @@ export const AddCoursePage = () => {
                 `http://localhost:3000/api/courses/create/${userId}`,
                 {
                   ...newCourse,
-                  userId: localStorage.getItem('id')
+                  userId
                 }
       )
       console.log(response.data)
       console.log(newCourse)
+
+      navigate('/mycourses')
     } catch (error) {
       console.log(error)
     }

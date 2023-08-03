@@ -1,6 +1,7 @@
 .navBottomContainer {
 width: 100vw;
 background-color: white;
+z-index: 1999;
 }
 
 .navContainer {

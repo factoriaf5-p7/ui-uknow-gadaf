@@ -9,6 +9,7 @@ import { AllCourses } from '../../components/AllCourses/AllCourses'
 import { Footer } from '../../components/Footer/Footer'
 import { NavbarBottom } from '../../components/NavbarBottom/NavbarBottom'
 import { NavbarDesk } from '../../components/NavbarDesk/NavbarDesk'
+import { TokenProvider } from '../../context/TokenContext'
 
 describe('HOMEPAGE', () => {
   describe('titles', () => {
@@ -43,7 +44,7 @@ describe('HOMEPAGE', () => {
       )
     })
     test('component NavbarDesc mounts properly', () => {
-      const wrapper = render(<NavbarDesk />)
+      const wrapper = render(<TokenProvider><NavbarDesk /></TokenProvider>)
       expect(wrapper).toBeTruthy()
     })
     test('Component Categories mounts properly', () => {
