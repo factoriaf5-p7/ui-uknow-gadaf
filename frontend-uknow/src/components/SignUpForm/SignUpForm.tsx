@@ -129,7 +129,7 @@ export const SignUpForm = () => {
           />
         </Form.Group>
 
-        <ButtonP text='Sign Up' />
+        <ButtonP text='Sign Up' icon={undefined} />
       </Form>
     </div>
   )

@@ -166,7 +166,7 @@ export const AddCoursePage = () => {
               />
             </Form.Group>
 
-            <ButtonP text='Add Course' />
+            <ButtonP text='Add Course' icon={undefined} />
           </Form>
         </Form.Group>
       </div>

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { StarRating } from '../../components/StarRating/StarRating'
 import styles from './CoursePage.module.css'
-import { PlayFill, Clock, BarChartFill, Lock, Coin } from 'react-bootstrap-icons'
+import { PlayFill, BarChartFill, Lock, Coin } from 'react-bootstrap-icons'
 import axios from 'axios'
 import { BackButton } from '../../components/BackButton/BackButton'
 

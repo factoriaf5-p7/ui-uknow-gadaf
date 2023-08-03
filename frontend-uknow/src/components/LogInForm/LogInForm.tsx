@@ -66,7 +66,7 @@ export const LogInForm = () => {
 
         {/* <Form.Text id={styles.forgotPassword}>Forgot password?</Form.Text> */}
 
-        <ButtonP text='Log In' type='submit' />
+        <ButtonP text='Log In' type='submit' icon={undefined} />
       </Form>
 
     </div>
