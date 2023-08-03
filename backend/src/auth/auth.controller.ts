@@ -29,10 +29,10 @@ export class AuthController {
 		return this.authService.verifyToken(token);
 	}
 
-	@Patch('recover')
-	recoverPasswordRequest (@Body() user: RecoverRequestDto){
-		return this.authService.recoverPasswordRequest(user);
-	}
+	// @Patch('recover')
+	// recoverPasswordRequest (@Body() user: RecoverRequestDto){
+	// 	return this.authService.recoverPasswordRequest(user);
+	// }
 
 	@Get('upassword')
 	updatePassword (@Body() user: RecoverUserDto){
