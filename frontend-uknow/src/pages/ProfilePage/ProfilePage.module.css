@@ -146,15 +146,29 @@
     }
     
 }
+
 @media (min-width: 800px) {
+    .img {
+        width: 50%
+    }
+
     .userInfo {
-        width:30%;
+        width:60%;
     }
     .courses {
         width: 70%;
     }
 }
+
 @media(min-width:600px) {
+    .img {
+        width: 50%
+    }
+
+    .userInfo {
+        width:50%;
+    }
+
     .logOutBtn {
         display: none;
     }
