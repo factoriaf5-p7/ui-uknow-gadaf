@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap'
 import styles from './ProfilePage.module.css'
-import { Coin, ArrowBarRight } from 'react-bootstrap-icons'
+import { Coin, ArrowBarRight, PencilFill, BellFill, ShieldFillCheck, ChatDotsFill, InfoSquareFill } from 'react-bootstrap-icons'
 import { ProfileActions } from '../../components/ProfileActions/ProfileActions'
 import { ProfileContact } from '../../components/ProfileContact/ProfileContact'
 
@@ -52,22 +52,29 @@ export const Profile = () => {
   return (
     <Container>
       <div className={styles.intro}>
-        <div><img src='https://xsgames.co/randomusers/avatar.php?g=female' className={styles.img} /></div>
-        <h1 className={styles.animateCharcter}>Welcome </h1>
+        <h1 className={styles.animateCharacter}>Welcome </h1>
       </div>
       <div className={styles.user}>
         <section className={styles.userInfo}>
-          <h4>{profile.name} {profile.last_name}</h4>
-          <h6>{profile.email}</h6>
+          <div className={styles.imgSection}><img src='https://xsgames.co/randomusers/avatar.php?g=female' className={styles.img} /></div>
+          <h3 className={styles.profileTitles}>Personal Information <PencilFill className={styles.profileIcons} /></h3>
+          <h4 className={styles.profileTitlesSmall}>{profile.name} {profile.last_name}</h4>
+          <h6 className={styles.profileEmail}>{profile.email}</h6>
           <br /><br />
-          <h3>My wallet</h3>
-          <p className={styles.chip}><Coin />  {profile.wallet_balance}</p>
+          <h3 className={styles.profileTitles}>My wallet</h3>
+          <p className={styles.chip}>  {profile.wallet_balance} <Coin /></p>
           <br />
+          <h3 className={styles.profileTitles}>My courses</h3>
+          <section className={styles.actions}> <ProfileActions /></section>
+          <br />
+          <h3 className={styles.profileTitles}>Settings</h3>
+          <h6 className={styles.profileSettings}><BellFill /> Notifications</h6>
+          <h6 className={styles.profileSettings}><ChatDotsFill />Help and Support</h6>
+          <h6 className={styles.profileSettings}><InfoSquareFill />Terms of Service</h6>
+          <h6 className={styles.profileSettings}><ShieldFillCheck />Privacy Policy</h6>
           <button className={styles.logOutBtn} onClick={handleLogOut}> Logout <ArrowBarRight /> </button>
-
         </section>
         <div className={styles.courses}>
-          <section className={styles.actions}> <ProfileActions /></section>
           <section className={styles.contact}> <ProfileContact /></section>
         </div>
       </div>
