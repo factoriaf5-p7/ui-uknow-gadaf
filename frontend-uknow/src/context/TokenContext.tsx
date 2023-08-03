@@ -21,7 +21,7 @@ export const TokenProvider: React.FC<TokenProviderProps> = ({ children }) => {
     } else {
       const verifyToken = async () => {
         try {
-          const res = await axios.post('http://localhost:3000/api/auth/verify', { token })
+          const res = await axios.post('https://ui-uknow-gadaf-production.up.railway.app/api/auth/verify', { token })
           setIsTokenValid(res.data.verified)
         } catch (error) {
           setIsTokenValid(false)

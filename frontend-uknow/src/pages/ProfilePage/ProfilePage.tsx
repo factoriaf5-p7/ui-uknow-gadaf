@@ -29,7 +29,7 @@ export const Profile = () => {
       try {
         const token = localStorage.getItem('token')
         console.log(token)
-        const response = await axios.get('http://localhost:3000/api/users/profile', {
+        const response = await axios.get('https://ui-uknow-gadaf-production.up.railway.app/api/users/profile', {
           headers: {
             Authorization: `Bearer ${token}`
           }

@@ -50,7 +50,7 @@ export const AddCoursePage = () => {
     try {
       const userId = localStorage.getItem('id')
       const response = await axios.post(
-                `http://localhost:3000/api/courses/create/${userId}`,
+                `https://ui-uknow-gadaf-production.up.railway.app/api/courses/create/${userId}`,
                 {
                   ...newCourse,
                   userId

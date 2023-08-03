@@ -11,7 +11,7 @@ export const PopularCourses = () => {
     const fetchCourse = async () => {
       try {
         const response = await fetch(
-          'http://localhost:3000/api/courses/rating'
+          'https://ui-uknow-gadaf-production.up.railway.app/api/courses/rating'
         )
         const data = await response.json()
         setCourse(data.data)

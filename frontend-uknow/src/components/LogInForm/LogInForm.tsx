@@ -16,7 +16,7 @@ export const LogInForm = () => {
     console.log('Form submitted!')
     console.log(formData)
     const response = await axios.post(
-      'http://localhost:3000/api/auth/login',
+      'https://ui-uknow-gadaf-production.up.railway.app/api/auth/login',
       formData,
       {
         headers: { 'Content-Type': 'application/JSON' }

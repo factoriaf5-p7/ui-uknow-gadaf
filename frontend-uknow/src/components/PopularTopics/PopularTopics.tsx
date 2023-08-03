@@ -11,7 +11,7 @@ export const PopularTopics = () => {
     const fetchTopics = async () => {
       try {
         const response = await fetch(
-          'http://localhost:3000/api/courses/topics'
+          'https://ui-uknow-gadaf-production.up.railway.app/api/courses/topics'
         )
         const data = await response.json()
         setTopics(data.data)

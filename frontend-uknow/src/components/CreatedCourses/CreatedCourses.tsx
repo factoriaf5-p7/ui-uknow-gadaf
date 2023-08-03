@@ -12,7 +12,7 @@ export const CreatedCourses = () => {
   useEffect(() => {
     const fetchCourse = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/api/courses/created-courses/${userId}`)
+        const response = await fetch(`https://ui-uknow-gadaf-production.up.railway.app/api/courses/created-courses/${userId}`)
         const data = await response.json()
         setCourse(data.data)
         setLoading(false)

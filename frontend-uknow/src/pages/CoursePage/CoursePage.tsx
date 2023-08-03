@@ -18,7 +18,7 @@ const CourseDetail = () => {
       try {
         const token = localStorage.getItem('token')
         const userId = localStorage.getItem('id')
-        const response = await axios.get(`http://localhost:3000/api/users/verify/${userId}/${id}`, {
+        const response = await axios.get(`https://ui-uknow-gadaf-production.up.railway.app/api/users/verify/${userId}/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -37,7 +37,7 @@ const CourseDetail = () => {
   useEffect(() => {
     const fetchCourseDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/api/courses/${id}`)
+        const response = await fetch(`https://ui-uknow-gadaf-production.up.railway.app/api/courses/${id}`)
         const data = await response.json()
         setCourseDetails(data.data)
         console.log(data.data)
@@ -59,7 +59,7 @@ const CourseDetail = () => {
     const isConfirmed = window.confirm('Are you sure you want to buy this course?')
     if (isConfirmed) {
       try {
-        const res = await axios.patch('http://localhost:3000/api/courses/purchase', {
+        const res = await axios.patch('https://ui-uknow-gadaf-production.up.railway.app/api/courses/purchase', {
           userId: localStorage.getItem('id'),
           courseId: id
         })
