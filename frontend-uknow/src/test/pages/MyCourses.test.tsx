@@ -4,7 +4,6 @@ import { MemoryRouter } from 'react-router-dom'
 import { MyCourses } from '../../pages/MyCourses/MyCourses'
 import { CreatedCourses } from '../../components/CreatedCourses/CreatedCourses'
 import { BoughtCourses } from '../../components/BoughtCourses/BoughtCourses'
-import { CoursePage } from '../../pages/CoursePage'
 
 describe('MY COURSES PAGE', () => {
   

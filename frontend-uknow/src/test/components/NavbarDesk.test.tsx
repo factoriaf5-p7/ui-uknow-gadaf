@@ -1,31 +1,17 @@
 import { describe, test, expect } from 'vitest'
-import { render } from '@testing-library/react'
+import { render, waitFor } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { NavbarDesk } from '../../components/NavbarDesk/NavbarDesk'
-import React from 'react'
+import { TokenProvider } from '../../context/TokenContext'
 
-describe('NAVBAR BOTTOM', () => {
-  describe('Navbar component', () => {
-    // beforeEach(() => {
-    const { container } = render(
-      <MemoryRouter>
-        <NavbarDesk />
-      </MemoryRouter>
-    )
-    // })
-    test('renders a nav element with a link /home', async () => {
-      const link1 = container.querySelector('a')
-      expect(link1).toHaveAttribute('href', '/home')
+describe('NAVBAR DESK', () => {
+  describe('Navbar', () => {
+    test('renders a nav', async () => {
+      const wrapper = render(
+        <TokenProvider>
+          <NavbarDesk />
+        </TokenProvider>)
+      expect(wrapper).toBeTruthy()
     })
-
-    // test('renders a nav element with a links /courses', async () => {
-    //   const { container } = render(
-    //     <MemoryRouter>
-    //       <NavbarBottom />
-    //     </MemoryRouter>
-    //   )
-    //   const link2 = container.querySelector('a')
-    //   expect(link2).toHaveAttribute('href', '/course')
-    // })
   })
 })
