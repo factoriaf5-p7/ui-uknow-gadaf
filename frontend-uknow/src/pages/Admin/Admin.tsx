@@ -56,7 +56,7 @@ export const Admin = () => {
 
   const CoursesTab = () => {
     return (
-      <div className='d-flex flex-wrap justify-content-center' style={{ display: 'inline-block', gap: 10 }}>
+      <div className='d-flex flex-wrap justify-content-center mb-4' style={{ display: 'inline-block', gap: 10 }}>
         {courses.map((course, i) => (
           <div key={i}>
             <div className='d-flex flex-column justify-content-center align-items-center border border-dark p-2'>
@@ -70,7 +70,7 @@ export const Admin = () => {
                 />
                 <p>{course._id}</p>
               </Link>
-              <p>{message[i]}</p>
+              <p style={{ color: 'red' }}>{message[i]}</p>
             </div>
           </div>
         ))}
