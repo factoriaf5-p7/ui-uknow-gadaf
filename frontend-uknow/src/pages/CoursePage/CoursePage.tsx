@@ -12,6 +12,7 @@ const CourseDetail = () => {
   const { id } = useParams()
   const [courseDetails, setCourseDetails] = useState<any>([])
   const [coursePurchased, setCoursePurchased] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     async function getProfileData () {
@@ -24,8 +25,10 @@ const CourseDetail = () => {
           }
         })
         setCoursePurchased(response.data)
+        setLoading(false)
       } catch (error) {
         console.error(error)
+        setLoading(false)
       }
     }
     console.log(id)
@@ -72,6 +75,11 @@ const CourseDetail = () => {
         }
       }
     }
+  }
+
+  if (loading) {
+    // Display loading state
+    return <div>Loading...</div>
   }
 
   return (
