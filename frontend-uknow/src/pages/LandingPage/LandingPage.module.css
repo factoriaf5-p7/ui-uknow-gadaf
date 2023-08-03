@@ -161,67 +161,6 @@
   }
 }
 
-
- .interrogantes {
-  display: flex;
-}
-
-.i1 {
-  position: absolute;
-  font-size: 6rem;
-  font-weight: 900;
-  font-family: "Lemon", cursive;
-  opacity: 0;
-  animation: anim 3s infinite;
-  z-index: 99;
-}
-.i2 {
-  position: absolute;
-  font-size: 4rem;
-  font-weight: 900;
-  font-family: "Lemon", cursive;
-  opacity: 0;
-  animation: anim 3s infinite;
-  z-index: 99;
-  right: 35vw;
-  transform: rotate(0.2turn);
-}
-.i3 {
-  position: absolute;
-  font-size: 6rem;
-  font-weight: 900;
-  font-family: "Lemon", cursive;
-  opacity: 0;
-  animation: anim 3s infinite;
-  z-index: 99;
-  left: 35vw;
-  transform: rotate(-0.2turn);
-}
-
-@keyframes anim {
-  0% {
-    transform: scale(0.2);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1);
-    transform: rotate(-0.5turn);
-  }
-  65% {
-    opacity: 1;
-    transform: scale(1.4);
-  }
-  75% {
-    opacity: 1;
-    transform: scale(1.2);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(0.5);
-    transform: rotate(0turn);
-  }
-}
-
 .titleAnim{
   display: flex;
 }
@@ -232,10 +171,12 @@
 
 /* DEMO-SPECIFIC STYLES */
 .landingPageText h1 {
+  display:flex;
+  flex:wrap;
   font-family: monospace;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: .15em solid var(--color-green); /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
+  
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: .15em; /* Adjust as needed */
   animation: 
@@ -265,10 +206,10 @@
 
 .slogan {
   color: rgb(0, 0, 0);
-text-transform: uppercase;
-font-size: 20px;
-font-weight: 700;
-text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
 }
 
 .catchPhrase {
