@@ -143,7 +143,7 @@ export const AddCoursePage = () => {
             <Form.Label className={styles.labelForm}>Video Title</Form.Label>
             <Form.Control
               name='videoTitle'
-              value={newCourse.topic}
+              value={newCourse.videoTitle}
               onChange={handleChange}
             />
           </Form.Group>
@@ -151,7 +151,7 @@ export const AddCoursePage = () => {
             <Form.Label className={styles.labelForm}>Video Link</Form.Label>
             <Form.Control
               name='videoURL'
-              value={newCourse.topic}
+              value={newCourse.videoURL}
               onChange={handleChange}
             />
           </Form.Group>
