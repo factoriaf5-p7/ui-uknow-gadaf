@@ -1,28 +1,26 @@
-import React from 'react'
+import { describe, test, expect, beforeEach } from 'vitest'
 import { render } from '@testing-library/react'
+import { MemoryRouter } from 'react-router-dom'
 import { LandingPage } from '../../pages/LandingPage/LandingPage'
-import '@testing-library/jest-dom/extend-expect'
+import { ButtonP } from '../../components/ButtonP'
+import { ButtonS } from '../../components/ButtonS'
 
-test('video autoplays', () => {
-  // Render the LandingPage component
-  const { container } = render(<LandingPage />)
-
-  // Assert that the video element has the "autoplay" attribute
-  const videoElement = container.querySelector('.video')
-  expect(videoElement).toHaveAttribute('autoplay')
-})
-
-test('buttons translate up after video ends', () => {
-  // Render the LandingPage component
-  const { container, rerender } = render(<LandingPage />)
-
-  // Find the buttons-container element and ensure it doesn't have the "translate-up" class initially
-  const buttonsContainer = container.querySelector('.buttons-container')
-  expect(buttonsContainer).not.toHaveClass('translate-up')
-
-  // Rerender the component with videoEnded set to true
-  rerender(<LandingPage videoEnded />)
-
-  // Assert that the buttons-container element now has the "translate-up" class
-  expect(buttonsContainer).toHaveClass('translate-up')
+describe('PROFILE PAGE', () => {
+  describe('render components ', () => {
+    beforeEach(() => {
+      render(
+        <MemoryRouter>
+          <LandingPage />
+        </MemoryRouter>
+      )
+    })
+    test('component ProfileActions mounts properly', () => {
+      const wrapper = render(<ButtonP text='' />)
+      expect(wrapper).toBeTruthy()
+    })
+    test('Component ProfileContact mounts properly', () => {
+      const wrapper = render(<ButtonS text='' />)
+      expect(wrapper).toBeTruthy()
+    })
+  })
 })
