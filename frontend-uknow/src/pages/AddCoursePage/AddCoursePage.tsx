@@ -67,109 +67,109 @@ export const AddCoursePage = () => {
 
   return (
     <>
-    <BackButton />    
-    <div className={styles.formCreateCourse}>
-      <h4 className={styles.sectionTitle}>Create your own course</h4>
-      <Form.Group className='mb-3'>
-        <Form onSubmit={handleSubmit}>
-          <Form.Group className='mb-3'>
-            <div className='input-icon'>
-              <Form.Label className={styles.labelForm}>Title</Form.Label>
+      <BackButton />
+      <div className={styles.formCreateCourse}>
+        <h4 className={styles.sectionTitle}>Create your own course</h4>
+        <Form.Group className='mb-3'>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group className='mb-3'>
+              <div className='input-icon'>
+                <Form.Label className={styles.labelForm}>Title</Form.Label>
+                <Form.Control
+                  type='text'
+                  name='title'
+                  value={newCourse.title}
+                  onChange={handleChange}
+                />
+              </div>
+            </Form.Group>
+
+            <Form.Group className='mb-3'>
+              <Form.Label className={styles.labelForm}>Description</Form.Label>
               <Form.Control
                 type='text'
-                name='title'
-                value={newCourse.title}
+                name='description'
+                value={newCourse.description}
                 onChange={handleChange}
               />
-            </div>
-          </Form.Group>
+            </Form.Group>
+            <Form.Group className='mb-3'>
+              <Form.Label className={styles.labelForm}>Image</Form.Label>
+              <Form.Control
+                name='image'
+                value={newCourse.image}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            <Form.Group className='mb-3'>
+              <Form.Label className={styles.labelForm}>Catergory</Form.Label>
+              <Form.Select
+                name='category'
+                value={newCourse.category}
+                onChange={handleChange}
+              >
+                <option value=''>Select category</option>
+                <option value='Big Data'>Big Data</option>
+                <option value='Cloud Computing'>Cloud Computing</option>
+                <option value='Cybersecurity'>Cybersecurity</option>
+                <option value='Data Science'>Data Science</option>
+                <option value='Design'>Design</option>
+                <option value='DevOps'>DevOps</option>
+                <option value='Electronics'>Electronics</option>
+                <option value='Game Development'>Game Development</option>
+                <option value='Internet of Things'>Internet of Things</option>
+                <option value='Mobile App Development'>Mobile App Development</option>
+                <option value='Programming Languages'>Programming Languages</option>
+                <option value='Quality Assurance'>Quality Assurance</option>
+                <option value='Software Engineering'>Software Engineering</option>
+                <option value='Web Development'>Web Development</option>
+              </Form.Select>
+            </Form.Group>
 
-          <Form.Group className='mb-3'>
-            <Form.Label className={styles.labelForm}>Description</Form.Label>
-            <Form.Control
-              type='text'
-              name='description'
-              value={newCourse.description}
-              onChange={handleChange}
-            />
-          </Form.Group>
-          <Form.Group className='mb-3'>
-            <Form.Label className={styles.labelForm}>Image</Form.Label>
-            <Form.Control
-              name='image'
-              value={newCourse.image}
-              onChange={handleChange}
-            />
-          </Form.Group>
-          <Form.Group className='mb-3'>
-            <Form.Label className={styles.labelForm}>Catergory</Form.Label>
-            <Form.Select
-              name='category'
-              value={newCourse.category}
-              onChange={handleChange}
-            >
-              <option value=''>Select category</option>
-              <option value='Big Data'>Big Data</option>
-              <option value='Cloud Computing'>Cloud Computing</option>
-              <option value='Cybersecurity'>Cybersecurity</option>
-              <option value='Data Science'>Data Science</option>
-              <option value='Design'>Design</option>
-              <option value='DevOps'>DevOps</option>
-              <option value='Electronics'>Electronics</option>
-              <option value='Game Development'>Game Development</option>
-              <option value='Internet of Things'>Internet of Things</option>
-              <option value='Mobile App Development'>Mobile App Development</option>
-              <option value='Programming Languages'>Programming Languages</option>
-              <option value='Quality Assurance'>Quality Assurance</option>
-              <option value='Software Engineering'>Software Engineering</option>
-              <option value='Web Development'>Web Development</option>
-            </Form.Select>
-          </Form.Group>
+            <Form.Group className='mb-3'>
+              <Form.Label className={styles.labelForm}>Topic</Form.Label>
+              <Form.Control
+                name='topic'
+                value={newCourse.topic}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            <Form.Group className='mb-3'>
+              <Form.Label className={styles.labelForm}>Difficulty</Form.Label>
+              <Form.Select
+                name='difficulty'
+                value={newCourse.difficulty}
+                onChange={handleChange}
+              >
+                <option value=''>Select difficulty</option>
+                <option value='Beginner'>Beginner</option>
+                <option value='Intermediate'>Intermediate</option>
+                <option value='Advanced'>Advanced</option>
+                <option value='Expert'>Expert</option>
+                <option value='All Levels'>All Levels</option>
+              </Form.Select>
+            </Form.Group>
+            <Form.Group className='mb-3'>
+              <Form.Label className={styles.labelForm}>Video Title</Form.Label>
+              <Form.Control
+                name='videoTitle'
+                value={newCourse.videoTitle}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            <Form.Group className='mb-3'>
+              <Form.Label className={styles.labelForm}>Video Link</Form.Label>
+              <Form.Control
+                name='videoURL'
+                value={newCourse.videoURL}
+                onChange={handleChange}
+              />
+            </Form.Group>
 
-          <Form.Group className='mb-3'>
-            <Form.Label className={styles.labelForm}>Topic</Form.Label>
-            <Form.Control
-              name='topic'
-              value={newCourse.topic}
-              onChange={handleChange}
-            />
-          </Form.Group>
-          <Form.Group className='mb-3'>
-            <Form.Label className={styles.labelForm}>Difficulty</Form.Label>
-            <Form.Select
-              name='difficulty'
-              value={newCourse.difficulty}
-              onChange={handleChange}
-            >
-              <option value=''>Select difficulty</option>
-              <option value='Beginner'>Beginner</option>
-              <option value='Intermediate'>Intermediate</option>
-              <option value='Advanced'>Advanced</option>
-              <option value='Expert'>Expert</option>
-              <option value='All Levels'>All Levels</option>
-            </Form.Select>
-          </Form.Group>
-          <Form.Group className='mb-3'>
-            <Form.Label className={styles.labelForm}>Video Title</Form.Label>
-            <Form.Control
-              name='videoTitle'
-              value={newCourse.videoTitle}
-              onChange={handleChange}
-            />
-          </Form.Group>
-          <Form.Group className='mb-3'>
-            <Form.Label className={styles.labelForm}>Video Link</Form.Label>
-            <Form.Control
-              name='videoURL'
-              value={newCourse.videoURL}
-              onChange={handleChange}
-            />
-          </Form.Group>
-
-          <ButtonP text='Add Course' />
-        </Form>
-      </Form.Group>
-    </div>
+            <ButtonP text='Add Course' />
+          </Form>
+        </Form.Group>
+      </div>
     </>
 
   )
