@@ -27,6 +27,7 @@ export const ProfileContact = () => {
 
         <Form.Group className='mb-3'>
           <Form.Control
+          as='textarea'
             className={styles.textFieldMessage}
             type='message'
             placeholder='Write your message'
