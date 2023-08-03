@@ -6,6 +6,7 @@ import { Coin, ArrowBarRight, PencilFill, BellFill, ShieldFillCheck, ChatDotsFil
 import { ProfileActions } from '../../components/ProfileActions/ProfileActions'
 import { ProfileContact } from '../../components/ProfileContact/ProfileContact'
 import { ButtonP } from '../../components/ButtonP'
+import { BackButton } from '../../components/BackButton/BackButton'
 
 export const Profile = () => {
   const [profile, setProfile] = useState({
@@ -52,6 +53,7 @@ export const Profile = () => {
 
   return (
     <Container>
+      <BackButton />
       <div className={styles.intro}>
         <h1 className={styles.animateCharacter}>Welcome </h1>
       </div>

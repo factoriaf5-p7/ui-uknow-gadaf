@@ -4,6 +4,7 @@ import styles from './AddCoursePage.module.css'
 import { ButtonP } from '../../components/ButtonP'
 import { Form } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
+import { BackButton } from '../../components/BackButton/BackButton'
 
 interface FormType {
     title: string;
@@ -65,6 +66,8 @@ export const AddCoursePage = () => {
   }
 
   return (
+    <>
+    <BackButton />    
     <div className={styles.formCreateCourse}>
       <h4 className={styles.sectionTitle}>Create your own course</h4>
       <Form.Group className='mb-3'>
@@ -167,6 +170,7 @@ export const AddCoursePage = () => {
         </Form>
       </Form.Group>
     </div>
+    </>
 
   )
 }
