@@ -1,7 +1,7 @@
 
 # :monkey::atom_symbol: U-KNOW: the new sharing & learning platform 
 
-Design and creation of a responsive website for buying and selling programming courses.
+Design and creation of a responsive website for buying and selling programming courses, developed with React Vite, NodeJS + Vitest.
 
 ## Team
 
