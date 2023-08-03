@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { StarRating } from '../../components/StarRating/StarRating'
-import DemoImg from '../../assets/demoImg.jpeg'
 import styles from './CoursePage.module.css'
 import { PlayFill, Clock, BarChartFill, Lock } from 'react-bootstrap-icons'
 import axios from 'axios'
@@ -12,6 +11,7 @@ const CourseDetail = () => {
   const { id } = useParams()
   const [courseDetails, setCourseDetails] = useState<any>([])
   const [coursePurchased, setCoursePurchased] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     async function getProfileData () {
@@ -24,8 +24,10 @@ const CourseDetail = () => {
           }
         })
         setCoursePurchased(response.data)
+        setLoading(false)
       } catch (error) {
         console.error(error)
+        setLoading(false)
       }
     }
     console.log(id)
@@ -38,6 +40,7 @@ const CourseDetail = () => {
         const response = await fetch(`http://localhost:3000/api/courses/${id}`)
         const data = await response.json()
         setCourseDetails(data.data)
+        console.log(data.data)
       } catch (error) {
         console.log('Error fetching course details:', error)
       }
@@ -61,7 +64,7 @@ const CourseDetail = () => {
           courseId: id
         })
         // Estilos Message
-        setMessage(<h4 className='text-success'>Course purchased!</h4>)
+        window.location.reload()
         return res
       } catch (error: any) {
         if (error.response.status === 400) {
@@ -73,6 +76,11 @@ const CourseDetail = () => {
     }
   }
 
+  if (loading) {
+    // Display loading state
+    return <div>Loading...</div>
+  }
+
   return (
     <>
       <BackButton />
@@ -82,7 +90,7 @@ const CourseDetail = () => {
 
           <hr />
           <div className={styles.imgSpecs}>
-            <img src={DemoImg} alt={courseDetails.title} className={styles.courseImg} />
+            <img src={courseDetails.image} alt={courseDetails.title} className={styles.courseImg} />
             <hr />
             <div className={styles.specsDescriptionBuy}>
               <h2 className={styles.courseTitle}>{courseDetails.title}</h2>
@@ -99,11 +107,9 @@ const CourseDetail = () => {
               <p className={styles.courseDescription}>{courseDetails.description}</p>
               {message}
               {/* Conditionally display the buy button or success message */}
-              {courseDetails.purchased
+              {coursePurchased
                 ? (
-                  <div className={styles.buyButton}>
-                    <p className={styles.priceCourse}>Course purchased!</p>
-                  </div>
+                  <></>
                   )
                 : (
                   <div className={styles.buyButton} onClick={handleBuyCourse}>
@@ -131,9 +137,9 @@ const CourseDetail = () => {
                     </button>
                   </div>
                   <div className={styles.videoInfo}>
-                    <h3 className={styles.videoTitle}>{courseDetails.videoTitle}What is Scala for Spark?</h3>
+                    <h3 className={styles.videoTitle}>{courseDetails.videoTitle}</h3>
                     <p className={styles.videoDuration}>
-                      <Clock className={styles.clockIcon} /> {courseDetails.videoDuration} 20 Minutes
+                      <Clock className={styles.clockIcon} /> {courseDetails.videoDuration}
                     </p>
                   </div>
                 </div>
@@ -142,7 +148,7 @@ const CourseDetail = () => {
             /* If the course is NOT purchased, show only the video title */
               <div className={styles.videoTitleUnbought}>
                 <Lock />
-                {courseDetails.videoTitle}What is Scala for Spark?
+                {courseDetails.videoTitle}
               </div>
             )}
           </div>

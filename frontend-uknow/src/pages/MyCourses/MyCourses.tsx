@@ -34,7 +34,6 @@ export const MyCourses = () => {
         setProfile(response.data)
         return profile
       } catch (error) {
-        console.error(error)
       }
     }
 
@@ -44,8 +43,9 @@ export const MyCourses = () => {
   return (
     <div className={styles.pageContent}>
       <BackButton />
-      <CreatedCourses />
       <BoughtCourses />
+      <br /><br />
+      <CreatedCourses />
     </div>
   )
 }

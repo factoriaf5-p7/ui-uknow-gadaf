@@ -3,15 +3,29 @@
 }
 
 .sectionTitle{
-    padding-bottom: 0.7rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid #efefef;
-  }
+  padding-bottom: 0.7rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #efefef;
+}
 
 
-  .coursesContainer{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
+.coursesContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .coursesContainer {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    justify-content: start;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
+
+  .coursesContainer::-webkit-scrollbar {
+    display: none;
+  }
+}

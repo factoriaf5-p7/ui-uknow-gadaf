@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 export const CreatedCourses = () => {
   const [course, setCourse] = useState<any[]>([])
   const userId = localStorage.getItem('id')
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const fetchCourse = async () => {
@@ -14,12 +15,19 @@ export const CreatedCourses = () => {
         const response = await fetch(`http://localhost:3000/api/courses/created-courses/${userId}`)
         const data = await response.json()
         setCourse(data.data)
+        setLoading(false)
       } catch (error) {
         console.log('No se encuentra ese curso por su:', error)
+        setLoading(false)
       }
     }
     fetchCourse()
   }, [])
+
+  if (loading) {
+    // Display loading state
+    return <div>Loading...</div>
+  }
 
   return (
     <Container className={styles.container}>
@@ -38,7 +46,7 @@ export const CreatedCourses = () => {
             </div>
             )
           : (
-            <p>No created courses available.</p>
+            <p>No created courses yet.</p>
             )}
       </div>
     </Container>

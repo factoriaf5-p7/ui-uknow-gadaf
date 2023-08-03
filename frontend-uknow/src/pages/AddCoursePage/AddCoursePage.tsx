@@ -50,8 +50,8 @@ export const AddCoursePage = () => {
             const response = await axios.post(
                 `http://localhost:3000/api/courses/create/${userId}`,
                 {
-                    ...newCourse,
-                    userId: localStorage.getItem('id')
+                  ...newCourse,
+                  userId
                 }
             )
             console.log(response.data)

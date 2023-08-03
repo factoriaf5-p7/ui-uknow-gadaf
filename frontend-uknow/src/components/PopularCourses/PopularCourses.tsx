@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Container } from 'react-bootstrap'
-import { CourseCard } from './CourseCard'
 import { Link } from 'react-router-dom'
 import styles from './PopularCourses.module.css'
+import { AllCoursesCard } from '../AllCourses/AllCoursesCard'
 
 export const PopularCourses = () => {
   const [course, setCourse] = useState<any[]>([])
@@ -30,7 +30,7 @@ export const PopularCourses = () => {
         {course.slice(0, 5).map((course) => (
           <div key={course._id}>
             <Link to={`/course/${course._id}`}>
-              <CourseCard img={course.image} rating={course.rating} title={course.title} price={course.price} />
+              <AllCoursesCard image={course.image} rating={course.rating} title={course.title} price={course.price} />
             </Link>
           </div>
         ))}

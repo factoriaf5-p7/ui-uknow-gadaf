@@ -49,9 +49,11 @@ export class Course {
   	bought: boolean;
 
   @ApiProperty({ example: 'https://www.youtube.com/watch?v=SqcY0GlETPk' })
+  @Prop( { required: true })
   	videoURL: string;
       
   @ApiProperty({ example: 'What is Scala for Spark?' })
+  @Prop( { required: true })
   	videoTitle: string;
 }
 

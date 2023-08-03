@@ -6,9 +6,9 @@ export const ProfileActions = () => {
   return (
     <Container className={styles.container}>
       <div className={styles.actionBtns}>
-        <Link to='/profile'>
+        {/* <Link to='/profile'>
           <div className={styles.button}> Edit profile </div>
-        </Link>
+        </Link> */}
         <Link to='/mycourses'>
           <div className={styles.button}> Bought courses </div>
         </Link>

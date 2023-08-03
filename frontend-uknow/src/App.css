@@ -38,3 +38,8 @@ p {
 hr {
   color: transparent;
 }
+.error-messages{
+  font-weight: bold;
+  margin: 20px;
+  text-align: center;
+}

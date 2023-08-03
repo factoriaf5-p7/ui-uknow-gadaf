@@ -25,7 +25,7 @@ export class User {
   	password: string;
 
   @ApiProperty({ example: 100 })
-  @Prop({ required: true, default: 100 })
+  @Prop({ required: true, default: 1000 })
   	wallet_balance: number;
 
   @ApiProperty({ example: [ 'Bought Course 1', 'Bought Course 2' ] })

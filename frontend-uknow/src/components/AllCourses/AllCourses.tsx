@@ -8,15 +8,23 @@ import { SearchBar } from '../SearchBar/SearchBar'
 export const AllCourses = () => {
   const [courses, setCourses] = useState<any[]>([])
   const [searchKeywords, setSearchKeywords] = useState('')
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     const fetchCourses = async () => {
       try {
         const response = await fetch('http://localhost:3000/api/courses/rating')
+        if (!response.ok) {
+          throw new Error('Failed to fetch data')
+        }
         const data = await response.json()
         setCourses(data.data)
+        setLoading(false)
       } catch (error) {
-        console.log('Error fetching courses:', error)
+        console.error('Error fetching courses:', error)
+        setError('Failed to connect to server :(')
+        setLoading(false)
       }
     }
     fetchCourses()
@@ -30,6 +38,15 @@ export const AllCourses = () => {
 
   const handleSearch = (keywords: string) => {
     setSearchKeywords(keywords)
+  }
+
+  if (loading) {
+    // Display loading state
+    return <div className='error-messages'>Loading...</div>
+  }
+  if (error) {
+    // Display error message
+    return <div className='error-messages'>Something went wrong: {error}</div>
   }
 
   return (
