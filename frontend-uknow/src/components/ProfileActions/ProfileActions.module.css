@@ -30,3 +30,11 @@
     justify-content: flex-start;
     gap: 1rem;
 }
+
+@media (min-width: 600px) {
+    .button{
+        margin: 0.5rem;
+        padding: 1rem;
+        gap: 1rem;
+    }
+  }
