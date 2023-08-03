@@ -44,6 +44,7 @@ export const MyCourses = () => {
     <div className={styles.pageContent}>
       <BackButton />
       <BoughtCourses />
+      <br /><br />
       <CreatedCourses />
     </div>
   )
