@@ -75,7 +75,7 @@ export const Profile = () => {
           <h6 className={styles.profileSettings}><ChatDotsFill />Help and Support</h6>
           <h6 className={styles.profileSettings}><InfoSquareFill />Terms of Service</h6>
           <h6 className={styles.profileSettings}><ShieldFillCheck />Privacy Policy</h6>
-          <ButtonP className={styles.logOutBtn} onClick={handleLogOut} text={'Logout'} icon={<ArrowBarRight />} >  </ButtonP>
+          <ButtonP className={styles.logOutBtn} onClick={handleLogOut} text='Logout' icon={<ArrowBarRight />} />
         </section>
         <div className={styles.courses}>
           <section className={styles.contact}> <ProfileContact /></section>
