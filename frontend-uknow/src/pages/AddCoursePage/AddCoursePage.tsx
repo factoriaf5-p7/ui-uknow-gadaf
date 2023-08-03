@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import styles from './AddCoursePage.module.css'
-import { Container } from 'react-bootstrap'
+import { Container, Form } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 
 interface FormType {
     title: string;
@@ -17,6 +18,8 @@ interface FormType {
 }
 
 export const AddCoursePage = () => {
+  const navigate = useNavigate()
+
   const [newCourse, setNewCourse] = useState<FormType>({
     title: '',
     topic: '',
@@ -48,117 +51,128 @@ export const AddCoursePage = () => {
                 `http://localhost:3000/api/courses/create/${userId}`,
                 {
                   ...newCourse,
-                  userId: localStorage.getItem('id')
+                  userId
                 }
       )
       console.log(response.data)
       console.log(newCourse)
+
+      navigate('/mycourses')
     } catch (error) {
       console.log(error)
     }
   }
 
   return (
-    <Container className={styles.formContainer}>
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <label>
-          Title
-          <input
-            type='text'
-            name='title'
-            value={newCourse.title}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Topic
-          <input
-            name='topic'
-            value={newCourse.topic}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Image
-          <input
-            name='image'
-            value={newCourse.image}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Category
-          <select
-            name='category'
-            value={newCourse.category}
-            onChange={handleChange}
-          >
-            <option value=''>Select category</option>
-            <option value='Big Data'>Big Data</option>
-            <option value='Cloud Computing'>Cloud Computing</option>
-            <option value='Cybersecurity'>Cybersecurity</option>
-            <option value='Data Science'>Data Science</option>
-            <option value='Design'>Design</option>
-            <option value='DevOps'>DevOps</option>
-            <option value='Electronics'>Electronics</option>
-            <option value='Game Development'>Game Development</option>
-            <option value='Internet of Things'>Internet of Things</option>
-            <option value='Mobile App Development'>Mobile App Development</option>
-            <option value='Programming Languages'>Programming Languages</option>
-            <option value='Quality Assurance'>Quality Assurance</option>
-            <option value='Software Engineering'>Software Engineering</option>
-            <option value='Web Development'>Web Development</option>
-          </select>
-        </label>
-        <label>
-          Difficulty
-          <select
-            name='difficulty'
-            value={newCourse.difficulty}
-            onChange={handleChange}
-          >
-            <option value=''>Select difficulty</option>
-            <option value='Beginner'>Beginner</option>
-            <option value='Intermediate'>Intermediate</option>
-            <option value='Advanced'>Advanced</option>
-            <option value='Expert'>Expert</option>
-            <option value='All Levels'>All Levels</option>
-          </select>
-        </label>
-        <label>
-          Description
-          <input
-            type='text'
-            name='description'
-            value={newCourse.description}
-            onChange={handleChange}
-          />
-        </label>
+    <Form.Group className='mb-3'>
+      <Container className={styles.formContainer}>
+        <h4 className={styles.sectionTitle}>Create your own course</h4>
 
-        <label>
-          Video Title
-          <input
-            type='text'
-            name='videoTitle'
-            value={newCourse.videoTitle}
-            onChange={handleChange}
-          />
-        </label>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <label>
+            Title
+            <input
+              type='text'
+              name='title'
+              value={newCourse.title}
+              onChange={handleChange}
+            />
+          </label>
 
-        <label>
-          Video Link
-          <input
-            type='text'
-            name='videoURL'
-            value={newCourse.videoURL}
-            onChange={handleChange}
-          />
-        </label>
+          <label>
+            Description
+            <input
+              type='text'
+              name='description'
+              value={newCourse.description}
+              onChange={handleChange}
+            />
+          </label>
 
-        <button type='submit'>
-          <i className='fa fa-plus-circle' aria-hidden='true' />Add Course
-        </button>
-      </form>
-    </Container>
+          <label>
+            Image
+            <input
+              name='image'
+              value={newCourse.image}
+              onChange={handleChange}
+            />
+          </label>
+
+          <label>
+            Category
+            <select
+              name='category'
+              value={newCourse.category}
+              onChange={handleChange}
+            >
+              <option value=''>Select category</option>
+              <option value='Big Data'>Big Data</option>
+              <option value='Cloud Computing'>Cloud Computing</option>
+              <option value='Cybersecurity'>Cybersecurity</option>
+              <option value='Data Science'>Data Science</option>
+              <option value='Design'>Design</option>
+              <option value='DevOps'>DevOps</option>
+              <option value='Electronics'>Electronics</option>
+              <option value='Game Development'>Game Development</option>
+              <option value='Internet of Things'>Internet of Things</option>
+              <option value='Mobile App Development'>Mobile App Development</option>
+              <option value='Programming Languages'>Programming Languages</option>
+              <option value='Quality Assurance'>Quality Assurance</option>
+              <option value='Software Engineering'>Software Engineering</option>
+              <option value='Web Development'>Web Development</option>
+            </select>
+          </label>
+
+          <label>
+            Topic
+            <input
+              name='topic'
+              value={newCourse.topic}
+              onChange={handleChange}
+            />
+          </label>
+
+          <label>
+            Difficulty
+            <select
+              name='difficulty'
+              value={newCourse.difficulty}
+              onChange={handleChange}
+            >
+              <option value=''>Select difficulty</option>
+              <option value='Beginner'>Beginner</option>
+              <option value='Intermediate'>Intermediate</option>
+              <option value='Advanced'>Advanced</option>
+              <option value='Expert'>Expert</option>
+              <option value='All Levels'>All Levels</option>
+            </select>
+          </label>
+
+          <label>
+            Video Title
+            <input
+              type='text'
+              name='videoTitle'
+              value={newCourse.videoTitle}
+              onChange={handleChange}
+            />
+          </label>
+
+          <label>
+            Video Link
+            <input
+              type='text'
+              name='videoURL'
+              value={newCourse.videoURL}
+              onChange={handleChange}
+            />
+          </label>
+
+          <button type='submit'>
+            <i className='fa fa-plus-circle' aria-hidden='true' />Add Course
+          </button>
+        </form>
+      </Container>
+    </Form.Group>
   )
 }
