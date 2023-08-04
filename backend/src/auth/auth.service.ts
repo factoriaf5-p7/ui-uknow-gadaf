@@ -4,8 +4,6 @@ import { GetUserLoginDto } from './dto/get-user-login.dto';
 import { RegisterUserDto } from './dto/register-user.dto';
 import { RecoverUserDto } from './dto/recover-user.dto';
 import { JwtService } from '@nestjs/jwt';
-import { sendEmail } from '../utils/mail-sender';
-import { RecoverRequestDto } from './dto/recover-request.dto';
 import { hash, genSalt, compare } from 'bcrypt';
 import { InjectModel } from '@nestjs/mongoose';
 import { User } from 'src/users/schemas/user.schema';
@@ -65,26 +63,25 @@ export class AuthService {
 		  }
 	}
 
-	async recoverPasswordRequest(user: RecoverRequestDto){
-		const payload = { 
-			sub: user._id,
-			email: user.email
-		};
+	// async recoverPasswordRequest(user: RecoverRequestDto){
+	// 	const payload = { 
+	// 		sub: user._id,
+	// 		email: user.email
+	// 	};
 
-		try {
-			const token = await this.jwtService.signAsync(payload, { expiresIn: '1d' });
-			user.recovery_token = token;
-			const { data } = await this.userService.updateRecoveryToken(user);
-			sendEmail(data, token);
-			return {
-				message: 'Recovery link has sent to your email',
-				status: HttpStatus.OK,
-				data: ''
-			};
-		} catch (error) {
-			throw error;
-		}
-	}
+	// 	try {
+	// 		const token = await this.jwtService.signAsync(payload, { expiresIn: '1d' });
+	// 		user.recovery_token = token;
+	// 		const { data } = await this.userService.updateRecoveryToken(user);
+	// 		return {
+	// 			message: 'Recovery link has sent to your email',
+	// 			status: HttpStatus.OK,
+	// 			data: ''
+	// 		};
+	// 	} catch (error) {
+	// 		throw error;
+	// 	}
+	// }
 
 	async updatePassword(user: RecoverUserDto) {
 		try {

@@ -11,7 +11,7 @@ export const Categories = () => {
     const getCategories = async () => {
       try {
         const response = await fetch(
-          'http://localhost:3000/api/courses/categories'
+          'https://ui-uknow-gadaf-production.up.railway.app/api/courses/categories'
         )
         const data = await response.json()
         setCategories(data.data)

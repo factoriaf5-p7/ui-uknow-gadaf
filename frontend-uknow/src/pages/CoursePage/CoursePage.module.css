@@ -19,7 +19,6 @@
 .specsDescriptionBuy {    
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 1rem;
 }
     
@@ -61,6 +60,7 @@
 .courseCategory {
     height: fit-content;
     width: fit-content;
+    align-self: flex-start;
     padding: 0.2rem 0.2rem;
     border: none;
     border-radius: 5px !important;
@@ -94,10 +94,12 @@ hr {
 .courseDescription {
     font-weight: 600;
     font-size: 16px;
+    text-align: left;
 }
 
 .buyButton {
-    width: 85vw;
+    width: 100%;
+    padding: 1.5rem 2rem;
     height: 45px;
     border: 2px solid #c7dd8f;
     border-radius: 10px;
@@ -285,8 +287,9 @@ h3 {
     }
 
     .buyButton {
+        width: fit-content;
          padding-top: 0.1rem;
-        width: 50vw; 
+        
     }
 
     .priceCourse {

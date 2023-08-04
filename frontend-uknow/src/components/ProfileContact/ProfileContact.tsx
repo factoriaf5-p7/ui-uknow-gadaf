@@ -1,4 +1,4 @@
-import { Container, Form, InputGroup } from 'react-bootstrap'
+import { Container, Form } from 'react-bootstrap'
 import styles from './ProfileContact.module.css'
 import { ButtonP } from '../ButtonP'
 
@@ -27,7 +27,7 @@ export const ProfileContact = () => {
 
         <Form.Group className='mb-3'>
           <Form.Control
-          as='textarea'
+            as='textarea'
             className={styles.textFieldMessage}
             type='message'
             placeholder='Write your message'
@@ -35,7 +35,7 @@ export const ProfileContact = () => {
           />
         </Form.Group>
         <br />
-        <ButtonP className={styles.buttonSubmit} text='Send' />
+        <ButtonP className={styles.buttonSubmit} text='Send' icon={undefined} />
       </Form>
     </Container>
   )

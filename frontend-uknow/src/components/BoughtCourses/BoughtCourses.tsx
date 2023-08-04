@@ -13,7 +13,7 @@ export const BoughtCourses = () => {
     async function getData () {
       try {
         const token = localStorage.getItem('token')
-        const response = await axios.get('http://localhost:3000/api/users/profile', {
+        const response = await axios.get('https://ui-uknow-gadaf-production.up.railway.app/api/users/profile', {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -35,7 +35,7 @@ export const BoughtCourses = () => {
         if (course && course.course_id) {
           try {
             const courseId = course.course_id
-            const response = await axios.get(`http://localhost:3000/api/courses/${courseId}`)
+            const response = await axios.get(`https://ui-uknow-gadaf-production.up.railway.app/api/courses/${courseId}`)
             if (response.data.data) {
               courseDataArray.push(response.data.data)
             } else {

@@ -14,7 +14,7 @@ export const AllCourses = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/courses/rating')
+        const response = await fetch('https://ui-uknow-gadaf-production.up.railway.app/api/courses/rating')
         if (!response.ok) {
           throw new Error('Failed to fetch data')
         }

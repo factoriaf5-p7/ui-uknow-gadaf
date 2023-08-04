@@ -2,7 +2,6 @@ import { describe, test, expect, beforeEach } from 'vitest'
 import { render } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { Profile } from '../../pages/ProfilePage/ProfilePage'
-import { ProfileActions } from '../../components/ProfileActions/ProfileActions'
 import { ProfileContact } from '../../components/ProfileContact/ProfileContact'
 
 describe('PROFILE PAGE', () => {

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { StarRating } from '../../components/StarRating/StarRating'
 import styles from './CoursePage.module.css'
-import { PlayFill, Clock, BarChartFill, Lock } from 'react-bootstrap-icons'
+import { PlayFill, BarChartFill, Lock } from 'react-bootstrap-icons'
 import axios from 'axios'
 import { BackButton } from '../../components/BackButton/BackButton'
 
@@ -18,7 +18,7 @@ const CourseDetail = () => {
       try {
         const token = localStorage.getItem('token')
         const userId = localStorage.getItem('id')
-        const response = await axios.get(`http://localhost:3000/api/users/verify/${userId}/${id}`, {
+        const response = await axios.get(`https://ui-uknow-gadaf-production.up.railway.app/api/users/verify/${userId}/${id}`, {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -37,7 +37,7 @@ const CourseDetail = () => {
   useEffect(() => {
     const fetchCourseDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/api/courses/${id}`)
+        const response = await fetch(`https://ui-uknow-gadaf-production.up.railway.app/api/courses/${id}`)
         const data = await response.json()
         setCourseDetails(data.data)
         console.log(data.data)
@@ -59,7 +59,7 @@ const CourseDetail = () => {
     const isConfirmed = window.confirm('Are you sure you want to buy this course?')
     if (isConfirmed) {
       try {
-        const res = await axios.patch('http://localhost:3000/api/courses/purchase', {
+        const res = await axios.patch('https://ui-uknow-gadaf-production.up.railway.app/api/courses/purchase', {
           userId: localStorage.getItem('id'),
           courseId: id
         })
@@ -113,7 +113,7 @@ const CourseDetail = () => {
                   )
                 : (
                   <div className={styles.buyButton} onClick={handleBuyCourse}>
-                    <p className={styles.priceCourse}>Buy for {courseDetails.price}$</p>
+                    <p className={styles.priceCourse}>Buy for {courseDetails.price} KN</p>
                   </div>
                   )}
             </div>
@@ -129,7 +129,7 @@ const CourseDetail = () => {
 
             {/* Show video link only if the course is purchased */}
             {coursePurchased ? (
-              <a href={courseDetails.videoUrl} className={styles.videoLink}>
+              <a href={courseDetails.videoURL} className={styles.videoLink}>
                 <div className={styles.videoBox}>
                   <div className={styles.squareButton}>
                     <button className={styles.circleButton}>
@@ -138,9 +138,6 @@ const CourseDetail = () => {
                   </div>
                   <div className={styles.videoInfo}>
                     <h3 className={styles.videoTitle}>{courseDetails.videoTitle}</h3>
-                    <p className={styles.videoDuration}>
-                      <Clock className={styles.clockIcon} /> {courseDetails.videoDuration}
-                    </p>
                   </div>
                 </div>
               </a>

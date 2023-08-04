@@ -12,7 +12,7 @@ export const FilterByCategory = () => {
   useEffect(() => {
     const getFilteredCategories = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/api/courses/category?filter=${filter}`)
+        const res = await axios.get(`https://ui-uknow-gadaf-production.up.railway.app/api/courses/category?filter=${filter}`)
         const courses = res.data
         setFilteredCourses(courses)
       } catch (error) {

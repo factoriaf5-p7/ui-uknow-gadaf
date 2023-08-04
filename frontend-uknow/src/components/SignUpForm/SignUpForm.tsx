@@ -36,7 +36,7 @@ export const SignUpForm = () => {
     }
     try {
       await axios.post(
-        'http://localhost:3000/api/auth/signup',
+        'https://ui-uknow-gadaf-production.up.railway.app/api/auth/signup',
         formData,
         {
           headers:
@@ -129,7 +129,7 @@ export const SignUpForm = () => {
           />
         </Form.Group>
 
-        <ButtonP text='Sign Up' />
+        <ButtonP text='Sign Up' icon={undefined} />
       </Form>
     </div>
   )

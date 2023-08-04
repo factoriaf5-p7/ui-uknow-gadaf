@@ -1,8 +1,9 @@
 import { describe, test, expect, beforeEach } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
-import { CoursePage } from '../../pages/CoursePage'
 import { StarRating } from '../../components/StarRating/StarRating'
+import CoursePage from '../../pages/CoursePage/CoursePage'
+import '@testing-library/jest-dom'
 
 describe('COURSES PAGE', () => {
   describe('titles', () => {

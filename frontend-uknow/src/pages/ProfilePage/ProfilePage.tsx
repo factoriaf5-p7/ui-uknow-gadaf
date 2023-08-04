@@ -29,7 +29,7 @@ export const Profile = () => {
       try {
         const token = localStorage.getItem('token')
         console.log(token)
-        const response = await axios.get('http://localhost:3000/api/users/profile', {
+        const response = await axios.get('https://ui-uknow-gadaf-production.up.railway.app/api/users/profile', {
           headers: {
             Authorization: `Bearer ${token}`
           }
@@ -75,7 +75,7 @@ export const Profile = () => {
           <h6 className={styles.profileSettings}><ChatDotsFill />Help and Support</h6>
           <h6 className={styles.profileSettings}><InfoSquareFill />Terms of Service</h6>
           <h6 className={styles.profileSettings}><ShieldFillCheck />Privacy Policy</h6>
-          <ButtonP className={styles.logOutBtn} onClick={handleLogOut} text={'Logout'} icon={<ArrowBarRight />} >  </ButtonP>
+          <ButtonP className={styles.logOutBtn} onClick={handleLogOut} text='Logout' icon={<ArrowBarRight />} />
         </section>
         <div className={styles.courses}>
           <section className={styles.contact}> <ProfileContact /></section>
