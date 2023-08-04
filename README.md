@@ -30,6 +30,12 @@ The website has a responsive navigation bar, and a dropdown menu in the Profile 
 
 ## :hammer_and_wrench: Languages and Tools
 
+For the front-end part, we have used React, Vitest and TypeScript. For the CSS, we have used BootStrap.
+
+For the back-end part, we have worked with NodeJS, NestJS and Axios.
+
+The tests have been done with Vitest.
+
 <div>
    <img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original-wordmark.svg" title="Node" alt="Node" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/nestjs/nestjs-plain.svg" title="NestJS" alt="NestJS" width="40" height="40"/>&nbsp;
