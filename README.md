@@ -5,7 +5,7 @@ Design and creation of a responsive website for buying and selling programming c
 
 ## Demo
 
-[Click here](https://ui-uknow-gadaf-81bz-kzc7ycjdz-uknow.vercel.app/)
+:point_right: [Click here](https://ui-uknow-gadaf-81bz-kzc7ycjdz-uknow.vercel.app/)
 
 ## Team
 
