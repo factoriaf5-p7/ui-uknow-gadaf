@@ -1,0 +1,356 @@
+.courseContainer {
+    height: fit-content;
+    padding-bottom: 4rem !important;
+    margin: 0rem 2.5rem 0rem 2.5rem;
+}
+
+.courseHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imgSpecs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.specsDescriptionBuy {    
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+    
+.courseImg {
+    width: 85vw;
+    height: auto;
+    border-radius: 20px;
+}
+
+.courseSpecs {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.rating {
+    font-size: 12px;
+    font-weight: 700;
+    color: rgb(75, 75, 75);
+    text-align: center;
+}
+
+.difficulty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    width: fit-content;
+    padding: 0.2rem 0.5rem;
+    text-align: center;
+    font-size: 12px;
+    gap: 1rem;
+    color: rgb(78, 78, 78);
+    background-color: #f6f6f6;  
+    box-shadow: 0 2px 4px rgba(220, 220, 220, 0.2);
+}
+
+.courseCategory {
+    height: fit-content;
+    width: fit-content;
+    align-self: flex-start;
+    padding: 0.2rem 0.2rem;
+    border: none;
+    border-radius: 5px !important;
+    cursor: pointer;
+    outline: none;
+      background-image: 
+    radial-gradient(circle at 100% 0, #f0f2e4, transparent),
+    radial-gradient(circle at 0 100%, #eaf4c2, transparent),
+    radial-gradient(circle at 100% 100%, #E3DB8A, transparent),
+    radial-gradient(circle at 50% 50%, transparent, rgb(0, 166, 255)) !important;
+    border-style: none !important;
+    color: #222222 !important;
+    text-align: center;
+    font-size: 12px;
+}
+
+.courseCategory:hover {
+    background-color: rgb(255, 255, 255) !important;;
+    border: 1px solid #AED581 !important;
+  }
+
+hr {
+    color: transparent;
+    margin: 10px;
+}
+
+.courseTitle {
+    font-weight: 700;
+}
+
+.courseDescription {
+    font-weight: 600;
+    font-size: 16px;
+    text-align: left;
+}
+
+.buyButton {
+    width: 100%;
+    padding: 1.5rem 2rem;
+    height: 45px;
+    border: 2px solid #c7dd8f;
+    border-radius: 10px;
+    padding-top: 0.4rem;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(72, 72, 72, 0.2);
+}
+
+.buyButton:hover {
+    background-color: #c7dd8f;
+}
+
+.priceCourse {
+    font-weight: 600;
+    font-size: 18px;
+    color: rgb(75, 75, 75);
+    letter-spacing: 0.8px;
+    text-align: center;
+}
+
+.courseContent {
+    margin-top: 1.5rem;
+    width: 90vw;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.courseContentTop {
+    width: 80vw;
+}
+
+.courseContentTitle {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #efefef;
+    font-weight: 600;
+}
+
+.videoBox {
+    display: flex;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+    border: 1px solid #e2e2e2;
+    border-radius: 15px;
+    width: 80vw;
+    padding: 1rem;
+    gap: 1rem;
+    background-image: 
+          radial-gradient(circle at 100% 0, #ffffff, transparent),
+          radial-gradient(circle at 70% 100%, #fbffea, transparent),
+          radial-gradient(circle at 100% 100%, #ffffff, transparent),
+          radial-gradient(circle at 10% 10%, transparent, rgb(187, 220, 237));
+    box-shadow: 0 2px 4px rgba(220, 220, 220, 0.2);
+}
+
+.videoInfo {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;   
+}
+
+h3 {
+    color: rgb(106, 106, 106);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.squareButton {
+    width: 60px;
+    height: 60px;
+    background-color: #92A65F;
+    background-image: 
+        radial-gradient(circle at 5% 0, #ffffff, transparent),
+        radial-gradient(circle at 10% 10%, transparent, rgb(187, 220, 237));
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(220, 220, 220, 0.2);
+  }
+
+.circleButton {
+    border-radius: 50px;
+    border-style: none;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+  }
+
+.playIcon {
+    color: white;
+    width: 30px;
+    height: 30px;
+}
+
+.videoDuration {
+    color: rgb(112, 112, 112);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.videoTitleUnbought {
+    color: rgb(121, 121, 121);
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+@media (min-width: 600px) {
+    .courseContainer {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding-bottom: 0;
+        gap: 0.5rem;
+        width: 100vw;
+    }
+
+    .courseTitle {
+    font-size: 40px;
+    text-align: left;
+    width: 50vw; 
+   }
+
+    .courseImg {
+        width: 30vw;
+    }
+
+    .imgSpecs {
+        display: flex;
+        flex-direction: row;
+        width: 80vw;
+        gap: 2rem;
+    }
+
+    .specsDescriptionBuy {
+        display: flex;
+        flex-direction: column;
+        width: 50vw; 
+        justify-content: flex-start;
+    }
+
+    .courseSpecs {
+        flex-direction: row;
+        gap: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+        width: 50vw; 
+        justify-content: flex-start;
+    }
+
+    .rating {
+        font-size: 16px;
+        font-weight: 700;
+        color: rgb(75, 75, 75);
+    }
+    
+    .difficulty {
+        font-size: 16px;
+        gap: 0.5rem;
+        width: fit-content;
+        height: fit-content;
+        padding: 0.5rem 1rem;
+    }
+    
+    .courseCategory {
+        width: fit-content;
+        height: fit-content;
+        padding: 0.5rem 1rem;
+        font-size: 16px;
+    }
+
+    .courseDescription {
+        font-size: 18px;
+        text-align: left;
+    }
+
+    .buyButton {
+        width: fit-content;
+         padding-top: 0.1rem;
+        
+    }
+
+    .priceCourse {
+        font-size: 22px;
+    }
+
+    .courseContent {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        width: fit-content;
+        margin-top: 5rem;
+    }
+
+    .courseContentTop {
+        width: 85vw;
+    }
+
+    .courseContentTitle {        
+        text-align: left;
+    }
+    
+    .videoTitleUnbought {
+        justify-content: flex-start;
+        width: 85vw;
+
+    }
+
+    .videoBox {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 2rem;
+        padding: 1.5rem;
+        width: 85vw;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+    
+    .squareButton {
+        width: 100px;
+        height: 80px;
+      }
+    
+    .circleButton {
+        width: 50px;
+        height: 50px;
+      }
+    
+    .playIcon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .videoDuration {
+        font-size: 14px;
+    }
+
+    .videoTitleUnbought {
+        font-size: 20px;
+    }
+}

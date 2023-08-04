@@ -1,0 +1,87 @@
+.navBarSection {
+    width: 100vw;
+    background-color: rgb(255, 255, 255);
+    background-image: 
+  radial-gradient(circle at 100% 0, #f0f2e4, transparent),
+  radial-gradient(circle at 0 100%, #eaf4c2, transparent),
+  radial-gradient(circle at 100% 100%, #E3DB8A, transparent),
+  radial-gradient(circle at 50% 50%, transparent, #00A6FF) !important;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    position: fixed;
+    top: 0;
+    z-index: 1999;
+  }
+
+  .navBarContainer {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center !important;
+  }
+  
+  .item {
+    color: #6f6f6f !important;
+    font-weight: 600 !important;
+    font-size: 18px;
+    padding-right: 3rem;
+    text-shadow: 5px 2px 5px rgb(255, 255, 255);
+  }
+  
+  .logoText img {
+    width: 150px;
+    height: auto;
+  }
+  
+  .logoImg img {
+    width: 110px;
+    height: auto;
+  }
+
+  .logoImgHidden {
+    display: none;
+  }
+  
+.navBarLinks{
+    display: flex;
+    align-items: center;
+    justify-content: space-around; 
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    gap: 5%;
+}
+
+   .navBarItems {
+    gap: 20rem;
+    width: 70%; 
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+  }
+  
+   .dropDownItem:hover {
+    background-color: #e5ecc9;
+  }
+
+  .dropDownItem:focus, .dropDownItem::after {
+    background-color: #c9d0a5;
+  }
+
+
+  @media (max-width: 600px) {
+    .navBarSection {
+      display: none !important;
+    }
+
+    .navBarContainer {
+      display: none !important;
+    }
+
+    body {
+      padding-top: 0 !important;
+    }
+  }
+

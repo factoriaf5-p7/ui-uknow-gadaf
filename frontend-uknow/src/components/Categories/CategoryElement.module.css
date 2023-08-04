@@ -1,0 +1,26 @@
+.categoryChip {
+
+  height: 35px;
+  padding: 0 26px;
+  border: none;
+  border-radius: 20px !important;
+  cursor: pointer;
+  outline: none;
+    background-image: 
+  radial-gradient(circle at 100% 0, #f0f2e4, transparent),
+  radial-gradient(circle at 0 100%, #eaf4c2, transparent),
+  radial-gradient(circle at 100% 100%, #E3DB8A, transparent),
+  radial-gradient(circle at 50% 50%, transparent, rgb(0, 166, 255)) !important;
+  
+
+  border-style: none !important;
+  color: #222222 !important;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.categoryChip:hover {
+  background-color: rgb(255, 255, 255) !important;
+  border: 1px solid #AED581 !important;
+}

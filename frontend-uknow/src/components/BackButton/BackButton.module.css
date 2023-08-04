@@ -1,0 +1,21 @@
+.backButton{
+width: 5rem;
+height: auto;
+margin: 1rem 0.5rem;
+}
+
+.backButtonIcon {
+    color: rgb(115, 115, 115);
+    width: 5rem;
+}
+
+@media (min-width: 600px) {
+.backButton {
+    margin-left: 8rem;
+}
+
+.backButtonIcon {
+    width: 2rem;
+}
+
+}
