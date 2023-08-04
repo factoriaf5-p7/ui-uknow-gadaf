@@ -33,7 +33,7 @@ The website has a responsive navigation bar, and a dropdown menu in the Profile 
 For the front-end part, we have used React, Vitest and TypeScript. For the CSS, we have used BootStrap.
 For the back-end part, we have worked with NodeJS, NestJS and Axios.
 The tests have been done with Vitest.
-The deploy has been done with Vercel and Railwway.
+The deploy has been done with Vercel and Railway.
 
 <div>
    <img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original-wordmark.svg" title="Node" alt="Node" width="40" height="40"/>&nbsp;
