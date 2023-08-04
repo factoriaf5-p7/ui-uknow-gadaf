@@ -5,7 +5,7 @@ import { TokenProvider } from '../../context/TokenContext'
 
 describe('NAVBAR DESK', () => {
   describe('Navbar', () => {
-    test('renders a nav', async () => {
+    test('renders a nav', () => {
       const wrapper = render(
         <TokenProvider>
           <NavbarDesk />

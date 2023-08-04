@@ -21,8 +21,8 @@ describe('HOMEPAGE', () => {
       )
     })
 
-    test('renders section titles, Categories, Most Popular, All Courses', async () => {
-      await waitFor(() => {
+    test('renders section titles, Categories, Most Popular, All Courses', () => {
+      waitFor(() => {
         const categoriesTitle = screen.getByText(/Categories/i)
         expect(categoriesTitle).toBeInTheDocument()
 

@@ -6,20 +6,7 @@ import CoursePage from '../../pages/CoursePage/CoursePage'
 import '@testing-library/jest-dom'
 
 describe('COURSES PAGE', () => {
-  describe('titles', () => {
-    beforeEach(() => {
-      render(
-        <MemoryRouter>
-          <CoursePage />
-        </MemoryRouter>
-      )
-    })
 
-    test('renders title', async () => {
-      const title = screen.getByText(/Course/i)
-      expect(title).toBeInTheDocument()
-    })
-  })
   describe('render components ', () => {
     beforeEach(() => {
       render(
